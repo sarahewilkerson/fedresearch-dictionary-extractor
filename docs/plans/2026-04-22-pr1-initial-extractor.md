@@ -91,4 +91,36 @@ Followed parent plan §3.1 exactly:
 
 ## Sync Verification
 
-(populated post-merge)
+- [x] Verification strategy executed: **PASS** (32 pytest cases, ruff lint clean, schema-validation smoke OK)
+- [x] Branch pushed to remote: **YES** — `feat/2026-04-22-initial-extractor`, then deleted post-merge
+- [x] Branch merged to main: **YES** — squash-merge PR #1 → commit a42788e
+- [x] Main pushed to remote: **YES** — local main == origin/main @ a42788e
+- [x] Documentation updated and current: **YES** — README + this plan doc cover the v0.1.0 baseline; v0.1.0 wheel publication deferred to PR1.2
+- [x] Production deploy: **N/A** — package not yet published to PyPI or as a GitHub Release. PR1.2 will gate that on validation-set (PR1.1) results.
+- [x] Local, remote, and main are consistent: **YES** — all at a42788e
+- CI status: **all green**, native runners (no infra issues encountered on this fresh repo). No admin bypass required.
+- Verified at: 2026-04-22 (post-merge, fast-forward sync)
+
+## Execution Results
+
+**Final status:** CLEAN — first PR merged with fully-green CI on Python 3.11 + 3.12.
+
+**What landed:**
+- 11 new files in package + 3 test files + CI workflow + plan + README + scaffold
+- 32 tests passing
+- Wheel-build job confirmed working (input for PR4's Dockerfile SHA pin)
+
+**Iteration count this PR:** 1 plan → 1 execution review → CLEAN. No remediation rounds.
+
+**Deferred (separate `/develop` cycles):**
+- **PR1.1** — validation set + ≥85% coverage push
+- **PR1.2** — v0.1.0 wheel + GitHub Release with pinned SHA (gated on PR1.1)
+- **PR1.3** — expanded inline patterns based on validation signal
+
+**Rule suggestions surfaced:**
+- None this PR (all routine).
+
+**Downstream unlocked:**
+- **PR1.1** /develop cycle (validation set + coverage)
+- **PR2** /develop cycle (FedResearch backend) can start in parallel; the JSON schema and `normalize_term` algorithm are now stable contracts the backend can target. Backend won't pin a wheel SHA until PR1.2 publishes one.
+
