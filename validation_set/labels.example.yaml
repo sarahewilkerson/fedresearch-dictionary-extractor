@@ -1,9 +1,23 @@
 # Format reference for validation_set/labels.yaml.
 # Real labels are NOT committed (see validation_set/README.md).
 #
-# Per parent plan §H8: 30 PDFs stratified by doc type, each with ≥5 labeled
-# defs covering glossary entries, multiline glossary entries, appendix defs,
-# parenthetical inline defs (NOT just simple cases).
+# Per parent plan §H8 + Codex iter-1 fixes:
+# - Top-level `expected_stratification` REQUIRED — gates the harness against
+#   incomplete corpora. Harness fails loudly if actual labeled docs don't match.
+# - Per-doc `labels` are sampled positives (recall-only).
+# - Per-doc `negative_labels` are explicit terms the extractor MUST NOT emit
+#   (only when present do we compute precision; otherwise precision is reported
+#   as informational only — sampled positives can't fairly compute precision).
+
+expected_stratification:
+  AR: 15
+  PAM: 5
+  FM: 4
+  ATP: 3
+  ADP: 1
+  TC: 1
+  TM: 1
+  # Total: 30 PDFs per parent plan §H8
 
 documents:
   - pdf: AR_600-20.pdf
@@ -18,6 +32,13 @@ documents:
         term_normalized: permanent change of station
         definition: The official assignment of a Soldier from one duty station to another.
         pdf_page_index: 145
+        source_type: glossary
+    # OPTIONAL: terms the extractor MUST NOT emit. Only when present is precision
+    # computed — otherwise the harness gates on recall + def_jaccard only.
+    negative_labels:
+      - term: Figure 1
+        source_type: glossary  # extractor should never emit a "Figure" caption as a glossary term
+      - term: Chapter 3
         source_type: glossary
 
   - pdf: PAM_600-3.pdf
