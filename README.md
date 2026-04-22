@@ -56,8 +56,18 @@ See `docs/schema/definition-output-v1.json`. Every output includes:
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
-pytest
+pytest                  # default suite (excludes real-PDF validation)
+pytest -m validation    # opt-in: requires validation_set/labels.yaml + pdfs/
+ruff check src tests
 ```
+
+## Validation set
+
+Per-doc-type precision/recall + def-text Jaccard thresholds gating PR1.2 wheel
+publication live in `validation_set/`. See [`validation_set/README.md`](validation_set/README.md)
+for label format, threshold table, and stratification target (30 PDFs total).
+Real PDFs and labels are kept out of git; the harness skips cleanly when
+`labels.yaml` is absent.
 
 ## License
 
