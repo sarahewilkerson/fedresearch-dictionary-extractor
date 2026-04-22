@@ -1,0 +1,32 @@
+# Format reference for validation_set/labels.yaml.
+# Real labels are NOT committed (see validation_set/README.md).
+#
+# Per parent plan §H8: 30 PDFs stratified by doc type, each with ≥5 labeled
+# defs covering glossary entries, multiline glossary entries, appendix defs,
+# parenthetical inline defs (NOT just simple cases).
+
+documents:
+  - pdf: AR_600-20.pdf
+    doc_type: AR
+    labels:
+      - term: Combatant Command
+        term_normalized: combatant command
+        definition: A unified or specified command with a broad continuing mission under a single commander established and so designated by the President.
+        pdf_page_index: 142
+        source_type: glossary
+      - term: Permanent Change of Station
+        term_normalized: permanent change of station
+        definition: The official assignment of a Soldier from one duty station to another.
+        pdf_page_index: 145
+        source_type: glossary
+
+  - pdf: PAM_600-3.pdf
+    doc_type: PAM
+    labels:
+      - term: Officer Talent Management
+        term_normalized: officer talent management
+        definition: A deliberate strategy to retain and develop officers across their careers.
+        pdf_page_index: 12
+        source_type: inline
+
+  # ... 28 more documents per the H8 stratification (15 AR, 5 PAM, 4 FM, 3 ATP, 1 ADP, 1 TC, 1 TM)

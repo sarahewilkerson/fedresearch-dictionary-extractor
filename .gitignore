@@ -10,3 +10,9 @@ build/
 *.whl
 .DS_Store
 .ruff_cache/
+
+# Validation set: real PDFs + ground-truth labels are large/sensitive, kept out of git.
+# labels.example.yaml is the format reference and IS committed.
+validation_set/pdfs/
+validation_set/labels.yaml
+validation_set/scorecard.json

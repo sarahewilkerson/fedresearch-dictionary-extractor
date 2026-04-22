@@ -50,7 +50,10 @@ fedresearch_dictionary_extractor = ["schema/*.json"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
-addopts = "-ra --strict-markers"
+addopts = "-ra --strict-markers -m 'not validation'"  # opt-in to real-PDF validation via `-m validation`
+markers = [
+    "validation: real-PDF validation set tests; require validation_set/labels.yaml + validation_set/pdfs/",
+]
 
 [tool.ruff]
 line-length = 100
