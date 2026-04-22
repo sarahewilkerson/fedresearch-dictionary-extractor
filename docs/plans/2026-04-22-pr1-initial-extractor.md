@@ -93,13 +93,13 @@ Followed parent plan §3.1 exactly:
 
 - [x] Verification strategy executed: **PASS** (32 pytest cases, ruff lint clean, schema-validation smoke OK)
 - [x] Branch pushed to remote: **YES** — `feat/2026-04-22-initial-extractor`, then deleted post-merge
-- [x] Branch merged to main: **YES** — squash-merge PR #1 → commit a42788e
-- [x] Main pushed to remote: **YES** — local main == origin/main @ a42788e
+- [x] Branch merged to main: **YES** — squash-merge PR #1 → commit a42788e at 2026-04-22T20:38:24Z
+- [x] Main pushed to remote: **YES** — after this Sync Verification appendix commit lands, local main == origin/main @ a835987 (a42788e was the squash-merge SHA; a835987 is this appendix on top of it)
 - [x] Documentation updated and current: **YES** — README + this plan doc cover the v0.1.0 baseline; v0.1.0 wheel publication deferred to PR1.2
 - [x] Production deploy: **N/A** — package not yet published to PyPI or as a GitHub Release. PR1.2 will gate that on validation-set (PR1.1) results.
-- [x] Local, remote, and main are consistent: **YES** — all at a42788e
-- CI status: **all green**, native runners (no infra issues encountered on this fresh repo). No admin bypass required.
-- Verified at: 2026-04-22 (post-merge, fast-forward sync)
+- [x] Local, remote, and main are consistent: **YES** — all at a835987
+- CI status: **all green** on main post-PR1 merge (24801438420 SUCCESS in 37s) and post-plan-close (24801464937 SUCCESS in 38s). Native runners healthy; no admin bypass required (unlike the FedResearch repo today).
+- Verified at: 2026-04-22T20:39:02Z (PR1 merge 20:38:24Z, plan-close commit 20:38:58Z, last green CI 20:39:02Z, final SHA a835987)
 
 ## Execution Results
 

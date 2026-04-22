@@ -20,6 +20,11 @@ cases:
     normalized: "dod"
   - input: "DoD,USA"
     normalized: "dodusa"
+  # Comma trailing an all-caps acronym (Codex iter-1 finding)
+  - input: "UCMJ,"
+    normalized: "ucmj"
+  - input: "the UCMJ, and the"
+    normalized: "the ucmj and the"
 
   # Lowercase abbreviations should preserve internal punctuation
   - input: "e.g., something"
