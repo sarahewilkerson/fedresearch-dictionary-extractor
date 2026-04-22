@@ -22,7 +22,17 @@ import unicodedata
 _CURLY_SINGLE = {"‘", "’", "‚", "‛"}
 _CURLY_DOUBLE = {"“", "”", "„", "‟"}
 
-_ACRONYM_PUNCT_RE = re.compile(r"(?<=[A-Z])[.,](?=[A-Z])|(?<=[A-Z])\.(?=\s|$)")
+# Spec: "Remove periods and commas when adjacent to capital letters
+# (U.C.M.J. → UCMJ, but 'e.g.,' at sentence end preserved)."
+# A period or comma immediately PRECEDED by a capital letter is dropped,
+# regardless of what follows. This catches:
+#   - U.C.M.J. (between capitals)
+#   - UCMJ. or UCMJ, at end-of-clause
+#   - "the UCMJ, and" (capital then comma then lowercase) — the comma is not
+#     part of the term, dropping it improves term-match correctness.
+# Lowercase-adjacent punctuation (e.g., e.g., i.e.) is preserved because the
+# lookbehind requires a capital letter.
+_ACRONYM_PUNCT_RE = re.compile(r"(?<=[A-Z])[.,]")
 # Strict: only collapse `-\n` with NO whitespace between (the canonical OCR
 # line-break-hyphenation pattern). Hyphen + space + newline is preserved as
 # intentional hyphenation in source text.

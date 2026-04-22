@@ -66,8 +66,28 @@ def strip_citations(text: str, citation_pattern: str) -> str:
 
 
 def has_text_layer(doc: fitz.Document) -> bool:
-    """True if the PDF has extractable text in the first 5 pages."""
-    for i in range(min(5, len(doc))):
+    """
+    True if the PDF has extractable text on a representative sample of pages.
+
+    Samples up to 10 pages distributed across the document (front, middle, back),
+    not just the first 5 — Army regulations frequently have image-only or
+    near-empty front matter (cover, change-page, blank verso) followed by a real
+    text body. A first-5-pages-only check produces false zero-entry classifications
+    for those docs.
+
+    Threshold: any sampled page with ≥100 characters of extracted text qualifies.
+    """
+    n = len(doc)
+    if n == 0:
+        return False
+    # Build a deduped sample list: first 5, last 5, and 5 evenly-spaced from the middle.
+    indices: set[int] = set()
+    indices.update(range(min(5, n)))
+    indices.update(range(max(0, n - 5), n))
+    if n > 10:
+        step = max(1, n // 6)
+        indices.update(range(step, n - step, step))
+    for i in sorted(indices):
         if len(doc[i].get_text().strip()) > 100:
             return True
     return False
