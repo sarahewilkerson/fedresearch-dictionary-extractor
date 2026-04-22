@@ -107,9 +107,20 @@ def test_per_type_thresholds() -> None:
         )
 
     # 2. Run extractor + collect stats per (aggregate_key) slice.
-    # agg_key -> {tp, fn, jaccards, fp_explicit (only when negative_labels present)}
+    # agg_key -> {tp, fn, jaccards, fp_explicit, tp_in_neg_docs, had_negatives}
+    # tp_in_neg_docs is tracked separately so precision is computed ONLY over
+    # the subset of docs that declared negative_labels — otherwise positives
+    # from no-negative PDFs would inflate precision across mixed aggregates
+    # (Codex rerun finding #2).
     agg: dict[tuple[str, str], dict] = defaultdict(
-        lambda: {"tp": 0, "fn": 0, "jaccards": [], "fp_explicit": 0, "had_negatives": False}
+        lambda: {
+            "tp": 0,
+            "fn": 0,
+            "jaccards": [],
+            "fp_explicit": 0,
+            "tp_in_neg_docs": 0,
+            "had_negatives": False,
+        }
     )
 
     for doc_entry in docs:
@@ -121,25 +132,33 @@ def test_per_type_thresholds() -> None:
         negative_labels = doc_entry.get("negative_labels", [])
 
         extracted = analyze_pdf(pdf_path)["entries"]
-        extracted_by_norm = {e["term_normalized"]: e for e in extracted}
 
-        # Per source_type slice
+        # Per source_type slice — Codex rerun finding #1: source-type-filter
+        # the extracted set so a labeled-inline term found only as glossary
+        # doesn't falsely satisfy inline recall.
         for source_type in ("glossary", "inline"):
             slice_labels = [lbl for lbl in labels if lbl.get("source_type") == source_type]
             slice_negatives = [n for n in negative_labels if n.get("source_type") == source_type]
             if not slice_labels and not slice_negatives:
                 continue
 
+            extracted_slice = {
+                e["term_normalized"]: e for e in extracted if e["source_type"] == source_type
+            }
+
             key = _aggregate_key(doc_type, source_type)
             stats = agg[key]
+            doc_has_negatives = bool(slice_negatives)
 
-            # Recall: how many labeled terms appear in extractor output
+            # Recall: how many labeled terms appear in extractor's same-source output
             for lbl in slice_labels:
                 term_norm = normalize_term(lbl["term"])
-                if term_norm in extracted_by_norm:
+                if term_norm in extracted_slice:
                     stats["tp"] += 1
+                    if doc_has_negatives:
+                        stats["tp_in_neg_docs"] += 1
                     stats["jaccards"].append(
-                        _jaccard(extracted_by_norm[term_norm]["definition"], lbl["definition"])
+                        _jaccard(extracted_slice[term_norm]["definition"], lbl["definition"])
                     )
                 else:
                     stats["fn"] += 1
@@ -150,10 +169,7 @@ def test_per_type_thresholds() -> None:
                 stats["had_negatives"] = True
                 negative_norms = {normalize_term(n["term"]) for n in slice_negatives}
                 for n in negative_norms:
-                    if n in extracted_by_norm and any(
-                        e["term_normalized"] == n and e["source_type"] == source_type
-                        for e in extracted
-                    ):
+                    if n in extracted_slice:
                         stats["fp_explicit"] += 1
 
     # 3. Apply thresholds + assemble scorecard.
@@ -169,12 +185,15 @@ def test_per_type_thresholds() -> None:
         recall = tp / (tp + fn) if (tp + fn) else 0.0
         avg_jaccard = sum(stats["jaccards"]) / len(stats["jaccards"]) if stats["jaccards"] else 0.0
 
-        # Precision is only computed + gated when negative_labels were declared
+        # Precision is only computed + gated when negative_labels were declared.
+        # Per Codex rerun finding #2: precision is computed ONLY over the docs
+        # that actually declared negatives — using `tp_in_neg_docs`, not aggregate `tp`.
         precision: float | None = None
         precision_passed: bool | None = None
         if stats["had_negatives"]:
-            denom = tp + stats["fp_explicit"]
-            precision = tp / denom if denom else 1.0
+            tp_neg = stats["tp_in_neg_docs"]
+            denom = tp_neg + stats["fp_explicit"]
+            precision = tp_neg / denom if denom else 1.0
             precision_passed = precision >= p_min
 
         recall_passed = recall >= r_min
@@ -188,6 +207,7 @@ def test_per_type_thresholds() -> None:
                 "tp": tp,
                 "fn": fn,
                 "fp_explicit": stats["fp_explicit"],
+                "tp_in_neg_docs": stats["tp_in_neg_docs"],
                 "had_negative_labels": stats["had_negatives"],
                 "recall": round(recall, 3),
                 "precision": round(precision, 3) if precision is not None else None,
