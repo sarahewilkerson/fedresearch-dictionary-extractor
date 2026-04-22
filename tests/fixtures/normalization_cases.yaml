@@ -1,0 +1,65 @@
+# Shared with the FedResearch backend. The TypeScript backend MUST produce
+# identical `normalized` output for every input here. Drift = silent
+# exact-match failures at search time.
+
+cases:
+  # Basic
+  - input: "Combatant Command"
+    normalized: "combatant command"
+  - input: "  Combatant   Command  "
+    normalized: "combatant command"
+  - input: "combatant\tcommand"
+    normalized: "combatant command"
+
+  # Acronyms with periods
+  - input: "U.C.M.J."
+    normalized: "ucmj"
+  - input: "U.S.A."
+    normalized: "usa"
+  - input: "DoD"
+    normalized: "dod"
+  - input: "DoD,USA"
+    normalized: "dodusa"
+
+  # Lowercase abbreviations should preserve internal punctuation
+  - input: "e.g., something"
+    normalized: "e.g., something"
+  - input: "i.e. that"
+    normalized: "i.e. that"
+
+  # Curly quotes
+  - input: "“Smart” quotes"
+    normalized: "\"smart\" quotes"
+  - input: "‘single’ smart"
+    normalized: "'single' smart"
+
+  # OCR'd hyphenation at line break (strict: only `-\n` with no spaces)
+  - input: "govern-\nment"
+    normalized: "government"
+  # Hyphen followed by space-newline-space is INTENTIONAL hyphenation, preserved.
+  - input: "absent- \nwithout-leave"
+    normalized: "absent- without-leave"
+
+  # NFKC normalization (full-width → half-width)
+  - input: "ＡＲ ６００－２０"
+    normalized: "ar 600-20"
+
+  # Mixed whitespace + newlines
+  - input: "permanent\n change\r\nof  station"
+    normalized: "permanent change of station"
+
+  # Empty / edge
+  - input: ""
+    normalized: ""
+  - input: "   "
+    normalized: ""
+
+  # Already-normalized
+  - input: "absent without leave"
+    normalized: "absent without leave"
+
+  # Punctuation that should be preserved
+  - input: "Article 15"
+    normalized: "article 15"
+  - input: "court-martial"
+    normalized: "court-martial"

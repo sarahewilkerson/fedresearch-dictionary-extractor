@@ -1,0 +1,83 @@
+"""
+Text-cleaning utilities shared by glossary + inline extractors.
+
+Ported from FedResearch_Dictionary_Creator (Jan 2026), adapted to remove
+the patterns-module indirection and to expose a clean API.
+"""
+
+import re
+
+import fitz
+
+# OCR-spacing correction: "C o o p e r a t i v e" → "Cooperative"
+_OCR_SPACED_CHARS_RE = re.compile(r"\b([A-Za-z] ){4,}[A-Za-z]\b")
+
+# Gibberish detection constants
+_MIN_GIBBERISH_LEN = 3
+_VOWEL_THRESHOLD = 0.12
+_MAX_WORD_LEN = 35
+_CONSECUTIVE_CONSONANTS = re.compile(
+    r"[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]{5,}"
+)
+_DIGIT_IN_WORD = re.compile(r"[A-Za-z]\d[A-Za-z]|\d[A-Za-z]{4,}")
+
+
+def fix_ocr_spacing(text: str) -> str:
+    """'C o o p e r a t i v e' → 'Cooperative'."""
+
+    def _collapse(m: re.Match[str]) -> str:
+        return m.group(0).replace(" ", "")
+
+    return _OCR_SPACED_CHARS_RE.sub(_collapse, text)
+
+
+def is_gibberish(text: str) -> bool:
+    """Heuristic detector for garbled OCR output."""
+    if not text or len(text) < _MIN_GIBBERISH_LEN:
+        return False
+
+    clean = re.sub(r"[^\w\s]", "", text)
+
+    if _CONSECUTIVE_CONSONANTS.search(clean):
+        return True
+
+    if _DIGIT_IN_WORD.search(clean):
+        return True
+
+    if text[0] in "$%*@#^~`¥|[]{}\\<>":
+        return True
+
+    alpha = [c for c in clean if c.isalpha()]
+    if len(alpha) > 10:
+        vowels = sum(1 for c in alpha if c.lower() in "aeiou")
+        if vowels / len(alpha) < _VOWEL_THRESHOLD:
+            return True
+
+    return any(len(word) > _MAX_WORD_LEN for word in text.split())
+
+
+def strip_citations(text: str, citation_pattern: str) -> str:
+    """Remove profile-defined embedded citations from definition text."""
+    cleaned = re.sub(citation_pattern, " ", text, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    if cleaned.endswith(" ."):
+        cleaned = cleaned[:-2] + "."
+    return cleaned
+
+
+def has_text_layer(doc: fitz.Document) -> bool:
+    """True if the PDF has extractable text in the first 5 pages."""
+    for i in range(min(5, len(doc))):
+        if len(doc[i].get_text().strip()) > 100:
+            return True
+    return False
+
+
+def compute_text_sha256(doc: fitz.Document) -> str:
+    """SHA-256 of the full extracted text. Used for idempotency keying."""
+    import hashlib
+
+    h = hashlib.sha256()
+    for page in doc:
+        h.update(page.get_text("text").encode("utf-8", errors="replace"))
+    return h.hexdigest()

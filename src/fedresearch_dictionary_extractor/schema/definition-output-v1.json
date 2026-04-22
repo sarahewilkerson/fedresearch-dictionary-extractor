@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/sarahewilkerson/fedresearch-dictionary-extractor/schema/definition-output-v1.json",
+  "title": "FedResearch definition extraction output (schema v1)",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_pdf",
+    "extractor_version",
+    "extraction_timestamp",
+    "profile",
+    "entries",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": { "const": "1" },
+    "source_pdf": { "type": "string" },
+    "source_gcs_key": { "type": ["string", "null"] },
+    "source_doc_id": { "type": ["string", "null"] },
+    "source_pub_number": { "type": ["string", "null"] },
+    "source_doc_type": { "type": ["string", "null"] },
+    "extractor_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+" },
+    "extraction_timestamp": { "type": "string", "format": "date-time" },
+    "profile": { "type": "string" },
+    "text_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$|^$" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/Entry" }
+    },
+    "metadata": { "$ref": "#/$defs/Metadata" }
+  },
+  "$defs": {
+    "Entry": {
+      "type": "object",
+      "required": [
+        "term",
+        "term_normalized",
+        "definition",
+        "source_type",
+        "pdf_page_index"
+      ],
+      "properties": {
+        "term": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "term_normalized": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "definition": { "type": "string", "minLength": 1, "maxLength": 10000 },
+        "source_type": { "enum": ["glossary", "inline"] },
+        "section": { "type": ["string", "null"] },
+        "pdf_page_index": { "type": "integer", "minimum": 1 },
+        "printed_page_label": { "type": ["string", "null"] },
+        "confidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "flags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": []
+        }
+      }
+    },
+    "Metadata": {
+      "type": "object",
+      "required": ["total_pages", "text_layer_present", "entries_glossary", "entries_inline", "entries_after_dedup"],
+      "properties": {
+        "total_pages": { "type": "integer", "minimum": 0 },
+        "glossary_pages": {
+          "type": "array",
+          "items": { "type": "integer" }
+        },
+        "text_layer_present": { "type": "boolean" },
+        "entries_glossary": { "type": "integer", "minimum": 0 },
+        "entries_inline": { "type": "integer", "minimum": 0 },
+        "entries_after_dedup": { "type": "integer", "minimum": 0 }
+      }
+    }
+  }
+}
