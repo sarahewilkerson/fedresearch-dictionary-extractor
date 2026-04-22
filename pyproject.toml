@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fedresearch-dictionary-extractor"
+version = "0.1.0"
+description = "Extract glossary and inline definitions from Army regulation PDFs; emit structured JSON for FedResearch."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "FedResearch" }]
+keywords = ["pdf", "army-regulations", "glossary", "extraction", "fedresearch"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Legal Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "pymupdf>=1.24.0",
+    "pdfplumber>=0.11.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+    "jsonschema>=4.21",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+extract-definitions = "fedresearch_dictionary_extractor.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/sarahewilkerson/fedresearch-dictionary-extractor"
+Repository = "https://github.com/sarahewilkerson/fedresearch-dictionary-extractor"
+Issues = "https://github.com/sarahewilkerson/fedresearch-dictionary-extractor/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fedresearch_dictionary_extractor = ["schema/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "N", "C4"]
+ignore = ["E501"]  # line-length handled by formatter
