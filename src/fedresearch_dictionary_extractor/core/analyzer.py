@@ -36,12 +36,34 @@ def analyze_pdf(
 
         glossary_entries: list[dict] = []
         glossary_pages: list[int] = []
+        glossary_used_fallback = False
         if text_layer:
             page_range = glossary.find_glossary_page_range(doc, profile)
             if page_range:
                 start, end = page_range
                 glossary_pages = list(range(start + 1, end + 2))  # 1-indexed for output
                 glossary_entries = glossary.parse_glossary_entries(doc, start, end, profile)
+                # PR1.2-quality Fix A safety net: doc-level fallback when bold
+                # gate produces SUSPICIOUSLY FEW entries given the glossary
+                # range size. Re-run with X-only gate. Catches OCR'd PDFs
+                # (GlyphLessFont) where the bold flag is absent and terms
+                # are mixed-case/lowercase — bold-gate detection fails AND
+                # multi-span walk over-extends into adjacent entries.
+                # Examples: ADP 3-07 (0 → 7 entries), FM 3-34 (1 → ?).
+                # Threshold: bold-path entry count < range page count means
+                # almost certainly something's wrong (a glossary always has
+                # ≥1 entry/page).
+                page_count = end - start + 1
+                if (
+                    profile.enable_bold_gate
+                    and len(glossary_entries) < page_count
+                ):
+                    fallback_entries = glossary.parse_glossary_entries(
+                        doc, start, end, profile, force_legacy_gate=True
+                    )
+                    if len(fallback_entries) > len(glossary_entries):
+                        glossary_entries = fallback_entries
+                        glossary_used_fallback = True
 
         inline_entries: list[dict] = []
         if text_layer:
@@ -68,6 +90,10 @@ def analyze_pdf(
                 "entries_glossary": len(glossary_entries),
                 "entries_inline": len(inline_entries),
                 "entries_after_dedup": len(deduped),
+                # PR1.2-quality Codex iter-3 #7: diagnostics for the bold
+                # gate fallback. True iff parse_glossary_entries was retried
+                # with X-only mode after the bold-gated run produced zero.
+                "glossary_used_legacy_fallback": glossary_used_fallback,
             },
         }
     finally:

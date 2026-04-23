@@ -142,10 +142,18 @@ def parse_glossary_entries(
     start: int,
     end: int,
     profile: ReferenceProfile,
+    *,
+    force_legacy_gate: bool = False,
 ) -> list[dict]:
     """
     Walk pages [start, end] inclusive, producing dict entries matching the
     Entry schema (excluding backend-assigned fields like visibility).
+
+    If `force_legacy_gate=True`, the per-line bold/ALL-CAPS gate is bypassed
+    (X-only). Used internally as a doc-level fallback when the bold-gate
+    parse produces zero entries despite ample valid lines (PR1.2-quality
+    Fix A safety net for OCR'd PDFs with no preserved bold flags AND
+    no ALL-CAPS terms — e.g., GlyphLessFont scans of ADP 3-07).
     """
     # PR1.2-quality Fix C: case-insensitive so "unclassified" / "section i"
     # / "pin 123" all match regardless of OCR capitalization.
@@ -269,7 +277,7 @@ def parse_glossary_entries(
             # A left-margin line is a NEW term only if its first span is bold
             # OR the line looks acronym-shaped. Otherwise it's a continuation
             # that wraps to the left margin.
-            if profile.enable_bold_gate:
+            if profile.enable_bold_gate and not force_legacy_gate:
                 full_line_text = " ".join(s["text"] for s in line_spans).strip()
                 is_bold = text_utils.is_span_bold(first["span"])
                 is_acronym_line = _looks_like_acronym_term_line(full_line_text)
@@ -380,23 +388,50 @@ def parse_glossary_entries(
 
 def _merge_same_page_continuations(page_entries: list[dict]) -> list[dict]:
     """Merge adjacent same-page entries when the next looks like a
-    continuation fragment (lowercase start) of the previous (def doesn't
-    end with terminal punctuation). Conservative — only operates on
-    document-ordered entries from a single page.
+    continuation fragment (lowercase start, sentence-fragment-shaped) of
+    the previous (def doesn't end with terminal punctuation).
+
+    Conservative — only merges when the "term" is unmistakably a fragment,
+    not a real lowercase headword (lowercase real headwords like
+    "synchronization", "planning", "spillage" are common in Army doctrine
+    glossaries and must NOT be merged).
+
+    Heuristic for "fragment-shaped":
+    - Lowercase start AND
+    - (≥4 words OR contains sentence-internal punctuation `,;:` OR
+      ends with stop-word like "and"/"or"/"the"/etc.)
     """
     if len(page_entries) < 2:
         return page_entries
+
+    stop_tail = {"and", "or", "the", "of", "to", "with", "in", "on", "for",
+                 "by", "as", "are", "is", "was", "were", "that", "which", "who"}
+
+    def _looks_like_fragment(term: str) -> bool:
+        if not term or not term[0].islower():
+            return False
+        words = term.split()
+        if len(words) >= 4:
+            return True
+        if re.search(r"[,;:]", term):
+            return True
+        if words and words[-1].lower().rstrip(".,;:") in stop_tail:
+            return True
+        return False
+
+    def _ends_terminal(text: str) -> bool:
+        # Treat ".)", "?)", "!)", as terminal too — citation parens after a sentence.
+        return bool(re.search(r"[.!?][\")\]]?\s*$", text))
+
     out = [page_entries[0]]
     for e in page_entries[1:]:
         prev = out[-1]
-        prev_def_ends_terminal = bool(re.search(r"[.!?]\s*$", prev.get("definition", "")))
-        next_term_starts_lower = bool(re.match(r"^[a-z]", e.get("term", "")))
+        prev_def_ends_terminal = _ends_terminal(prev.get("definition", ""))
         if (
             prev["pdf_page_index"] == e["pdf_page_index"]
             and not prev_def_ends_terminal
-            and next_term_starts_lower
+            and _looks_like_fragment(e.get("term", ""))
         ):
-            # Merge fragment into prior def
             prev["definition"] = (
                 prev.get("definition", "") + " " + e.get("term", "") + " " + e.get("definition", "")
             ).strip()
