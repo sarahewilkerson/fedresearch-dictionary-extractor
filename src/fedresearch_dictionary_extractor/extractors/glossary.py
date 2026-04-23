@@ -56,6 +56,39 @@ _GLOSSARY_END_PATTERNS = (
     r"^\s*Bibliography\s*(\n|$)",
 )
 
+# PR1.2-quality Fix A: ALL-CAPS heuristic for acronym sections that
+# don't preserve bold flags (AR 600-20, FM 6-02, etc).
+_ACRONYM_FIRST_WORD_RE = re.compile(r"^[A-Z][A-Z0-9\-]{1,14}$")  # allow digits: AH-64, M-1A1, MC-130
+_ACRONYM_LINE_MAX_CHARS = 60       # full-line cap; rules out continuation prose
+_ACRONYM_LINE_NO_PERIOD_PREFIX = 30  # no '.' in first N chars
+
+
+def _looks_like_acronym_term_line(line_text: str) -> bool:
+    """True if `line_text` looks like an acronym-list entry rather than a
+    continuation. Used as the no-bold fallback for the new-term gate.
+
+    Accepts:
+      - First word matches `_ACRONYM_FIRST_WORD_RE` (2-15 chars, upper or
+        hyphenated upper)
+      - Full line is ≤60 chars
+      - No '.' in the first 30 chars (rules out "Furthermore, ..." continuations)
+    """
+    if not line_text or len(line_text) > _ACRONYM_LINE_MAX_CHARS:
+        return False
+    if "." in line_text[:_ACRONYM_LINE_NO_PERIOD_PREFIX]:
+        return False
+    first_word = line_text.split(maxsplit=1)[0] if line_text else ""
+    return bool(_ACRONYM_FIRST_WORD_RE.match(first_word))
+
+
+def _is_term_style_span(span_text: str, span: dict) -> bool:
+    """True if a non-leading span looks like part of the term (bold or acronym).
+    Used by the multi-span term walk."""
+    if text_utils.is_span_bold(span):
+        return True
+    first_word = span_text.split(maxsplit=1)[0] if span_text else ""
+    return bool(_ACRONYM_FIRST_WORD_RE.match(first_word))
+
 
 def find_glossary_page_range(
     doc: fitz.Document,
@@ -226,12 +259,42 @@ def parse_glossary_entries(
         for line_spans in valid_lines:
             first = line_spans[0]
             first_x = first["bbox"][0]
+            in_term_col = first_x < term_col_threshold
 
-            if first_x < term_col_threshold:
-                # Candidate term-line.
-                term_text = first["text"]
+            # PR1.2-quality Fix A: per-line bold/ALL-CAPS gate.
+            # A left-margin line is a NEW term only if its first span is bold
+            # OR the line looks acronym-shaped. Otherwise it's a continuation
+            # that wraps to the left margin.
+            if profile.enable_bold_gate:
+                full_line_text = " ".join(s["text"] for s in line_spans).strip()
+                is_bold = text_utils.is_span_bold(first["span"])
+                is_acronym_line = _looks_like_acronym_term_line(full_line_text)
+                is_new_term_line = in_term_col and (is_bold or is_acronym_line)
+            else:
+                is_new_term_line = in_term_col   # legacy X-only fallback
 
-                # Inline-def split: "Term. Definition…"
+            if is_new_term_line:
+                # PR1.2-quality Fix A multi-span term walk: collect consecutive
+                # term-style spans (bold OR acronym-shaped) into the term.
+                # Stop on first non-term-style span, terminal-punct + lowercase,
+                # or opening-paren citation marker.
+                term_spans = [first]
+                def_start_idx = len(line_spans)
+                for j in range(1, len(line_spans)):
+                    sp = line_spans[j]
+                    sp_text = sp["text"]
+                    if not _is_term_style_span(sp_text, sp["span"]):
+                        def_start_idx = j; break
+                    if re.search(r"[.!?]\s+[a-z]", sp_text):
+                        def_start_idx = j; break
+                    if sp_text.startswith("("):
+                        def_start_idx = j; break
+                    term_spans.append(sp)
+
+                term_text = " ".join(s["text"] for s in term_spans).strip()
+                rest_from_def_spans = " ".join(s["text"] for s in line_spans[def_start_idx:])
+
+                # Inline-def split on the joined term_text: "Term. Definition…"
                 actual_term = term_text.strip()
                 inline_def: str | None = None
                 m = split_re.match(term_text)
@@ -279,10 +342,9 @@ def parse_glossary_entries(
                 term_page_idx = page_idx
                 if inline_def:
                     current_def_lines.append(inline_def)
-                # Remaining spans on this line are part of the definition.
-                rest = " ".join(s["text"] for s in line_spans[1:])
-                if rest:
-                    current_def_lines.append(rest)
+                # Remaining spans (post-term-walk) become def text.
+                if rest_from_def_spans:
+                    current_def_lines.append(rest_from_def_spans)
             else:
                 # Indented line — definition continuation.
                 if current_term is not None:
