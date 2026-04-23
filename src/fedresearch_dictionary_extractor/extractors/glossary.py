@@ -85,7 +85,21 @@ def find_glossary_page_range(
         if any(r.search(page_text) for r in end_res):
             end = i - 1
             break
+        # PR1.2-quality Fix D: back-cover detection. UNCLASSIFIED alone is
+        # NOT a terminator (appears in many normal-page footers). Require
+        # BOTH PIN proximity AND last-3-pages position.
+        if _is_back_cover_marker(page_text, i, total):
+            end = i - 1
+            break
     return (found_start, end)
+
+
+def _is_back_cover_marker(page_text: str, page_idx: int, total: int) -> bool:
+    """True if this page looks like a back-cover / publication-info page,
+    not a glossary page. Conservative — requires PIN+position evidence."""
+    has_pin = bool(re.search(r"\bPIN\s+\d{4,}", page_text))
+    in_last_3 = (total - page_idx) <= 3
+    return has_pin and in_last_3
 
 
 def parse_glossary_entries(
