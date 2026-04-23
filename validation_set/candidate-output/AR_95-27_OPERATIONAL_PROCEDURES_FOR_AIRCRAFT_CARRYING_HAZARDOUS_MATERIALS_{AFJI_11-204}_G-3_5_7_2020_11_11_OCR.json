@@ -1,0 +1,21 @@
+{
+  "schema_version": "1",
+  "source_pdf": "AR_95-27_OPERATIONAL_PROCEDURES_FOR_AIRCRAFT_CARRYING_HAZARDOUS_MATERIALS_{AFJI_11-204}_G-3_5_7_2020_11_11_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "AR 95-27",
+  "source_doc_type": "AR",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T01:02:43Z",
+  "profile": "army",
+  "text_sha256": "ab1e398dd58160935eca94ed6ad8d5256c5ca385a3d114eb5af269e21ef8d0fa",
+  "entries": [],
+  "metadata": {
+    "total_pages": 1,
+    "glossary_pages": [],
+    "text_layer_present": true,
+    "entries_glossary": 0,
+    "entries_inline": 0,
+    "entries_after_dedup": 0
+  }
+}

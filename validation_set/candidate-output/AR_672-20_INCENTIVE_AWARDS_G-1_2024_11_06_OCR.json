@@ -1,0 +1,158 @@
+{
+  "schema_version": "1",
+  "source_pdf": "AR_672-20_INCENTIVE_AWARDS_G-1_2024_11_06_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "AR 672-20",
+  "source_doc_type": "AR",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T01:02:43Z",
+  "profile": "army",
+  "text_sha256": "c72caaece5960fe620a3130e95ff54ad8257f7ec709606dbf91210f6e195aa0a",
+  "entries": [
+    {
+      "term": "U.S",
+      "term_normalized": "us",
+      "definition": "Army",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Cash award",
+      "term_normalized": "cash award",
+      "definition": "Monetary remuneration based on tangible and intangible benefits to the Government, includes SASA, QSIs, perfor-",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Designated area of eligibility",
+      "term_normalized": "designated area of eligibility",
+      "definition": "Foreign territory on which military troops have actually landed or are present and specifically deployed for operation, adjacent water areas in which ships are operating, patrolling, or providing direct support of the operation, and the air",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Direct support",
+      "term_normalized": "direct support",
+      "definition": "Providing services to participating military activities or armed forces in a military operation awarded the GWOTEM or in other similar operations for which a separate military campaign medal was awarded to military personnel, only",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Equal employment opportunity and adverse action certification",
+      "term_normalized": "equal employment opportunity and adverse action certification",
+      "definition": "A statement signed by the commander (or EEO officer for the commander) attesting to prior founded discrimination",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "charges against the nominee and prior adverse personnel actions, if any.",
+      "term_normalized": "charges against the nominee and prior adverse personnel actions, if any.",
+      "definition": "AR 672–20 • 6 November 2024",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Honorary award",
+      "term_normalized": "honorary award",
+      "definition": "Recognition of outstanding performance and achievement usually accompanied by a medal, certificate, plaque, or",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Invention award",
+      "term_normalized": "invention award",
+      "definition": "Monetary or honorary recognition granted for an invention by Federal personnel that is of interest to the U.S. Govern-",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Quality Step Increase",
+      "term_normalized": "quality step increase",
+      "definition": "An increase in an employee’s rate of basic pay from one rate of the grade of his or her position to the next higher rate of that grade in recognition of sustained high quality performance at a level that substantially exceeds an acceptable",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Special achievement award",
+      "term_normalized": "special achievement award",
+      "definition": "An award granted for performance exceeding job requirements. It may be granted either for sustained superior perfor- mance or for a one-time special act or service in the public interest, connected with, or related to official employment.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Hours other than the normal 8-hour, 5-day work week.",
+      "term_normalized": "hours other than the normal 8-hour, 5-day work week.",
+      "definition": "AR 672–20 • 6 November 2024",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "UNCLASSIFIED",
+      "term_normalized": "unclassified",
+      "definition": "PIN 006494–000",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 59,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 59,
+    "glossary_pages": [
+      57,
+      58,
+      59
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 12,
+    "entries_inline": 0,
+    "entries_after_dedup": 12
+  }
+}

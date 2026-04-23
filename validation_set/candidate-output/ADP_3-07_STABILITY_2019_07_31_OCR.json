@@ -1,0 +1,113 @@
+{
+  "schema_version": "1",
+  "source_pdf": "ADP_3-07_STABILITY_2019_07_31_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "ADP 3-07",
+  "source_doc_type": "ADP",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T01:02:44Z",
+  "profile": "army",
+  "text_sha256": "faaf8cd976276032625b0e752de61ee85671da4631309e84c56e94e412b3b69f",
+  "entries": [
+    {
+      "term": "planning",
+      "term_normalized": "planning",
+      "definition": "The art and science of understanding a situation, envisioning a desired future, and determining effective ways to bring that future about.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 69,
+      "printed_page_label": "69",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "*reintegration",
+      "term_normalized": "*reintegration",
+      "definition": "The process through which former combatants, belligerents, and displaced civilians receive amnesty, reenter civil society, gain sustainable employment, and become contributing members of the local populace.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 69,
+      "printed_page_label": "69",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "security",
+      "term_normalized": "security",
+      "definition": "cooperation All Department of Defense interactions with foreign security establishments to build security relationships that promote specific United States security interests, develop allied and partner nation military and security capabilities for self-defense and multinational operations, and provide United States forces with peacetime and contingency access to allied and partner nations.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 69,
+      "printed_page_label": "69",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "stability",
+      "term_normalized": "stability",
+      "definition": "mechanism The primary method through which friendly forces affect civilians in order to attain conditions that support establishing a lasting, stable peace.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 69,
+      "printed_page_label": "69",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "task-organizing",
+      "term_normalized": "task-organizing",
+      "definition": "The act of designing a force, support staff, or sustainment package of specific size and composition to meet a unique task or mission.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 69,
+      "printed_page_label": "69",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "unified",
+      "term_normalized": "unified",
+      "definition": "land operations The simultaneous execution of offense, defense, stability, and defense support of civil authorities across multiple domains to shape operational environments, prevent conflict, prevail in large-scale ground combat, and consolidate gains as part of unified action.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 69,
+      "printed_page_label": "69",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "unity",
+      "term_normalized": "unity",
+      "definition": "of effort Coordination and cooperation toward common objectives, even if the participants are not necessarily part of the same command or organization, which is the product of successful unified action. 31 July 2019 ADP 3-07 Glossary-3",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 69,
+      "printed_page_label": "69",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "This",
+      "term_normalized": "this",
+      "definition": "page intentionally left blank.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 70,
+      "printed_page_label": "70",
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 84,
+    "glossary_pages": [
+      69,
+      70
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 11,
+    "entries_inline": 0,
+    "entries_after_dedup": 8
+  }
+}

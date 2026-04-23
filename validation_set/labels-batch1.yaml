@@ -1,0 +1,15 @@
+# Batch 1 manual labels (small docs, 62 entries)
+# Format: doc -> entry# -> label (g=good, b=bad)
+# Source: user spot-check 2026-04-22
+
+flips_to_bad:
+  TC_1-19.30: [1]
+  AR_190-55: [5]
+  ADP_3-07: [8]
+  AR_12-15: [2]
+  FM_3-34: [4]
+
+extractor_bugs_logged:
+  - asterisk_term_split: "*engineer / *field — leading-* terms split into two entries"
+  - section_header_as_term: "SECTION I / SECTION II / SECTION absorbed as terms"
+  - page_footer_in_entries: "Date + doc-id footer text bleeding into adjacent entry def"

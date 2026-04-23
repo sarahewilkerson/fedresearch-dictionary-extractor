@@ -1,0 +1,35 @@
+{
+  "schema_version": "1",
+  "source_pdf": "FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "FM 4-1",
+  "source_doc_type": "FM",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T01:02:45Z",
+  "profile": "army",
+  "text_sha256": "193139d70651273c35140be8842d351958c140511623e2007ae4729faa454965",
+  "entries": [
+    {
+      "term": "sustainment warfighting function",
+      "term_normalized": "sustainment warfighting function",
+      "definition": "The related tasks and systems that provide support and services to enable freedom of action, extend operational reach, and prolong endurance. 15 September 2025 102 FM 4-1",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 112,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 122,
+    "glossary_pages": [
+      112
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 1,
+    "entries_inline": 0,
+    "entries_after_dedup": 1
+  }
+}

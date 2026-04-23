@@ -1,0 +1,58 @@
+{
+  "schema_version": "1",
+  "source_pdf": "FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "FM 3-55",
+  "source_doc_type": "FM",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T01:02:44Z",
+  "profile": "army",
+  "text_sha256": "70540682d1bcb2266dbe5a0b53807df9a3dd108f91e8a7269c62db393181ab1b",
+  "entries": [
+    {
+      "term": "surveillance",
+      "term_normalized": "surveillance",
+      "definition": "The systematic observation of aerospace, surface, or subsurface areas, places, persons, or things, by visual, aural, electronic, photographic, or other means.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 77,
+      "printed_page_label": "77",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "synchronization",
+      "term_normalized": "synchronization",
+      "definition": "The arrangement of military actions in time, space, and purpose to produce maximum relative combat power at a decisive place and time.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 77,
+      "printed_page_label": "77",
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "3 May 2013",
+      "term_normalized": "3 may 2013",
+      "definition": "FM 3-55 Glossary-3",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 77,
+      "printed_page_label": "77",
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 86,
+    "glossary_pages": [
+      77,
+      78
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 3,
+    "entries_inline": 0,
+    "entries_after_dedup": 3
+  }
+}
