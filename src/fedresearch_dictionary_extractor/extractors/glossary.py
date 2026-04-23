@@ -98,7 +98,9 @@ def parse_glossary_entries(
     Walk pages [start, end] inclusive, producing dict entries matching the
     Entry schema (excluding backend-assigned fields like visibility).
     """
-    invalid_res = [re.compile(p) for p in profile.invalid_term_patterns]
+    # PR1.2-quality Fix C: case-insensitive so "unclassified" / "section i"
+    # / "pin 123" all match regardless of OCR capitalization.
+    invalid_res = [re.compile(p, re.IGNORECASE) for p in profile.invalid_term_patterns]
     citation_pattern = profile.citation_pattern
     header_patterns = profile.header_patterns
 
