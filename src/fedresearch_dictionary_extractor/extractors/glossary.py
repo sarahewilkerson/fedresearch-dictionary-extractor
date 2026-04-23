@@ -167,6 +167,10 @@ def parse_glossary_entries(
     entries: list[dict] = []
 
     for page_idx in range(start, end + 1):
+        # PR1.2-quality Fix E (Codex iter-3 #9): per-page entries collector
+        # so the post-pass continuation merge runs on document-ordered entries
+        # from a single page. Then extend the global `entries` list.
+        page_entries: list[dict] = []
         try:
             page = doc[page_idx]
         except Exception:
@@ -326,7 +330,7 @@ def parse_glossary_entries(
 
                 # Flush previous (term, def) before starting new.
                 _flush(
-                    entries,
+                    page_entries,
                     current_term,
                     current_def_lines,
                     term_page_idx,
@@ -353,7 +357,7 @@ def parse_glossary_entries(
 
         # End of page — flush whatever's pending.
         _flush(
-            entries,
+            page_entries,
             current_term,
             current_def_lines,
             term_page_idx,
@@ -364,7 +368,41 @@ def parse_glossary_entries(
             source_type="glossary",
         )
 
+        # PR1.2-quality Fix E: per-page continuation merge. Catches residual
+        # fragments where Fix A's bold gate didn't cleanly separate a wrapped
+        # def line from a real new term (e.g., when the wrapping line happens
+        # to start with a bold word that's not actually a term).
+        page_entries = _merge_same_page_continuations(page_entries)
+        entries.extend(page_entries)
+
     return entries
+
+
+def _merge_same_page_continuations(page_entries: list[dict]) -> list[dict]:
+    """Merge adjacent same-page entries when the next looks like a
+    continuation fragment (lowercase start) of the previous (def doesn't
+    end with terminal punctuation). Conservative — only operates on
+    document-ordered entries from a single page.
+    """
+    if len(page_entries) < 2:
+        return page_entries
+    out = [page_entries[0]]
+    for e in page_entries[1:]:
+        prev = out[-1]
+        prev_def_ends_terminal = bool(re.search(r"[.!?]\s*$", prev.get("definition", "")))
+        next_term_starts_lower = bool(re.match(r"^[a-z]", e.get("term", "")))
+        if (
+            prev["pdf_page_index"] == e["pdf_page_index"]
+            and not prev_def_ends_terminal
+            and next_term_starts_lower
+        ):
+            # Merge fragment into prior def
+            prev["definition"] = (
+                prev.get("definition", "") + " " + e.get("term", "") + " " + e.get("definition", "")
+            ).strip()
+            continue
+        out.append(e)
+    return out
 
 
 def _validate_term(term: str, inline_def: str | None, invalid_res: list[re.Pattern]) -> bool:
