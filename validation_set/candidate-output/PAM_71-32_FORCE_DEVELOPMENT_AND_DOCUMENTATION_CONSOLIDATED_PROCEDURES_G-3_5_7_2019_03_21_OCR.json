@@ -6,7 +6,7 @@
   "source_pub_number": "DA PAM 71-32",
   "source_doc_type": "DA",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T10:45:54Z",
+  "extraction_timestamp": "2026-04-23T11:25:28Z",
   "profile": "army",
   "text_sha256": "d3cf51e5d905dac172bc78afde77c7411fdfb40f1a828a19eb8a3eab565b5abf",
   "entries": [
@@ -464,7 +464,18 @@
     {
       "term": "Minimum mission essential wartime requirements",
       "term_normalized": "minimum mission essential wartime requirements",
-      "definition": "MMEWR are the minimum personnel and equipment necessary for a military unit to accomplish its doctrinal mis- sion and perform its core functions and assigned universal tasks during sustained combat operations. Level 1 of the BTOE is the MMEWR to structure an effective organization for combat, combat support, and sustainment units. The OTOE includes all modernization options (personnel, equipment, structure) beyond MMEWR. A MTOE for a mili- tary unit generally reflects requirements, and associated authorizations, at a level of modernization between the BTOE and OTOE. CTA equipment is not considered to be MMEWR.",
+      "definition": "MMEWR are the minimum personnel and equipment necessary for a military unit to accomplish its doctrinal mis- sion and perform its core functions and assigned universal tasks during sustained combat operations. Level 1 of the BTOE is the MMEWR to structure an effective organization for combat, combat support, and sustainment units. The OTOE includes all modernization options (personnel, equipment, structure) beyond MMEWR. A MTOE for a mili- tary unit generally reflects requirements, and associated authorizations, at a level of modernization between the",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 144,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "BTOE and OTOE",
+      "term_normalized": "btoe and otoe",
+      "definition": "CTA equipment is not considered to be MMEWR.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -705,9 +716,9 @@
       146
     ],
     "text_layer_present": true,
-    "entries_glossary": 64,
+    "entries_glossary": 65,
     "entries_inline": 0,
-    "entries_after_dedup": 62,
+    "entries_after_dedup": 63,
     "glossary_used_legacy_fallback": false
   }
 }

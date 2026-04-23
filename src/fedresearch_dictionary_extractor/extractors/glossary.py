@@ -58,9 +58,10 @@ _GLOSSARY_END_PATTERNS = (
 
 # PR1.2-quality Fix A: ALL-CAPS heuristic for acronym sections that
 # don't preserve bold flags (AR 600-20, FM 6-02, etc).
-_ACRONYM_FIRST_WORD_RE = re.compile(r"^[A-Z][A-Z0-9\-]{1,14}$")  # allow digits: AH-64, M-1A1, MC-130
+# Codex iter-3 #2 fix: allow dots in the first word so dotted acronyms like
+# "U.S.", "U.S.C.", "A.D.", "P.O.W." are correctly recognized as terms.
+_ACRONYM_FIRST_WORD_RE = re.compile(r"^[A-Z][A-Z0-9.\-]{1,14}$")  # allow digits + dots
 _ACRONYM_LINE_MAX_CHARS = 60       # full-line cap; rules out continuation prose
-_ACRONYM_LINE_NO_PERIOD_PREFIX = 30  # no '.' in first N chars
 
 
 def _looks_like_acronym_term_line(line_text: str) -> bool:
@@ -68,14 +69,18 @@ def _looks_like_acronym_term_line(line_text: str) -> bool:
     continuation. Used as the no-bold fallback for the new-term gate.
 
     Accepts:
-      - First word matches `_ACRONYM_FIRST_WORD_RE` (2-15 chars, upper or
-        hyphenated upper)
+      - First word matches `_ACRONYM_FIRST_WORD_RE` (2-15 chars, upper /
+        digit / dot / hyphen — covers AIT, USINDOPACOM, M-1A1, U.S.,
+        U.S.C., AH-64)
       - Full line is ≤60 chars
-      - No '.' in the first 30 chars (rules out "Furthermore, ..." continuations)
+
+    The first-word regex + line-length cap together reject continuation
+    prose: "Furthermore, the term..." fails on first-word (mixed case),
+    "active duty status..." fails on first-word (lowercase). The
+    previously-required "no period in first 30 chars" rule was redundant
+    and incorrectly rejected dotted acronyms (Codex iter-3 #2).
     """
     if not line_text or len(line_text) > _ACRONYM_LINE_MAX_CHARS:
-        return False
-    if "." in line_text[:_ACRONYM_LINE_NO_PERIOD_PREFIX]:
         return False
     first_word = line_text.split(maxsplit=1)[0] if line_text else ""
     return bool(_ACRONYM_FIRST_WORD_RE.match(first_word))
