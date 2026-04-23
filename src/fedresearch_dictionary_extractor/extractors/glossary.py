@@ -39,6 +39,7 @@ from . import text as text_utils
 
 # ── Heuristic thresholds ──────────────────────────────────────────────────
 HEADER_ZONE_Y = 150              # ignore document headers above this Y
+FOOTER_ZONE_PCT = 0.88           # bottom 12% of page = footer zone (PR1.2-quality Fix B)
 TERM_COL_MARGIN = 30             # points past min_x to still be "term column"
 MAX_GLOSSARY_LOOKBACK_PAGES = 30 # how far back to look for the glossary
 MIN_TERM_LENGTH = 2
@@ -46,6 +47,7 @@ MAX_TERM_LENGTH = 100
 MAX_SPLIT_TERM_LENGTH = 50       # max term length when split inline (Term. Def…)
 MIN_TERM_WITH_PERIOD = 4         # reject "1." but allow "U.S."
 MAX_DEFINITION_LEN = 5000
+MAX_FOOTER_LINES_PER_PAGE = 5    # warn when filter is too aggressive (Fix B safety net)
 
 _GLOSSARY_END_PATTERNS = (
     r"^\s*Index\s*(\n|$)",
@@ -53,6 +55,39 @@ _GLOSSARY_END_PATTERNS = (
     r"^\s*Appendix\s+[A-Z]",
     r"^\s*Bibliography\s*(\n|$)",
 )
+
+# PR1.2-quality Fix A: ALL-CAPS heuristic for acronym sections that
+# don't preserve bold flags (AR 600-20, FM 6-02, etc).
+_ACRONYM_FIRST_WORD_RE = re.compile(r"^[A-Z][A-Z0-9\-]{1,14}$")  # allow digits: AH-64, M-1A1, MC-130
+_ACRONYM_LINE_MAX_CHARS = 60       # full-line cap; rules out continuation prose
+_ACRONYM_LINE_NO_PERIOD_PREFIX = 30  # no '.' in first N chars
+
+
+def _looks_like_acronym_term_line(line_text: str) -> bool:
+    """True if `line_text` looks like an acronym-list entry rather than a
+    continuation. Used as the no-bold fallback for the new-term gate.
+
+    Accepts:
+      - First word matches `_ACRONYM_FIRST_WORD_RE` (2-15 chars, upper or
+        hyphenated upper)
+      - Full line is ≤60 chars
+      - No '.' in the first 30 chars (rules out "Furthermore, ..." continuations)
+    """
+    if not line_text or len(line_text) > _ACRONYM_LINE_MAX_CHARS:
+        return False
+    if "." in line_text[:_ACRONYM_LINE_NO_PERIOD_PREFIX]:
+        return False
+    first_word = line_text.split(maxsplit=1)[0] if line_text else ""
+    return bool(_ACRONYM_FIRST_WORD_RE.match(first_word))
+
+
+def _is_term_style_span(span_text: str, span: dict) -> bool:
+    """True if a non-leading span looks like part of the term (bold or acronym).
+    Used by the multi-span term walk."""
+    if text_utils.is_span_bold(span):
+        return True
+    first_word = span_text.split(maxsplit=1)[0] if span_text else ""
+    return bool(_ACRONYM_FIRST_WORD_RE.match(first_word))
 
 
 def find_glossary_page_range(
@@ -85,7 +120,27 @@ def find_glossary_page_range(
         if any(r.search(page_text) for r in end_res):
             end = i - 1
             break
+        # PR1.2-quality Fix D: back-cover detection. UNCLASSIFIED alone is
+        # NOT a terminator (appears in many normal-page footers). Require
+        # BOTH PIN proximity AND last-3-pages position.
+        if _is_back_cover_marker(page_text, i, total):
+            end = i - 1
+            break
     return (found_start, end)
+
+
+def _is_back_cover_marker(page_text: str, page_idx: int, total: int) -> bool:
+    """True if this page looks like a back-cover / publication-info page,
+    not a glossary page. Conservative — requires PIN+position evidence.
+
+    PIN format variants accepted (Codex iter-exec finding #1):
+    - "PIN 123456-000" (no colon)
+    - "PIN: 123456-000" (with colon — common in formal Army publications)
+    - lowercase "pin ..." (OCR variant)
+    """
+    has_pin = bool(re.search(r"\bPIN\s*:?\s*\d{4,}", page_text, re.IGNORECASE))
+    in_last_3 = (total - page_idx) <= 3
+    return has_pin and in_last_3
 
 
 def parse_glossary_entries(
@@ -93,12 +148,25 @@ def parse_glossary_entries(
     start: int,
     end: int,
     profile: ReferenceProfile,
+    *,
+    force_legacy_gate: bool = False,
 ) -> list[dict]:
     """
     Walk pages [start, end] inclusive, producing dict entries matching the
     Entry schema (excluding backend-assigned fields like visibility).
+
+    If `force_legacy_gate=True`, the per-line bold/ALL-CAPS gate is bypassed
+    (X-only). Used internally as a doc-level fallback when the bold-gate
+    parse produces zero entries despite ample valid lines (PR1.2-quality
+    Fix A safety net for OCR'd PDFs with no preserved bold flags AND
+    no ALL-CAPS terms — e.g., GlyphLessFont scans of ADP 3-07).
     """
-    invalid_res = [re.compile(p) for p in profile.invalid_term_patterns]
+    # PR1.2-quality Fix C: case-insensitive so "unclassified" / "section i"
+    # / "pin 123" all match regardless of OCR capitalization.
+    invalid_res = [re.compile(p, re.IGNORECASE) for p in profile.invalid_term_patterns]
+    # PR1.2-quality Fix B: footer-zone-only filter for bare-date / page-num /
+    # doc-id+bullet patterns that header_patterns doesn't catch.
+    footer_res = [re.compile(p, re.IGNORECASE) for p in profile.footer_patterns]
     citation_pattern = profile.citation_pattern
     header_patterns = profile.header_patterns
 
@@ -113,12 +181,18 @@ def parse_glossary_entries(
     entries: list[dict] = []
 
     for page_idx in range(start, end + 1):
+        # PR1.2-quality Fix E (Codex iter-3 #9): per-page entries collector
+        # so the post-pass continuation merge runs on document-ordered entries
+        # from a single page. Then extend the global `entries` list.
+        page_entries: list[dict] = []
         try:
             page = doc[page_idx]
         except Exception:
             continue
         page_dict = page.get_text("dict")
         blocks = page_dict.get("blocks", [])
+        # PR1.2-quality Fix B: precompute footer-zone Y threshold per page.
+        footer_y_threshold = page.rect.height * FOOTER_ZONE_PCT
 
         # Collect every text span on the page with its Y bucket.
         all_spans: list[dict] = []
@@ -158,8 +232,9 @@ def parse_glossary_entries(
         if cur_line:
             lines.append(cur_line)
 
-        # Filter document headers + invalid lines.
+        # Filter document headers + footer-zone noise + invalid lines.
         valid_lines: list[list[dict]] = []
+        footer_filtered_count = 0
         for line_spans in lines:
             full_line_text = " ".join(s["text"] for s in line_spans)
             y_pos = line_spans[0]["bbox"][1]
@@ -168,9 +243,26 @@ def parse_glossary_entries(
                 and text_utils.is_document_header(full_line_text, header_patterns)
             ):
                 continue
+            # PR1.2-quality Fix B: bottom-zone footer filter — bare dates,
+            # page nums, doc-id+bullet, "Glossary-N" labels.
+            if y_pos > footer_y_threshold and (
+                any(r.match(full_line_text) for r in footer_res)
+                or text_utils.is_document_header(full_line_text, header_patterns)
+            ):
+                footer_filtered_count += 1
+                continue
             if any(r.match(full_line_text) for r in invalid_res):
                 continue
             valid_lines.append(line_spans)
+        if footer_filtered_count > MAX_FOOTER_LINES_PER_PAGE:
+            # Threshold likely too aggressive; investigate at validation time.
+            import warnings
+            warnings.warn(
+                f"Glossary page {page_idx + 1}: footer filter dropped "
+                f"{footer_filtered_count} lines (>{MAX_FOOTER_LINES_PER_PAGE}). "
+                f"Possible false-positive footer detection.",
+                stacklevel=2,
+            )
 
         if not valid_lines:
             continue
@@ -186,12 +278,45 @@ def parse_glossary_entries(
         for line_spans in valid_lines:
             first = line_spans[0]
             first_x = first["bbox"][0]
+            in_term_col = first_x < term_col_threshold
 
-            if first_x < term_col_threshold:
-                # Candidate term-line.
-                term_text = first["text"]
+            # PR1.2-quality Fix A: per-line bold/ALL-CAPS gate.
+            # A left-margin line is a NEW term only if its first span is bold
+            # OR the line looks acronym-shaped. Otherwise it's a continuation
+            # that wraps to the left margin.
+            if profile.enable_bold_gate and not force_legacy_gate:
+                full_line_text = " ".join(s["text"] for s in line_spans).strip()
+                is_bold = text_utils.is_span_bold(first["span"])
+                is_acronym_line = _looks_like_acronym_term_line(full_line_text)
+                is_new_term_line = in_term_col and (is_bold or is_acronym_line)
+            else:
+                is_new_term_line = in_term_col   # legacy X-only fallback
 
-                # Inline-def split: "Term. Definition…"
+            if is_new_term_line:
+                # PR1.2-quality Fix A multi-span term walk: collect consecutive
+                # term-style spans (bold OR acronym-shaped) into the term.
+                # Stop on first non-term-style span, terminal-punct + lowercase,
+                # or opening-paren citation marker.
+                term_spans = [first]
+                def_start_idx = len(line_spans)
+                for j in range(1, len(line_spans)):
+                    sp = line_spans[j]
+                    sp_text = sp["text"]
+                    if not _is_term_style_span(sp_text, sp["span"]):
+                        def_start_idx = j
+                        break
+                    if re.search(r"[.!?]\s+[a-z]", sp_text):
+                        def_start_idx = j
+                        break
+                    if sp_text.startswith("("):
+                        def_start_idx = j
+                        break
+                    term_spans.append(sp)
+
+                term_text = " ".join(s["text"] for s in term_spans).strip()
+                rest_from_def_spans = " ".join(s["text"] for s in line_spans[def_start_idx:])
+
+                # Inline-def split on the joined term_text: "Term. Definition…"
                 actual_term = term_text.strip()
                 inline_def: str | None = None
                 m = split_re.match(term_text)
@@ -223,7 +348,7 @@ def parse_glossary_entries(
 
                 # Flush previous (term, def) before starting new.
                 _flush(
-                    entries,
+                    page_entries,
                     current_term,
                     current_def_lines,
                     term_page_idx,
@@ -239,10 +364,9 @@ def parse_glossary_entries(
                 term_page_idx = page_idx
                 if inline_def:
                     current_def_lines.append(inline_def)
-                # Remaining spans on this line are part of the definition.
-                rest = " ".join(s["text"] for s in line_spans[1:])
-                if rest:
-                    current_def_lines.append(rest)
+                # Remaining spans (post-term-walk) become def text.
+                if rest_from_def_spans:
+                    current_def_lines.append(rest_from_def_spans)
             else:
                 # Indented line — definition continuation.
                 if current_term is not None:
@@ -251,7 +375,7 @@ def parse_glossary_entries(
 
         # End of page — flush whatever's pending.
         _flush(
-            entries,
+            page_entries,
             current_term,
             current_def_lines,
             term_page_idx,
@@ -262,7 +386,68 @@ def parse_glossary_entries(
             source_type="glossary",
         )
 
+        # PR1.2-quality Fix E: per-page continuation merge. Catches residual
+        # fragments where Fix A's bold gate didn't cleanly separate a wrapped
+        # def line from a real new term (e.g., when the wrapping line happens
+        # to start with a bold word that's not actually a term).
+        page_entries = _merge_same_page_continuations(page_entries)
+        entries.extend(page_entries)
+
     return entries
+
+
+def _merge_same_page_continuations(page_entries: list[dict]) -> list[dict]:
+    """Merge adjacent same-page entries when the next looks like a
+    continuation fragment (lowercase start, sentence-fragment-shaped) of
+    the previous (def doesn't end with terminal punctuation).
+
+    Conservative — only merges when the "term" is unmistakably a fragment,
+    not a real lowercase headword (lowercase real headwords like
+    "synchronization", "planning", "spillage" are common in Army doctrine
+    glossaries and must NOT be merged).
+
+    Heuristic for "fragment-shaped":
+    - Lowercase start AND
+    - (≥4 words OR contains sentence-internal punctuation `,;:` OR
+      ends with stop-word like "and"/"or"/"the"/etc.)
+    """
+    if len(page_entries) < 2:
+        return page_entries
+
+    stop_tail = {"and", "or", "the", "of", "to", "with", "in", "on", "for",
+                 "by", "as", "are", "is", "was", "were", "that", "which", "who"}
+
+    def _looks_like_fragment(term: str) -> bool:
+        if not term or not term[0].islower():
+            return False
+        words = term.split()
+        if len(words) >= 4:
+            return True
+        if re.search(r"[,;:]", term):
+            return True
+        if words and words[-1].lower().rstrip(".,;:") in stop_tail:
+            return True
+        return False
+
+    def _ends_terminal(text: str) -> bool:
+        # Treat ".)", "?)", "!)", as terminal too — citation parens after a sentence.
+        return bool(re.search(r"[.!?][\")\]]?\s*$", text))
+
+    out = [page_entries[0]]
+    for e in page_entries[1:]:
+        prev = out[-1]
+        prev_def_ends_terminal = _ends_terminal(prev.get("definition", ""))
+        if (
+            prev["pdf_page_index"] == e["pdf_page_index"]
+            and not prev_def_ends_terminal
+            and _looks_like_fragment(e.get("term", ""))
+        ):
+            prev["definition"] = (
+                prev.get("definition", "") + " " + e.get("term", "") + " " + e.get("definition", "")
+            ).strip()
+            continue
+        out.append(e)
+    return out
 
 
 def _validate_term(term: str, inline_def: str | None, invalid_res: list[re.Pattern]) -> bool:

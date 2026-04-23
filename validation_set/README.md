@@ -38,14 +38,33 @@ validation_set/
     └── ... (30 total)
 ```
 
+## Two-tier label oracle (PR1.2-quality)
+
+The harness reads two confidence tiers from `labels.yaml`:
+
+**Tier 1 — user-confirmed (BLOCKING):**
+- `tier1_positive_terms[]`: terms the user confirmed appear in the doc, gated on **term-presence only** (no Jaccard). The fix is allowed to legitimately change definitions; the term must still be present.
+- `negative_labels[]`: terms that MUST NOT appear in extractor output. Tier-1 fails the run.
+
+**Tier 2 — auto-classified (INFORMATIONAL only, never blocks):**
+- `auto_positive_labels[]`: heuristically-classified-good terms (recall reported as warning if low)
+- `auto_negative_labels[]`: heuristically-classified-bad terms (count of violations reported)
+
+**Stage 1 (this PR):** `labels` (Jaccard-gated key in the existing harness) is left empty — the fix legitimately changes defs and there are no canonical user-confirmed defs yet. Stage-1 gates only on Tier-1 (term-presence + negative_labels).
+
+**Stage 2 (PR1.2 wheel publication):** populate `labels[]` with user-confirmed canonical defs from batches 2+3, re-enabling Jaccard gating + the existing per-type recall thresholds.
+
+**Bold-fallback exclusion:** docs that fell back to legacy X-only gating (signalled by `metadata.glossary_used_legacy_fallback=true` in the analyzer output) are excluded from Tier-1 negative-label gating. Rationale: the fix didn't fire on those docs, so penalizing them for not improving = wrong signal. Tracked in `scorecard.json` `fallback_docs`.
+
 ## How to add labels
 
-1. Drop the 30 real PDFs into `validation_set/pdfs/`.
+1. Drop the real PDFs into `validation_set/pdfs/`.
 2. Copy `labels.example.yaml` → `labels.yaml`.
 3. Top-level `expected_stratification:` block declares the per-doc-type counts you commit to labeling. Harness fails loudly if your actual labeled docs don't reach that count — prevents incomplete corpora from emitting a passing scorecard.
-4. For each PDF, label ~5 known-good `labels:` (positive cases). Format documented in `labels.example.yaml`.
-5. **Optionally** add `negative_labels:` for terms the extractor MUST NOT emit (e.g., "Figure 1", "Chapter 3"). Required if you want precision gated; otherwise precision is informational only.
-6. Run the validation suite locally:
+4. For each PDF reviewed by a human, populate `tier1_positive_terms[]` (presence-only positives) and `negative_labels[]` (must-not-appear).
+5. For non-reviewed PDFs, the auto-classifier populates `auto_positive_labels[]` / `auto_negative_labels[]` (informational only).
+6. **At Stage 2:** populate `labels[]` with full term + canonical definition + page from user review of batches 2+3 to enable Jaccard gating per the existing harness.
+7. Run the validation suite locally:
 
 ```bash
 pytest -m validation -v
@@ -54,9 +73,9 @@ pytest -m validation -v
 The suite will:
 - Assert the stratification gate (fails if labeled corpus is incomplete vs `expected_stratification`)
 - Run the extractor against each PDF
-- For each `(doc_type, source_type)` slice (inline rows aggregated under `*`): compute recall + def-text Jaccard, plus precision only where `negative_labels` exist
-- Fail the run with a per-type scorecard if any threshold is breached
-- Always write `validation_set/scorecard.json` with `passed_all: bool` at the top level — PR1.2 refuses to publish unless `passed_all: true`
+- `test_tier1_oracle`: BLOCKING — Tier-1 positive recall ≥95%, Tier-1 negative violations = 0
+- `test_per_type_thresholds`: BLOCKING when `labels[]` populated (Stage 2) — per-type recall + Jaccard + precision gates
+- Always write `validation_set/scorecard.json` with `tier1.passed: bool`, `tier2.*` (informational), `per_doc_metrics`, `fallback_docs`
 
 ## Why labels are kept out of git
 

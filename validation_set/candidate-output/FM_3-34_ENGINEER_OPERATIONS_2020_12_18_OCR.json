@@ -1,0 +1,70 @@
+{
+  "schema_version": "1",
+  "source_pdf": "FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "FM 3-34",
+  "source_doc_type": "FM",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T10:45:49Z",
+  "profile": "army",
+  "text_sha256": "207950c1b0db367c98b726a9217e63d6c9c5f976067905936f1fe0e6026a89d2",
+  "entries": [
+    {
+      "term": "USINDOPACOM",
+      "term_normalized": "usindopacom",
+      "definition": "United States Indo-Pacific Command",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 131,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "countermobility",
+      "term_normalized": "countermobility",
+      "definition": "operations Those combined arms activities that use or enhance the effects of natural and man-made obstables to deny enemy freedom of movement and maneuver.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 131,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "*engineer",
+      "term_normalized": "*engineer",
+      "definition": "work line A coordinated boundary or phase line used to compartmentalize an area of operations to indicate where specific engineer units have primary responsibility for the engineer effort.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 131,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "*field",
+      "term_normalized": "*field",
+      "definition": "force engineering The application of Army engineering capabilities from the three engineer disciplines through reachback and forward presence. 18 December 2020 FM 3-34 Glossary-3",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 131,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 142,
+    "glossary_pages": [
+      131,
+      132
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 4,
+    "entries_inline": 0,
+    "entries_after_dedup": 4,
+    "glossary_used_legacy_fallback": true
+  }
+}

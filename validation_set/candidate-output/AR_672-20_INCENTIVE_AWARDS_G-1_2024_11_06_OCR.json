@@ -1,0 +1,301 @@
+{
+  "schema_version": "1",
+  "source_pdf": "AR_672-20_INCENTIVE_AWARDS_G-1_2024_11_06_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "AR 672-20",
+  "source_doc_type": "AR",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T10:45:46Z",
+  "profile": "army",
+  "text_sha256": "c72caaece5960fe620a3130e95ff54ad8257f7ec709606dbf91210f6e195aa0a",
+  "entries": [
+    {
+      "term": "SASA",
+      "term_normalized": "sasa",
+      "definition": "Special Act or Service Awards",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SECARMY",
+      "term_normalized": "secarmy",
+      "definition": "Secretary of the Army",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SECDEF",
+      "term_normalized": "secdef",
+      "definition": "Secretary of Defense",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SES",
+      "term_normalized": "ses",
+      "definition": "senior executive service",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SF",
+      "term_normalized": "sf",
+      "definition": "Standard Form",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SIR",
+      "term_normalized": "sir",
+      "definition": "statutory invention registration",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SL",
+      "term_normalized": "sl",
+      "definition": "senior level",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "ST",
+      "term_normalized": "st",
+      "definition": "senior scientific and professional",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "TIG",
+      "term_normalized": "tig",
+      "definition": "The Inspector General",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "TIOH",
+      "term_normalized": "tioh",
+      "definition": "The Institute of Heraldry",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "TOA",
+      "term_normalized": "toa",
+      "definition": "time off award",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "USC",
+      "term_normalized": "usc",
+      "definition": "United States Code",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "USD (P&R)",
+      "term_normalized": "usd (p&r)",
+      "definition": "Under Secretary of Defense for Personnel and Readiness",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Career service recognition",
+      "term_normalized": "career service recognition",
+      "definition": "An award which acknowledges number of years of Government service.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Cash award",
+      "term_normalized": "cash award",
+      "definition": "Monetary remuneration based on tangible and intangible benefits to the Government, includes SASA, QSIs, perfor- mance awards, and on-the-spot cash awards.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Designated area of eligibility",
+      "term_normalized": "designated area of eligibility",
+      "definition": "Foreign territory on which military troops have actually landed or are present and specifically deployed for operation, adjacent water areas in which ships are operating, patrolling, or providing direct support of the operation, and the air space above and adjacent to the area in which operations are being conducted.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Direct support",
+      "term_normalized": "direct support",
+      "definition": "Providing services to participating military activities or armed forces in a military operation awarded the GWOTEM or in other similar operations for which a separate military campaign medal was awarded to military personnel, only if the employee actually enters the designated area of eligibility.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Equal employment opportunity and adverse action certification",
+      "term_normalized": "equal employment opportunity and adverse action certification",
+      "definition": "A statement signed by the commander (or EEO officer for the commander) attesting to prior founded discrimination charges against the nominee and prior adverse personnel actions, if any.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 57,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Honorary award",
+      "term_normalized": "honorary award",
+      "definition": "Recognition of outstanding performance and achievement usually accompanied by a medal, certificate, plaque, or other item that can be worn or displayed.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Incentive award",
+      "term_normalized": "incentive award",
+      "definition": "A cash award, an honorary award, or both, but does not include a QSI or performance rating.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Invention award",
+      "term_normalized": "invention award",
+      "definition": "Monetary or honorary recognition granted for an invention by Federal personnel that is of interest to the U.S. Govern- ment or the public, and for which patent coverage is sought or granted.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Public service award",
+      "term_normalized": "public service award",
+      "definition": "An award granted to a private citizen in recognition of service benefiting the Government.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Quality Step Increase",
+      "term_normalized": "quality step increase",
+      "definition": "An increase in an employee\u2019s rate of basic pay from one rate of the grade of his or her position to the next higher rate of that grade in recognition of sustained high quality performance at a level that substantially exceeds an acceptable level of competence.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Rating of record",
+      "term_normalized": "rating of record",
+      "definition": "The Overall Performance Rating assigned to the annual appraisal.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Special achievement award",
+      "term_normalized": "special achievement award",
+      "definition": "An award granted for performance exceeding job requirements. It may be granted either for sustained superior perfor- mance or for a one-time special act or service in the public interest, connected with, or related to official employment.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 58,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 59,
+    "glossary_pages": [
+      57,
+      58
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 25,
+    "entries_inline": 0,
+    "entries_after_dedup": 25,
+    "glossary_used_legacy_fallback": false
+  }
+}

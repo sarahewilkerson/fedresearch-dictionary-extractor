@@ -16,8 +16,16 @@ _OCR_SPACED_CHARS_RE = re.compile(r"\b([A-Za-z] ){4,}[A-Za-z]\b")
 _MIN_GIBBERISH_LEN = 3
 _VOWEL_THRESHOLD = 0.12
 _MAX_WORD_LEN = 35
+# PR1.2-quality fix: only match LOWERCASE consonant runs of 7+. Uppercase
+# runs are nearly always acronyms (FTNGD, USINDOPACOM, NATO). Real English
+# words can have 5-6 lowercase consonants in a row ("psychological",
+# "twelfths", "strengths"); raising the threshold to 7 preserves them while
+# still catching OCR garble like "kdjfghqp" or "mnnnbbpp". Pre-fix this
+# wasn't an issue because shorter (often fragmented) definitions rarely
+# tripped it; the new continuation-merge discipline produces full-length
+# defs where common 5-consonant words like "psychology" appear regularly.
 _CONSECUTIVE_CONSONANTS = re.compile(
-    r"[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]{5,}"
+    r"[bcdfghjklmnpqrstvwxyz]{7,}"
 )
 _DIGIT_IN_WORD = re.compile(r"[A-Za-z]\d[A-Za-z]|\d[A-Za-z]{4,}")
 

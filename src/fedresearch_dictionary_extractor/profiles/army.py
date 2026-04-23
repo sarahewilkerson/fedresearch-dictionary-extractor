@@ -47,12 +47,39 @@ class ArmyProfile(ReferenceProfile):
 
     @property
     def invalid_term_patterns(self) -> list[str]:
+        # Compiled with re.IGNORECASE in glossary.py — case variants
+        # like "unclassified" or "section" are caught.
         return [
             r"^\d+$",  # pure number
             r"^[\W_]+$",  # all punctuation
             r"^\s*$",  # whitespace-only
             r"^(AR|FM|ADP|ATP|TC|PAM|TM)\s+\d+[-–]\d+\s*$",  # just a citation
             r"^(Figure|Table|Chapter|Appendix|Section)\s+[A-Z0-9]",
+            # PR1.2-quality additions — observed noise terms from
+            # batch-1 user spot-check (validation_set/labels-batch1.yaml).
+            r"^SECTION(\s+[IVX]+)?\s*$",        # SECTION, SECTION I, SECTION II
+            r"^Glossary[\s\-–—]+\d+\s*$",       # "Glossary-4", "Glossary 3"
+            r"^TERMS?\s*$",                     # "TERMS", "TERM"
+            r"^ACRONYMS?(\s+AND\s+ABBREVIATIONS?)?\s*$",
+            r"^PIN\s+\d{4,}",                   # "PIN 123456-000"
+            r"^UNCLASSIFIED\b",                 # back-cover marker
+            r"^U\.\s*S\.?\s*Army\s*$",          # "U.S Army" / "U.S. Army"
+            r"^U\.\s*S\.?\s*$",                 # bare "U.S"
+            r"^\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*$",  # "08 September 2025"
+            r"^This\s+(page|section)\s+intentionally\s+left\s+blank",
+        ]
+
+    @property
+    def footer_patterns(self) -> list[str]:
+        # PR1.2-quality Fix B — footer-zone-only filter, applied in addition
+        # to is_document_header. Catches bare-date / page-number / doc-id
+        # variants that header_patterns misses.
+        return [
+            r"^\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*$",                  # "30 October 2023"
+            r"^[A-Z][a-z]+\s+\d{1,2},?\s+\d{4}\s*$",                # "October 30, 2023"
+            r"^\s*\d+\s*$",                                          # bare page number
+            r"^(?:AR|FM|ADP|ATP|TC|PAM|TM|DA\s*PAM)\s+\d+[-–]?\d*\s*[•·\-]\s*\d+\s+\w+",
+            r"^Glossary[\s\-–—]?\d*\s*$",                            # "Glossary-3"
         ]
 
     @property

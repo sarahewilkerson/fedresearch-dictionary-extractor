@@ -1,0 +1,212 @@
+{
+  "schema_version": "1",
+  "source_pdf": "AR_190-55_U.S._ARMY_CORRECTIONS_SYSTEM__PROCEDURES_FOR_MILITARY_EXECUTIONS_PMG_2023_10_30_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "AR 190-55",
+  "source_doc_type": "AR",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T10:45:42Z",
+  "profile": "army",
+  "text_sha256": "30b8718e6d5a7658da13ef78cccaf4859a1d27c0b75a0dd54e79e2c472c79e50",
+  "entries": [
+    {
+      "term": "OTJAG",
+      "term_normalized": "otjag",
+      "definition": "Office of The Judge Advocate General",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "OTSG",
+      "term_normalized": "otsg",
+      "definition": "Office of The Surgeon General",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "PADD",
+      "term_normalized": "padd",
+      "definition": "Person Authorized to Direct Disposition (of remains)",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "PMG",
+      "term_normalized": "pmg",
+      "definition": "Provost Marshal General",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "RCM",
+      "term_normalized": "rcm",
+      "definition": "rules for courts-martial",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SECARMY",
+      "term_normalized": "secarmy",
+      "definition": "Secretary of the Army",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SOP",
+      "term_normalized": "sop",
+      "definition": "standing operating procedure",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "TDS",
+      "term_normalized": "tds",
+      "definition": "Trial Defense Service",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "TJAG",
+      "term_normalized": "tjag",
+      "definition": "The Judge Advocate General",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "TSG",
+      "term_normalized": "tsg",
+      "definition": "The Surgeon General",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "UCMJ",
+      "term_normalized": "ucmj",
+      "definition": "Uniform Code of Military Justice",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "USC",
+      "term_normalized": "usc",
+      "definition": "United States Code",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "USDB",
+      "term_normalized": "usdb",
+      "definition": "United States Disciplinary Barracks",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Execution Management and Coordination Team",
+      "term_normalized": "execution management and coordination team",
+      "definition": "Representatives from HQDA key staff elements responsible for monitoring and coordinating the execution policy and procedures to conduct a presidentially approved death sentence.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Execution officer",
+      "term_normalized": "execution officer",
+      "definition": "The officer appointed to carry out the execution in the manner affirmed and/or approved by the SECARMY.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Execution Team",
+      "term_normalized": "execution team",
+      "definition": "The personnel, specifically trained and (medically) certified, responsible for the actual conduct of the execution method designated by the SECARMY.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Execution Watch Team",
+      "term_normalized": "execution watch team",
+      "definition": "The EWT consists of USDB staff (Soldiers and Civilians) that are responsible for the care, security, and transportation of the condemned prisoner.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 19,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 20,
+    "glossary_pages": [
+      19
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 17,
+    "entries_inline": 0,
+    "entries_after_dedup": 17,
+    "glossary_used_legacy_fallback": false
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "schema_version": "1",
+  "source_pdf": "FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "FM 6-02",
+  "source_doc_type": "FM",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T10:45:51Z",
+  "profile": "army",
+  "text_sha256": "6ec9ed4622a3d65f51ff1e253b8d99d01ed84543c947bfd4146d65e8993b6ca4",
+  "entries": [
+    {
+      "term": "offensive cyberspace operations",
+      "term_normalized": "offensive cyberspace operations",
+      "definition": "Cyberspace operations intended to project power by the application of force in or through cyberspace.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "operational environment",
+      "term_normalized": "operational environment",
+      "definition": "A composite of the conditions, circumstances, and influences that effect the employment of capabilities and bear on the decisions of the commander.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "operational reach",
+      "term_normalized": "operational reach",
+      "definition": "The distance and duration across which a force can successfully employ military capabilities.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "retrograde",
+      "term_normalized": "retrograde",
+      "definition": "A defensive task that involves organized movement away from the enemy.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "running estimate",
+      "term_normalized": "running estimate",
+      "definition": "The continuous assessment of the current situation used to determine if the current operation is proceeding according to the commander\u2019s intent and if planned future operations are supportable.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "* spectrum management operations",
+      "term_normalized": "* spectrum management operations",
+      "definition": "The interrelated functions of spectrum management, frequency assignment, host nation coordination, and policy that together enable the planning, management, and execution of operations within the electromagnetic operational environment during all phases of military operations.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "spillage",
+      "term_normalized": "spillage",
+      "definition": "A security incident that results in the transfer of classified information onto an information system not authorized to store or process that information. (CNSSI 4009)",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "synchronization",
+      "term_normalized": "synchronization",
+      "definition": "The arrangement of military actions in time, space, and purpose to produce maximum relative combat power at a decisive place and time.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "technical channels",
+      "term_normalized": "technical channels",
+      "definition": "The chain of authority for ensuring the execution of clearly delineated technical tasks, functions, and capabilities to meet the dynamic requirements of Department of Defense information network operations.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "threat",
+      "term_normalized": "threat",
+      "definition": "Any combination of actors, entities, or forces that have the capability and into to harm United States forces, United States national interests, or the homeland.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "unified land operations",
+      "term_normalized": "unified land operations",
+      "definition": "The simultaneous execution of offense, defense, stability, and defense support of civil authorities across multiple domains to shape operational environments, prevent conflict, prevail in large-scale ground combat, and consolidate gains as part of unified action.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "visual information",
+      "term_normalized": "visual information",
+      "definition": "Various visual media with or without sound that generally includes still and motion photography, audio video recording, graphic arts, and visual presentations.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "wide-area network",
+      "term_normalized": "wide-area network",
+      "definition": "A physical or logical network that provides data communications to a larger number of independent users than are usually served by a local area network and is usually spread over a larger geographic area than that of a local area network. Note 1: Wide-area networks may include physical networks, such as Integrated Services Digital Networks, X.25 networks, and T1 networks. Note 2: A metropolitan area network is a wide-area network that serves all the users in a metropolitan area. Wide- area networks may be nationwide or worldwide. (American National Standard T1.523.2011)",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 171,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "DODIN operations",
+      "term_normalized": "dodin operations",
+      "definition": "these activities on any DOD network.",
+      "source_type": "inline",
+      "section": "Chapter 2",
+      "pdf_page_index": 68,
+      "printed_page_label": null,
+      "confidence": 0.65,
+      "flags": [
+        "inline_inferred"
+      ]
+    }
+  ],
+  "metadata": {
+    "total_pages": 184,
+    "glossary_pages": [
+      171,
+      172
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 13,
+    "entries_inline": 1,
+    "entries_after_dedup": 14,
+    "glossary_used_legacy_fallback": false
+  }
+}

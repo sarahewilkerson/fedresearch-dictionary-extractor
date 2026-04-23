@@ -40,6 +40,15 @@ def extract_inline_definitions(doc: fitz.Document, profile: ReferenceProfile) ->
             for m in r.finditer(page_text):
                 term = (m.group("term") or "").strip()
                 definition = (m.group("definition") or "").strip()
+                # PR1.2-quality: strip article/prefix noise from the term.
+                # The first inline pattern's term group captures everything
+                # between "purposes of this regulation," and "means" — which
+                # includes leading "the term", "the word", "a", "an" prefixes.
+                # Drop them so "the term healthcare" → "healthcare" (dedupes
+                # with the second pattern's match).
+                term = re.sub(r"^(?:the\s+(?:term|word|phrase|expression)\s+)", "", term, flags=re.IGNORECASE)
+                term = re.sub(r"^(?:the|a|an)\s+", "", term, flags=re.IGNORECASE)
+                term = term.strip(" '\"")
                 if not term or not definition:
                     continue
                 if len(definition) < _MIN_DEF_LEN or len(definition) > _MAX_DEF_LEN:

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1",
+  "source_pdf": "ATP_1-05.01_RELIGIOUS_SUPPORT_AND_THE_OPERATIONS_PROCESS_2018_07_31_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "ATP 1-05.01",
+  "source_doc_type": "ATP",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T10:45:47Z",
+  "profile": "army",
+  "text_sha256": "6a008728658e119468c8aecdabf8b5854fe8d7368b9042dbeab5df4d25dfd009",
+  "entries": [],
+  "metadata": {
+    "total_pages": 92,
+    "glossary_pages": [
+      83,
+      84
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 0,
+    "entries_inline": 0,
+    "entries_after_dedup": 0,
+    "glossary_used_legacy_fallback": false
+  }
+}

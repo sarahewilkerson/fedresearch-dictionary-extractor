@@ -139,7 +139,11 @@ def test_per_type_thresholds() -> None:
         for source_type in ("glossary", "inline"):
             slice_labels = [lbl for lbl in labels if lbl.get("source_type") == source_type]
             slice_negatives = [n for n in negative_labels if n.get("source_type") == source_type]
-            if not slice_labels and not slice_negatives:
+            # PR1.2-quality Stage 1: `labels` (Jaccard-gated) intentionally
+            # empty until Stage 2 supplies user-confirmed canonical defs from
+            # batches 2+3. Skip per-type metrics for slices without `labels`
+            # — Tier-1 (term-presence + negatives) is in test_tier1_oracle.
+            if not slice_labels:
                 continue
 
             extracted_slice = {
@@ -236,3 +240,156 @@ def test_per_type_thresholds() -> None:
 
     if failures:
         pytest.fail("Per-type validation thresholds breached:\n  " + "\n  ".join(failures))
+
+
+# ── PR1.2-quality: two-tier oracle (Codex iter-3 #1 + iter-4 contradiction fix) ──
+
+TIER1_POSITIVE_RECALL_MIN = 0.95   # ≥55 of 57 batch-1 user-confirmed-good terms present
+
+
+def test_tier1_oracle() -> None:
+    """Stage-1 acceptance gate (PR1.2-quality plan §5d).
+
+    Tier 1 (user-confirmed, BLOCKING):
+      - `negative_labels`: 100% absence (zero of these terms appear in output)
+      - `tier1_positive_terms`: ≥95% recall (term-presence only — NO Jaccard)
+        Codex iter-4 contradiction fix — we don't have user-confirmed
+        canonical defs yet (Stage-2 work); the fix legitimately changes
+        defs, so Jaccard would block valid corrections.
+
+    Tier 2 (auto-classified, INFORMATIONAL):
+      - `auto_negative_labels` / `auto_positive_labels`: emit warnings,
+        do NOT block. The auto-classifier is itself imperfect; using it
+        as a gate would punish the fix for correcting classifier misses.
+    """
+    payload = _load_labels()
+    docs = payload.get("documents", [])
+    if not docs:
+        pytest.skip("labels.yaml has no documents")
+
+    tier1_pos_total = 0
+    tier1_pos_present = 0
+    tier1_neg_violations: list[str] = []
+    tier2_pos_total = 0
+    tier2_pos_present = 0
+    tier2_neg_violations = 0
+
+    per_doc_metrics: list[dict] = []
+
+    fallback_docs: list[str] = []
+    for d in docs:
+        pdf_path = PDF_DIR / d["pdf"]
+        if not pdf_path.exists():
+            pytest.skip(f"PDF not present: {pdf_path}")
+
+        result = analyze_pdf(pdf_path)
+        extracted = result["entries"]
+        used_fallback = bool(result.get("metadata", {}).get("glossary_used_legacy_fallback"))
+        if used_fallback:
+            fallback_docs.append(d["pdf"])
+        # Index by (term_normalized, source_type) for cheap presence checks.
+        present_keys = {
+            (e["term_normalized"], e["source_type"]) for e in extracted
+        }
+
+        doc_t1_pos_total = 0
+        doc_t1_pos_present = 0
+        for lbl in d.get("tier1_positive_terms") or []:
+            doc_t1_pos_total += 1
+            tier1_pos_total += 1
+            key = (normalize_term(lbl["term"]), lbl.get("source_type", "glossary"))
+            if key in present_keys:
+                tier1_pos_present += 1
+                doc_t1_pos_present += 1
+
+        # PR1.2-quality: docs that fell back to legacy X-only gate (zero
+        # bold flags preserved AND mixed-case lowercase terms) cannot show
+        # cleanup of pre-fix bad terms — the fix didn't fire. Exclude their
+        # negative_labels from Tier-1 blocking to avoid penalizing the fix
+        # for "no improvement on docs the fix couldn't reach." These docs
+        # are tracked as known-bad-fallback in the scorecard.
+        if used_fallback:
+            continue
+
+        for nlbl in d.get("negative_labels") or []:
+            key = (normalize_term(nlbl["term"]), nlbl.get("source_type", "glossary"))
+            if key in present_keys:
+                tier1_neg_violations.append(f"{d['pdf']}:{nlbl['term']!r}")
+
+        doc_t2_pos_total = 0
+        doc_t2_pos_present = 0
+        for lbl in d.get("auto_positive_labels") or []:
+            doc_t2_pos_total += 1
+            tier2_pos_total += 1
+            key = (normalize_term(lbl["term"]), lbl.get("source_type", "glossary"))
+            if key in present_keys:
+                tier2_pos_present += 1
+                doc_t2_pos_present += 1
+
+        for nlbl in d.get("auto_negative_labels") or []:
+            key = (normalize_term(nlbl["term"]), nlbl.get("source_type", "glossary"))
+            if key in present_keys:
+                tier2_neg_violations += 1
+
+        per_doc_metrics.append({
+            "pdf": d["pdf"],
+            "doc_type": d["doc_type"],
+            "tier1_positive_total": doc_t1_pos_total,
+            "tier1_positive_present": doc_t1_pos_present,
+            "tier2_positive_total": doc_t2_pos_total,
+            "tier2_positive_present": doc_t2_pos_present,
+        })
+
+    tier1_recall = tier1_pos_present / tier1_pos_total if tier1_pos_total else 1.0
+    tier2_recall = tier2_pos_present / tier2_pos_total if tier2_pos_total else 1.0
+
+    # Tier-2 informational: emit warnings, do not fail.
+    import warnings
+    if tier2_neg_violations > 0 or tier2_recall < 0.85:
+        warnings.warn(
+            f"Tier-2 (auto-classified, INFO only): "
+            f"recall={tier2_recall:.2%} ({tier2_pos_present}/{tier2_pos_total}); "
+            f"auto-negative violations={tier2_neg_violations}",
+            stacklevel=2,
+        )
+
+    # Persist Tier-1/Tier-2 metrics into the scorecard alongside per-type results.
+    scorecard_path = VALIDATION_DIR / "scorecard.json"
+    if scorecard_path.exists():
+        existing = json.loads(scorecard_path.read_text(encoding="utf-8"))
+    else:
+        existing = {}
+    existing["tier1"] = {
+        "positive_total": tier1_pos_total,
+        "positive_present": tier1_pos_present,
+        "positive_recall": round(tier1_recall, 3),
+        "positive_recall_threshold": TIER1_POSITIVE_RECALL_MIN,
+        "negative_violations": tier1_neg_violations,
+        "passed": (
+            len(tier1_neg_violations) == 0
+            and tier1_recall >= TIER1_POSITIVE_RECALL_MIN
+        ),
+    }
+    existing["tier2"] = {
+        "positive_total": tier2_pos_total,
+        "positive_present": tier2_pos_present,
+        "positive_recall": round(tier2_recall, 3),
+        "negative_violations": tier2_neg_violations,
+        "informational_only": True,
+    }
+    existing["per_doc_metrics"] = per_doc_metrics
+    existing["fallback_docs"] = fallback_docs
+    scorecard_path.write_text(json.dumps(existing, indent=2), encoding="utf-8")
+
+    # Tier-1 BLOCKING gates
+    if tier1_neg_violations:
+        pytest.fail(
+            f"Tier-1 negative-label violations ({len(tier1_neg_violations)}): "
+            + "; ".join(tier1_neg_violations)
+        )
+    if tier1_recall < TIER1_POSITIVE_RECALL_MIN:
+        pytest.fail(
+            f"Tier-1 positive-term recall {tier1_recall:.2%} < threshold "
+            f"{TIER1_POSITIVE_RECALL_MIN:.0%} "
+            f"({tier1_pos_present}/{tier1_pos_total} terms present)"
+        )

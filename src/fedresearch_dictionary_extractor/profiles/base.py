@@ -61,3 +61,37 @@ class ReferenceProfile(ABC):
     @abstractmethod
     def supported_doc_types(self) -> list[str]:
         """Canonical doc_type strings this profile is responsible for."""
+
+    # ── Non-abstract defaults (PR1.2-quality additions) ──────────────────
+    # These have safe defaults so existing profiles keep working without
+    # implementing them; subclasses override when they have content.
+
+    @property
+    def footer_patterns(self) -> list[str]:
+        """
+        Regex patterns identifying page-footer text (bare dates, doc-id +
+        bullet + page, "Glossary-N" labels). Matched in the bottom-zone Y
+        band and rejected, so footer text doesn't bleed into adjacent
+        glossary definitions.
+
+        Default: empty list. Override in subclass when footer noise is
+        observed in real PDFs.
+        """
+        return []
+
+    @property
+    def enable_bold_gate(self) -> bool:
+        """
+        Toggle the bold/ALL-CAPS new-term gate added in PR1.2-quality.
+
+        When True (default): a left-margin line is treated as a NEW term
+        only when its first span is bold OR the line looks like an
+        acronym-section term (per `_looks_like_acronym_term_line`).
+        Continuation lines that wrap to the left margin are kept as
+        definition text.
+
+        When False: revert to legacy X-position-only gating. Escape
+        hatch for forensics on PDFs that lose bold flags AND don't use
+        ALL-CAPS terms.
+        """
+        return True

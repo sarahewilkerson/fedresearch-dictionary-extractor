@@ -1,0 +1,47 @@
+{
+  "schema_version": "1",
+  "source_pdf": "ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "ATP 4-35",
+  "source_doc_type": "ATP",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T10:45:47Z",
+  "profile": "army",
+  "text_sha256": "e57f3679c8b7792d1ff71ad11e35a253a5903e47ead13e27b5cecd79416a45e7",
+  "entries": [
+    {
+      "term": "stability operation",
+      "term_normalized": "stability operation",
+      "definition": "An operation conducted outside the United States in coordination with other instruments of national power to establish or maintain a secure environment and provide essential governmental services, emergency infrastructure reconstruction, and humanitarian relief.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 110,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "sustainment preparation of the operational environment",
+      "term_normalized": "sustainment preparation of the operational environment",
+      "definition": "The analysis to determine infrastructure, physical environment, and resources in the operational environment that will optimize or adversely impact friendly forces means for supporting and sustaining the commander\u2019s operations plan.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 110,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 118,
+    "glossary_pages": [
+      110
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 2,
+    "entries_inline": 0,
+    "entries_after_dedup": 2,
+    "glossary_used_legacy_fallback": false
+  }
+}
