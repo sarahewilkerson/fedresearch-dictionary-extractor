@@ -131,8 +131,14 @@ def find_glossary_page_range(
 
 def _is_back_cover_marker(page_text: str, page_idx: int, total: int) -> bool:
     """True if this page looks like a back-cover / publication-info page,
-    not a glossary page. Conservative — requires PIN+position evidence."""
-    has_pin = bool(re.search(r"\bPIN\s+\d{4,}", page_text))
+    not a glossary page. Conservative — requires PIN+position evidence.
+
+    PIN format variants accepted (Codex iter-exec finding #1):
+    - "PIN 123456-000" (no colon)
+    - "PIN: 123456-000" (with colon — common in formal Army publications)
+    - lowercase "pin ..." (OCR variant)
+    """
+    has_pin = bool(re.search(r"\bPIN\s*:?\s*\d{4,}", page_text, re.IGNORECASE))
     in_last_3 = (total - page_idx) <= 3
     return has_pin and in_last_3
 

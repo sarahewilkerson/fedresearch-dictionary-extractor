@@ -41,6 +41,20 @@ extract-definitions \
   --workers 8
 ```
 
+## Approach
+
+Glossary detection (`extractors/glossary.py`):
+
+1. Scan the last 30 pages backward for a profile-defined glossary header (e.g., `^Glossary$`, `^Section II — Terms$`).
+2. Scan forward to find the section's end via Index/References/Appendix/Bibliography markers, OR via a back-cover marker (`PIN \d{4,}` on the last 3 pages — handles `PIN: 123456`, `pin 123`, etc.).
+3. Per-page parsing: group spans by Y-coordinate to recover physical lines; filter document headers (top zone) and footers (bottom 12% — bare dates, page numbers, doc-id+bullet patterns, "Glossary-N" labels).
+4. **New-term gating (PR1.2-quality, Fix A):** a left-margin line is a NEW term only if its first span is bold OR the line looks acronym-shaped (first word matches `^[A-Z][A-Z0-9\-]{1,14}$`, line ≤60 chars, no period in first 30 chars). Otherwise it's a continuation of the current term's def. Multi-bold-span term walk picks up multi-word bold terms (`*engineer work line` etc.).
+5. **Bold-fallback safety net:** if the bold-gated parse produces fewer entries than the glossary range has pages, retry with X-only (legacy) gating. Catches OCR'd PDFs (GlyphLessFont) where bold flags aren't preserved AND terms are mixed-case lowercase. The boolean `metadata.glossary_used_legacy_fallback` records when this fired.
+6. **Per-page continuation merge (Fix E):** after per-page extraction, fragment-shaped follow-on entries (lowercase start AND ≥4 words / sentence-internal punct / stop-word tail) get merged into the prior def. Real one-word lowercase headwords (e.g., "synchronization") are preserved.
+7. Inline extraction runs separately (`extractors/inline.py`) against full body text using narrow profile-defined patterns; article prefixes (`the term`, `the`, `a`, `an`) are stripped from captured terms to dedupe.
+
+Profile flags (`profiles/base.py`): `enable_bold_gate=True` (default) toggles step 4; flip to `False` for forensics on PDFs with no formatting metadata.
+
 ## Output schema
 
 See `docs/schema/definition-output-v1.json`. Every output includes:
@@ -49,7 +63,7 @@ See `docs/schema/definition-output-v1.json`. Every output includes:
 - `source_pdf`, `source_gcs_key`, `source_doc_id`, `source_pub_number`, `source_doc_type`
 - `extractor_version`, `extraction_timestamp`, `profile`, `text_sha256`
 - `entries[]` — each with `term`, `term_normalized`, `definition`, `source_type` (glossary|inline), `section`, `pdf_page_index`, `printed_page_label`, `confidence`, `flags[]`
-- `metadata` — page counts, glossary pages, entries per source type, post-dedup count
+- `metadata` — page counts, glossary pages, entries per source type, post-dedup count, `glossary_used_legacy_fallback` (true if bold-gate produced too few entries and the X-only fallback fired)
 
 ## Development
 
