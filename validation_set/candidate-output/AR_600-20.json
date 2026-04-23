@@ -6,14 +6,14 @@
   "source_pub_number": "AR 600-20",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:44Z",
+  "extraction_timestamp": "2026-04-23T10:45:46Z",
   "profile": "army",
   "text_sha256": "eca7fd861049a3bc25c43f6c926df8bf220a9e035e124c603090ba3feb9ca328",
   "entries": [
     {
       "term": "Active duty",
       "term_normalized": "active duty",
-      "definition": "Full-time duty in the active military Service of the United States, including full-time training duty; annual training duty; attendance while in the active military Service, at a school designated as a Service school by law or by secretary",
+      "definition": "Full-time duty in the active military Service of the United States, including full-time training duty; annual training duty; attendance while in the active military Service, at a school designated as a Service school by law or by secretary of the military department concerned. This term does not include FTNGD.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 123,
@@ -35,29 +35,7 @@
     {
       "term": "Anonymous complaint",
       "term_normalized": "anonymous complaint",
-      "definition": "Anonymous reporting is defined as an allegation report of sexual harassment, regardless of the means of transmission,",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 123,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "from an unknown/unidentified source",
-      "term_normalized": "from an unknown/unidentified source",
-      "definition": "The individual reporting the information is not required to divulge any PII. Commanders will publicize and enable anonymous reporting through organizational hotlines, email, and official tel-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 123,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "ephone lines",
-      "term_normalized": "ephone lines",
-      "definition": "Anonymous reports of sexual harassment occurring in confinement facilities involving military inmates",
+      "definition": "Anonymous reporting is defined as an allegation report of sexual harassment, regardless of the means of transmission, from an unknown/unidentified source. The individual reporting the information is not required to divulge any PII. Commanders will publicize and enable anonymous reporting through organizational hotlines, email, and official tel- ephone lines. Anonymous reports of sexual harassment occurring in confinement facilities involving military inmates will adhere to the Prison Rape Elimination Act.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 123,
@@ -68,7 +46,18 @@
     {
       "term": "Army National Guard",
       "term_normalized": "army national guard",
-      "definition": "The Army portion of the recognized militia of the several states, Commonwealth of Puerto Rico and District of Co-",
+      "definition": "The Army portion of the recognized militia of the several states, Commonwealth of Puerto Rico and District of Co- lumbia whose units and members are federally recognized.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 123,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Army National Guard of the United States",
+      "term_normalized": "army national guard of the united states",
+      "definition": "A RC of the Army, all of whose members are members of the ARNG.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 123,
@@ -79,7 +68,40 @@
     {
       "term": "Army recruit",
       "term_normalized": "army recruit",
-      "definition": "An Army recruit is an individual who has joined the Army, including U.S. Army Military Academy cadets, ROTC cadets who are under contract, and individuals in the DEP (Future Soldiers Program), Delayed Training Program,",
+      "definition": "An Army recruit is an individual who has joined the Army, including U.S. Army Military Academy cadets, ROTC cadets who are under contract, and individuals in the DEP (Future Soldiers Program), Delayed Training Program, Recruit Sustainment Program, or similar programs.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 123,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Beliefs",
+      "term_normalized": "beliefs",
+      "definition": "Judgments or expectancies which one may hold.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 123,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Category",
+      "term_normalized": "category",
+      "definition": "A specifically defined division in a system of classification.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 123,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Chain of command",
+      "term_normalized": "chain of command",
+      "definition": "The succession of COs from a superior to a subordinate through which command is exercised.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 123,
@@ -90,7 +112,7 @@
     {
       "term": "Civil office",
       "term_normalized": "civil office",
-      "definition": "A nonmilitary office involving the exercise of the powers of authority of civil government, to include elective or an appointed office in the government, a U.S. territory or possession, State, county, municipality, or official subdivision",
+      "definition": "A nonmilitary office involving the exercise of the powers of authority of civil government, to include elective or an appointed office in the government, a U.S. territory or possession, State, county, municipality, or official subdivision thereof.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 123,
@@ -112,7 +134,18 @@
     {
       "term": "Common levels of support",
       "term_normalized": "common levels of support",
-      "definition": "Common levels of support are the IMCOM determined levels for the common services that are provided by a garrison. Common levels of support refers to the method by which IMCOM directs all garrisons to deliver specific elements of installation support services (Service Support Programs) at a IMCOM approved pre-determined level of service. This strategy is aimed at achieving standardization of installation services across the Army through equitable distribution",
+      "definition": "Common levels of support are the IMCOM determined levels for the common services that are provided by a garrison. Common levels of support refers to the method by which IMCOM directs all garrisons to deliver specific elements of installation support services (Service Support Programs) at a IMCOM approved pre-determined level of service. This strategy is aimed at achieving standardization of installation services across the Army through equitable distribution of resources and garrison accountability for service delivery performance.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 123,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Complainant",
+      "term_normalized": "complainant",
+      "definition": "A Soldier, military Family member, or DA civilian employee who submits a complaint.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 123,
@@ -123,18 +156,7 @@
     {
       "term": "Complaint (equal opportunity)",
       "term_normalized": "complaint (equal opportunity)",
-      "definition": "An allegation of discrimination based on race, color, sex , national origin, religion, or sexual orientation or allegation",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 123,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "of harassment (hazing, bullying, or discriminatory harassment).",
-      "term_normalized": "of harassment (hazing, bullying, or discriminatory harassment).",
-      "definition": "AR 600–20 • 6 February 2025",
+      "definition": "An allegation of discrimination based on race, color, sex , national origin, religion, or sexual orientation or allegation of harassment (hazing, bullying, or discriminatory harassment).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 123,
@@ -145,7 +167,7 @@
     {
       "term": "Complaint (equal opportunity), formal",
       "term_normalized": "complaint (equal opportunity), formal",
-      "definition": "An allegation of discrimination or harassment (hazing, bullying, or discriminatory harassment) submitted in writing on a DA Form 7279 to a commander, supervisor, or military equal opportunity professional; or an allegation identified",
+      "definition": "An allegation of discrimination or harassment (hazing, bullying, or discriminatory harassment) submitted in writing on a DA Form 7279 to a commander, supervisor, or military equal opportunity professional; or an allegation identified by the commander to be investigated through the formal complaint process.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -156,7 +178,7 @@
     {
       "term": "Complaint (equal opportunity), informal",
       "term_normalized": "complaint (equal opportunity), informal",
-      "definition": "An allegation of discrimination or harassment (hazing, bullying, or discriminatory harassment) made either verbally",
+      "definition": "An allegation of discrimination or harassment (hazing, bullying, or discriminatory harassment) made either verbally or in writing that is not submitted as a formal complaint to an MEO professional (not an EOL).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -167,18 +189,7 @@
     {
       "term": "Consent",
       "term_normalized": "consent",
-      "definition": "As used in the context of sexual assault, consent is a freely given agreement to the conduct at issue by a competent",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 124,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "person",
-      "term_normalized": "person",
-      "definition": "An expression of lack of consent through words or conduct means there is no consent. Lack of verbal resistance or submission resulting from the use of force, threat of force, or placing another person in fear does not constitute",
+      "definition": "As used in the context of sexual assault, consent is a freely given agreement to the conduct at issue by a competent person. An expression of lack of consent through words or conduct means there is no consent. Lack of verbal resistance or submission resulting from the use of force, threat of force, or placing another person in fear does not constitute consent. A current or previous dating or social or sexual relationship by itself or the manner of dress of the person involved with the accused in the conduct at issue does not constitute consent. A sleeping, unconscious, or incompetent person cannot consent.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -189,7 +200,7 @@
     {
       "term": "Culture",
       "term_normalized": "culture",
-      "definition": "The learned and shared behaviors and perceptions of a group which have been transmitted from generation to gener-",
+      "definition": "The learned and shared behaviors and perceptions of a group which have been transmitted from generation to gener- ation through a shared symbol system.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -200,7 +211,7 @@
     {
       "term": "Date of rank",
       "term_normalized": "date of rank",
-      "definition": "The date on which an officer or enlisted Soldier actually or constructively was appointed in a particular grade. The date will be calculated on the basis of criteria established in this regulation and is the first rule for determining relative",
+      "definition": "The date on which an officer or enlisted Soldier actually or constructively was appointed in a particular grade. The date will be calculated on the basis of criteria established in this regulation and is the first rule for determining relative seniority for officers and enlisted holding the same grade.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -211,7 +222,7 @@
     {
       "term": "Department of Defense Military Equal Opportunity Program",
       "term_normalized": "department of defense military equal opportunity program",
-      "definition": "The DoD-wide military program of MEO that is accomplished through efforts by the DoD components. It provides an environment in which Soldiers are ensured an opportunity to rise to the highest level of responsibility possible in",
+      "definition": "The DoD-wide military program of MEO that is accomplished through efforts by the DoD components. It provides an environment in which Soldiers are ensured an opportunity to rise to the highest level of responsibility possible in the military profession, dependent only on merit, performance, and potential.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -222,7 +233,7 @@
     {
       "term": "Direct support",
       "term_normalized": "direct support",
-      "definition": "A support relationship requiring a force to support another specific forces and authorizing it to answer directly to the",
+      "definition": "A support relationship requiring a force to support another specific forces and authorizing it to answer directly to the supported force\u2019s request for assistance.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -233,7 +244,7 @@
     {
       "term": "Discrimination",
       "term_normalized": "discrimination",
-      "definition": "The act, policy, or procedure that arbitrarily denies EO or EEO because of race, color, sex , national origin, religion,",
+      "definition": "The act, policy, or procedure that arbitrarily denies EO or EEO because of race, color, sex , national origin, religion, or sexual orientation to an individual or group of individuals.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -242,75 +253,9 @@
       "flags": []
     },
     {
-      "term": "The following definition of discrimination types apply to the Military Equal Opportunity program",
-      "term_normalized": "the following definition of discrimination types apply to the military equal opportunity program",
-      "definition": "a. Color discrimination. Occurs when an individual is treated differently based on the lightness, darkness or toner",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 124,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "color characteristics of the person",
-      "term_normalized": "color characteristics of the person",
-      "definition": "This type of discrimination can occur with race discrimination. Color discrimina- tion can occur between persons of different races or ethnicities. It can also occur when members of the same race treat",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 124,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "each other differently because of lightness or darkness of their skin.",
-      "term_normalized": "each other differently because of lightness or darkness of their skin.",
-      "definition": "b. Sex discrimination. Occurs when an individual is deprived of an opportunity because of their sex (including preg- nancy) or when decisions are made based on stereotypes and assumptions about abilities, traits, or the performance of",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 124,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "individuals on the basis of sex.",
-      "term_normalized": "individuals on the basis of sex.",
-      "definition": "c. Racial discrimination. Occurs when an individual is treated differently because of their racial group, racial charac- teristics (for example, hair texture, color, facial features), or because of their relationship or association with someone",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 124,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "of a particular race.",
-      "term_normalized": "of a particular race.",
-      "definition": "d. Religious discrimination. Occurs when an individual is treated more or less favorably because of their religious beliefs or practices—except to the extent a religious accommodation is warranted. For example, imposing stricter promotion requirements for a person of a certain religious or imposing more or different work requirements on an individual because of their religious beliefs or practices, or forcing an individual to participate—or not participate—",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 124,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "in a religious activity.",
-      "term_normalized": "in a religious activity.",
-      "definition": "e. National origin discrimination. Occurs when an individual is treated less favorably because of their origin, ethnicity",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 124,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "or accent, or because it is believed they are a particular nationality.",
-      "term_normalized": "or accent, or because it is believed they are a particular nationality.",
-      "definition": "AR 600–20 • 6 February 2025",
+      "term": "Discrimination types",
+      "term_normalized": "discrimination types",
+      "definition": "The following definition of discrimination types apply to the Military Equal Opportunity program: a. Color discrimination. Occurs when an individual is treated differently based on the lightness, darkness or toner color characteristics of the person. This type of discrimination can occur with race discrimination. Color discrimina- tion can occur between persons of different races or ethnicities. It can also occur when members of the same race treat each other differently because of lightness or darkness of their skin. b. Sex discrimination. Occurs when an individual is deprived of an opportunity because of their sex (including preg- nancy) or when decisions are made based on stereotypes and assumptions about abilities, traits, or the performance of individuals on the basis of sex. c. Racial discrimination. Occurs when an individual is treated differently because of their racial group, racial charac- teristics (for example, hair texture, color, facial features), or because of their relationship or association with someone of a particular race. d. Religious discrimination. Occurs when an individual is treated more or less favorably because of their religious beliefs or practices\u2014except to the extent a religious accommodation is warranted. For example, imposing stricter promotion requirements for a person of a certain religious or imposing more or different work requirements on an individual because of their religious beliefs or practices, or forcing an individual to participate\u2014or not participate\u2014 in a religious activity. e. National origin discrimination. Occurs when an individual is treated less favorably because of their origin, ethnicity or accent, or because it is believed they are a particular nationality.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -321,7 +266,7 @@
     {
       "term": "Disparaging terms",
       "term_normalized": "disparaging terms",
-      "definition": "Terms used to degrade, belittle, insult, or negative statements pertaining to race, color, sex , national origin, or religion. These terms include insults, printed material, visual material, signs, symbols, posters, or insignia. The determining factor whether a term is disparaging is not the intent but the impact it has on the recipient or a reasonable person. The use of these terms may contribute to an unlawful hostile work environment if it occurs with respect to a person’s race,",
+      "definition": "Terms used to degrade, belittle, insult, or negative statements pertaining to race, color, sex , national origin, or religion. These terms include insults, printed material, visual material, signs, symbols, posters, or insignia. The determining factor whether a term is disparaging is not the intent but the impact it has on the recipient or a reasonable person. The use of these terms may contribute to an unlawful hostile work environment if it occurs with respect to a person\u2019s race, color, sex , national origin, or religion and must not be tolerated.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -332,18 +277,7 @@
     {
       "term": "Dual-military couple",
       "term_normalized": "dual-military couple",
-      "definition": "A Soldier (RA or USAR) married to another Soldier (RA or USAR) of the Army, Air Force, Navy, Marines, or Coast",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 125,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "Guard",
-      "term_normalized": "guard",
-      "definition": "A dual-military parent is one who shares with their military spouse all parental responsibilities for Family members acquired through birth or legal decree who are in physical custody of the Soldier and who are under the age",
+      "definition": "A Soldier (RA or USAR) married to another Soldier (RA or USAR) of the Army, Air Force, Navy, Marines, or Coast Guard. A dual-military parent is one who shares with their military spouse all parental responsibilities for Family members acquired through birth or legal decree who are in physical custody of the Soldier and who are under the age of 18 years or who are beyond 18 years but are mentally or physically incapable of self-care.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -363,9 +297,20 @@
       "flags": []
     },
     {
+      "term": "Entry-level training",
+      "term_normalized": "entry-level training",
+      "definition": "Entry-level training includes, but is not limited to, recruit and initial skill training, including enlisted basic combat training, advanced individual training, and one station unit training; officer acquisition training, such as the Basic Officer Leader Course, Officer Candidate School, WO Basic Course, and WOC School; and Military Academy and Cadet Command conducted training (including ROTC courses). It includes students in training and holding status.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 125,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
       "term": "Equal Employment Opportunity Program",
       "term_normalized": "equal employment opportunity program",
-      "definition": "The comprehensive program through which the Army implements its policy to provide EO in employment for all",
+      "definition": "The comprehensive program through which the Army implements its policy to provide EO in employment for all qualified current and former DA Civilians and applicants for employment.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -376,18 +321,7 @@
     {
       "term": "Equal opportunity",
       "term_normalized": "equal opportunity",
-      "definition": "The right of all persons to participate in, and benefit from, programs and activities for which they are qualified. These programs and activities will be free from social, personal, or institutional barriers that prevent people from rising to",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 125,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "the highest level of accountability possible",
-      "term_normalized": "the highest level of accountability possible",
-      "definition": "Persons will be evaluated only on individual merit, performance, and potential, regardless of race, color, sex , national origin, religion, or sexual orientation except as prescribed by statute,",
+      "definition": "The right of all persons to participate in, and benefit from, programs and activities for which they are qualified. These programs and activities will be free from social, personal, or institutional barriers that prevent people from rising to the highest level of accountability possible. Persons will be evaluated only on individual merit, performance, and potential, regardless of race, color, sex , national origin, religion, or sexual orientation except as prescribed by statute, or other Service policy.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -398,18 +332,7 @@
     {
       "term": "Equal opportunity complaint review",
       "term_normalized": "equal opportunity complaint review",
-      "definition": "Prior to submission of the MEO complaint report to the legal advisor, the investigating officer and MEO professional",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 125,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "will meet and review the report",
-      "term_normalized": "will meet and review the report",
-      "definition": "The MEO professional will provide the investigating officer a memorandum docu-",
+      "definition": "Prior to submission of the MEO complaint report to the legal advisor, the investigating officer and MEO professional will meet and review the report. The MEO professional will provide the investigating officer a memorandum docu- menting the review.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -420,29 +343,7 @@
     {
       "term": "Equal opportunity leader",
       "term_normalized": "equal opportunity leader",
-      "definition": "A military member who is collaterally appointed to serve at the company and battalion (or equivalent) to assist com-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 125,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "manders in carrying out the MEO Program within their unit, as an additional duty.",
-      "term_normalized": "manders in carrying out the meo program within their unit, as an additional duty.",
-      "definition": "Equal opportunity professional (equal opportunity program manager, sergeant major, GM, equal opportunity",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 125,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "advisor or specialist (Active Component/Reserve Component))",
-      "term_normalized": "advisor or specialist (active component/reserve component))",
-      "definition": "A military member or DA Civilian employee who performs MEO duties on a full-time basis and who have completed",
+      "definition": "A military member who is collaterally appointed to serve at the company and battalion (or equivalent) to assist com- manders in carrying out the MEO Program within their unit, as an additional duty. Equal opportunity professional (equal opportunity program manager, sergeant major, GM, equal opportunity advisor or specialist (Active Component/Reserve Component)) A military member or DA Civilian employee who performs MEO duties on a full-time basis and who have completed required DEOMI MEO Advisor Course.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -464,7 +365,7 @@
     {
       "term": "Ethnic group",
       "term_normalized": "ethnic group",
-      "definition": "A segment of the population that possesses common characteristics and a cultural heritage based to some degree on: faith or faiths; shared traditions, values or symbols; literature, folklore, or music; an internal sense of distinctiveness;",
+      "definition": "A segment of the population that possesses common characteristics and a cultural heritage based to some degree on: faith or faiths; shared traditions, values or symbols; literature, folklore, or music; an internal sense of distinctiveness; and/or an external perception of distinctiveness.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -475,18 +376,7 @@
     {
       "term": "Ethnicity",
       "term_normalized": "ethnicity",
-      "definition": "That which sets off a group by race (defined as genetic), religion (preferred denomination), national origin (country",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 125,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "of one's ancestors), or some combination of these categories.",
-      "term_normalized": "of one's ancestors), or some combination of these categories.",
-      "definition": "AR 600–20 • 6 February 2025",
+      "definition": "That which sets off a group by race (defined as genetic), religion (preferred denomination), national origin (country of one's ancestors), or some combination of these categories.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -508,7 +398,7 @@
     {
       "term": "Family readiness liaison",
       "term_normalized": "family readiness liaison",
-      "definition": "An official command-sponsored individual who provides liaison between Soldiers and their Families and the com-",
+      "definition": "An official command-sponsored individual who provides liaison between Soldiers and their Families and the com- mand, promoting a culture of mutual support and communication",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -519,7 +409,7 @@
     {
       "term": "Formal complaint",
       "term_normalized": "formal complaint",
-      "definition": "Allegation of unlawful discrimination and/or harassment that is submitted in writing to proper authority and processed",
+      "definition": "Allegation of unlawful discrimination and/or harassment that is submitted in writing to proper authority and processed through official complaint channels.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -530,7 +420,18 @@
     {
       "term": "Garrison",
       "term_normalized": "garrison",
-      "definition": "An IMCOM unit that provides appropriate and equitable services in accordance with HQDA-directed common levels of support to tenants, Soldiers, other Servicemembers, Families, DA Civilians, and civilians in the garrison area of",
+      "definition": "An IMCOM unit that provides appropriate and equitable services in accordance with HQDA-directed common levels of support to tenants, Soldiers, other Servicemembers, Families, DA Civilians, and civilians in the garrison area of responsibility.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 126,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Goals",
+      "term_normalized": "goals",
+      "definition": "An objective based on realistic, measurable prospects of attainment.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -541,7 +442,7 @@
     {
       "term": "Grade",
       "term_normalized": "grade",
-      "definition": "A step or degree in a graduated scale of office or rank that is established and designated as a grade by law or regulation.",
+      "definition": "A step or degree in a graduated scale of office or rank that is established and designated as a grade by law or regulation. For example, 2LT, CPT, SFC, CW2 are grades.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -552,18 +453,7 @@
     {
       "term": "Hostile work environment",
       "term_normalized": "hostile work environment",
-      "definition": "A hostile work environment is a series of acts that are so severe and pervasive as to alter an individual’s work condi-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 126,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "tions",
-      "term_normalized": "tions",
-      "definition": "The acts may be discreet acts which are offensive, intimidating, or abusive to another person using the reason-",
+      "definition": "A hostile work environment is a series of acts that are so severe and pervasive as to alter an individual\u2019s work condi- tions. The acts may be discreet acts which are offensive, intimidating, or abusive to another person using the reason- able person standard. They need not result in concrete psychological harm, but need only be perceived by a reasonable person as hostile or offensive.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -574,7 +464,7 @@
     {
       "term": "Human relations",
       "term_normalized": "human relations",
-      "definition": "The social relations between human beings; a course, study, or program designed to develop better interpersonal and",
+      "definition": "The social relations between human beings; a course, study, or program designed to develop better interpersonal and intergroup adjustments.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -585,18 +475,7 @@
     {
       "term": "Informal complaint",
       "term_normalized": "informal complaint",
-      "definition": "Allegations of unlawful discrimination, harassment (hazing, bullying, or discriminatory harassment), or sexual har-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 126,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "assment that do not require written documentation",
-      "term_normalized": "assment that do not require written documentation",
-      "definition": "These complaints may be voiced to the offending party, to someone in a position of authority, or both. The intention is that the offending behavior will cease with no further action re-",
+      "definition": "Allegations of unlawful discrimination, harassment (hazing, bullying, or discriminatory harassment), or sexual har- assment that do not require written documentation. These complaints may be voiced to the offending party, to someone in a position of authority, or both. The intention is that the offending behavior will cease with no further action re- quired.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -607,7 +486,7 @@
     {
       "term": "Installation",
       "term_normalized": "installation",
-      "definition": "An aggregation of contiguous or near contiguous, real property holding commanded by a centrally selected com-",
+      "definition": "An aggregation of contiguous or near contiguous, real property holding commanded by a centrally selected com- mander. Installations represent management organizations. An installation may be made of one or more sites.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -616,9 +495,9 @@
       "flags": []
     },
     {
-      "term": "mander",
-      "term_normalized": "mander",
-      "definition": "Installations represent management organizations. An installation may be made of one or more sites.",
+      "term": "Investigation",
+      "term_normalized": "investigation",
+      "definition": "An examination into allegations of wrongdoing or misconduct.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -629,18 +508,7 @@
     {
       "term": "Joint Service environment",
       "term_normalized": "joint service environment",
-      "definition": "A locality from which operations of two or more of the Military Departments are projected or supported and which is manned by significant elements of two or more Military Departments or in which significant elements of two or more",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 126,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "Military Departments are located",
-      "term_normalized": "military departments are located",
-      "definition": "Includes joint commands, joint bases, Defense agencies, and joint field activities",
+      "definition": "A locality from which operations of two or more of the Military Departments are projected or supported and which is manned by significant elements of two or more Military Departments or in which significant elements of two or more Military Departments are located. Includes joint commands, joint bases, Defense agencies, and joint field activities that involve more than one branch of Military Service.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -651,51 +519,7 @@
     {
       "term": "Legal sufficiency review",
       "term_normalized": "legal sufficiency review",
-      "definition": "The review of an investigation into a formal complaint of discrimination or harassment (hazing, bullying, or discrim-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 126,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "inatory harassment) to determine whether",
-      "term_normalized": "inatory harassment) to determine whether",
-      "definition": "a. Whether the proceedings complied with legal requirements, including the requirements established in the appointing",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 126,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "memorandum.",
-      "term_normalized": "memorandum.",
-      "definition": "b. Whether there are errors and, if so, whether the errors are substantial or harmless; the effect, if any, that the errors",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 126,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "had on the proceedings; and, what action, if any, is recommended to remediate the errors.",
-      "term_normalized": "had on the proceedings; and, what action, if any, is recommended to remediate the errors.",
-      "definition": "c. Whether the findings of the investigation or board, or those substituted or added by the approval authority, are",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 126,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "supported by a greater weight of the evidence than supports a contrary conclusion.",
-      "term_normalized": "supported by a greater weight of the evidence than supports a contrary conclusion.",
-      "definition": "d. Whether the recommendations are consistent with the findings. AR 600–20 • 6 February 2025",
+      "definition": "The review of an investigation into a formal complaint of discrimination or harassment (hazing, bullying, or discrim- inatory harassment) to determine whether: a. Whether the proceedings complied with legal requirements, including the requirements established in the appointing memorandum. b. Whether there are errors and, if so, whether the errors are substantial or harmless; the effect, if any, that the errors had on the proceedings; and, what action, if any, is recommended to remediate the errors. c. Whether the findings of the investigation or board, or those substituted or added by the approval authority, are supported by a greater weight of the evidence than supports a contrary conclusion. d. Whether the recommendations are consistent with the findings.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -717,7 +541,7 @@
     {
       "term": "National origin",
       "term_normalized": "national origin",
-      "definition": "An individual’s or ancestor’s place of origin. Also applies to a person who has the physical, cultural, or linguistic",
+      "definition": "An individual\u2019s or ancestor\u2019s place of origin. Also applies to a person who has the physical, cultural, or linguistic characteristics of a national group.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -728,7 +552,18 @@
     {
       "term": "Nonpartisan political activity",
       "term_normalized": "nonpartisan political activity",
-      "definition": "Activity supporting or relating to candidates not representing, or issues not specifically identified with, national or State political parties and associated or ancillary organizations. Issues relating to Constitutional amendments, refer- endums, approval of municipal ordinances, and others of similar character and are not considered under this regulation",
+      "definition": "Activity supporting or relating to candidates not representing, or issues not specifically identified with, national or State political parties and associated or ancillary organizations. Issues relating to Constitutional amendments, refer- endums, approval of municipal ordinances, and others of similar character and are not considered under this regulation as specifically being identified with national or State political parties.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 127,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Objective",
+      "term_normalized": "objective",
+      "definition": "Defines the basic results desired.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -739,7 +574,7 @@
     {
       "term": "Partisan political activity",
       "term_normalized": "partisan political activity",
-      "definition": "Activity supporting or relating to candidates representing, or issues specifically identified with, national or State po-",
+      "definition": "Activity supporting or relating to candidates representing, or issues specifically identified with, national or State po- litical parties and associated or ancillary organization.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -750,7 +585,7 @@
     {
       "term": "Prejudice",
       "term_normalized": "prejudice",
-      "definition": "An attitude, judgment or opinion, without regard to pertinent fact, that is typically expressed in suspicion, fear, hos-",
+      "definition": "An attitude, judgment or opinion, without regard to pertinent fact, that is typically expressed in suspicion, fear, hos- tility, or intolerance of certain people, customs, and ideas.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -770,9 +605,20 @@
       "flags": []
     },
     {
+      "term": "Proposed corrective action",
+      "term_normalized": "proposed corrective action",
+      "definition": "Plan of action developed to resolve identified areas of concern.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 127,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
       "term": "Prospect",
       "term_normalized": "prospect",
-      "definition": "Any person who has expressed an interest to recruiting personnel in enlisting or receiving an appointment in the Army or any other military Service and who appears to possess, or who may in the future possess, the potential and qualifi- cations for enlistment or appointment in the Army or other military Service. For the purpose of the policy, an individ- ual who expresses a loss of interest in enlistment or appointment will continue to be a prospect for a period of 1 year from the date they express their loss of interest to recruiting personnel. Individuals who possess the potential or qual- ifications for enlistment or appointment at some point in the future may include, but are not limited to, individuals who do not meet minimum age requirements, who scored too low on the qualification testing but will be eligible to retest, or who have not completed their education. An individual who expresses an interest in enlistment or appoint-",
+      "definition": "Any person who has expressed an interest to recruiting personnel in enlisting or receiving an appointment in the Army or any other military Service and who appears to possess, or who may in the future possess, the potential and qualifi- cations for enlistment or appointment in the Army or other military Service. For the purpose of the policy, an individ- ual who expresses a loss of interest in enlistment or appointment will continue to be a prospect for a period of 1 year from the date they express their loss of interest to recruiting personnel. Individuals who possess the potential or qual- ifications for enlistment or appointment at some point in the future may include, but are not limited to, individuals who do not meet minimum age requirements, who scored too low on the qualification testing but will be eligible to retest, or who have not completed their education. An individual who expresses an interest in enlistment or appoint- ment but is permanently barred under existing regulations is not a prospect.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -783,7 +629,7 @@
     {
       "term": "Protected communication (Military Whistleblower Protection Act)",
       "term_normalized": "protected communication (military whistleblower protection act)",
-      "definition": "A lawful communication to any member of the chain of command, a Member of Congress, an IG or any member of a DoD audit, inspection, or law-enforcement organization, including any office or command official designated to re- ceive MEO complaints from Soldiers in which a military member makes a complaint or discloses information that he or she reasonably believes evidences a violation of law or regulation, gross mismanagement, a gross waste of funds,",
+      "definition": "A lawful communication to any member of the chain of command, a Member of Congress, an IG or any member of a DoD audit, inspection, or law-enforcement organization, including any office or command official designated to re- ceive MEO complaints from Soldiers in which a military member makes a complaint or discloses information that he or she reasonably believes evidences a violation of law or regulation, gross mismanagement, a gross waste of funds, a gross abuse of authority, or a substantial and specific danger to public health or safety.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -794,7 +640,18 @@
     {
       "term": "Race",
       "term_normalized": "race",
-      "definition": "A division of humans identified by the possession of traits that are transmissible by descent and that are sufficient to",
+      "definition": "A division of humans identified by the possession of traits that are transmissible by descent and that are sufficient to characterize persons possessing these traits as a distinctive human genotype.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 127,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Race/ethnic groups",
+      "term_normalized": "race/ethnic groups",
+      "definition": "The race/ethnic groups for Army reporting are the same as listed under ethnic and racial categories.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -805,18 +662,7 @@
     {
       "term": "Rank",
       "term_normalized": "rank",
-      "definition": "The order of precedence among members of the Armed Forces. Military rank among officers of the same grade or of equivalent grade is determined by comparing dates of rank. An officer whose DOR is earlier that the DOR of another",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 127,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "officer of the same or equivalent grade is senior to that officer.",
-      "term_normalized": "officer of the same or equivalent grade is senior to that officer.",
-      "definition": "AR 600–20 • 6 February 2025",
+      "definition": "The order of precedence among members of the Armed Forces. Military rank among officers of the same grade or of equivalent grade is determined by comparing dates of rank. An officer whose DOR is earlier that the DOR of another officer of the same or equivalent grade is senior to that officer.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -827,40 +673,7 @@
     {
       "term": "Reasonable person standard",
       "term_normalized": "reasonable person standard",
-      "definition": "An objective test used to determine if behavior constitutes discrimination or harassment (hazing, bullying, or discrim-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "inatory harassment)",
-      "term_normalized": "inatory harassment)",
-      "definition": "This standard considers what a reasonable person's reaction would have been under similar cir-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "cumstances and in a similar environment",
-      "term_normalized": "cumstances and in a similar environment",
-      "definition": "The reasonable person standard considers the recipient's perspective and not",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "stereotyped notions of acceptable behavior",
-      "term_normalized": "stereotyped notions of acceptable behavior",
-      "definition": "For example, a work environment in which racial slurs, the display of racial material or other offensive racial behavior abound can constitute discrimination even if other people might deem",
+      "definition": "An objective test used to determine if behavior constitutes discrimination or harassment (hazing, bullying, or discrim- inatory harassment). This standard considers what a reasonable person's reaction would have been under similar cir- cumstances and in a similar environment. The reasonable person standard considers the recipient's perspective and not stereotyped notions of acceptable behavior. For example, a work environment in which racial slurs, the display of racial material or other offensive racial behavior abound can constitute discrimination even if other people might deem it to be harmless or insignificant.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -871,7 +684,7 @@
     {
       "term": "Recipient",
       "term_normalized": "recipient",
-      "definition": "Any person subjected to discrimination or harassment (hazing, bullying, or discriminatory harassment) (also referred",
+      "definition": "Any person subjected to discrimination or harassment (hazing, bullying, or discriminatory harassment) (also referred to as complainant).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -893,7 +706,7 @@
     {
       "term": "Reprisal",
       "term_normalized": "reprisal",
-      "definition": "Taking or threatening to take an unfavorable personnel action, or withholding or threatening to withhold a favorable personnel action, or any other act of retaliation, against a Soldier or Family member, for making or preparing a formal MEO complaint, a DA Civilian for engaging in activity in opposition to perceived discrimination; or against an alleged",
+      "definition": "Taking or threatening to take an unfavorable personnel action, or withholding or threatening to withhold a favorable personnel action, or any other act of retaliation, against a Soldier or Family member, for making or preparing a formal MEO complaint, a DA Civilian for engaging in activity in opposition to perceived discrimination; or against an alleged subject under investigation.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -904,18 +717,7 @@
     {
       "term": "Retaliation",
       "term_normalized": "retaliation",
-      "definition": "Any person subject to the UCMJ who wrongfully takes or threatens to take an adverse personnel action, or wrongfully withholds or threatens to withhold a favorable personnel action with the intent to discourage or retaliate against any person for reporting or planning to report a criminal offense, or making, or planning to make a protected communica-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "tion",
-      "term_normalized": "tion",
-      "definition": "(See Article 132, UCMJ (2019))",
+      "definition": "Any person subject to the UCMJ who wrongfully takes or threatens to take an adverse personnel action, or wrongfully withholds or threatens to withhold a favorable personnel action with the intent to discourage or retaliate against any person for reporting or planning to report a criminal offense, or making, or planning to make a protected communica- tion. (See Article 132, UCMJ (2019))",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -926,7 +728,7 @@
     {
       "term": "Senior commander",
       "term_normalized": "senior commander",
-      "definition": "An officer designated on orders from HQDA as the SC of an installation. Normally the senior GO at the installation. The SC’s mission is the care of Soldiers, Families, and DA Civilians, and to enable unit readiness. While the delegation of senior command authority is direct from HQDA, the SC will routinely resolve installation issues with IMCOM and,",
+      "definition": "An officer designated on orders from HQDA as the SC of an installation. Normally the senior GO at the installation. The SC\u2019s mission is the care of Soldiers, Families, and DA Civilians, and to enable unit readiness. While the delegation of senior command authority is direct from HQDA, the SC will routinely resolve installation issues with IMCOM and, as needed, the associated ACOM, ASCC, or DRU.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -937,29 +739,7 @@
     {
       "term": "Senior regularly assigned Army officer",
       "term_normalized": "senior regularly assigned army officer",
-      "definition": "The officer whose appointed place of duty is the company, battalion, or brigade to which assigned. If the company commander is absent, the executive officer, if they are the senior officer who performs duty in the company, will",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "assume command",
-      "term_normalized": "assume command",
-      "definition": "Likewise, if the battalion commander is absent, the senior officer assigned to the battalion (nor-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "mally the executive officer) will assume command",
-      "term_normalized": "mally the executive officer) will assume command",
-      "definition": "If an officer is senior to the executive officer and is assigned to the company or battalion, but who works in the division headquarters or a maintenance unit, the executive officer",
+      "definition": "The officer whose appointed place of duty is the company, battalion, or brigade to which assigned. If the company commander is absent, the executive officer, if they are the senior officer who performs duty in the company, will assume command. Likewise, if the battalion commander is absent, the senior officer assigned to the battalion (nor- mally the executive officer) will assume command. If an officer is senior to the executive officer and is assigned to the company or battalion, but who works in the division headquarters or a maintenance unit, the executive officer would still assume command.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -970,7 +750,7 @@
     {
       "term": "Senior responsible officials",
       "term_normalized": "senior responsible officials",
-      "definition": "Leaders of non-command type organizations that supervise military and/or DA Civilian personnel (for example, the",
+      "definition": "Leaders of non-command type organizations that supervise military and/or DA Civilian personnel (for example, the DCS, G \u2013 1, or a director under the U.S. Army Materiel Command).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -992,18 +772,7 @@
     {
       "term": "Sexual assault",
       "term_normalized": "sexual assault",
-      "definition": "Intentional sexual contact, characterized by use of force, threats, intimidation, or abuse of authority or when the victim",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "does not or cannot consent",
-      "term_normalized": "does not or cannot consent",
-      "definition": "The term includes a broad range of sexual offenses including the following specific UCMJ offenses: rape, sexual assault, aggravated sexual contact, abusive sexual contact, forcible sodomy (forced oral or anal",
+      "definition": "Intentional sexual contact, characterized by use of force, threats, intimidation, or abuse of authority or when the victim does not or cannot consent. The term includes a broad range of sexual offenses including the following specific UCMJ offenses: rape, sexual assault, aggravated sexual contact, abusive sexual contact, forcible sodomy (forced oral or anal sex), and attempts to commit these acts.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -1014,32 +783,10 @@
     {
       "term": "Sexual harassment",
       "term_normalized": "sexual harassment",
-      "definition": "Conduct that involves unwelcome sexual advances, requests for sexual favors, and deliberate or repeated offensive comments of a general nature when: Submission to such conduct is either explicitly or implicitly a term or condition of a person’s job, pay or career; or submission to or rejection of such conduct by a person is used as a basis for career or employment decisions affecting that person; or such conduct has the purpose or effect of unreasonably interfering with an individual’s work performance or creates an intimidating, hostile, or offensive working environment and is so AR 600–20 • 6 February 2025",
+      "definition": "Conduct that involves unwelcome sexual advances, requests for sexual favors, and deliberate or repeated offensive comments of a general nature when: Submission to such conduct is either explicitly or implicitly a term or condition of a person\u2019s job, pay or career; or submission to or rejection of such conduct by a person is used as a basis for career or employment decisions affecting that person; or such conduct has the purpose or effect of unreasonably interfering with an individual\u2019s work performance or creates an intimidating, hostile, or offensive working environment and is so",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "of offensive",
-      "term_normalized": "of offensive",
-      "definition": "Any use or condonation, by any person in a supervisory or command position, of any form of sexual behavior to control, influence or affect the career, pay, or job of a member of the armed forces or a DA Civilian",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 129,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "employee",
-      "term_normalized": "employee",
-      "definition": "Any deliberate or repeated unwelcome verbal comment or gesture of a sexual nature related to the work",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 129,
       "printed_page_label": null,
       "confidence": 0.95,
       "flags": []
@@ -1058,7 +805,7 @@
     {
       "term": "Single parent",
       "term_normalized": "single parent",
-      "definition": "A Soldier who is the responsible adult who by reason of birth or legal decree, has physical custody of and the legal and moral responsibility to provide for the care and well-being of a child under the age of 18 years or for a person beyond 19 years of age who is mentally or physically incapable of self-care. Persons who fit this category are generally regarded as parents with full or joint custody of children, and who are unmarried, divorced, widowed, or residing apart",
+      "definition": "A Soldier who is the responsible adult who by reason of birth or legal decree, has physical custody of and the legal and moral responsibility to provide for the care and well-being of a child under the age of 18 years or for a person beyond 19 years of age who is mentally or physically incapable of self-care. Persons who fit this category are generally regarded as parents with full or joint custody of children, and who are unmarried, divorced, widowed, or residing apart from their spouse.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1069,7 +816,7 @@
     {
       "term": "Site",
       "term_normalized": "site",
-      "definition": "A physically defined location which can be supported by a legal boundary survey which closes a polygon. It can be owned, leased, or otherwise possessed or used. A site may exist in one of three forms: land only; facility or facilities",
+      "definition": "A physically defined location which can be supported by a legal boundary survey which closes a polygon. It can be owned, leased, or otherwise possessed or used. A site may exist in one of three forms: land only; facility or facilities only; or land and all facilities on it. A site is a sum of all real property at a specific location.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1080,7 +827,7 @@
     {
       "term": "Social media",
       "term_normalized": "social media",
-      "definition": "Web-based tools, websites, applications, and media that connect users and allow them to engage in dialogue, share",
+      "definition": "Web-based tools, websites, applications, and media that connect users and allow them to engage in dialogue, share information, collaborate, and interact.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1089,9 +836,9 @@
       "flags": []
     },
     {
-      "term": "The husband or wife of a Soldier",
-      "term_normalized": "the husband or wife of a soldier",
-      "definition": "If such person is also in the military, see the term “dual-military couple.”",
+      "term": "Spouse",
+      "term_normalized": "spouse",
+      "definition": "The husband or wife of a Soldier. If such person is also in the military, see the term \u201cdual-military couple.\u201d",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1102,18 +849,7 @@
     {
       "term": "Strategic Support Area",
       "term_normalized": "strategic support area",
-      "definition": "The area of cross-combatant command coordination to include the strategic sea and air lines of communications and",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 129,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "the homeland",
-      "term_normalized": "the homeland",
-      "definition": "Joint sustainment functions required to support Multi-Domain Operations campaigning throughout the",
+      "definition": "The area of cross-combatant command coordination to include the strategic sea and air lines of communications and the homeland. Joint sustainment functions required to support Multi-Domain Operations campaigning throughout the competition continuum emanate from the Strategic Support Area.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1124,7 +860,7 @@
     {
       "term": "Subject",
       "term_normalized": "subject",
-      "definition": "A person or a group of people who are alleged to have committed the action or offense that is the basis for a formal",
+      "definition": "A person or a group of people who are alleged to have committed the action or offense that is the basis for a formal or informal complaint or investigation.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1135,7 +871,7 @@
     {
       "term": "Substantiated equal opportunity complaint",
       "term_normalized": "substantiated equal opportunity complaint",
-      "definition": "A substantiated finding occurs when a preponderance of the evidence supports (more likely to have occurred than not occurred) the complainant’s allegation of a violation of law, regulation or Army policy or standards. The documented",
+      "definition": "A substantiated finding occurs when a preponderance of the evidence supports (more likely to have occurred than not occurred) the complainant\u2019s allegation of a violation of law, regulation or Army policy or standards. The documented facts indicate that a violation occurred.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1146,7 +882,18 @@
     {
       "term": "Substantiated violation",
       "term_normalized": "substantiated violation",
-      "definition": "A violation will be treated as substantiated if a violation of the policy results in a court-martial conviction, but the adjudged sentence does not include discharge or dismissal; or if a nonjudicial punishment authority under 10 USC 815 (reference a) has determined that a Soldier has committed an offense in violation of the policy and imposed",
+      "definition": "A violation will be treated as substantiated if a violation of the policy results in a court-martial conviction, but the adjudged sentence does not include discharge or dismissal; or if a nonjudicial punishment authority under 10 USC 815 (reference a) has determined that a Soldier has committed an offense in violation of the policy and imposed nonjudicial punishment upon that Soldier. For contractor recruiters and trainers providing entry-level training, a vio- lation will be treated as substantiated if the charge is supported by a preponderance of the evidence.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 129,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Supervisor",
+      "term_normalized": "supervisor",
+      "definition": "A commissioned officer, noncommissioned officer or DoD Civilian employee in a supervisory position.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1157,7 +904,7 @@
     {
       "term": "Supported commander",
       "term_normalized": "supported commander",
-      "definition": "In the context of the support command relationship, the commander who receives assistance from another com- mander’s force or capabilities, and who is responsible for ensuring that the supporting commander understands the",
+      "definition": "In the context of the support command relationship, the commander who receives assistance from another com- mander\u2019s force or capabilities, and who is responsible for ensuring that the supporting commander understands the assistance required.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1168,7 +915,7 @@
     {
       "term": "Supporting commander",
       "term_normalized": "supporting commander",
-      "definition": "In the context of a support command relationship, the commander who aids, protects, complements, or sustains another commander’s force, and who is responsible for providing the assistance required by the supported commander. AR 600–20 • 6 February 2025",
+      "definition": "In the context of a support command relationship, the commander who aids, protects, complements, or sustains another commander\u2019s force, and who is responsible for providing the assistance required by the supported commander.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -1179,7 +926,7 @@
     {
       "term": "Uniformed Service",
       "term_normalized": "uniformed service",
-      "definition": "The Army, Navy, Air Force, Marine Corps, Coast Guard, the Commissioned Corps of the Public Health Service, and",
+      "definition": "The Army, Navy, Air Force, Marine Corps, Coast Guard, the Commissioned Corps of the Public Health Service, and the Commissioned Corps of the National Oceanic and Atmospheric Administration.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 130,
@@ -1190,7 +937,18 @@
     {
       "term": "Unwelcome",
       "term_normalized": "unwelcome",
-      "definition": "Conduct that is not solicited and which is considered objectionable by the person to whom it is directed and which is",
+      "definition": "Conduct that is not solicited and which is considered objectionable by the person to whom it is directed and which is found to be undesirable or offensive using a reasonable person standard.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 130,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Values",
+      "term_normalized": "values",
+      "definition": "Those things, people, and ideas that are important to an individual.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 130,
@@ -1201,18 +959,7 @@
     {
       "term": "Verbatim comments",
       "term_normalized": "verbatim comments",
-      "definition": "Comments made by a survey respondent that are recorded exactly as they appear in the survey and are transferred to",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 130,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "the analysis report",
-      "term_normalized": "the analysis report",
-      "definition": "Verbatim comments retain all the spelling and grammatical content of the original along with as",
+      "definition": "Comments made by a survey respondent that are recorded exactly as they appear in the survey and are transferred to the analysis report. Verbatim comments retain all the spelling and grammatical content of the original along with as much stylistic or emphatic markings as is possible.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 130,
@@ -1223,32 +970,10 @@
     {
       "term": "Victim",
       "term_normalized": "victim",
-      "definition": "In the SHARP context, a person who asserts direct physical, emotional, or pecuniary harm as a result of the commis- sion of a sexual assault or an act of sexual harassment. The term encompasses all persons 18 and over eligible to",
+      "definition": "In the SHARP context, a person who asserts direct physical, emotional, or pecuniary harm as a result of the commis- sion of a sexual assault or an act of sexual harassment. The term encompasses all persons 18 and over eligible to receive treatment in military medical treatment facilities.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 130,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "receive treatment in military medical treatment facilities.",
-      "term_normalized": "receive treatment in military medical treatment facilities.",
-      "definition": "AR 600–20 • 6 February 2025",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 130,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "UNCLASSIFIED",
-      "term_normalized": "unclassified",
-      "definition": "PIN 003351–000",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 131,
       "printed_page_label": null,
       "confidence": 0.95,
       "flags": []
@@ -1264,12 +989,12 @@
       127,
       128,
       129,
-      130,
-      131
+      130
     ],
     "text_layer_present": true,
-    "entries_glossary": 114,
+    "entries_glossary": 88,
     "entries_inline": 0,
-    "entries_after_dedup": 113
+    "entries_after_dedup": 88,
+    "glossary_used_legacy_fallback": false
   }
 }

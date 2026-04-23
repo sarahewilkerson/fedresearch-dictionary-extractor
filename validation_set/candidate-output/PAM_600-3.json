@@ -6,7 +6,7 @@
   "source_pub_number": "DA PAM 600-3",
   "source_doc_type": "DA",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:45Z",
+  "extraction_timestamp": "2026-04-23T10:45:53Z",
   "profile": "army",
   "text_sha256": "1aeaa68f89124f5cec66dbc10bf0a9d624a6075ccce536a75f81de904f68df69",
   "entries": [],
@@ -16,6 +16,7 @@
     "text_layer_present": true,
     "entries_glossary": 0,
     "entries_inline": 0,
-    "entries_after_dedup": 0
+    "entries_after_dedup": 0,
+    "glossary_used_legacy_fallback": false
   }
 }

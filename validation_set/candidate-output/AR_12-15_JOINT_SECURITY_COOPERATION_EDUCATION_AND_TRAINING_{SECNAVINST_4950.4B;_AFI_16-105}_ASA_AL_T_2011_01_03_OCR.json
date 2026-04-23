@@ -6,33 +6,86 @@
   "source_pub_number": "AR 12-15",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:46Z",
+  "extraction_timestamp": "2026-04-23T10:45:41Z",
   "profile": "army",
   "text_sha256": "7cb33ab8ffe70b24d9b5b050c8f549e01278b34842d577eae83020faaf54c5eb",
   "entries": [
     {
-      "term": "UNCLASSIFIED",
-      "term_normalized": "unclassified",
-      "definition": "PIN 123456–000",
+      "term": "USG",
+      "term_normalized": "usg",
+      "definition": "United States Government",
       "source_type": "glossary",
       "section": "Glossary",
-      "pdf_page_index": 345,
+      "pdf_page_index": 344,
       "printed_page_label": null,
       "confidence": 0.95,
       "flags": []
     },
     {
-      "term": "the term healthcare",
-      "term_normalized": "the term healthcare",
-      "definition": "both medical and dental care.",
-      "source_type": "inline",
-      "section": "Chapter 6",
-      "pdf_page_index": 151,
+      "term": "USMC",
+      "term_normalized": "usmc",
+      "definition": "United States Marine Corps",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.65,
-      "flags": [
-        "inline_inferred"
-      ]
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "USN",
+      "term_normalized": "usn",
+      "definition": "United States Navy",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 344,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "VEQ",
+      "term_normalized": "veq",
+      "definition": "visiting enlisted quarters",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 344,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "VOQ",
+      "term_normalized": "voq",
+      "definition": "visiting officer's quarters",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 344,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "WCN",
+      "term_normalized": "wcn",
+      "definition": "worksheet control number",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 344,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "WHINSEC",
+      "term_normalized": "whinsec",
+      "definition": "Western Hemisphere Institute for Security Cooperation This section contains entries.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 344,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
     },
     {
       "term": "healthcare",
@@ -51,12 +104,12 @@
   "metadata": {
     "total_pages": 345,
     "glossary_pages": [
-      344,
-      345
+      344
     ],
     "text_layer_present": true,
-    "entries_glossary": 1,
+    "entries_glossary": 7,
     "entries_inline": 2,
-    "entries_after_dedup": 3
+    "entries_after_dedup": 8,
+    "glossary_used_legacy_fallback": false
   }
 }

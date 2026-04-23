@@ -6,7 +6,7 @@
   "source_pub_number": "FM 6-02",
   "source_doc_type": "FM",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:45Z",
+  "extraction_timestamp": "2026-04-23T10:45:51Z",
   "profile": "army",
   "text_sha256": "6ec9ed4622a3d65f51ff1e253b8d99d01ed84543c947bfd4146d65e8993b6ca4",
   "entries": [
@@ -57,7 +57,7 @@
     {
       "term": "running estimate",
       "term_normalized": "running estimate",
-      "definition": "The continuous assessment of the current situation used to determine if the current operation is proceeding according to the commander’s intent and if planned future operations are supportable.",
+      "definition": "The continuous assessment of the current situation used to determine if the current operation is proceeding according to the commander\u2019s intent and if planned future operations are supportable.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 171,
@@ -154,17 +154,6 @@
       "flags": []
     },
     {
-      "term": "13 September 2019",
-      "term_normalized": "13 september 2019",
-      "definition": "FM 6-02 Glossary-5",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 171,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
       "term": "DODIN operations",
       "term_normalized": "dodin operations",
       "definition": "these activities on any DOD network.",
@@ -185,8 +174,9 @@
       172
     ],
     "text_layer_present": true,
-    "entries_glossary": 14,
+    "entries_glossary": 13,
     "entries_inline": 1,
-    "entries_after_dedup": 15
+    "entries_after_dedup": 14,
+    "glossary_used_legacy_fallback": false
   }
 }

@@ -6,25 +6,14 @@
   "source_pub_number": "TC 1-19.30",
   "source_doc_type": "TC",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:46Z",
+  "extraction_timestamp": "2026-04-23T10:45:55Z",
   "profile": "army",
   "text_sha256": "1befdca4b5c3a1c187ac347f56684e12a5e125a7b94aa4b96984ff1e56df3193",
   "entries": [
     {
-      "term": "SECTION I",
-      "term_normalized": "section i",
-      "definition": "ACRONYMS AND ABBREVIATIONS AIT Advanced Individual Training AR Army regulation ASI additional skill identifier ATP Army techniques publication DA Department of the Army FM field manual MOS military occupational specialty MPT music performance team TC training circular U.S. United States",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 149,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "SECTION II",
-      "term_normalized": "section ii",
-      "definition": "TERMS",
+      "term": "listed in parenthesis after the definition.",
+      "term_normalized": "listed in parenthesis after the definition.",
+      "definition": "AIT Advanced Individual Training AR Army regulation ASI additional skill identifier ATP Army techniques publication DA Department of the Army FM field manual MOS military occupational specialty MPT music performance team TC training circular U.S. United States",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 149,
@@ -36,17 +25,6 @@
       "term": "music performance team",
       "term_normalized": "music performance team",
       "definition": "A team that offers the flexibility to support concurrent musical missions in multiple geographical areas.",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 149,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "08 September 2025",
-      "term_normalized": "08 september 2025",
-      "definition": "TC 1-19.30 137",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 149,
@@ -75,8 +53,9 @@
       150
     ],
     "text_layer_present": true,
-    "entries_glossary": 4,
+    "entries_glossary": 2,
     "entries_inline": 1,
-    "entries_after_dedup": 5
+    "entries_after_dedup": 3,
+    "glossary_used_legacy_fallback": true
   }
 }

@@ -6,7 +6,7 @@
   "source_pub_number": "DA PAM 385-64",
   "source_doc_type": "DA",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:46Z",
+  "extraction_timestamp": "2026-04-23T10:45:53Z",
   "profile": "army",
   "text_sha256": "b920a342c857f28efa12def93bf5bad953879d3c658a5c0461898d71743a0e8e",
   "entries": [],
@@ -16,6 +16,7 @@
     "text_layer_present": true,
     "entries_glossary": 0,
     "entries_inline": 0,
-    "entries_after_dedup": 0
+    "entries_after_dedup": 0,
+    "glossary_used_legacy_fallback": false
   }
 }

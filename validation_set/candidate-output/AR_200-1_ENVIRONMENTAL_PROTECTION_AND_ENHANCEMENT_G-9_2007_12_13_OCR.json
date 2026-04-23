@@ -6,7 +6,7 @@
   "source_pub_number": "AR 200-1",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:43Z",
+  "extraction_timestamp": "2026-04-23T10:45:43Z",
   "profile": "army",
   "text_sha256": "18a3ed2b6749d75a302ba0859aafd32fa0400251a0023046e3af091a01239398",
   "entries": [],
@@ -16,6 +16,7 @@
     "text_layer_present": true,
     "entries_glossary": 0,
     "entries_inline": 0,
-    "entries_after_dedup": 0
+    "entries_after_dedup": 0,
+    "glossary_used_legacy_fallback": false
   }
 }

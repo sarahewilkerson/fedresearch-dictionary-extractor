@@ -6,14 +6,58 @@
   "source_pub_number": "DA PAM 71-32",
   "source_doc_type": "DA",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T01:02:46Z",
+  "extraction_timestamp": "2026-04-23T10:45:54Z",
   "profile": "army",
   "text_sha256": "d3cf51e5d905dac172bc78afde77c7411fdfb40f1a828a19eb8a3eab565b5abf",
   "entries": [
     {
-      "term": "developmental line item number",
-      "term_normalized": "developmental line item number",
-      "definition": "4610–R",
+      "term": "VCSA",
+      "term_normalized": "vcsa",
+      "definition": "Vice Chief of Staff of the Army",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 140,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "VI",
+      "term_normalized": "vi",
+      "definition": "visual information",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 140,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "WO",
+      "term_normalized": "wo",
+      "definition": "warrant officer",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 140,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "WRSA",
+      "term_normalized": "wrsa",
+      "definition": "War Reserve Stocks for Allies",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 140,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "ZLIN",
+      "term_normalized": "zlin",
+      "definition": "developmental line item number 4610\u2013R Automated TDA Equipment Request Tool",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
@@ -24,62 +68,7 @@
     {
       "term": "Army acquisition objective",
       "term_normalized": "army acquisition objective",
-      "definition": "The AAO is the total Army requirement that represents the unconstrained acquisition quantity required for a major end item of equipment that has, or will have, a LIN that reflects the minimum mission essential wartime requirement (MMEWR) needed to equip and sustain the army's approved Master force and to meet other specified approved",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 140,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "Army procurement objective",
-      "term_normalized": "army procurement objective",
-      "definition": "The APO is a determined portion of the AAO that is affordable at an acceptable level of risk to Army missions and",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 140,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "modernization objectives",
-      "term_normalized": "modernization objectives",
-      "definition": "The APO represents the total quantity of fully configured end items the army intends to",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 140,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "procure during the life cycle of the program",
-      "term_normalized": "procure during the life cycle of the program",
-      "definition": "An APO is established when army priorities change or program costs",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 140,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "make procurement of the full AAO unaffordable",
-      "term_normalized": "make procurement of the full aao unaffordable",
-      "definition": "The APO quantity must produce operationally relevant capacity",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 140,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "within units across the force",
-      "term_normalized": "within units across the force",
-      "definition": "The approved APO, adjusted distribution plan, and the associated risk mitigation plan will be documented in the reigning joint capabilities integration and development system (JCIDS) AAO and BOIG as an enclosure to the supporting document of the capability development document (CDD)/capability production",
+      "definition": "The AAO is the total Army requirement that represents the unconstrained acquisition quantity required for a major end item of equipment that has, or will have, a LIN that reflects the minimum mission essential wartime requirement (MMEWR) needed to equip and sustain the army's approved Master force and to meet other specified approved equipment Requirements.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
@@ -101,7 +90,7 @@
     {
       "term": "Authorized substitutes",
       "term_normalized": "authorized substitutes",
-      "definition": "Equipment items prescribed by HQDA in accordance with the provisions explained in DA Pam 708–3, that, if cur- rently on-hand (available) in the unit, will be reported as on-hand (available) in the USR in place of the equipment items required in accordance with the unit’s formal requirements and authorizations document (MTOE and",
+      "definition": "Equipment items prescribed by HQDA in accordance with the provisions explained in DA Pam 708\u20133, that, if cur- rently on-hand (available) in the unit, will be reported as on-hand (available) in the USR in place of the equipment items required in accordance with the unit\u2019s formal requirements and authorizations document (MTOE and TDA).Authorized substitutes are listed in DA Pam 708\u20133 (see SB 700\u201320).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
@@ -112,7 +101,7 @@
     {
       "term": "Base table of organization and equipment",
       "term_normalized": "base table of organization and equipment",
-      "definition": "The BTOE is an organizational model design based on doctrine and equipment currently available. It is the least modernized version of a type of organization and identifies mission-essential wartime requirements for personnel",
+      "definition": "The BTOE is an organizational model design based on doctrine and equipment currently available. It is the least modernized version of a type of organization and identifies mission-essential wartime requirements for personnel and equipment.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
@@ -123,7 +112,7 @@
     {
       "term": "Capability developer",
       "term_normalized": "capability developer",
-      "definition": "The CAPDEV is the command or agency that formulates warfighting requirements for doctrine, organization, train- ing, materiel, leadership, and education, personnel, facilities and any policy within the context of the force develop-",
+      "definition": "The CAPDEV is the command or agency that formulates warfighting requirements for doctrine, organization, train- ing, materiel, leadership, and education, personnel, facilities and any policy within the context of the force develop- ment process. A CAPDEV is also responsible for representing the end user during the full development and lifecycle process and ensures all enabling capabilities are known, affordable, budgeted, and aligned for synchronous fielding and support.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
@@ -134,32 +123,10 @@
     {
       "term": "Component major item",
       "term_normalized": "component major item",
-      "definition": "An item that has been modified for the major end item; it is a part of the BOIP item configuration. End items used as a component will not be listed separately in authorization documents; they take on the identity of the BOIP item and",
+      "definition": "An item that has been modified for the major end item; it is a part of the BOIP item configuration. End items used as a component will not be listed separately in authorization documents; they take on the identity of the BOIP item and are included in the total end item cost. Component major items normally will be installed or removed at higher than",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "are included in the total end item cost",
-      "term_normalized": "are included in the total end item cost",
-      "definition": "Component major items normally will be installed or removed at higher than DA PAM 71–32 • 21 March 2019",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 140,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "set",
-      "term_normalized": "set",
-      "definition": "An example is a trailer/shelter that is modified and then embedded in the major end item.",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 141,
       "printed_page_label": null,
       "confidence": 0.95,
       "flags": []
@@ -178,7 +145,7 @@
     {
       "term": "Components of end items",
       "term_normalized": "components of end items",
-      "definition": "A component is defined as an assembly or combination of parts, subassemblies, and assemblies mounted together in",
+      "definition": "A component is defined as an assembly or combination of parts, subassemblies, and assemblies mounted together in manufacture, assembly, maintenance, or rebuild.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -189,7 +156,7 @@
     {
       "term": "Critical mission support items",
       "term_normalized": "critical mission support items",
-      "definition": "Critical mission support items are selected items of equipment required to refuel, rearm, power, move, recover, pro-",
+      "definition": "Critical mission support items are selected items of equipment required to refuel, rearm, power, move, recover, pro- vide medical support, or provide direct command and control.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -200,18 +167,7 @@
     {
       "term": "Current force",
       "term_normalized": "current force",
-      "definition": "The force that is approved in the annual Command Plan process and codified in the Army Master Force published in",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 141,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "the early summer",
-      "term_normalized": "the early summer",
-      "definition": "The Master Force reflects the execution year force structure for the OF and GF, all Army compo- nents, and DA Civilians. The current force is reflected in MTOEs and TDAs produced during the Command Plan.",
+      "definition": "The force that is approved in the annual Command Plan process and codified in the Army Master Force published in the early summer. The Master Force reflects the execution year force structure for the OF and GF, all Army compo- nents, and DA Civilians. The current force is reflected in MTOEs and TDAs produced during the Command Plan.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -222,7 +178,7 @@
     {
       "term": "Developmental line item numbers",
       "term_normalized": "developmental line item numbers",
-      "definition": "Alphanumeric LINs consisting of the letter Z and five numerals ranging from Z00001 through Z99999. They are assigned to items being developed under HQDA-approved materiel development projects, prior to the type-",
+      "definition": "Alphanumeric LINs consisting of the letter Z and five numerals ranging from Z00001 through Z99999. They are assigned to items being developed under HQDA-approved materiel development projects, prior to the type- classified standard.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -233,7 +189,7 @@
     {
       "term": "Effective date",
       "term_normalized": "effective date",
-      "definition": "The EDATE is used to identify the date of ANY change in a unit’s status (that is, activation, inactivation, con-",
+      "definition": "The EDATE is used to identify the date of ANY change in a unit\u2019s status (that is, activation, inactivation, con- version) and is published annually with the release of updated MTOEs via the Command Plan process.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -244,18 +200,7 @@
     {
       "term": "Element Sequence",
       "term_normalized": "element sequence",
-      "definition": "A two-digit alphanumeric code that identifies the relationship of units within an organization as either organic or",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 141,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "assigned",
-      "term_normalized": "assigned",
-      "definition": "It is to designate attached and assigned UICs to TPSN organizations.",
+      "definition": "A two-digit alphanumeric code that identifies the relationship of units within an organization as either organic or assigned. It is to designate attached and assigned UICs to TPSN organizations.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -266,18 +211,7 @@
     {
       "term": "End item",
       "term_normalized": "end item",
-      "definition": "An end item is a final combination of end products, components, and materiels that is ready for its intended use. Examples are rifle, ship, tank, mobile machine shop, aircraft, common tools, TMDE, and special test or other sup- port equipment designed and developed to perform a specific maintenance operation on specific assemblies or sub-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 141,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "assemblies of an end item",
-      "term_normalized": "assemblies of an end item",
-      "definition": "The exception to the general rule is an end item that is used as a component of a larger",
+      "definition": "An end item is a final combination of end products, components, and materiels that is ready for its intended use. Examples are rifle, ship, tank, mobile machine shop, aircraft, common tools, TMDE, and special test or other sup- port equipment designed and developed to perform a specific maintenance operation on specific assemblies or sub- assemblies of an end item. The exception to the general rule is an end item that is used as a component of a larger end item.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -288,7 +222,7 @@
     {
       "term": "Equip for",
       "term_normalized": "equip for",
-      "definition": "An automated tool used to develop equipment distribution plans to support Army initiatives and the POM.EQ4, a component of the Army flow model, uses data from logistics integrated databases to give on-hand quantities to the unit identification code-level of detail and uses the structure and composition system (SACDB), (specifically the",
+      "definition": "An automated tool used to develop equipment distribution plans to support Army initiatives and the POM.EQ4, a component of the Army flow model, uses data from logistics integrated databases to give on-hand quantities to the unit identification code-level of detail and uses the structure and composition system (SACDB), (specifically the LOGSACDB) to identify the equipment requirements over time for the Army.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -299,7 +233,7 @@
     {
       "term": "Equipment defense articles",
       "term_normalized": "equipment defense articles",
-      "definition": "Defense articles owned by the Government that are neither procured in anticipation of military assistance or sales requirements, nor procured pursuant to a military assistance or sales order. Excess defense articles are items (except construction equipment) which are in excess of the approved force acquisition objective and approved force reten- tion stock of all DoD components at the time such articles are dropped from inventory by the supplying agency for",
+      "definition": "Defense articles owned by the Government that are neither procured in anticipation of military assistance or sales requirements, nor procured pursuant to a military assistance or sales order. Excess defense articles are items (except construction equipment) which are in excess of the approved force acquisition objective and approved force reten- tion stock of all DoD components at the time such articles are dropped from inventory by the supplying agency for delivery to countries or international organizations.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -310,7 +244,7 @@
     {
       "term": "Equipment readiness code P items",
       "term_normalized": "equipment readiness code p items",
-      "definition": "ERC P items are those items of equipment such as major weapon systems, aircraft, and other items of equipment central to an organization's ability to perform its designated mission. These items are subject to continuous monitor- DA PAM 71–32 • 21 March 2019",
+      "definition": "ERC P items are those items of equipment such as major weapon systems, aircraft, and other items of equipment central to an organization's ability to perform its designated mission. These items are subject to continuous monitor-",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -319,20 +253,9 @@
       "flags": []
     },
     {
-      "term": "ing and management at all levels of command",
-      "term_normalized": "ing and management at all levels of command",
-      "definition": "DCS, G–3/7 (DAMO–FM), in coordination with TRADOC, estab- lishes and maintains the authoritative listing of pacing items for MTOE units at FMSWeb in accordance with the",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 142,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
       "term": "Equipment readiness codes A and P items",
       "term_normalized": "equipment readiness codes a and p items",
-      "definition": "ERC P and ERC A items of equipment are principal weapon and/or mission systems and equipment (to include technology automation equipment), which are essential to the accomplishment of primary doctrinal mission tasks",
+      "definition": "ERC P and ERC A items of equipment are principal weapon and/or mission systems and equipment (to include technology automation equipment), which are essential to the accomplishment of primary doctrinal mission tasks and force protection, and critical mission support items.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -343,7 +266,7 @@
     {
       "term": "Equipment Review and Validation Board",
       "term_normalized": "equipment review and validation board",
-      "definition": "ERVB is a process through which TDA and/or AUGTDA organizations submit requests (automated 4610–R tool) for HQDA-controlled equipment authorizations or modernization upgrades. HQDA-controlled equipment refers to",
+      "definition": "ERVB is a process through which TDA and/or AUGTDA organizations submit requests (automated 4610\u2013R tool) for HQDA-controlled equipment authorizations or modernization upgrades. HQDA-controlled equipment refers to the HQDA-managed LIN list, as determined by DCS, G\u20138.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -354,18 +277,7 @@
     {
       "term": "Equipment-in-place",
       "term_normalized": "equipment-in-place",
-      "definition": "For the purpose of this regulation, equipment-in-place is movable TDA, JTA, and CTA nonexpendable equipment that has been affixed to real property, but that may be removed without destroying or reducing the use-fulness of the",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 142,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "facility",
-      "term_normalized": "facility",
-      "definition": "It does not include installed building equipment.",
+      "definition": "For the purpose of this regulation, equipment-in-place is movable TDA, JTA, and CTA nonexpendable equipment that has been affixed to real property, but that may be removed without destroying or reducing the use-fulness of the facility. It does not include installed building equipment.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -376,7 +288,7 @@
     {
       "term": "Exception modified table of organization and equipment",
       "term_normalized": "exception modified table of organization and equipment",
-      "definition": "An exception MTOE is an MTOE whose requirements differ from the TOE model, that is, have been increased, de-",
+      "definition": "An exception MTOE is an MTOE whose requirements differ from the TOE model, that is, have been increased, de- creased, added, or subtracted from the TOE. May be equipment and personnel",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -387,7 +299,7 @@
     {
       "term": "Excess defense articles",
       "term_normalized": "excess defense articles",
-      "definition": "Defense articles owned by the Government that are neither procured in anticipation of military assistance or sales requirements, nor procured pursuant to a military assistance or sales order. Excess defense articles are items (except construction equipment) which are in excess of the approved force acquisition objective and approved force reten- tion stock of all DoD components at the time such articles are dropped from inventory by the supplying agency for",
+      "definition": "Defense articles owned by the Government that are neither procured in anticipation of military assistance or sales requirements, nor procured pursuant to a military assistance or sales order. Excess defense articles are items (except construction equipment) which are in excess of the approved force acquisition objective and approved force reten- tion stock of all DoD components at the time such articles are dropped from inventory by the supplying agency for delivery to countries or international organizations.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -398,18 +310,7 @@
     {
       "term": "Force Design Update",
       "term_normalized": "force design update",
-      "definition": "FDU is used to develop consensus within the Army on new organizations and changes to existing organizations and",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 142,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "to obtain approval and implementation decisions",
-      "term_normalized": "to obtain approval and implementation decisions",
-      "definition": "The FDU process addresses organizational solutions to desired capabilities and improvements to existing designs in which other doctrine, training, materiel, leader development, personnel or facilities solutions were insufficient. The FDU serves as the link between the development of the URS",
+      "definition": "FDU is used to develop consensus within the Army on new organizations and changes to existing organizations and to obtain approval and implementation decisions. The FDU process addresses organizational solutions to desired capabilities and improvements to existing designs in which other doctrine, training, materiel, leader development, personnel or facilities solutions were insufficient. The FDU serves as the link between the development of the URS and the development of the TOE.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -420,7 +321,7 @@
     {
       "term": "Force development",
       "term_normalized": "force development",
-      "definition": "The process of determining Army doctrinal, leader development, training, organizational, Soldier development, and materiel requirements and translating them into programs and structure, within allocated resources, to accomplish",
+      "definition": "The process of determining Army doctrinal, leader development, training, organizational, Soldier development, and materiel requirements and translating them into programs and structure, within allocated resources, to accomplish Army missions and functions.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -431,7 +332,7 @@
     {
       "term": "Force file",
       "term_normalized": "force file",
-      "definition": "The force portrayed in SAMAS is the force file, with a working view, not yet approved, and a locked position, ap-",
+      "definition": "The force portrayed in SAMAS is the force file, with a working view, not yet approved, and a locked position, ap- proved. When the locked file is published, it is either the Master Force, following the CPLAN, or an interim force review point.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -440,31 +341,9 @@
       "flags": []
     },
     {
-      "term": "proved",
-      "term_normalized": "proved",
-      "definition": "When the locked file is published, it is either the Master Force, following the CPLAN, or an interim force",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 142,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "management of change, includes the following",
-      "term_normalized": "management of change, includes the following",
-      "definition": "a. The introduction, incorporation, and sustainment of doctrine, organizations, and equipment in the Army; b. Coordination and integration of operational and managerial systems collectively designed to improve the effec-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 142,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "tiveness and capability of the Army; and",
-      "term_normalized": "tiveness and capability of the army; and",
-      "definition": "c. Knowledge and consideration of the potential implications of decisions and actions taken within the execution",
+      "term": "Force integration",
+      "term_normalized": "force integration",
+      "definition": "The synchronized, resource-constrained execution of an approved force development program to achieve systematic management of change, includes the following: a. The introduction, incorporation, and sustainment of doctrine, organizations, and equipment in the Army; b. Coordination and integration of operational and managerial systems collectively designed to improve the effec- tiveness and capability of the Army; and c. Knowledge and consideration of the potential implications of decisions and actions taken within the execution process",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -475,29 +354,7 @@
     {
       "term": "Force integration functional area analysis",
       "term_normalized": "force integration functional area analysis",
-      "definition": "The FIFA analysis reviews force structure issues and the impacts of force structure decisions on the total Army. The FIFA determines the ability for the force to be structured, manned, equipped, trained, sustained, funded, and sta-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 142,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "tioned",
-      "term_normalized": "tioned",
-      "definition": "The FIFA analysis process analyzes the force to assess affordability, supportability, and sustainability. The FIFA may provide alternatives based on prior initiatives, unalterable decisions from the Army leadership, or pro-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 142,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "gram budget decisions",
-      "term_normalized": "gram budget decisions",
-      "definition": "FIFA can result in one of three recommendations: DA PAM 71–32 • 21 March 2019",
+      "definition": "The FIFA analysis reviews force structure issues and the impacts of force structure decisions on the total Army. The FIFA determines the ability for the force to be structured, manned, equipped, trained, sustained, funded, and sta- tioned. The FIFA analysis process analyzes the force to assess affordability, supportability, and sustainability. The FIFA may provide alternatives based on prior initiatives, unalterable decisions from the Army leadership, or pro- gram budget decisions. FIFA can result in one of three recommendations:",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -508,7 +365,18 @@
     {
       "term": "Force management",
       "term_normalized": "force management",
-      "definition": "The capstone process to establish and field mission-ready Army organizations. The process involves organization, integration, decision-making, and execution of the spectrum of activities encompassing requirements definition, force development, force integration, force structuring, combat developments, materiel developments, training de-",
+      "definition": "The capstone process to establish and field mission-ready Army organizations. The process involves organization, integration, decision-making, and execution of the spectrum of activities encompassing requirements definition, force development, force integration, force structuring, combat developments, materiel developments, training de- velopments, resourcing, and all elements of the AOLCM.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 143,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Force review point",
+      "term_normalized": "force review point",
+      "definition": "A locked force file released outside the CPLAN window.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -519,18 +387,7 @@
     {
       "term": "Generating force",
       "term_normalized": "generating force",
-      "definition": "The part of the Total Army (AC and RC Military, and DA Civilians) whose primary purpose is implementing Army policy, and generating and sustaining Operational Army formations. It performs functions specified in law including designing, organizing, recruiting, training, equipping, modernizing, deploying, and sustaining, to ensure readiness",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "and availability of all Army forces",
-      "term_normalized": "and availability of all army forces",
-      "definition": "The GF also provides operational depth to the OF by providing real-time reach back support and by deploying individuals, teams, or entire units to provide specific capabilities and functions for",
+      "definition": "The part of the Total Army (AC and RC Military, and DA Civilians) whose primary purpose is implementing Army policy, and generating and sustaining Operational Army formations. It performs functions specified in law including designing, organizing, recruiting, training, equipping, modernizing, deploying, and sustaining, to ensure readiness and availability of all Army forces. The GF also provides operational depth to the OF by providing real-time reach back support and by deploying individuals, teams, or entire units to provide specific capabilities and functions for employment by or in direct support of Joint Force CDRs and the OFs",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -541,7 +398,7 @@
     {
       "term": "In-lieu-of equipment items",
       "term_normalized": "in-lieu-of equipment items",
-      "definition": "The in-lieu-of items are those on hand (available) equipment items, to include nontype classified items and non- standard items, that do not have a valid substitute relationship reflected in SB 700–20, but the CDR wish-es to report as on hand (available) in place of an equipment item required in accordance with the unit's formal requirements and",
+      "definition": "The in-lieu-of items are those on hand (available) equipment items, to include nontype classified items and non- standard items, that do not have a valid substitute relationship reflected in SB 700\u201320, but the CDR wish-es to report as on hand (available) in place of an equipment item required in accordance with the unit's formal requirements and authorization document.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -552,7 +409,7 @@
     {
       "term": "Installed equipment",
       "term_normalized": "installed equipment",
-      "definition": "Installed equipment is an item of equipment that is affixed and built into a facility as an integral part of that facility. Equipment that is an integral part of a facility is equipment that is necessary to make the facility complete, and if removed, would destroy or reduce the usefulness of the facility. Use of the equipment determines if it is an integral",
+      "definition": "Installed equipment is an item of equipment that is affixed and built into a facility as an integral part of that facility. Equipment that is an integral part of a facility is equipment that is necessary to make the facility complete, and if removed, would destroy or reduce the usefulness of the facility. Use of the equipment determines if it is an integral part of a facility.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -563,73 +420,7 @@
     {
       "term": "Logistics Control Code",
       "term_normalized": "logistics control code",
-      "definition": "The Logistics Control Code is a one position alphabetic code assigned to Army adopted items and other items of materiel authorized in accordance with AR 700–142, Table 3–1 and Table 3–2. These code is used to pro-vide a basis for logistics support and documentation decisions. LCC–A, is designated as standard and classify as mission",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "essential",
-      "term_normalized": "essential",
-      "definition": "LCC–B is designated as standard and classify as no longer procurable, not the preferred materiel but ac-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "ceptable for mission",
-      "term_normalized": "ceptable for mission",
-      "definition": "LCC–F, is designated as standard and classify as used for Contingency /Training/Homeland",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "Defense",
-      "term_normalized": "defense",
-      "definition": "LCC–N is designated as exempt and classify as exempt. LCC–O, is designated as obsolete and classify as",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "obsolete",
-      "term_normalized": "obsolete",
-      "definition": "LCC–P, is designated as limited procurement and classify as non-developmental item. LCC–R, does not have a designation and Non-Line Item Number (LIN) related items not appearing in SB 700–20. LCC–S, is desig- nated as obsolete and classify as discontinued item; no longer acceptable as minimum mission warfighter equip-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "ment",
-      "term_normalized": "ment",
-      "definition": "LCC–T is designated as limited procurement and classify as low-rate initial production (LRIP) for operational",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "test and evaluation",
-      "term_normalized": "test and evaluation",
-      "definition": "LCC–U is no longer applicable.",
+      "definition": "The Logistics Control Code is a one position alphabetic code assigned to Army adopted items and other items of materiel authorized in accordance with AR 700\u2013142, Table 3\u20131 and Table 3\u20132. These code is used to pro-vide a basis for logistics support and documentation decisions. LCC\u2013A, is designated as standard and classify as mission essential. LCC\u2013B is designated as standard and classify as no longer procurable, not the preferred materiel but ac- ceptable for mission. LCC\u2013F, is designated as standard and classify as used for Contingency /Training/Homeland Defense. LCC\u2013N is designated as exempt and classify as exempt. LCC\u2013O, is designated as obsolete and classify as obsolete. LCC\u2013P, is designated as limited procurement and classify as non-developmental item. LCC\u2013R, does not have a designation and Non-Line Item Number (LIN) related items not appearing in SB 700\u201320. LCC\u2013S, is desig- nated as obsolete and classify as discontinued item; no longer acceptable as minimum mission warfighter equip- ment. LCC\u2013T is designated as limited procurement and classify as low-rate initial production (LRIP) for operational test and evaluation. LCC\u2013U is no longer applicable.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -640,7 +431,7 @@
     {
       "term": "Manpower requirements criteria",
       "term_normalized": "manpower requirements criteria",
-      "definition": "MARC studies produce standards that express the minimum number of wartime personnel requirements need-ed to perform specific maneuver support or sustainment functions (both maintenance and non-maintenance) in a sustained",
+      "definition": "MARC studies produce standards that express the minimum number of wartime personnel requirements need-ed to perform specific maneuver support or sustainment functions (both maintenance and non-maintenance) in a sustained combat environment.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -651,7 +442,7 @@
     {
       "term": "Master force",
       "term_normalized": "master force",
-      "definition": "The MFORCE is the SAMAS output that is approved during the annual Command Plan. The Master Force reflects the execution year force structure for the operating and GF, all Army components and DA Civilians and is reflected",
+      "definition": "The MFORCE is the SAMAS output that is approved during the annual Command Plan. The Master Force reflects the execution year force structure for the operating and GF, all Army components and DA Civilians and is reflected in MTOEs and TDAs approved and published during the Command Plan.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -662,18 +453,7 @@
     {
       "term": "Materiel developer",
       "term_normalized": "materiel developer",
-      "definition": "A MATDEV is located within the research, development and acquisition (RDA) command, agency, or office as- signed responsibility for the system under development or being acquired. The term may be used generically to refer",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 143,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "to the RDA community in the materiel acquisition process (counterpart to the generic use of CAPDEV).",
-      "term_normalized": "to the rda community in the materiel acquisition process (counterpart to the generic use of capdev).",
-      "definition": "DA PAM 71–32 • 21 March 2019",
+      "definition": "A MATDEV is located within the research, development and acquisition (RDA) command, agency, or office as- signed responsibility for the system under development or being acquired. The term may be used generically to refer to the RDA community in the materiel acquisition process (counterpart to the generic use of CAPDEV).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -684,18 +464,7 @@
     {
       "term": "Minimum mission essential wartime requirements",
       "term_normalized": "minimum mission essential wartime requirements",
-      "definition": "MMEWR are the minimum personnel and equipment necessary for a military unit to accomplish its doctrinal mis- sion and perform its core functions and assigned universal tasks during sustained combat operations. Level 1 of the BTOE is the MMEWR to structure an effective organization for combat, combat support, and sustainment units. The OTOE includes all modernization options (personnel, equipment, structure) beyond MMEWR. A MTOE for a mili- tary unit generally reflects requirements, and associated authorizations, at a level of modernization between the",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 144,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "BTOE and OTOE",
-      "term_normalized": "btoe and otoe",
-      "definition": "CTA equipment is not considered to be MMEWR.",
+      "definition": "MMEWR are the minimum personnel and equipment necessary for a military unit to accomplish its doctrinal mis- sion and perform its core functions and assigned universal tasks during sustained combat operations. Level 1 of the BTOE is the MMEWR to structure an effective organization for combat, combat support, and sustainment units. The OTOE includes all modernization options (personnel, equipment, structure) beyond MMEWR. A MTOE for a mili- tary unit generally reflects requirements, and associated authorizations, at a level of modernization between the BTOE and OTOE. CTA equipment is not considered to be MMEWR.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -717,40 +486,7 @@
     {
       "term": "Modernization Path",
       "term_normalized": "modernization path",
-      "definition": "A modernization path (MODPATH) behaves much like a \"container\" that groups these BOIPs into a material capa-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 144,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "bility/solution and is inserted into a TOE",
-      "term_normalized": "bility/solution and is inserted into a toe",
-      "definition": "MODPATHs are doctrinally sound groupings of one or more BOIPs that represent materiel solutions for specific capabilities. Unless otherwise specified, the term MODPATH, in and of itself, refers to these materiel solutions. They are used to introduce, replace, or modernize, BOIPs into or within a",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 144,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "TOE",
-      "term_normalized": "toe",
-      "definition": "A MODPATH may have a single BOIP or it may have many BOIPs that pro-vide a logical sequence of BOIPs that upgrade (modernize) a basic system capability over time. Equipment line item numbers (LINs) are documented in accordance with the Supply Bulletin 700–20. All LINs that are materiel solutions for TOE and MTOE documen- tations are managed through a basis of issue plan (BOIP). In the TOE/BOIP/MTOE production system, every BOIP is assigned a modernization path (MODPATH) which establishes a digital linkage for modernizing equipment. For example, the M48 tank is linked to the M60 tank which is linked to the M1 tank. The MODPATH accounts for modernization of a BOIP’s primary LIN, its ASIOE, and unique personnel requirements like operators. The first BOIP/LIN in a MODPATH is the Army’s base item for the required capability while the last BOIP/LIN is the Ar- my’s most modern item to fulfill the required capability, the objective. All levels of modernization across a MODPATH are available for planning, programming, and data analysis from base TOE (BTOE) to objective TOE",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 144,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "OTOE",
-      "term_normalized": "otoe",
-      "definition": "Most units are authorized and resourced at a modernization level along the MODPATH between BTOE and OTOE depending on G–3/5/7 modernization priorities and G–8 equipment availability. Modernization Paths can",
+      "definition": "A modernization path (MODPATH) behaves much like a \"container\" that groups these BOIPs into a material capa- bility/solution and is inserted into a TOE. MODPATHs are doctrinally sound groupings of one or more BOIPs that represent materiel solutions for specific capabilities. Unless otherwise specified, the term MODPATH, in and of itself, refers to these materiel solutions. They are used to introduce, replace, or modernize, BOIPs into or within a TOE. A MODPATH may have a single BOIP or it may have many BOIPs that pro-vide a logical sequence of BOIPs that upgrade (modernize) a basic system capability over time. Equipment line item numbers (LINs) are documented in accordance with the Supply Bulletin 700\u201320. All LINs that are materiel solutions for TOE and MTOE documen- tations are managed through a basis of issue plan (BOIP). In the TOE/BOIP/MTOE production system, every BOIP is assigned a modernization path (MODPATH) which establishes a digital linkage for modernizing equipment. For example, the M48 tank is linked to the M60 tank which is linked to the M1 tank. The MODPATH accounts for modernization of a BOIP\u2019s primary LIN, its ASIOE, and unique personnel requirements like operators. The first BOIP/LIN in a MODPATH is the Army\u2019s base item for the required capability while the last BOIP/LIN is the Ar- my\u2019s most modern item to fulfill the required capability, the objective. All levels of modernization across a MODPATH are available for planning, programming, and data analysis from base TOE (BTOE) to objective TOE (OTOE). Most units are authorized and resourced at a modernization level along the MODPATH between BTOE and OTOE depending on G\u20133/5/7 modernization priorities and G\u20138 equipment availability. Modernization Paths can be viewed using FMSWeb.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -772,7 +508,7 @@
     {
       "term": "Multicomponent unit",
       "term_normalized": "multicomponent unit",
-      "definition": "A MC unit is a unit organized with personnel and/or equipment from more than one COMPO. MCUs will integrate resources from more than one COMPO into a cohesive, fully capable Army unit, to the maximum extent within stat-",
+      "definition": "A MC unit is a unit organized with personnel and/or equipment from more than one COMPO. MCUs will integrate resources from more than one COMPO into a cohesive, fully capable Army unit, to the maximum extent within stat- utory and regulatory constraints.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -783,7 +519,7 @@
     {
       "term": "Nonstandard line item numbers",
       "term_normalized": "nonstandard line item numbers",
-      "definition": "Alphanumeric LINs consisting of a combination of six alphanumeric characters. They are used to identify nonex- pendable items with functional capability expressed by the generic nomenclature and to authorize items not eligible",
+      "definition": "Alphanumeric LINs consisting of a combination of six alphanumeric characters. They are used to identify nonex- pendable items with functional capability expressed by the generic nomenclature and to authorize items not eligible for a SLIN.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -794,18 +530,7 @@
     {
       "term": "Objective table of organization and equipment",
       "term_normalized": "objective table of organization and equipment",
-      "definition": "A fully modernized, doctrinally sound organizational model design achieved by applying all of the HQDA-approved",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 144,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "BOIPs",
-      "term_normalized": "boips",
-      "definition": "The OTOE sets the goal for planning and programming of the Army’s force structure and supporting acqui-",
+      "definition": "A fully modernized, doctrinally sound organizational model design achieved by applying all of the HQDA-approved BOIPs. The OTOE sets the goal for planning and programming of the Army\u2019s force structure and supporting acqui- sition systems.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -816,7 +541,7 @@
     {
       "term": "Operating force",
       "term_normalized": "operating force",
-      "definition": "Those forces whose primary missions are to participate in combat and the integral supporting elements there-of. The OF is Army organizations whose primary purpose is to fulfill global operational requirements. The force constrains",
+      "definition": "Those forces whose primary missions are to participate in combat and the integral supporting elements there-of. The OF is Army organizations whose primary purpose is to fulfill global operational requirements. The force constrains globally available rotational structure and a globally available nonrotational structure.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -827,7 +552,7 @@
     {
       "term": "Organization integrator",
       "term_normalized": "organization integrator",
-      "definition": "OIs manage TOE and/or MTOE units, by branch, to provide an operational view of change management. OIs are branch assigned personnel who are the focal point for force accounting, documentation, resourcing, readiness of assign units; exercise resource controls for documentation; coordinate and recommend approval or disapproval of all",
+      "definition": "OIs manage TOE and/or MTOE units, by branch, to provide an operational view of change management. OIs are branch assigned personnel who are the focal point for force accounting, documentation, resourcing, readiness of assign units; exercise resource controls for documentation; coordinate and recommend approval or disapproval of all branch specific actions and documentation. The OI is the subject matter expert for branch issues and advises DCS,",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -836,12 +561,12 @@
       "flags": []
     },
     {
-      "term": "branch specific actions and documentation",
-      "term_normalized": "branch specific actions and documentation",
-      "definition": "The OI is the subject matter expert for branch issues and advises DCS, DA PAM 71–32 • 21 March 2019",
+      "term": "Organizational integration",
+      "term_normalized": "organizational integration",
+      "definition": "Management of change in organizations.",
       "source_type": "glossary",
       "section": "Glossary",
-      "pdf_page_index": 144,
+      "pdf_page_index": 145,
       "printed_page_label": null,
       "confidence": 0.95,
       "flags": []
@@ -849,7 +574,7 @@
     {
       "term": "Organizational requirements document approval board",
       "term_normalized": "organizational requirements document approval board",
-      "definition": "The organizational requirements document approval board is the DCS, G–3/5/7 forum at the colonel and general Officer levels that convenes on a regular basis to review and approve or disapprove new and amended BOIPs for",
+      "definition": "The organizational requirements document approval board is the DCS, G\u20133/5/7 forum at the colonel and general Officer levels that convenes on a regular basis to review and approve or disapprove new and amended BOIPs for documentation.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -860,18 +585,7 @@
     {
       "term": "Program objective memorandum force (programmed force)",
       "term_normalized": "program objective memorandum force (programmed force)",
-      "definition": "The POM force is that force projected to be raised, provisioned, sustained, and maintained within resources availa-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "ble during the FYDP",
-      "term_normalized": "ble during the fydp",
-      "definition": "It includes the operating and generating, all Army components and DA Civilians. TAA is the",
+      "definition": "The POM force is that force projected to be raised, provisioned, sustained, and maintained within resources availa- ble during the FYDP. It includes the operating and generating, all Army components and DA Civilians. TAA is the basis for the Army's POM development and is articulated in the Army Structure Memorandum.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -882,40 +596,7 @@
     {
       "term": "Retention objective",
       "term_normalized": "retention objective",
-      "definition": "The RO is the quantity of major end items of equipment that the army will retain once procurement is complete to",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "support life cycle management",
-      "term_normalized": "support life cycle management",
-      "definition": "The RO will be established and will replace the AAO/APO when procurement is complete and the program achieves full operating capability (FOC). The RO supports the divestment process by identifying the minimum inventory for items no longer in procurement or being replaced by modernized items. To- gether the RO and AAO within a MPR support achievement of the total army requirement identified in the SACS OTOE and additional requirements identified through the AAO/APO/RO approval process. The RO will consist of the sub-elements of the AAO or APO, replacing the OTOE requirements with the MTOE, TDA and Augmentation",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "TDA requirement",
-      "term_normalized": "tda requirement",
-      "definition": "The calculated RO will be adjusted Based on strategic portfolio assessment review (SPAR) deci-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "sions and as modernization occurs",
-      "term_normalized": "sions and as modernization occurs",
-      "definition": "The DCS, G–3/5/7 is the approving authority for the RO",
+      "definition": "The RO is the quantity of major end items of equipment that the army will retain once procurement is complete to support life cycle management. The RO will be established and will replace the AAO/APO when procurement is complete and the program achieves full operating capability (FOC). The RO supports the divestment process by identifying the minimum inventory for items no longer in procurement or being replaced by modernized items. To- gether the RO and AAO within a MPR support achievement of the total army requirement identified in the SACS OTOE and additional requirements identified through the AAO/APO/RO approval process. The RO will consist of the sub-elements of the AAO or APO, replacing the OTOE requirements with the MTOE, TDA and Augmentation TDA requirement. The calculated RO will be adjusted Based on strategic portfolio assessment review (SPAR) deci- sions and as modernization occurs. The DCS, G\u20133/5/7 is the approving authority for the RO",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -926,7 +607,7 @@
     {
       "term": "Staff support agency (or activity)",
       "term_normalized": "staff support agency (or activity)",
-      "definition": "Organization that directly supports only an Army Staff principal, usually with management information, analysis, or",
+      "definition": "Organization that directly supports only an Army Staff principal, usually with management information, analysis, or command and control support.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -937,7 +618,7 @@
     {
       "term": "Standard line item numbers",
       "term_normalized": "standard line item numbers",
-      "definition": "Alphanumeric LINs consisting of one letter and five numbers ranging from A00001 through Y99999 (except alpha I",
+      "definition": "Alphanumeric LINs consisting of one letter and five numbers ranging from A00001 through Y99999 (except alpha I and O).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -948,29 +629,7 @@
     {
       "term": "Standard manpower requirements criteria",
       "term_normalized": "standard manpower requirements criteria",
-      "definition": "Standard MARC includes supervisory and/or nonsupervisory positions where work is difficult to measure or apply a",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "specific unit of measure",
-      "term_normalized": "specific unit of measure",
-      "definition": "Such positions often have no definable or recurring work task that occurs within a Soldier's",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "work day for which measurements can be taken",
-      "term_normalized": "work day for which measurements can be taken",
-      "definition": "Examples are inspector general, field feeding advisor, or recovery",
+      "definition": "Standard MARC includes supervisory and/or nonsupervisory positions where work is difficult to measure or apply a specific unit of measure. Such positions often have no definable or recurring work task that occurs within a Soldier's work day for which measurements can be taken. Examples are inspector general, field feeding advisor, or recovery vehicle operators.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -981,7 +640,7 @@
     {
       "term": "Standard requirements code",
       "term_normalized": "standard requirements code",
-      "definition": "A twelve-position alphanumeric code that identifies the type of organization, edition, authorized level of authoriza-",
+      "definition": "A twelve-position alphanumeric code that identifies the type of organization, edition, authorized level of authoriza- tion, and exceptions to standard structure, personnel, and equipment",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -990,9 +649,9 @@
       "flags": []
     },
     {
-      "term": "Standard study number–line item number automated management and integrating system",
-      "term_normalized": "standard study number–line item number automated management and integrating system",
-      "definition": "SLAMIS is a Web-based application designed to provide Army users easy access to key \"chain-of-custody\" data relationships and management tools for use over the entire life cycle of major items of equipment. Online processes support requirements approval, funding, acquisition, basis of issue planning, authorization, initial fielding, sustain-",
+      "term": "Standard study number\u2013line item number automated management and integrating system",
+      "term_normalized": "standard study number\u2013line item number automated management and integrating system",
+      "definition": "SLAMIS is a Web-based application designed to provide Army users easy access to key \"chain-of-custody\" data relationships and management tools for use over the entire life cycle of major items of equipment. Online processes support requirements approval, funding, acquisition, basis of issue planning, authorization, initial fielding, sustain- ment, property book management, and eventual disposal of weapon systems and/or equipment items. A TDA is a workload-based manpower authorization document. It prescribes the organizational structure, the per- sonnel, and equipment requirements, and authorizations required to perform a unique mission for which no TOE exists. However, a TDA can be either an operating or GF TDA. TDAs include military, civilian, as well as standard and commercial equipment. TDAs are organized and resourced in accordance with DoD and Army priorities",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -1001,42 +660,9 @@
       "flags": []
     },
     {
-      "term": "Table of distribution and allowances",
-      "term_normalized": "table of distribution and allowances",
-      "definition": "A TDA is a workload-based manpower authorization document. It prescribes the organizational structure, the per- sonnel, and equipment requirements, and authorizations required to perform a unique mission for which no TOE",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "exists",
-      "term_normalized": "exists",
-      "definition": "However, a TDA can be either an operating or GF TDA. TDAs include military, civilian, as well as standard",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "and commercial equipment",
-      "term_normalized": "and commercial equipment",
-      "definition": "TDAs are organized and resourced in accordance with DoD and Army priorities DA PAM 71–32 • 21 March 2019",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 145,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "Table of organization and equipment",
-      "term_normalized": "table of organization and equipment",
-      "definition": "A requirements document that prescribes the doctrinal mission, organization and MMEWR for manpower and",
+      "term": "Troop program sequence number",
+      "term_normalized": "troop program sequence number",
+      "definition": "Used to track an organization capability at various echelons by grouping UIC\u2019s under a common field.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 146,
@@ -1047,7 +673,7 @@
     {
       "term": "Unit Reference Sheet",
       "term_normalized": "unit reference sheet",
-      "definition": "A product of the organizational design process, the URS as part of a FDU provides the basis for development of a",
+      "definition": "A product of the organizational design process, the URS as part of a FDU provides the basis for development of a TOE. Section I of the URS contains a narrative providing sufficient detail for subsequent development of Section I of the TOE. Section II contains quantities of personnel (MOS and grade) and equipment LIN at paragraph and line number level of detail. The URS is always a component of a force design update (FDU) package submitted for ap- proval of a new design or significant change to an existing design",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 146,
@@ -1056,45 +682,12 @@
       "flags": []
     },
     {
-      "term": "of the TOE",
-      "term_normalized": "of the toe",
-      "definition": "Section II contains quantities of personnel (MOS and grade) and equipment LIN at paragraph and line",
+      "term": "Special Abbreviations and Terms",
+      "term_normalized": "special abbreviations and terms",
+      "definition": "This section contains no entries.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 146,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "number level of detail",
-      "term_normalized": "number level of detail",
-      "definition": "The URS is always a component of a force design update (FDU) package submitted for ap-",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 146,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "This section contains no entries.",
-      "term_normalized": "this section contains no entries.",
-      "definition": "DA PAM 71–32 • 21 March 2019",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 146,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "UNCLASSIFIED",
-      "term_normalized": "unclassified",
-      "definition": "PIN 204091–000",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 147,
       "printed_page_label": null,
       "confidence": 0.95,
       "flags": []
@@ -1109,12 +702,12 @@
       143,
       144,
       145,
-      146,
-      147
+      146
     ],
     "text_layer_present": true,
-    "entries_glossary": 101,
+    "entries_glossary": 64,
     "entries_inline": 0,
-    "entries_after_dedup": 99
+    "entries_after_dedup": 62,
+    "glossary_used_legacy_fallback": false
   }
 }
