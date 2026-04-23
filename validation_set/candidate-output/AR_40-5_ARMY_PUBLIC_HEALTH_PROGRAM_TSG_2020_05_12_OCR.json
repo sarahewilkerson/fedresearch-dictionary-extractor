@@ -6,7 +6,7 @@
   "source_pub_number": "AR 40-5",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:25:17Z",
+  "extraction_timestamp": "2026-04-23T11:33:44Z",
   "profile": "army",
   "text_sha256": "d36f905b1f897ab86438174d93caf89f81978c4d02e944dac2a72766ecd9d7da",
   "entries": [
@@ -651,18 +651,7 @@
     {
       "term": "Occupational and environmental health surveillance",
       "term_normalized": "occupational and environmental health surveillance",
-      "definition": "The regular or repeated collection, analysis, archiving, interpretation, and dissemination of OEH-related data for mon- itoring the health of, or potential health hazard impact on, a population and individual personnel, and for intervening in a timely manner to prevent, treat, or control the occurrence of disease or injury when determined necessary (see",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 56,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "DODD 6490.02E)",
-      "term_normalized": "dodd 6490.02e)",
-      "definition": "See also \u201chealth surveillance.\u201d",
+      "definition": "The regular or repeated collection, analysis, archiving, interpretation, and dissemination of OEH-related data for mon- itoring the health of, or potential health hazard impact on, a population and individual personnel, and for intervening in a timely manner to prevent, treat, or control the occurrence of disease or injury when determined necessary (see DODD 6490.02E). See also \u201chealth surveillance.\u201d",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 56,
@@ -937,18 +926,7 @@
     {
       "term": "Toxic industrial materials",
       "term_normalized": "toxic industrial materials",
-      "definition": "A generic term for toxic, chemical, biological, or radioactive substances in solid, liquid, aerosolized, or gaseous form that may be used, or stored for use, for industrial, commercial, medical, military, or domestic purposes. Also called",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 59,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "TIM",
-      "term_normalized": "tim",
-      "definition": "TIMs include: a . Toxic industrial biological. Any biological material manufactured, used, transported, or stored by industrial, medi- cal, or commercial processes that could pose an infectious or toxic threat. Also called TIB. b. Toxic industrial chemical. A chemical developed or manufactured for use in industrial operations or research by industry, government, or academia that poses a hazard. Also called TIC. c. Toxic industrial radiological . Any radiological material manufactured, used, transported, or stored by industrial, medical, or commercial processes. Also called TIR.",
+      "definition": "A generic term for toxic, chemical, biological, or radioactive substances in solid, liquid, aerosolized, or gaseous form that may be used, or stored for use, for industrial, commercial, medical, military, or domestic purposes. Also called TIM. TIMs include: a . Toxic industrial biological. Any biological material manufactured, used, transported, or stored by industrial, medi- cal, or commercial processes that could pose an infectious or toxic threat. Also called TIB. b. Toxic industrial chemical. A chemical developed or manufactured for use in industrial operations or research by industry, government, or academia that poses a hazard. Also called TIC. c. Toxic industrial radiological . Any radiological material manufactured, used, transported, or stored by industrial, medical, or commercial processes. Also called TIR.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 59,
@@ -993,9 +971,9 @@
       59
     ],
     "text_layer_present": true,
-    "entries_glossary": 88,
+    "entries_glossary": 86,
     "entries_inline": 0,
-    "entries_after_dedup": 88,
+    "entries_after_dedup": 86,
     "glossary_used_legacy_fallback": false
   }
 }

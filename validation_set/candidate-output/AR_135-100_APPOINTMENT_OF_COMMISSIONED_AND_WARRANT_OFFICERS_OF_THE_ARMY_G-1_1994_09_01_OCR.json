@@ -6,7 +6,7 @@
   "source_pub_number": "AR 135-100",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:25:15Z",
+  "extraction_timestamp": "2026-04-23T11:33:42Z",
   "profile": "army",
   "text_sha256": "d680344ac5ebc92ccacf70ad0d83eabdf7293a69e4b166a9997ebc3c1061f573",
   "entries": [
@@ -223,17 +223,6 @@
       "term": "Active duty list (ADL)",
       "term_normalized": "active duty list (adl)",
       "definition": "An order of seniority list (required by 10 USC 620) of commissioned officers on active duty in the U.S. Army other than those listed below (10 USC 641). a. Reserve officers. (1) On active duty for training. (2) On active duty under 10 USC 175, 265, 3015, 3019, 3033, 3496, or 32 USC 708. (3) On active duty under 10 USC 672(d) or 32 USC 502 or 503 in connection with organizing, administering, recruit- ing, instructing, or training the Reserve Components. (4) On active duty to pursue special work. (5) Ordered to active duty under 10 USC 673 b, or (6) On active duty under 50 USC App 460(b)2 for the administration of the Selective Service System. b. The Director of Admission, Dean, and permanent professors at the United States Military Academy. The Registrar, Dean, and permanent professors at the United States Air Force Academy. c. Warrant officers d. Retired officers on active duty. e. Students at the Uniformed Services University of the Health Sciences.",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 71,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "Active Guard Reserve (AGR)",
-      "term_normalized": "active guard reserve (agr)",
-      "definition": "Army National Guard of the United States (ARNGUS) and U.S. Army Reserve (USAR) personnel serving on active duty (AD) under Title 10, U.S. Code, section 672(d) and Army National Guard (ARNG) personnel serving on full- time National Guard duty (FTNGD) under Title 32, U.S. Code, section 502(f). These personnel are on FTNGD or AD (other than for training or AD in the Active Army) for 180 days or more for the purpose of organizing, administering, recruiting, instructing, or training the Reserve components and are paid from National Guard Personnel, Army or Reserve Personnel, Army or Reserve Personnel Army appropriations. Exceptions are personnel ordered to AD as a. General officers b. United States Property and Fiscal Officers under 32 USC 708. c. Members assigned or detailed to the Selective Service System serving under the Military Selective Service Act, (50",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 71,
@@ -737,17 +726,6 @@
       "flags": []
     },
     {
-      "term": "AR140",
-      "term_normalized": "ar140",
-      "definition": "111). b. The continuation of active ARNG service with the ARNG of the same State, Territory, or Commonwealth consum- mated by subscription to the oath of extension. This definition may be used with the term immediate reenlistment.",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 78,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
       "term": "Extreme community hardship",
       "term_normalized": "extreme community hardship",
       "definition": "A situation that may, because a reservist is mobilized, have a substantially adverse effect on the health, safety, or welfare of the community. Any request for a determination of such hardship shall be made by the reservist and must be supported by documentation as required by the Secretary of the Army..",
@@ -838,7 +816,7 @@
     {
       "term": "Individual Mobilization Augmentation (IMA) proponent",
       "term_normalized": "individual mobilization augmentation (ima) proponent",
-      "definition": "Any DOD, DA, or other Federal agency whose mobilization TDA or TOE provides positions to be filled by preselected",
+      "definition": "Any DOD, DA, or other Federal agency whose mobilization TDA or TOE provides positions to be filled by preselected USAR soldiers.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 78,
@@ -1663,18 +1641,7 @@
     {
       "term": "Unsatisfactory participant",
       "term_normalized": "unsatisfactory participant",
-      "definition": "A member of a unit or the USAR Control Group who fails to participate as outlined in AR 135 91, chapter 4, section",
-      "source_type": "glossary",
-      "section": "Glossary",
-      "pdf_page_index": 84,
-      "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
-    },
-    {
-      "term": "III",
-      "term_normalized": "iii",
-      "definition": "(AR 135 7 or AR 135 91.",
+      "definition": "A member of a unit or the USAR Control Group who fails to participate as outlined in AR 135 91, chapter 4, section III. (AR 135 7 or AR 135 91.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 84,
@@ -1748,9 +1715,9 @@
       85
     ],
     "text_layer_present": true,
-    "entries_glossary": 156,
+    "entries_glossary": 153,
     "entries_inline": 0,
-    "entries_after_dedup": 156,
+    "entries_after_dedup": 153,
     "glossary_used_legacy_fallback": false
   }
 }
