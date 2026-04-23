@@ -39,6 +39,7 @@ from . import text as text_utils
 
 # ── Heuristic thresholds ──────────────────────────────────────────────────
 HEADER_ZONE_Y = 150              # ignore document headers above this Y
+FOOTER_ZONE_PCT = 0.88           # bottom 12% of page = footer zone (PR1.2-quality Fix B)
 TERM_COL_MARGIN = 30             # points past min_x to still be "term column"
 MAX_GLOSSARY_LOOKBACK_PAGES = 30 # how far back to look for the glossary
 MIN_TERM_LENGTH = 2
@@ -46,6 +47,7 @@ MAX_TERM_LENGTH = 100
 MAX_SPLIT_TERM_LENGTH = 50       # max term length when split inline (Term. Def…)
 MIN_TERM_WITH_PERIOD = 4         # reject "1." but allow "U.S."
 MAX_DEFINITION_LEN = 5000
+MAX_FOOTER_LINES_PER_PAGE = 5    # warn when filter is too aggressive (Fix B safety net)
 
 _GLOSSARY_END_PATTERNS = (
     r"^\s*Index\s*(\n|$)",
@@ -115,6 +117,9 @@ def parse_glossary_entries(
     # PR1.2-quality Fix C: case-insensitive so "unclassified" / "section i"
     # / "pin 123" all match regardless of OCR capitalization.
     invalid_res = [re.compile(p, re.IGNORECASE) for p in profile.invalid_term_patterns]
+    # PR1.2-quality Fix B: footer-zone-only filter for bare-date / page-num /
+    # doc-id+bullet patterns that header_patterns doesn't catch.
+    footer_res = [re.compile(p, re.IGNORECASE) for p in profile.footer_patterns]
     citation_pattern = profile.citation_pattern
     header_patterns = profile.header_patterns
 
@@ -135,6 +140,8 @@ def parse_glossary_entries(
             continue
         page_dict = page.get_text("dict")
         blocks = page_dict.get("blocks", [])
+        # PR1.2-quality Fix B: precompute footer-zone Y threshold per page.
+        footer_y_threshold = page.rect.height * FOOTER_ZONE_PCT
 
         # Collect every text span on the page with its Y bucket.
         all_spans: list[dict] = []
@@ -174,8 +181,9 @@ def parse_glossary_entries(
         if cur_line:
             lines.append(cur_line)
 
-        # Filter document headers + invalid lines.
+        # Filter document headers + footer-zone noise + invalid lines.
         valid_lines: list[list[dict]] = []
+        footer_filtered_count = 0
         for line_spans in lines:
             full_line_text = " ".join(s["text"] for s in line_spans)
             y_pos = line_spans[0]["bbox"][1]
@@ -184,9 +192,25 @@ def parse_glossary_entries(
                 and text_utils.is_document_header(full_line_text, header_patterns)
             ):
                 continue
+            # PR1.2-quality Fix B: bottom-zone footer filter — bare dates,
+            # page nums, doc-id+bullet, "Glossary-N" labels.
+            if y_pos > footer_y_threshold and (
+                any(r.match(full_line_text) for r in footer_res)
+                or text_utils.is_document_header(full_line_text, header_patterns)
+            ):
+                footer_filtered_count += 1
+                continue
             if any(r.match(full_line_text) for r in invalid_res):
                 continue
             valid_lines.append(line_spans)
+        if footer_filtered_count > MAX_FOOTER_LINES_PER_PAGE:
+            # Threshold likely too aggressive; investigate at validation time.
+            import warnings
+            warnings.warn(
+                f"Glossary page {page_idx + 1}: footer filter dropped "
+                f"{footer_filtered_count} lines (>{MAX_FOOTER_LINES_PER_PAGE}). "
+                f"Possible false-positive footer detection."
+            )
 
         if not valid_lines:
             continue
