@@ -65,6 +65,28 @@ def strip_citations(text: str, citation_pattern: str) -> str:
     return cleaned
 
 
+def is_document_header(line: str, header_patterns: list[str]) -> bool:
+    """True if the given line matches any of the profile's header/footer patterns."""
+    for pattern in header_patterns:
+        if re.search(pattern, line, re.IGNORECASE):
+            return True
+    return False
+
+
+def is_span_bold(span: dict) -> bool:
+    """
+    True if a fitz/pymupdf text span is rendered bold.
+
+    Checks both the bold flag (PDF spec bit 16 of `flags`) and the font name
+    for hints — many PDFs synthesize bold via font choice without the flag.
+    """
+    font = (span.get("font") or "").lower()
+    flags = int(span.get("flags") or 0)
+    is_bold_flag = (flags & 16) > 0
+    is_bold_font = "bold" in font or "black" in font or "heavy" in font
+    return is_bold_flag or is_bold_font
+
+
 def has_text_layer(doc: fitz.Document) -> bool:
     """
     True if the PDF has extractable text on a representative sample of pages.

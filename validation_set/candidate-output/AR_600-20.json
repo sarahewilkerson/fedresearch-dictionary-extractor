@@ -1,0 +1,252 @@
+{
+  "schema_version": "1",
+  "source_pdf": "AR_600-20.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "AR 600-20",
+  "source_doc_type": "AR",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T00:15:15Z",
+  "profile": "army",
+  "text_sha256": "eca7fd861049a3bc25c43f6c926df8bf220a9e035e124c603090ba3feb9ca328",
+  "entries": [
+    {
+      "term": "from an unknown/unidentified source",
+      "term_normalized": "from an unknown/unidentified source",
+      "definition": "The individual reporting the information is not required to divulge any PII.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 123,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "ephone lines",
+      "term_normalized": "ephone lines",
+      "definition": "Anonymous reports of sexual harassment occurring in confinement facilities involving military inmates will adhere to the Prison Rape Elimination Act.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 123,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "person",
+      "term_normalized": "person",
+      "definition": "An expression of lack of consent through words or conduct means there is no consent. Lack of verbal resistance or submission resulting from the use of force, threat of force, or placing another person in fear does not constitute",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 124,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "consent",
+      "term_normalized": "consent",
+      "definition": "A current or previous dating or social or sexual relationship by itself or the manner of dress of the person involved with the accused in the conduct at issue does not constitute consent. A sleeping, unconscious, or incompetent person cannot consent.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 124,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "color characteristics of the person",
+      "term_normalized": "color characteristics of the person",
+      "definition": "This type of discrimination can occur with race discrimination. Color discrimina- tion can occur between persons of different races or ethnicities. It can also occur when members of the same race treat each other differently because of lightness or darkness of their skin.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 124,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Guard",
+      "term_normalized": "guard",
+      "definition": "A dual-military parent is one who shares with their military spouse all parental responsibilities for Family members acquired through birth or legal decree who are in physical custody of the Soldier and who are under the age of 18 years or who are beyond 18 years but are mentally or physically incapable of self-care.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 125,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "the highest level of accountability possible",
+      "term_normalized": "the highest level of accountability possible",
+      "definition": "Persons will be evaluated only on individual merit, performance, and potential, regardless of race, color, sex , national origin, religion, or sexual orientation except as prescribed by statute, or other Service policy.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 125,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "will meet and review the report",
+      "term_normalized": "will meet and review the report",
+      "definition": "The MEO professional will provide the investigating officer a memorandum docu- menting the review.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 125,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "tions",
+      "term_normalized": "tions",
+      "definition": "The acts may be discreet acts which are offensive, intimidating, or abusive to another person using the reason-",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 126,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "assment that do not require written documentation",
+      "term_normalized": "assment that do not require written documentation",
+      "definition": "These complaints may be voiced to the offending party, to someone in a position of authority, or both. The intention is that the offending behavior will cease with no further action re- quired.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 126,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "mander",
+      "term_normalized": "mander",
+      "definition": "Installations represent management organizations. An installation may be made of one or more sites.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 126,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "Military Departments are located",
+      "term_normalized": "military departments are located",
+      "definition": "Includes joint commands, joint bases, Defense agencies, and joint field activities that involve more than one branch of Military Service.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 126,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "tion",
+      "term_normalized": "tion",
+      "definition": "(See Article 132, UCMJ (2019))",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 128,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "assume command",
+      "term_normalized": "assume command",
+      "definition": "Likewise, if the battalion commander is absent, the senior officer assigned to the battalion (nor-",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 128,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "mally the executive officer) will assume command",
+      "term_normalized": "mally the executive officer) will assume command",
+      "definition": "If an officer is senior to the executive officer and is assigned to the company or battalion, but who works in the division headquarters or a maintenance unit, the executive officer would still assume command.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 128,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "does not or cannot consent",
+      "term_normalized": "does not or cannot consent",
+      "definition": "The term includes a broad range of sexual offenses including the following specific UCMJ offenses: rape, sexual assault, aggravated sexual contact, abusive sexual contact, forcible sodomy (forced oral or anal sex), and attempts to commit these acts.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 128,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "The husband or wife of a Soldier",
+      "term_normalized": "the husband or wife of a soldier",
+      "definition": "If such person is also in the military, see the term “dual-military couple.”",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 129,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "the homeland",
+      "term_normalized": "the homeland",
+      "definition": "Joint sustainment functions required to support Multi-Domain Operations campaigning throughout the competition continuum emanate from the Strategic Support Area.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 129,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "the analysis report",
+      "term_normalized": "the analysis report",
+      "definition": "Verbatim comments retain all the spelling and grammatical content of the original along with as much stylistic or emphatic markings as is possible.",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 130,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "UNCLASSIFIED",
+      "term_normalized": "unclassified",
+      "definition": "PIN 003351–000",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 131,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    }
+  ],
+  "metadata": {
+    "total_pages": 131,
+    "glossary_pages": [
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 20,
+    "entries_inline": 0,
+    "entries_after_dedup": 20
+  }
+}

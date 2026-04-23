@@ -1,0 +1,71 @@
+{
+  "schema_version": "1",
+  "source_pdf": "TC_1-19.30.pdf",
+  "source_gcs_key": null,
+  "source_doc_id": null,
+  "source_pub_number": "TC 1-19.30",
+  "source_doc_type": "TC",
+  "extractor_version": "0.1.0",
+  "extraction_timestamp": "2026-04-23T00:15:15Z",
+  "profile": "army",
+  "text_sha256": "1befdca4b5c3a1c187ac347f56684e12a5e125a7b94aa4b96984ff1e56df3193",
+  "entries": [
+    {
+      "term": "SECTION I",
+      "term_normalized": "section i",
+      "definition": "ACRONYMS AND ABBREVIATIONS AIT Advanced Individual Training AR Army regulation ASI additional skill identifier ATP Army techniques publication DA Department of the Army FM field manual MOS military occupational specialty MPT music performance team TC training circular",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 149,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "U.S",
+      "term_normalized": "us",
+      "definition": "United States",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 149,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "SECTION II – TERMS",
+      "term_normalized": "section ii – terms",
+      "definition": "music performance team A team that offers the flexibility to support concurrent musical missions in multiple geographical",
+      "source_type": "glossary",
+      "section": "Glossary",
+      "pdf_page_index": 149,
+      "printed_page_label": null,
+      "confidence": 0.95,
+      "flags": []
+    },
+    {
+      "term": "dampen \nusually",
+      "term_normalized": "dampen usually",
+      "definition": "the muting of undesirable overtones.",
+      "source_type": "inline",
+      "section": "Chapter 4",
+      "pdf_page_index": 102,
+      "printed_page_label": null,
+      "confidence": 0.65,
+      "flags": [
+        "inline_inferred"
+      ]
+    }
+  ],
+  "metadata": {
+    "total_pages": 156,
+    "glossary_pages": [
+      149,
+      150
+    ],
+    "text_layer_present": true,
+    "entries_glossary": 3,
+    "entries_inline": 1,
+    "entries_after_dedup": 4
+  }
+}
