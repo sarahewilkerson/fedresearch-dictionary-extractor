@@ -58,9 +58,12 @@ _GLOSSARY_END_PATTERNS = (
 
 # PR1.2-quality Fix A: ALL-CAPS heuristic for acronym sections that
 # don't preserve bold flags (AR 600-20, FM 6-02, etc).
-_ACRONYM_FIRST_WORD_RE = re.compile(r"^[A-Z][A-Z0-9\-]{1,14}$")  # allow digits: AH-64, M-1A1, MC-130
+# Codex iter-3 #2 fix: allow dots in the first word so dotted acronyms like
+# "U.S.", "U.S.C.", "A.D.", "P.O.W." are correctly recognized as terms.
+_ACRONYM_FIRST_WORD_RE = re.compile(r"^[A-Z][A-Z0-9.\-]{1,14}$")  # allow digits + dots
+_DOTTED_ACRONYM_RE = re.compile(r"[A-Z]\.[A-Z]")  # interior dot pattern (U.S, P.O.W) — not "III."
 _ACRONYM_LINE_MAX_CHARS = 60       # full-line cap; rules out continuation prose
-_ACRONYM_LINE_NO_PERIOD_PREFIX = 30  # no '.' in first N chars
+_ACRONYM_LINE_NO_PERIOD_PREFIX = 30  # period-in-first-N filter for non-dotted acronym lines
 
 
 def _looks_like_acronym_term_line(line_text: str) -> bool:
@@ -68,17 +71,31 @@ def _looks_like_acronym_term_line(line_text: str) -> bool:
     continuation. Used as the no-bold fallback for the new-term gate.
 
     Accepts:
-      - First word matches `_ACRONYM_FIRST_WORD_RE` (2-15 chars, upper or
-        hyphenated upper)
+      - First word matches `_ACRONYM_FIRST_WORD_RE` (2-15 chars, upper /
+        digit / dot / hyphen — covers AIT, USINDOPACOM, M-1A1, U.S.,
+        U.S.C., AH-64, P.O.W.)
       - Full line is ≤60 chars
-      - No '.' in the first 30 chars (rules out "Furthermore, ..." continuations)
+      - For first words WITHOUT dots: no period anywhere in the first 30
+        chars (rules out wrapped citations like "DODD 6490.02E)" where
+        the acronym is followed by a numeric reference). Dotted-acronym
+        first words (U.S., U.S.C., etc.) are exempt — the dots are part
+        of the acronym, not a sentence boundary. (Codex iter-3 #2 fix +
+        rerun regression fix.)
     """
     if not line_text or len(line_text) > _ACRONYM_LINE_MAX_CHARS:
         return False
-    if "." in line_text[:_ACRONYM_LINE_NO_PERIOD_PREFIX]:
-        return False
     first_word = line_text.split(maxsplit=1)[0] if line_text else ""
-    return bool(_ACRONYM_FIRST_WORD_RE.match(first_word))
+    if not _ACRONYM_FIRST_WORD_RE.match(first_word):
+        return False
+    # Conditional period filter: applies UNLESS the first word is a
+    # genuine dotted acronym (interior `[A-Z]\.[A-Z]` pattern — U.S.,
+    # P.O.W., U.S.C). A trailing-dot-only word like "III." or "MLK." is
+    # NOT a dotted acronym and the period filter still applies, so
+    # "III. The committee" continuation lines are correctly rejected.
+    is_dotted_acronym = bool(_DOTTED_ACRONYM_RE.search(first_word))
+    if not is_dotted_acronym and "." in line_text[:_ACRONYM_LINE_NO_PERIOD_PREFIX]:
+        return False
+    return True
 
 
 def _is_term_style_span(span_text: str, span: dict) -> bool:

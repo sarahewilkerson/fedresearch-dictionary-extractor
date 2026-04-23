@@ -44,19 +44,24 @@ def analyze_pdf(
                 glossary_pages = list(range(start + 1, end + 2))  # 1-indexed for output
                 glossary_entries = glossary.parse_glossary_entries(doc, start, end, profile)
                 # PR1.2-quality Fix A safety net: doc-level fallback when bold
-                # gate produces SUSPICIOUSLY FEW entries given the glossary
-                # range size. Re-run with X-only gate. Catches OCR'd PDFs
-                # (GlyphLessFont) where the bold flag is absent and terms
-                # are mixed-case/lowercase — bold-gate detection fails AND
-                # multi-span walk over-extends into adjacent entries.
-                # Examples: ADP 3-07 (0 → 7 entries), FM 3-34 (1 → ?).
-                # Threshold: bold-path entry count < range page count means
-                # almost certainly something's wrong (a glossary always has
-                # ≥1 entry/page).
-                page_count = end - start + 1
+                # flags are essentially ABSENT in the glossary section
+                # (GlyphLessFont OCR'd PDFs). Catches ADP 3-07 + FM 3-34 type
+                # cases where bold detection gives 0/very few entries because
+                # there are no bold spans to detect.
+                #
+                # Codex iter-3 #1 fix: the prior threshold (entries < page_count)
+                # over-fired on docs with sparse-but-correct bold output (a
+                # 3-entry glossary spanning 5 pages would falsely fall back).
+                # New trigger: measure actual bold-flag preservation rate on
+                # the glossary section. Below 10% means the PDF has functionally
+                # lost bold metadata (real Army doc bold rates are 20-50% on
+                # glossary pages with proper formatting). Threshold tuned
+                # empirically: ADP 3-07=0%, FM 3-34=3%, AR 600-20=24%,
+                # AR 135-100=21%. 10% catches the 0-3% cases while leaving
+                # the 20%+ cases on the bold path.
                 if (
                     profile.enable_bold_gate
-                    and len(glossary_entries) < page_count
+                    and _bold_preservation_rate(doc, start, end) < 0.10
                 ):
                     fallback_entries = glossary.parse_glossary_entries(
                         doc, start, end, profile, force_legacy_gate=True
@@ -98,6 +103,36 @@ def analyze_pdf(
         }
     finally:
         doc.close()
+
+
+def _bold_preservation_rate(doc: fitz.Document, start: int, end: int) -> float:
+    """Fraction of first-spans across the glossary range that are bold.
+
+    Used (Codex iter-3 #1 fix) to detect docs that have lost bold metadata
+    (typically OCR'd PDFs using GlyphLessFont). When this is essentially
+    zero, the bold-gate parse will mis-classify everything as continuation
+    and the legacy X-only fallback should fire.
+
+    Threshold for fallback decision is set by the caller (currently 1%);
+    this helper only computes the metric.
+    """
+    bold_count = 0
+    total = 0
+    for page_idx in range(start, end + 1):
+        try:
+            page = doc[page_idx]
+        except Exception:
+            continue
+        for block in page.get_text("dict").get("blocks", []):
+            for line in block.get("lines", []):
+                spans = [s for s in line.get("spans", []) if (s.get("text") or "").strip()]
+                if not spans:
+                    continue
+                first = spans[0]
+                total += 1
+                if text_utils.is_span_bold(first):
+                    bold_count += 1
+    return bold_count / total if total else 0.0
 
 
 def _dedupe_within_doc(glossary_entries: list[dict], inline_entries: list[dict]) -> list[dict]:
