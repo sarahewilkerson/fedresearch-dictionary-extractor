@@ -254,7 +254,8 @@ def parse_glossary_entries(
             warnings.warn(
                 f"Glossary page {page_idx + 1}: footer filter dropped "
                 f"{footer_filtered_count} lines (>{MAX_FOOTER_LINES_PER_PAGE}). "
-                f"Possible false-positive footer detection."
+                f"Possible false-positive footer detection.",
+                stacklevel=2,
             )
 
         if not valid_lines:
@@ -296,11 +297,14 @@ def parse_glossary_entries(
                     sp = line_spans[j]
                     sp_text = sp["text"]
                     if not _is_term_style_span(sp_text, sp["span"]):
-                        def_start_idx = j; break
+                        def_start_idx = j
+                        break
                     if re.search(r"[.!?]\s+[a-z]", sp_text):
-                        def_start_idx = j; break
+                        def_start_idx = j
+                        break
                     if sp_text.startswith("("):
-                        def_start_idx = j; break
+                        def_start_idx = j
+                        break
                     term_spans.append(sp)
 
                 term_text = " ".join(s["text"] for s in term_spans).strip()
