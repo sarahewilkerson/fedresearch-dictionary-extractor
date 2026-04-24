@@ -1,0 +1,28 @@
+description: |
+  Predecessor-definition expected text after v0.2.a AR citation-fragment
+  extractor fix applies. HAND-DERIVED independently of the new extractor's
+  output per plan §3e (not copied from the new extractor's emission).
+
+  Derivation:
+    1. Read pre-fix definition from the pre-v0.2.a committed candidate-output.
+    2. Append the rejected term's line + its continuation text (what the
+       extractor will accumulate into current_def_lines).
+    3. Apply ArmyProfile.citation_pattern via strip_citations
+       (apps/backend/... text.py:67).
+    4. Commit that computed text here.
+
+  Re-extraction must produce byte-equal output. If it doesn't, the test
+  fails EVEN IF the new output looks coherent — catches the "blessed-
+  wrong-output" case Codex iter-3 flagged.
+
+expected:
+  - pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.json
+    term: Entry on duty date
+    predecessor_of: AR 124
+    pdf_page_index: 77
+    expected_definition: "The date travel officially begins (per compete orders). The official travel date is determined by the mode of transportation authorized and actually used to comply with the reporting date shown on the order."
+  - pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.json
+    term: Statutory term of service
+    predecessor_of: AR 140
+    pdf_page_index: 83
+    expected_definition: "The military service obligation incurred on initial entry into the Armed Forces under 10 USC 651."

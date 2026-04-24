@@ -6,7 +6,7 @@
   "source_pub_number": "DA PAM 350-58",
   "source_doc_type": "DA",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:53Z",
+  "extraction_timestamp": "2026-04-24T10:14:24Z",
   "profile": "army",
   "text_sha256": "e3d053bae45c421fbccdc27eaa1709b3005cc81602b9e85d9f76b887c2bc1971",
   "entries": [
@@ -167,7 +167,7 @@
     {
       "term": "Army Leader Development Program",
       "term_normalized": "army leader development program",
-      "definition": "CG, TRADOC led activity which executes Army leader development. The ALDP is the Army\u2019s program for managing HQDA-approved leader development initiatives. The ALDP is the sole management process for program execution, approval, and incorporation of new initiatives, and recommendations for prioritization of resources.",
+      "definition": "CG, TRADOC led activity which executes Army leader development. The ALDP is the Army’s program for managing HQDA-approved leader development initiatives. The ALDP is the sole management process for program execution, approval, and incorporation of new initiatives, and recommendations for prioritization of resources.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 25,
@@ -310,7 +310,7 @@
     {
       "term": "Integrated priority list",
       "term_normalized": "integrated priority list",
-      "definition": "A list of a combatant commander\u2019s highest priority requirements, prioritized across Service and functional lines, defining shortfalls in key programs that, in the judgment of the combatant commander, adversely affect the capability of the combatant commander\u2019s forces to accomplish their assigned mission. Also called IPL.",
+      "definition": "A list of a combatant commander’s highest priority requirements, prioritized across Service and functional lines, defining shortfalls in key programs that, in the judgment of the combatant commander, adversely affect the capability of the combatant commander’s forces to accomplish their assigned mission. Also called IPL.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 26,
@@ -321,7 +321,7 @@
     {
       "term": "Lead agent (or Agency)",
       "term_normalized": "lead agent (or agency)",
-      "definition": "Army organization and/or individual assigned responsibility for development and implementation of a leader develop- ment initiative or program. 22 DA PAM 350\u201358 \u2022 8 March 2013",
+      "definition": "Army organization and/or individual assigned responsibility for development and implementation of a leader develop- ment initiative or program. 22 DA PAM 350–58 • 8 March 2013",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 26,
@@ -365,7 +365,7 @@
     {
       "term": "Leader Development Program",
       "term_normalized": "leader development program",
-      "definition": "A program designed to train leaders. It incorporates formal and informal training; progressive and sequential duty assignments; an assessment, counseling, coaching and feedback to maximize a leader\u2019s potential.",
+      "definition": "A program designed to train leaders. It incorporates formal and informal training; progressive and sequential duty assignments; an assessment, counseling, coaching and feedback to maximize a leader’s potential.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 27,

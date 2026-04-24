@@ -1,5 +1,5 @@
 classifier_version: v2-2026-04-24
-candidate_corpus_hash: sha256:71ed3e64d607c925e5029da7a353b61c5a8f883422a1bdf979c96d54c1703f1b
+candidate_corpus_hash: sha256:ff28f27c07c41760f3111ec207e8983654ee68a178d16afe95af62d853d377f7
 entries:
 - pdf: ADP_3-07_STABILITY_2019_07_31_OCR.pdf
   verdicts:
@@ -61,12 +61,6 @@ entries:
   - term: 2LT
     source_type: glossary
     verdict: g
-  - term: AR 124
-    source_type: glossary
-    verdict: b
-  - term: AR 140
-    source_type: glossary
-    verdict: b
   - term: ARCOM
     source_type: glossary
     verdict: g

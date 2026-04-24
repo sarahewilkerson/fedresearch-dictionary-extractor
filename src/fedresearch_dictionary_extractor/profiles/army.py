@@ -54,6 +54,12 @@ class ArmyProfile(ReferenceProfile):
             r"^[\W_]+$",  # all punctuation
             r"^\s*$",  # whitespace-only
             r"^(AR|FM|ADP|ATP|TC|PAM|TM)\s+\d+[-–]\d+\s*$",  # just a citation
+            # v0.2.a — pre-hyphen citation fragment. Rejects "AR 124",
+            # "FM 6", etc. when bold markup splits on hyphen in
+            # "(AR 124-210)". Structurally safe: Army doctrine always
+            # identifies publications as <TYPE> <series>-<publication>;
+            # a bare <TYPE> <digits> glossary headword cannot be legit.
+            r"^(AR|FM|ADP|ATP|TC|PAM|TM|DA\s*PAM)\s+\d+\s*$",
             r"^(Figure|Table|Chapter|Appendix|Section)\s+[A-Z0-9]",
             # PR1.2-quality additions — observed noise terms from
             # batch-1 user spot-check (validation_set/labels-batch1.yaml).

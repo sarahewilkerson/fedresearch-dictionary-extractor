@@ -6,7 +6,7 @@
   "source_pub_number": "AR 40-5",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:44Z",
+  "extraction_timestamp": "2026-04-24T10:14:16Z",
   "profile": "army",
   "text_sha256": "d36f905b1f897ab86438174d93caf89f81978c4d02e944dac2a72766ecd9d7da",
   "entries": [
@@ -68,7 +68,7 @@
     {
       "term": "Accountable agent",
       "term_normalized": "accountable agent",
-      "definition": "The individual designated by the commander to be the single point of accountability for the command\u2019s specific programs and services. The accountable agent is not intended to replace the authorities and prerogatives of command- ers, but to assist commanders in providing leadership and unified, cohesive, coordinated, efficient, well-resourced programs and services. The accountable agent reports directly to the commander and informs, advises, and recom- mends actions for the functional integration and optimal delivery of specific programs and services.",
+      "definition": "The individual designated by the commander to be the single point of accountability for the command’s specific programs and services. The accountable agent is not intended to replace the authorities and prerogatives of command- ers, but to assist commanders in providing leadership and unified, cohesive, coordinated, efficient, well-resourced programs and services. The accountable agent reports directly to the commander and informs, advises, and recom- mends actions for the functional integration and optimal delivery of specific programs and services.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 51,
@@ -77,9 +77,9 @@
       "flags": []
     },
     {
-      "term": "All\u2013hazards",
-      "term_normalized": "all\u2013hazards",
-      "definition": "A threat or an incident, natural or manmade, that warrants action to protect life, property, the environment, and the public\u2019s health or safety, and to minimize disruptions of government, social, or economic activities. It includes natural disasters, cyber incidents, industrial accidents, pandemics, acts of terrorism, sabotage, and destructive criminal activity targeting critical infrastructure.",
+      "term": "All–hazards",
+      "term_normalized": "all–hazards",
+      "definition": "A threat or an incident, natural or manmade, that warrants action to protect life, property, the environment, and the public’s health or safety, and to minimize disruptions of government, social, or economic activities. It includes natural disasters, cyber incidents, industrial accidents, pandemics, acts of terrorism, sabotage, and destructive criminal activity targeting critical infrastructure.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 51,
@@ -101,7 +101,7 @@
     {
       "term": "Army personnel",
       "term_normalized": "army personnel",
-      "definition": "As used in this publication, includes Regular Army; Army National Guard/Army National Guard of the United States and USAR personnel on active duty or inactive duty for training status; U.S. Military Academy cadets; U.S. Army Reserve Officer Training Corps cadets, when engaged in directed training activities; other DOD and foreign national military personnel assigned to Army components; and DA Civilian personnel and nonappropriated fund personnel employed by the Army worldwide. Except for those PH services defined in DODI 6055.01 for supporting DOD con- tractor personnel during force deployments or specifically provided for in contracts between the Government and a contractor, Army contractor personnel are not included in this definition. Servicemembers\u2019 dependents and co-residing Family members living on Army installations are also included in this definition for purposes of environmental health and safety, and wellness activities. Volunteers are considered Army personnel only to the extent noted in DODI 1100.21 (for example, during training).",
+      "definition": "As used in this publication, includes Regular Army; Army National Guard/Army National Guard of the United States and USAR personnel on active duty or inactive duty for training status; U.S. Military Academy cadets; U.S. Army Reserve Officer Training Corps cadets, when engaged in directed training activities; other DOD and foreign national military personnel assigned to Army components; and DA Civilian personnel and nonappropriated fund personnel employed by the Army worldwide. Except for those PH services defined in DODI 6055.01 for supporting DOD con- tractor personnel during force deployments or specifically provided for in contracts between the Government and a contractor, Army contractor personnel are not included in this definition. Servicemembers’ dependents and co-residing Family members living on Army installations are also included in this definition for purposes of environmental health and safety, and wellness activities. Volunteers are considered Army personnel only to the extent noted in DODI 1100.21 (for example, during training).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 51,
@@ -189,7 +189,7 @@
     {
       "term": "Comprehensive health surveillance",
       "term_normalized": "comprehensive health surveillance",
-      "definition": "Health surveillance conducted throughout Servicemembers\u2019 military careers and DOD Civilian employees\u2019 employ- ment, across all duty locations, and encompassing risk, intervention, and outcome data. Such surveillance is essential to the evaluation, planning, and implementation of PH practice and prevention and must be closely integrated with the timely dissemination of information to those who can act upon it (see DODD 6490.02E).",
+      "definition": "Health surveillance conducted throughout Servicemembers’ military careers and DOD Civilian employees’ employ- ment, across all duty locations, and encompassing risk, intervention, and outcome data. Such surveillance is essential to the evaluation, planning, and implementation of PH practice and prevention and must be closely integrated with the timely dissemination of information to those who can act upon it (see DODD 6490.02E).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 52,
@@ -200,7 +200,7 @@
     {
       "term": "Contract working dog",
       "term_normalized": "contract working dog",
-      "definition": "Dogs that are owned by companies contracted by the DOD and required by the using DOD component for a specific purpose, mission, or combat capability. Contract working dogs are authorized military medical care and support when in an operational environment. Scope of care provided to these dogs is defined in each company\u2019s individual contract.",
+      "definition": "Dogs that are owned by companies contracted by the DOD and required by the using DOD component for a specific purpose, mission, or combat capability. Contract working dogs are authorized military medical care and support when in an operational environment. Scope of care provided to these dogs is defined in each company’s individual contract.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 52,
@@ -209,9 +209,9 @@
       "flags": []
     },
     {
-      "term": "Department of Defense\u2013owned animals",
-      "term_normalized": "department of defense\u2013owned animals",
-      "definition": "Animals that are owned by the DOD and authorized care by Army veterinary services. These include, but are not limited to: military working animals; authorized unit mascots; animals supported through appropriated and non-ap- propriated funds; stray animals on military installations in a DOD operated stray facility for the first 3 working days; animals used in biomedical research, education, training, and testing; and wild animals in confinement on military installations, such as deer. See also \u201cmilitary working animals.\u201d",
+      "term": "Department of Defense–owned animals",
+      "term_normalized": "department of defense–owned animals",
+      "definition": "Animals that are owned by the DOD and authorized care by Army veterinary services. These include, but are not limited to: military working animals; authorized unit mascots; animals supported through appropriated and non-ap- propriated funds; stray animals on military installations in a DOD operated stray facility for the first 3 working days; animals used in biomedical research, education, training, and testing; and wild animals in confinement on military installations, such as deer. See also “military working animals.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 52,
@@ -277,7 +277,7 @@
     {
       "term": "Enterprise",
       "term_normalized": "enterprise",
-      "definition": "An organization supporting a defined business scope and mission. An enterprise includes interdependent resources (people, organizations, and technology) that must coordinate their functions and share information in support of a common mission or set of related missions. See also \u201cpublic health enterprise.\u201d",
+      "definition": "An organization supporting a defined business scope and mission. An enterprise includes interdependent resources (people, organizations, and technology) that must coordinate their functions and share information in support of a common mission or set of related missions. See also “public health enterprise.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 53,
@@ -321,7 +321,7 @@
     {
       "term": "Epidemiology",
       "term_normalized": "epidemiology",
-      "definition": "The most fundamental practice of PH, involves the study of the distribution and determinants of health-related states or events in specified populations and the application of this study to control health problems. Distribution refers to time, place, and person (demographics, behavioral characteristics). Determinants include causes, risks, or exposure types/volumes of activities, disease agents, or external OEH hazards. Health-related states or events are health out- comes (see \u201chealth outcome\u201d.) (See Public Health and Preventive Medicine.)",
+      "definition": "The most fundamental practice of PH, involves the study of the distribution and determinants of health-related states or events in specified populations and the application of this study to control health problems. Distribution refers to time, place, and person (demographics, behavioral characteristics). Determinants include causes, risks, or exposure types/volumes of activities, disease agents, or external OEH hazards. Health-related states or events are health out- comes (see “health outcome”.) (See Public Health and Preventive Medicine.)",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 53,
@@ -365,7 +365,7 @@
     {
       "term": "Garrison",
       "term_normalized": "garrison",
-      "definition": "Organization responsible for providing installation management services and operations. An Army garrison is a TDA organization that manages Army installations. Garrison command is the execution arm of the IMCOM. It delivers the majority of installation management services to both resident and nonresident organizations. The garrison\u2019s mission is linked to the installation\u2019s purpose. As the execution arm of IMCOM, the garrison\u2019s mission is to provide installation management programs and services for mission activity commanders, Soldiers, DA Civilians, Family members, and retirees.",
+      "definition": "Organization responsible for providing installation management services and operations. An Army garrison is a TDA organization that manages Army installations. Garrison command is the execution arm of the IMCOM. It delivers the majority of installation management services to both resident and nonresident organizations. The garrison’s mission is linked to the installation’s purpose. As the execution arm of IMCOM, the garrison’s mission is to provide installation management programs and services for mission activity commanders, Soldiers, DA Civilians, Family members, and retirees.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 53,
@@ -376,7 +376,7 @@
     {
       "term": "Global Health Engagement",
       "term_normalized": "global health engagement",
-      "definition": "Interaction between individuals or elements of DOD and those of a partner nation\u2019s armed forces or civilian authori- ties, in coordination with other U.S. Government departments and agencies, to build trust and confidence, share infor- mation, coordinate mutual activities, maintain influence, and achieve interoperability in health-related activities that support U.S. national security policy and military strategy. Global Health Engagement activities establish, reconsti- tute, maintain, or improve the capabilities or capacities of the partner nation\u2019s military or civilian health sector, or those of the DOD (see DODI 2000.30).",
+      "definition": "Interaction between individuals or elements of DOD and those of a partner nation’s armed forces or civilian authori- ties, in coordination with other U.S. Government departments and agencies, to build trust and confidence, share infor- mation, coordinate mutual activities, maintain influence, and achieve interoperability in health-related activities that support U.S. national security policy and military strategy. Global Health Engagement activities establish, reconsti- tute, maintain, or improve the capabilities or capacities of the partner nation’s military or civilian health sector, or those of the DOD (see DODI 2000.30).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 53,
@@ -385,8 +385,8 @@
       "flags": []
     },
     {
-      "term": "Government\u2013owned animals",
-      "term_normalized": "government\u2013owned animals",
+      "term": "Government–owned animals",
+      "term_normalized": "government–owned animals",
       "definition": "Includes both DOD-owned animals and animals owned, maintained, or managed by a federal agency or activity such as the U.S. Department of Homeland Security.",
       "source_type": "glossary",
       "section": "Glossary",
@@ -398,7 +398,7 @@
     {
       "term": "Health communication",
       "term_normalized": "health communication",
-      "definition": "The study or use of communication strategies to inform and influence individual and community decisions that en- hance health. See also \u201cpublic health communication.\u201d",
+      "definition": "The study or use of communication strategies to inform and influence individual and community decisions that en- hance health. See also “public health communication.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 54,
@@ -442,7 +442,7 @@
     {
       "term": "Health outcome",
       "term_normalized": "health outcome",
-      "definition": "A direct measure or criteria representing a person\u2019s physical and/or mental health status. Adverse health outcomes include diagnosed or reported medical conditions (disease, physical or mental, sign or symptom) and abnormal med- ical or laboratory results (for example, abnormal audiology exam). Clinically significant biological markers of disease or injury in an exposed population (such as cholinesterase, radiation, blood-lead levels) may also be identified as a health outcome for medical evaluations and medical surveillance of specifically exposed populations. (Adapted from Public Health and Preventive Medicine.)",
+      "definition": "A direct measure or criteria representing a person’s physical and/or mental health status. Adverse health outcomes include diagnosed or reported medical conditions (disease, physical or mental, sign or symptom) and abnormal med- ical or laboratory results (for example, abnormal audiology exam). Clinically significant biological markers of disease or injury in an exposed population (such as cholinesterase, radiation, blood-lead levels) may also be identified as a health outcome for medical evaluations and medical surveillance of specifically exposed populations. (Adapted from Public Health and Preventive Medicine.)",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 54,
@@ -464,7 +464,7 @@
     {
       "term": "Health risk communication",
       "term_normalized": "health risk communication",
-      "definition": "See \u201crisk communication\u201d and \u201cpublic health communication.\u201d",
+      "definition": "See “risk communication” and “public health communication.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 54,
@@ -530,7 +530,7 @@
     {
       "term": "Installation public health authority",
       "term_normalized": "installation public health authority",
-      "definition": "The installation PH authority is the senior PH professional as designated or recognized by TSG or DHA as the com- mander, director, or chief of an installation\u2019s PH Program. The installation PH authority is responsible for integrating, coordinating, and synchronizing delivery of the Army PH Program for the installation. Prior to the 2017 National Defense Authorization Act (NDAA), the MTF\u2019s Chief of the Preventive Medicine Note. Department, under the medical commander, was responsible for installation preventive medicine services. Veterinary services were administered through the Public Health Command Activity. Changes to the organizational structure of the AMEDD (and MEDCOM) are pending at the time of this AR\u2019s publishing based on decisions from the 2017 NDAA, which may remove the function of PH from the MTF and combine the former functions of preventive medi- cine and veterinary services under a single organization/department.",
+      "definition": "The installation PH authority is the senior PH professional as designated or recognized by TSG or DHA as the com- mander, director, or chief of an installation’s PH Program. The installation PH authority is responsible for integrating, coordinating, and synchronizing delivery of the Army PH Program for the installation. Prior to the 2017 National Defense Authorization Act (NDAA), the MTF’s Chief of the Preventive Medicine Note. Department, under the medical commander, was responsible for installation preventive medicine services. Veterinary services were administered through the Public Health Command Activity. Changes to the organizational structure of the AMEDD (and MEDCOM) are pending at the time of this AR’s publishing based on decisions from the 2017 NDAA, which may remove the function of PH from the MTF and combine the former functions of preventive medi- cine and veterinary services under a single organization/department.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 55,
@@ -585,7 +585,7 @@
     {
       "term": "Medical surveillance",
       "term_normalized": "medical surveillance",
-      "definition": "The ongoing, systematic collection, analysis, and interpretation of data derived from instances of medical care or medical evaluation, and the reporting of population-based information for characterizing and countering threats to a population\u2019s health, well-being, and performance (see DODD 6490.02E). See also \u201chealth surveillance.\u201d",
+      "definition": "The ongoing, systematic collection, analysis, and interpretation of data derived from instances of medical care or medical evaluation, and the reporting of population-based information for characterizing and countering threats to a population’s health, well-being, and performance (see DODD 6490.02E). See also “health surveillance.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 55,
@@ -651,7 +651,7 @@
     {
       "term": "Occupational and environmental health surveillance",
       "term_normalized": "occupational and environmental health surveillance",
-      "definition": "The regular or repeated collection, analysis, archiving, interpretation, and dissemination of OEH-related data for mon- itoring the health of, or potential health hazard impact on, a population and individual personnel, and for intervening in a timely manner to prevent, treat, or control the occurrence of disease or injury when determined necessary (see DODD 6490.02E). See also \u201chealth surveillance.\u201d",
+      "definition": "The regular or repeated collection, analysis, archiving, interpretation, and dissemination of OEH-related data for mon- itoring the health of, or potential health hazard impact on, a population and individual personnel, and for intervening in a timely manner to prevent, treat, or control the occurrence of disease or injury when determined necessary (see DODD 6490.02E). See also “health surveillance.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 56,
@@ -695,7 +695,7 @@
     {
       "term": "Operational public health",
       "term_normalized": "operational public health",
-      "definition": "The application of PH practices and conduct of PH-related activities within a geographic area where military opera- tions are conducted by TOE units. Examples of military operations include training and exercises conducted in field environments or locations outside of a permanent U.S. military installation, humanitarian support, contingency oper- ations, and combat or stability operations. (See the definitions for \u201coperation\u201d and \u201coperational area\u201d in the DOD Dictionary of Military and Associated Terms.)",
+      "definition": "The application of PH practices and conduct of PH-related activities within a geographic area where military opera- tions are conducted by TOE units. Examples of military operations include training and exercises conducted in field environments or locations outside of a permanent U.S. military installation, humanitarian support, contingency oper- ations, and combat or stability operations. (See the definitions for “operation” and “operational area” in the DOD Dictionary of Military and Associated Terms.)",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 57,
@@ -706,7 +706,7 @@
     {
       "term": "Oversight",
       "term_normalized": "oversight",
-      "definition": "The process whereby the overseeing agency has the authority to \u201cstop work\u201d within an overseen agency to ensure that program or function process execution, outputs, and outcomes are within policies and standards.",
+      "definition": "The process whereby the overseeing agency has the authority to “stop work” within an overseen agency to ensure that program or function process execution, outputs, and outcomes are within policies and standards.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 57,
@@ -717,7 +717,7 @@
     {
       "term": "Personal readiness",
       "term_normalized": "personal readiness",
-      "definition": "An individual\u2019s physical, psychological, social, spiritual, and family preparedness to achieve and sustain optimal per- formance in environments of uncertainty and persistent danger.",
+      "definition": "An individual’s physical, psychological, social, spiritual, and family preparedness to achieve and sustain optimal per- formance in environments of uncertainty and persistent danger.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 57,
@@ -805,7 +805,7 @@
     {
       "term": "Public health emergency",
       "term_normalized": "public health emergency",
-      "definition": "According to DODI 6200.03, a PH emergency is an occurrence or imminent threat of an illness or health condition that may\u2014 a . Be caused by biological incident, manmade or naturally occurring; the appearance of a novel, previously controlled, or eradicated infectious agent or biological toxin; natural disaster; chemical attack or accidental release; radiological or nuclear attack or accident; high-yield explosive detonation, and/or zoonotic disease. b . Pose a high probability of a significant number of deaths in the affected population considering the severity and probability of the event; a significant number of serious or long-term disabilities in the affected population considering the severity and probability of the event; widespread exposure to an infectious or toxic agent, including those of zoonotic origin, that poses a significant risk of substantial future harm to a large number of people in the affected population; and/or healthcare needs that exceed available resources. c . Require notification to the World Health Organization as a potential PH Emergency of International Concern.",
+      "definition": "According to DODI 6200.03, a PH emergency is an occurrence or imminent threat of an illness or health condition that may— a . Be caused by biological incident, manmade or naturally occurring; the appearance of a novel, previously controlled, or eradicated infectious agent or biological toxin; natural disaster; chemical attack or accidental release; radiological or nuclear attack or accident; high-yield explosive detonation, and/or zoonotic disease. b . Pose a high probability of a significant number of deaths in the affected population considering the severity and probability of the event; a significant number of serious or long-term disabilities in the affected population considering the severity and probability of the event; widespread exposure to an infectious or toxic agent, including those of zoonotic origin, that poses a significant risk of substantial future harm to a large number of people in the affected population; and/or healthcare needs that exceed available resources. c . Require notification to the World Health Organization as a potential PH Emergency of International Concern.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 58,
@@ -816,7 +816,7 @@
     {
       "term": "Public health enterprise",
       "term_normalized": "public health enterprise",
-      "definition": "The set of command and technical staff relationships, both vertical and horizontal, throughout the U.S. Army, func- tioning as a unified Army PH team, implementing a cohesive, standardized approach to Army PH planning, resourc- ing, and asset distribution. See also \u201centerprise\u201d and \u201centerprise governance process.\u201d",
+      "definition": "The set of command and technical staff relationships, both vertical and horizontal, throughout the U.S. Army, func- tioning as a unified Army PH team, implementing a cohesive, standardized approach to Army PH planning, resourc- ing, and asset distribution. See also “enterprise” and “enterprise governance process.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 58,
@@ -827,7 +827,7 @@
     {
       "term": "Public health enterprise governance",
       "term_normalized": "public health enterprise governance",
-      "definition": "The set of command and technical staff relationships, both vertical and horizontal; standardization of best practices; management controls; oversight and monitoring functions providing accountability; and quality improvement. See also \u201centerprise governance process\u201d and \u201cpublic health enterprise.\u201d",
+      "definition": "The set of command and technical staff relationships, both vertical and horizontal; standardization of best practices; management controls; oversight and monitoring functions providing accountability; and quality improvement. See also “enterprise governance process” and “public health enterprise.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 58,
@@ -882,7 +882,7 @@
     {
       "term": "Responsibility",
       "term_normalized": "responsibility",
-      "definition": "The liability to be required to give account, as of one\u2019s actions or the discharge of a duty or trust. The accountable agent defines responsibilities, which can be shared or delegated.",
+      "definition": "The liability to be required to give account, as of one’s actions or the discharge of a duty or trust. The accountable agent defines responsibilities, which can be shared or delegated.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 58,
@@ -915,7 +915,7 @@
     {
       "term": "Senior commander",
       "term_normalized": "senior commander",
-      "definition": "An officer designated on orders from HQDA as the senior commander of an installation. Normally the senior general officer at the installation. The senior commander\u2019s mission is the care of Soldiers, Families, and DA Civilians and to enable unit readiness. While the delegation of senior command authority is direct from HQDA, the senior commander will routinely resolve installation issues with IMCOM and, as needed, the associated ACOM, ASCC, or DRU.",
+      "definition": "An officer designated on orders from HQDA as the senior commander of an installation. Normally the senior general officer at the installation. The senior commander’s mission is the care of Soldiers, Families, and DA Civilians and to enable unit readiness. While the delegation of senior command authority is direct from HQDA, the senior commander will routinely resolve installation issues with IMCOM and, as needed, the associated ACOM, ASCC, or DRU.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 59,

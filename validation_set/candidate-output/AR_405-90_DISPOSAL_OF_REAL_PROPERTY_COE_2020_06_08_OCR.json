@@ -6,7 +6,7 @@
   "source_pub_number": "AR 405-90",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:45Z",
+  "extraction_timestamp": "2026-04-24T10:14:16Z",
   "profile": "army",
   "text_sha256": "d06281ae4697fe79d71c3f962d30a36535e9529cb11160fef62ad5b35c4ce987",
   "entries": [
@@ -286,9 +286,9 @@
       "flags": []
     },
     {
-      "term": "Equipment\u2013in\u2013place",
-      "term_normalized": "equipment\u2013in\u2013place",
-      "definition": "A special category of personal property (not real property) consisting of capital equipment and other nonexpendable equip- ment of a movable nature that has been fixed in place or attached to real property, but not as an integral part of the facility. Therefore, such equipment may be severed or removed from a facility without severely damaging, destroying, or reducing the usefulness of the facility. Equipment\u2013in\u2013place is personal property and does not include installed building equipment. It is accounted for on property book records (not real property records).",
+      "term": "Equipment–in–place",
+      "term_normalized": "equipment–in–place",
+      "definition": "A special category of personal property (not real property) consisting of capital equipment and other nonexpendable equip- ment of a movable nature that has been fixed in place or attached to real property, but not as an integral part of the facility. Therefore, such equipment may be severed or removed from a facility without severely damaging, destroying, or reducing the usefulness of the facility. Equipment–in–place is personal property and does not include installed building equipment. It is accounted for on property book records (not real property records).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 35,
@@ -299,7 +299,7 @@
     {
       "term": "Excess real property",
       "term_normalized": "excess real property",
-      "definition": "Real property under the control of a federal agency that the head of the agency determines is not required to meet the agency\u2019s needs or responsibilities. See 40 USC 102(3).",
+      "definition": "Real property under the control of a federal agency that the head of the agency determines is not required to meet the agency’s needs or responsibilities. See 40 USC 102(3).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 35,
@@ -321,7 +321,7 @@
     {
       "term": "Facility",
       "term_normalized": "facility",
-      "definition": "A real property entity consisting of one or more of the following: a building, a structure, a utility system, or underlying land. All real property facilities are categorized by one or more category codes from DA Pam 415\u201328. Also called a \u201creal property facility.\u201d",
+      "definition": "A real property entity consisting of one or more of the following: a building, a structure, a utility system, or underlying land. All real property facilities are categorized by one or more category codes from DA Pam 415–28. Also called a “real property facility.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 35,
@@ -374,8 +374,8 @@
       "flags": []
     },
     {
-      "term": "Fee\u2013owned",
-      "term_normalized": "fee\u2013owned",
+      "term": "Fee–owned",
+      "term_normalized": "fee–owned",
       "definition": "Real property for which the United States has all right, title, and interest rather than a partial interest. Does not include withdrawn public land.",
       "source_type": "glossary",
       "section": "Glossary",
@@ -398,7 +398,7 @@
     {
       "term": "Foreign excess real estate",
       "term_normalized": "foreign excess real estate",
-      "definition": "Any excess real property interest located outside the United States, Puerto Rico, American Samoa, Guam, the Trust Terri- tory of the Pacific Islands, and the Virgin Islands. Real property overseas may not include timber, installed building equip- ment, and so forth. Check the applicable regulation for the definition of real estate under applicable law at each location (see USARJ 405\u20131 for Japan, USFK 405\u20137 for Korea, USAREUR 405\u20138 for Europe).",
+      "definition": "Any excess real property interest located outside the United States, Puerto Rico, American Samoa, Guam, the Trust Terri- tory of the Pacific Islands, and the Virgin Islands. Real property overseas may not include timber, installed building equip- ment, and so forth. Check the applicable regulation for the definition of real estate under applicable law at each location (see USARJ 405–1 for Japan, USFK 405–7 for Korea, USAREUR 405–8 for Europe).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 36,
@@ -420,7 +420,7 @@
     {
       "term": "Hazardous materials",
       "term_normalized": "hazardous materials",
-      "definition": "Hazardous material (commonly referred to as HAZMAT) is defined by GSA in Federal Standard, Material Safety Data, Transportation Data and Disposal Data for Hazardous Materials Furnished to Government Activities (FED\u2013STD\u2013313E, 1 July 2014).",
+      "definition": "Hazardous material (commonly referred to as HAZMAT) is defined by GSA in Federal Standard, Material Safety Data, Transportation Data and Disposal Data for Hazardous Materials Furnished to Government Activities (FED–STD–313E, 1 July 2014).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 36,
@@ -508,7 +508,7 @@
     {
       "term": "Landholding Commands (Army)",
       "term_normalized": "landholding commands (army)",
-      "definition": "Army commands, Army service component commands, and direct reporting units, as defined in AR 10\u201387, or Reserve Components, having landholding responsibilities. As of the time of this regulation issuance, the Army landholding com- mands are the U.S. Army Installation Management Command, U.S. Army Materiel Command, Army National Guard Bureau, U.S. Army Reserve Command, U.S. Army Europe, U.S. Army Central, and U.S. Army Corps of Engineers.",
+      "definition": "Army commands, Army service component commands, and direct reporting units, as defined in AR 10–87, or Reserve Components, having landholding responsibilities. As of the time of this regulation issuance, the Army landholding com- mands are the U.S. Army Installation Management Command, U.S. Army Materiel Command, Army National Guard Bureau, U.S. Army Reserve Command, U.S. Army Europe, U.S. Army Central, and U.S. Army Corps of Engineers.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 36,

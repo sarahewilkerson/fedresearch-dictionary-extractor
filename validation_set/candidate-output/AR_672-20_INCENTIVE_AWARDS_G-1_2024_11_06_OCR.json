@@ -6,7 +6,7 @@
   "source_pub_number": "AR 672-20",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:46Z",
+  "extraction_timestamp": "2026-04-24T10:14:17Z",
   "profile": "army",
   "text_sha256": "c72caaece5960fe620a3130e95ff54ad8257f7ec709606dbf91210f6e195aa0a",
   "entries": [
@@ -255,7 +255,7 @@
     {
       "term": "Quality Step Increase",
       "term_normalized": "quality step increase",
-      "definition": "An increase in an employee\u2019s rate of basic pay from one rate of the grade of his or her position to the next higher rate of that grade in recognition of sustained high quality performance at a level that substantially exceeds an acceptable level of competence.",
+      "definition": "An increase in an employee’s rate of basic pay from one rate of the grade of his or her position to the next higher rate of that grade in recognition of sustained high quality performance at a level that substantially exceeds an acceptable level of competence.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 58,

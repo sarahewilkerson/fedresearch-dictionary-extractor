@@ -6,7 +6,7 @@
   "source_pub_number": "AR 40-3",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:44Z",
+  "extraction_timestamp": "2026-04-24T10:14:15Z",
   "profile": "army",
   "text_sha256": "b3f68a0f73e48efd7a4a9c3c4a1c61a896f5db5b6bfb8cb463f2b573075886b6",
   "entries": [
@@ -178,7 +178,7 @@
     {
       "term": "Abatement order",
       "term_normalized": "abatement order",
-      "definition": "A written order for DNR (or \u201cno-code\u201d) or to withdraw or withhold life-sustaining treatment.",
+      "definition": "A written order for DNR (or “no-code”) or to withdraw or withhold life-sustaining treatment.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 105,
@@ -211,7 +211,7 @@
     {
       "term": "Advance directive",
       "term_normalized": "advance directive",
-      "definition": "A written document defining a patient\u2019s wishes, should (s)he become incapable of participating in medical decisions. These include a \u201cDurable Power of Attorney for Health Care\u201d and a \u201cLiving Will.\u201d State law governs the validity of these documents.",
+      "definition": "A written document defining a patient’s wishes, should (s)he become incapable of participating in medical decisions. These include a “Durable Power of Attorney for Health Care” and a “Living Will.” State law governs the validity of these documents.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 106,
@@ -233,7 +233,7 @@
     {
       "term": "AMEDD MEDLI",
       "term_normalized": "amedd medli",
-      "definition": "NET The electronic network of AMEDD libraries and information centers that ensures timely and cost-effective access to biomedical information and services to all echelons of the AMEDD worldwide. The goal of the AMEDD MEDLI\u2013NET is to provide the highest quality, customer-oriented, knowledge-based information programs and services in support of patient care, healthcare administration, research, education, training, and readiness.",
+      "definition": "NET The electronic network of AMEDD libraries and information centers that ensures timely and cost-effective access to biomedical information and services to all echelons of the AMEDD worldwide. The goal of the AMEDD MEDLI–NET is to provide the highest quality, customer-oriented, knowledge-based information programs and services in support of patient care, healthcare administration, research, education, training, and readiness.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 106,
@@ -255,7 +255,7 @@
     {
       "term": "Authorized monetary value allowed for subsistence",
       "term_normalized": "authorized monetary value allowed for subsistence",
-      "definition": "NCD earnings equal patient meal days multiplied by the patient BDFA plus non-patient meal days multiplied by the MTF BDFA. NCD earnings in an a la carte operation equals the patient meal days multiplied by the patient BDFA plus SIK meal days multiplied by the MTF BDFA plus cash collected (less operating costs). The authorized monetary value allowed for subsistence or earnings is calculated on a daily basis to provide a \u201cyardstick \u201c to compare with the monetary value of food purchases.",
+      "definition": "NCD earnings equal patient meal days multiplied by the patient BDFA plus non-patient meal days multiplied by the MTF BDFA. NCD earnings in an a la carte operation equals the patient meal days multiplied by the patient BDFA plus SIK meal days multiplied by the MTF BDFA plus cash collected (less operating costs). The authorized monetary value allowed for subsistence or earnings is calculated on a daily basis to provide a “yardstick “ to compare with the monetary value of food purchases.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 106,
@@ -332,7 +332,7 @@
     {
       "term": "Donation after cardiac death",
       "term_normalized": "donation after cardiac death",
-      "definition": "All patients with significant neurologic injury, Glascow Coma scale of 5 or <, and who are ventilator dependent, are potential DCD donors. This type of donor should be covered in the MOA with the local OPO. Some OPOs use a Glascow Coma Scale of 4 or < and this should be addressed in the MOA. 96 AR 40\u20133 \u2022 23 April 2013",
+      "definition": "All patients with significant neurologic injury, Glascow Coma scale of 5 or <, and who are ventilator dependent, are potential DCD donors. This type of donor should be covered in the MOA with the local OPO. Some OPOs use a Glascow Coma Scale of 4 or < and this should be addressed in the MOA. 96 AR 40–3 • 23 April 2013",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 106,
@@ -486,7 +486,7 @@
     {
       "term": "Incapable patient",
       "term_normalized": "incapable patient",
-      "definition": "A minor or someone who does not have the ability to communicate or understand information or to reason and deliberate sufficiently well about the choices involved. Some exceptions have been created for \u201cmature\u201d minors between the ages of 14 and 17 years, because children sometimes have adequate capacity to make decisions. However, a minor below 14 years old will be considered to lack capacity for healthcare decisions, unless specifically so provided by applicable State law. This incapacity should be verified by clinical assessment of mental and emotional status.",
+      "definition": "A minor or someone who does not have the ability to communicate or understand information or to reason and deliberate sufficiently well about the choices involved. Some exceptions have been created for “mature” minors between the ages of 14 and 17 years, because children sometimes have adequate capacity to make decisions. However, a minor below 14 years old will be considered to lack capacity for healthcare decisions, unless specifically so provided by applicable State law. This incapacity should be verified by clinical assessment of mental and emotional status.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 108,
@@ -497,7 +497,7 @@
     {
       "term": "Indefinite loan collections and libraries",
       "term_normalized": "indefinite loan collections and libraries",
-      "definition": "Any size collection of library materials on loan to a department for use on a daily basis. The materials are part of the main library\u2019s total collection and signed out to the department\u2019s indefinite loan accountable officer on DA Form 3161. Materials on indefinite loan are subject to recall for use by other library users.",
+      "definition": "Any size collection of library materials on loan to a department for use on a daily basis. The materials are part of the main library’s total collection and signed out to the department’s indefinite loan accountable officer on DA Form 3161. Materials on indefinite loan are subject to recall for use by other library users.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 108,
@@ -519,7 +519,7 @@
     {
       "term": "Knowledge-based information",
       "term_normalized": "knowledge-based information",
-      "definition": "Commonly referred to as \u201cthe literature,\u201d knowledge-based information includes journal literature, reference informa- tion, and research data. It is authoritative and up-to-date. It supports clinical decision making, continuing education of staff, administrative planning and management, performance assessment and improvement, patient and family educa- tion, and research. Systems, resources, and services are necessary to effectively and efficiently manage knowledge- based information. Systems refer to the structures needed to identify, locate, and control knowledge-based information, that is, electronic and paper-based catalogs, networks, consortia, controlled vocabularies, and standard nomenclatures. TJC has identified knowledge-based information as vital to an organization\u2019s ability to provide patient care.",
+      "definition": "Commonly referred to as “the literature,” knowledge-based information includes journal literature, reference informa- tion, and research data. It is authoritative and up-to-date. It supports clinical decision making, continuing education of staff, administrative planning and management, performance assessment and improvement, patient and family educa- tion, and research. Systems, resources, and services are necessary to effectively and efficiently manage knowledge- based information. Systems refer to the structures needed to identify, locate, and control knowledge-based information, that is, electronic and paper-based catalogs, networks, consortia, controlled vocabularies, and standard nomenclatures. TJC has identified knowledge-based information as vital to an organization’s ability to provide patient care.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 108,
@@ -530,7 +530,7 @@
     {
       "term": "Living will",
       "term_normalized": "living will",
-      "definition": "A written document setting forth a person\u2019s desires concerning medical care when (s)he is terminally ill or in a persistent vegetative state. This is a type of advance directive.",
+      "definition": "A written document setting forth a person’s desires concerning medical care when (s)he is terminally ill or in a persistent vegetative state. This is a type of advance directive.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 108,
@@ -596,7 +596,7 @@
     {
       "term": "Medical officer",
       "term_normalized": "medical officer",
-      "definition": "Pertaining to orthopedic footwear, defined as an orthopedic physician or a podiatrist. MEDCEN/MEDDAC command- ers, in order to meet access standards, may determine that personnel in clinical specialties other than orthopedics and 98 AR 40\u20133 \u2022 23 April 2013",
+      "definition": "Pertaining to orthopedic footwear, defined as an orthopedic physician or a podiatrist. MEDCEN/MEDDAC command- ers, in order to meet access standards, may determine that personnel in clinical specialties other than orthopedics and 98 AR 40–3 • 23 April 2013",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 108,
@@ -761,7 +761,7 @@
     {
       "term": "Patient with decision-making capacity",
       "term_normalized": "patient with decision-making capacity",
-      "definition": "An adult (18 years of age or over or emancipated minor as determined by State law) who has the ability to communicate and understand information and the ability to reason and deliberate sufficiently well about the choices involved. Some exceptions have been created for \u201cmature\u201d minors in recognition that children sometimes have adequate capacity to make decisions. However, a minor below 14 years old will be considered not to have capacity for healthcare decisions, unless specifically so provided by applicable State law. Emancipated minors include 17 year old service members.",
+      "definition": "An adult (18 years of age or over or emancipated minor as determined by State law) who has the ability to communicate and understand information and the ability to reason and deliberate sufficiently well about the choices involved. Some exceptions have been created for “mature” minors in recognition that children sometimes have adequate capacity to make decisions. However, a minor below 14 years old will be considered not to have capacity for healthcare decisions, unless specifically so provided by applicable State law. Emancipated minors include 17 year old service members.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 110,
@@ -770,7 +770,7 @@
       "flags": []
     },
     {
-      "term": "Pharmaceutical care (Academy of Managed Care Pharmacy\u2019s Concepts in Managed Care Pharmacy series)",
+      "term": "Pharmaceutical care (Academy of Managed Care Pharmacy’s Concepts in Managed Care Pharmacy series)",
       "term_normalized": "pharmaceutical care (academy of managed care pharmacy's concepts in managed care pharmacy series)",
       "definition": "That component of the healthcare system that seeks, through the caring, collaborative efforts of a team of pharmacists, physicians, nurses, and other healthcare providers working with patients, to ensure that medications are used appropri- ately to improve patient health status.",
       "source_type": "glossary",
@@ -783,7 +783,7 @@
     {
       "term": "Pharmacy data transaction service (PDTS) (from PDTS Business Rules)",
       "term_normalized": "pharmacy data transaction service (pdts) (from pdts business rules)",
-      "definition": "Military Health System Integrated Pharmacy System business rules that identify issues and processes used by the pharmacists and providers in the direct care system when interacting with the PDTS. The integrated pharmacy system will operate with several Government systems to screen an eligible patient\u2019s prescription against the patient\u2019s total drug profile for drug interactions, drug overlaps, drug dosage, and patient compliance. Additionally, retrospective, concur- rent, and prospective drug utilization reviews will be accomplished.",
+      "definition": "Military Health System Integrated Pharmacy System business rules that identify issues and processes used by the pharmacists and providers in the direct care system when interacting with the PDTS. The integrated pharmacy system will operate with several Government systems to screen an eligible patient’s prescription against the patient’s total drug profile for drug interactions, drug overlaps, drug dosage, and patient compliance. Additionally, retrospective, concur- rent, and prospective drug utilization reviews will be accomplished.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 110,
@@ -860,7 +860,7 @@
     {
       "term": "Special measurement footwear",
       "term_normalized": "special measurement footwear",
-      "definition": "That footwear which is required by reason of size alone for active duty personnel. Special measurement footwear guidance is covered in AR 32\u20134 and AR 700\u201384. These procedures should not be confused with those in AR 40\u20133 for the issue and fitting of orthopedic footwear. Special measurement footwear is not purchased through the MTF, but through the clothing sales store.",
+      "definition": "That footwear which is required by reason of size alone for active duty personnel. Special measurement footwear guidance is covered in AR 32–4 and AR 700–84. These procedures should not be confused with those in AR 40–3 for the issue and fitting of orthopedic footwear. Special measurement footwear is not purchased through the MTF, but through the clothing sales store.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 111,
