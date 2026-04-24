@@ -12,9 +12,7 @@ labels.yaml with the same verdicts applied.
 Run from repo root: python scripts/build_labels_yaml.py
 """
 import json
-import os
 import re
-import glob
 import sys
 from pathlib import Path
 
@@ -41,32 +39,20 @@ FLIPS_GOOD_TO_BAD = {
     "FM_3-34":    ["*engineer"],
 }
 
-# User flipped: classifier said bad, user said good
-# (Mostly long noun phrases with parenthetical-acronym suffix that trip
-# `looks_like_noun_phrase`'s 8-word limit.)
-FLIPS_BAD_TO_GOOD = {
-    # Batch 2
-    "PAM_190-45": [
-        "subject/suspect (as reporting criteria in Army Law Enforcement Record Tracking System)",
-    ],
-    "PAM_350-58": [
-        "Army Leader Development Forum (formerly prepare the Army forum)",
-    ],
-    "PAM_71-32":  [
-        "Standard study number–line item number automated management and integrating system",
-    ],
-    # Batch 3 (decided autonomously by AI per established user pattern; user delegated)
-    "AR_40-3": [
-        "Medical treatment facility basic daily food allowance (MTF BDFA)",
-        "Pharmaceutical care (Academy of Managed Care Pharmacy’s Concepts in Managed Care Pharmacy series)",
-        "Pharmacy data transaction service (PDTS) (from PDTS Business Rules)",
-    ],
-    "AR_135-100": [
-        "vol", "1LT", "1SG", "2LT",
-        "Military Intelligence (MI) combat electronic warfare intelligence (CEWI) units",
-        "USAR Active Guard Reserve Management Program (USAR AGR MP)",
-    ],
-}
+# User flipped: classifier said bad, user said good.
+#
+# PRUNED in the PR4-classifier plan step 6 after Option B's 2a/2b/2c rule
+# fixes in labels_classifier.py. Those 12 entries now classify as 'g'
+# naturally — the override became redundant. Verified by a zero-byte
+# labels.yaml diff: generating labels.yaml with empty FLIPS_BAD_TO_GOOD
+# produces bit-identical output to generating it with the populated list
+# (the 12 entries land in tier1_positive_terms either way).
+#
+# The authoritative snapshot of what Option B flipped is
+# tests/fixtures/option_b_expected_flips.yaml (immutable).
+#
+# Dict kept (empty) for future overrides if new patterns surface.
+FLIPS_BAD_TO_GOOD: dict[str, list[str]] = {}
 
 # Terms the user flagged as bad but the extractor faithfully captures
 # from BOLD source text — would need an extractor-level term-blocklist
@@ -77,64 +63,11 @@ EXCLUDE_FROM_NEGATIVES = {
     "AR_135-100": ["AR 124", "AR 140"],   # citation fragments from "(AR 124-210)" splits
 }
 
-# ── Auto-classifier (heuristic for non-reviewed docs + tier-2 metric) ───
-NOISE_TERMS = {
-    "UNCLASSIFIED", "CLASSIFIED", "CONFIDENTIAL", "SECRET",
-    "This section contains no entries.", "Terms", "See",
-}
-STOP_TAIL = {
-    "and", "or", "the", "of", "to", "with", "in", "on", "for", "by", "as",
-    "are", "is", "was", "were", "that", "which", "who", "if", "when",
-}
-ACRO_TERM_RE = re.compile(r"^[A-Z][A-Z0-9.\-/]{1,18}(\s*\([^)]{1,20}\))?$")
-
-
-def is_recognized_acronym_entry(term: str, definition: str) -> bool:
-    """Recognized acronym + expansion pattern (e.g., WHINSEC, SECARMY,
-    ASA (FM&C)). Override for the `^[A-Z]{6,}` rule."""
-    if not term or not definition or len(term) > 22:
-        return False
-    if not ACRO_TERM_RE.match(term):
-        return False
-    if not definition[0].isalpha() or len(definition) < 3:
-        return False
-    return True
-
-
-def looks_like_noun_phrase(t: str) -> bool:
-    words = t.split()
-    if not words or len(words) > 8:
-        return False
-    if re.search(r"\.\s+\S", t):
-        return False
-    if words[-1].lower().rstrip(".,;:") in STOP_TAIL:
-        return False
-    if sum(1 for c in t if c.isalpha() or c.isspace() or c in "-/") / max(len(t), 1) < 0.85:
-        return False
-    return True
-
-
-def classify(term: str, definition: str) -> str:
-    """Heuristic: 'g' (good glossary entry) or 'b' (noise)."""
-    t = term.strip()
-    d = definition.strip()
-    if not t or not d: return "b"
-    if t in NOISE_TERMS: return "b"
-    if is_recognized_acronym_entry(t, d): return "g"
-    if re.fullmatch(r"[A-Z]{6,}", t): return "b"
-    if t.lower().startswith(("this section", "see ", "pin ")): return "b"
-    if len(d) < 15: return "b"
-    if t.startswith(("a. ", "b. ", "c. ", "(1)", "(2)", "(3)", "(4)", "(5)")): return "b"
-    if re.search(r"\b(and|or|the|of|to|with|in|on|for|by|as|are|is|was|were|that|which|who)$", t, re.IGNORECASE):
-        return "b"
-    if len(t) > 80 or len(t) < 2: return "b"
-    if re.fullmatch(r"[\d\.,\-/ ]+", t): return "b"
-    if re.search(r"\([A-Z]{2,5}\s*$", t) or re.search(r"\(AR\b", t): return "b"
-    if not looks_like_noun_phrase(t): return "b"
-    if re.match(r"^(AR|PAM|FM|ATP|ADP|TC|TM|SD|STP)[\s\-]\d", d) and len(d) < 25:
-        return "b"
-    if re.fullmatch(r"[\d\.\)\s]+", d): return "b"
-    return "g"
+# ── Auto-classifier (extracted to library module PR4 §6 step 2) ─────────
+# Classifier helpers live in src/fedresearch_dictionary_extractor/labels_classifier.py
+# for direct testability. Run `pip install -e '.[dev]'` from repo root to make
+# this import resolve.
+from fedresearch_dictionary_extractor.labels_classifier import classify  # noqa: E402
 
 
 def main() -> int:

@@ -1,0 +1,2139 @@
+classifier_version: v2-2026-04-24
+candidate_corpus_hash: sha256:71ed3e64d607c925e5029da7a353b61c5a8f883422a1bdf979c96d54c1703f1b
+entries:
+- pdf: ADP_3-07_STABILITY_2019_07_31_OCR.pdf
+  verdicts:
+  - term: '*reintegration'
+    source_type: glossary
+    verdict: g
+  - term: planning
+    source_type: glossary
+    verdict: g
+  - term: security
+    source_type: glossary
+    verdict: g
+  - term: stability
+    source_type: glossary
+    verdict: g
+  - term: task-organizing
+    source_type: glossary
+    verdict: g
+  - term: unified
+    source_type: glossary
+    verdict: g
+  - term: unity
+    source_type: glossary
+    verdict: g
+- pdf: AR_12-15_JOINT_SECURITY_COOPERATION_EDUCATION_AND_TRAINING_{SECNAVINST_4950.4B;_AFI_16-105}_ASA_AL_T_2011_01_03_OCR.pdf
+  verdicts:
+  - term: USG
+    source_type: glossary
+    verdict: g
+  - term: USMC
+    source_type: glossary
+    verdict: g
+  - term: USN
+    source_type: glossary
+    verdict: g
+  - term: VEQ
+    source_type: glossary
+    verdict: g
+  - term: VOQ
+    source_type: glossary
+    verdict: g
+  - term: WCN
+    source_type: glossary
+    verdict: g
+  - term: WHINSEC
+    source_type: glossary
+    verdict: g
+  - term: healthcare
+    source_type: inline
+    verdict: g
+- pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf
+  verdicts:
+  - term: 1LT
+    source_type: glossary
+    verdict: g
+  - term: 1SG
+    source_type: glossary
+    verdict: g
+  - term: 2LT
+    source_type: glossary
+    verdict: g
+  - term: AR 124
+    source_type: glossary
+    verdict: b
+  - term: AR 140
+    source_type: glossary
+    verdict: b
+  - term: ARCOM
+    source_type: glossary
+    verdict: g
+  - term: Active Army
+    source_type: glossary
+    verdict: g
+  - term: Active duty
+    source_type: glossary
+    verdict: g
+  - term: Active duty list (ADL)
+    source_type: glossary
+    verdict: g
+  - term: Active service
+    source_type: glossary
+    verdict: g
+  - term: Active status
+    source_type: glossary
+    verdict: g
+  - term: Administrative board procedure
+    source_type: glossary
+    verdict: g
+  - term: Administrative separation
+    source_type: glossary
+    verdict: g
+  - term: Administrative separation board
+    source_type: glossary
+    verdict: g
+  - term: Applicant
+    source_type: glossary
+    verdict: g
+  - term: Appointed counsel for consultation
+    source_type: glossary
+    verdict: g
+  - term: Appointed counsel for representation
+    source_type: glossary
+    verdict: g
+  - term: Approved applicant
+    source_type: glossary
+    verdict: g
+  - term: Area Maintenance Support Activity (AMSA)
+    source_type: glossary
+    verdict: g
+  - term: Area command
+    source_type: glossary
+    verdict: g
+  - term: Area commanders
+    source_type: glossary
+    verdict: g
+  - term: Area commands
+    source_type: glossary
+    verdict: g
+  - term: Armed Forces (Interservice) Championships
+    source_type: glossary
+    verdict: g
+  - term: Army
+    source_type: glossary
+    verdict: g
+  - term: Army Reserve Command (ARCOM)
+    source_type: glossary
+    verdict: g
+  - term: Army promotion list (APL)
+    source_type: glossary
+    verdict: g
+  - term: Basic training
+    source_type: glossary
+    verdict: g
+  - term: Candidate
+    source_type: glossary
+    verdict: g
+  - term: Character of service for administrative separation
+    source_type: glossary
+    verdict: g
+  - term: Civilian-sponsored distance
+    source_type: glossary
+    verdict: g
+  - term: Commuting distance
+    source_type: glossary
+    verdict: g
+  - term: Competition
+    source_type: glossary
+    verdict: g
+  - term: Contractual term of service
+    source_type: glossary
+    verdict: g
+  - term: Contractually obligated member
+    source_type: glossary
+    verdict: g
+  - term: Convening authority
+    source_type: glossary
+    verdict: g
+  - term: Deactivate
+    source_type: glossary
+    verdict: g
+  - term: Defense support industry
+    source_type: glossary
+    verdict: g
+  - term: Delayed Entry Program (DEP)
+    source_type: glossary
+    verdict: g
+  - term: Dependent
+    source_type: glossary
+    verdict: g
+  - term: Distinguished Designation
+    source_type: glossary
+    verdict: g
+  - term: Education levels
+    source_type: glossary
+    verdict: g
+  - term: Enlisted
+    source_type: glossary
+    verdict: g
+  - term: Enlisted Personnel Management System USAR
+    source_type: glossary
+    verdict: g
+  - term: Entry level status
+    source_type: glossary
+    verdict: g
+  - term: Entry on duty date
+    source_type: glossary
+    verdict: g
+  - term: Equipment concentration site
+    source_type: glossary
+    verdict: g
+  - term: Equivalent training (ET)
+    source_type: glossary
+    verdict: g
+  - term: Excellence-in-Competition Badge
+    source_type: glossary
+    verdict: g
+  - term: Excellence-in-Competition Match
+    source_type: glossary
+    verdict: g
+  - term: Expiration term of service (ETS)
+    source_type: glossary
+    verdict: g
+  - term: Extended active duty (EAD)
+    source_type: glossary
+    verdict: g
+  - term: Extensions
+    source_type: glossary
+    verdict: g
+  - term: Extreme community hardship
+    source_type: glossary
+    verdict: g
+  - term: Extreme personal hardship
+    source_type: glossary
+    verdict: g
+  - term: Full-Time National Guard Duty (FTNGD)
+    source_type: glossary
+    verdict: g
+  - term: Full-Time Support (FTS) Program
+    source_type: glossary
+    verdict: g
+  - term: General Officer Command (GOCOM)
+    source_type: glossary
+    verdict: g
+  - term: Immediate reenlistment
+    source_type: glossary
+    verdict: g
+  - term: Inactivate
+    source_type: glossary
+    verdict: g
+  - term: Individual Mobilization Augmentation (IMA) detachment
+    source_type: glossary
+    verdict: g
+  - term: Individual Mobilization Augmentation (IMA) proponent
+    source_type: glossary
+    verdict: g
+  - term: Individual Ready Reserve (IRR)
+    source_type: glossary
+    verdict: g
+  - term: Initial entry training (IET)
+    source_type: glossary
+    verdict: g
+  - term: Inservice personnel
+    source_type: glossary
+    verdict: g
+  - term: Installation championships
+    source_type: glossary
+    verdict: g
+  - term: Instruction
+    source_type: glossary
+    verdict: g
+  - term: Involuntary separation
+    source_type: glossary
+    verdict: g
+  - term: Joint AT ADT IDT training
+    source_type: glossary
+    verdict: g
+  - term: Juvenile offender
+    source_type: glossary
+    verdict: g
+  - term: Major U.S
+    source_type: glossary
+    verdict: g
+  - term: Major commands
+    source_type: glossary
+    verdict: g
+  - term: Mandatory training requirement
+    source_type: glossary
+    verdict: g
+  - term: Material error
+    source_type: glossary
+    verdict: g
+  - term: Members and former members
+    source_type: glossary
+    verdict: g
+  - term: Military Intelligence (MI) combat electronic warfare intelligence (CEWI) units
+    source_type: glossary
+    verdict: g
+  - term: Military record
+    source_type: glossary
+    verdict: g
+  - term: Minister of Religion
+    source_type: glossary
+    verdict: g
+  - term: Minority group
+    source_type: glossary
+    verdict: g
+  - term: Moral or professional dereliction
+    source_type: glossary
+    verdict: g
+  - term: Multiple Unit Training Assembly (MUTA)
+    source_type: glossary
+    verdict: g
+  - term: National Board for the Promotion of Rifle Practice
+    source_type: glossary
+    verdict: g
+  - term: National matches
+    source_type: glossary
+    verdict: g
+  - term: No previous (prior) service (NPS)
+    source_type: glossary
+    verdict: g
+  - term: Nominee
+    source_type: glossary
+    verdict: g
+  - term: Non-distinguished competitor
+    source_type: glossary
+    verdict: g
+  - term: Nonlocatee
+    source_type: glossary
+    verdict: g
+  - term: Nonobligated member
+    source_type: glossary
+    verdict: g
+  - term: Nonpay training status
+    source_type: glossary
+    verdict: g
+  - term: Notification procedure
+    source_type: glossary
+    verdict: g
+  - term: Obligated member
+    source_type: glossary
+    verdict: g
+  - term: Obligated officer
+    source_type: glossary
+    verdict: g
+  - term: Office active duty obligor
+    source_type: glossary
+    verdict: g
+  - term: Officer
+    source_type: glossary
+    verdict: g
+  - term: Officer Personnel Management System
+    source_type: glossary
+    verdict: g
+  - term: One station unit training (OSUT)
+    source_type: glossary
+    verdict: g
+  - term: Organizational maintenance shops
+    source_type: glossary
+    verdict: g
+  - term: Other approved EIC matches
+    source_type: glossary
+    verdict: g
+  - term: Overstength
+    source_type: glossary
+    verdict: g
+  - term: Permanent promotion
+    source_type: glossary
+    verdict: g
+  - term: Preponderance of evidence
+    source_type: glossary
+    verdict: g
+  - term: Previous (prior) services (PS)
+    source_type: glossary
+    verdict: g
+  - term: Prior enlistment or period of service
+    source_type: glossary
+    verdict: g
+  - term: Professional development
+    source_type: glossary
+    verdict: g
+  - term: Promotion eligibility date (PED)
+    source_type: glossary
+    verdict: g
+  - term: Promotion to fill officer position grade vacancies
+    source_type: glossary
+    verdict: g
+  - term: ROTC cadet
+    source_type: glossary
+    verdict: g
+  - term: ROTC program
+    source_type: glossary
+    verdict: g
+  - term: Readiness training
+    source_type: glossary
+    verdict: g
+  - term: Ready Reserve
+    source_type: glossary
+    verdict: g
+  - term: Reenlistment
+    source_type: glossary
+    verdict: g
+  - term: Reenlistment activity
+    source_type: glossary
+    verdict: g
+  - term: Regularly scheduled unit training assembly (RSUTA)
+    source_type: glossary
+    verdict: g
+  - term: Reinforcement Training Unit (RTU)
+    source_type: glossary
+    verdict: g
+  - term: Release from active duty
+    source_type: glossary
+    verdict: g
+  - term: Required period of duty
+    source_type: glossary
+    verdict: g
+  - term: Rescheduled training (RST)
+    source_type: glossary
+    verdict: g
+  - term: Reserve Components of the Army
+    source_type: glossary
+    verdict: g
+  - term: Reserve of the Army
+    source_type: glossary
+    verdict: g
+  - term: Respondent
+    source_type: glossary
+    verdict: g
+  - term: Retired Pay
+    source_type: glossary
+    verdict: g
+  - term: Satisfactory participation
+    source_type: glossary
+    verdict: g
+  - term: Selected Reserve
+    source_type: glossary
+    verdict: g
+  - term: Self-terminating orders
+    source_type: glossary
+    verdict: g
+  - term: Separation
+    source_type: glossary
+    verdict: g
+  - term: Separation authority
+    source_type: glossary
+    verdict: g
+  - term: Special Abbreviations and Terms
+    source_type: glossary
+    verdict: g
+  - term: Standby Reserve
+    source_type: glossary
+    verdict: g
+  - term: Statutorily obligated member
+    source_type: glossary
+    verdict: g
+  - term: Statutory term of service
+    source_type: glossary
+    verdict: g
+  - term: Substandard performance of duty
+    source_type: glossary
+    verdict: g
+  - term: Temporary promotion
+    source_type: glossary
+    verdict: g
+  - term: Temporary tours of active duty
+    source_type: glossary
+    verdict: g
+  - term: Troop program unit (TPU)
+    source_type: glossary
+    verdict: g
+  - term: USAR Active Guard Reserve Management Program (USAR AGR MP)
+    source_type: glossary
+    verdict: g
+  - term: USF
+    source_type: glossary
+    verdict: g
+  - term: USMA
+    source_type: glossary
+    verdict: g
+  - term: USMAPS
+    source_type: glossary
+    verdict: g
+  - term: USMEPC
+    source_type: glossary
+    verdict: g
+  - term: USPFO
+    source_type: glossary
+    verdict: g
+  - term: USPHS
+    source_type: glossary
+    verdict: g
+  - term: UTA
+    source_type: glossary
+    verdict: g
+  - term: Unit Training Assembly (UTA)
+    source_type: glossary
+    verdict: g
+  - term: Unit vacancy
+    source_type: glossary
+    verdict: g
+  - term: Unsatisfactory participant
+    source_type: glossary
+    verdict: g
+  - term: VA
+    source_type: glossary
+    verdict: g
+  - term: VC
+    source_type: glossary
+    verdict: g
+  - term: WO
+    source_type: glossary
+    verdict: g
+  - term: WOCS/WOCS RC
+    source_type: glossary
+    verdict: g
+  - term: WOTS
+    source_type: glossary
+    verdict: g
+  - term: Warrant officers
+    source_type: glossary
+    verdict: g
+  - term: YTP
+    source_type: glossary
+    verdict: g
+  - term: Years for percentage purposes
+    source_type: glossary
+    verdict: g
+  - term: vol
+    source_type: glossary
+    verdict: g
+- pdf: AR_190-55_U.S._ARMY_CORRECTIONS_SYSTEM__PROCEDURES_FOR_MILITARY_EXECUTIONS_PMG_2023_10_30_OCR.pdf
+  verdicts:
+  - term: Execution Management and Coordination Team
+    source_type: glossary
+    verdict: g
+  - term: Execution Team
+    source_type: glossary
+    verdict: g
+  - term: Execution Watch Team
+    source_type: glossary
+    verdict: g
+  - term: Execution officer
+    source_type: glossary
+    verdict: g
+  - term: OTJAG
+    source_type: glossary
+    verdict: g
+  - term: OTSG
+    source_type: glossary
+    verdict: g
+  - term: PADD
+    source_type: glossary
+    verdict: g
+  - term: PMG
+    source_type: glossary
+    verdict: g
+  - term: RCM
+    source_type: glossary
+    verdict: g
+  - term: SECARMY
+    source_type: glossary
+    verdict: g
+  - term: SOP
+    source_type: glossary
+    verdict: g
+  - term: TDS
+    source_type: glossary
+    verdict: g
+  - term: TJAG
+    source_type: glossary
+    verdict: g
+  - term: TSG
+    source_type: glossary
+    verdict: g
+  - term: UCMJ
+    source_type: glossary
+    verdict: g
+  - term: USC
+    source_type: glossary
+    verdict: g
+  - term: USDB
+    source_type: glossary
+    verdict: g
+- pdf: AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf
+  verdicts:
+  - term: A la carte meal pricing system
+    source_type: glossary
+    verdict: g
+  - term: A la carte meal service
+    source_type: glossary
+    verdict: g
+  - term: AMEDD MEDLI
+    source_type: glossary
+    verdict: g
+  - term: Abatement order
+    source_type: glossary
+    verdict: g
+  - term: Active duty
+    source_type: glossary
+    verdict: g
+  - term: Adult
+    source_type: glossary
+    verdict: g
+  - term: Advance directive
+    source_type: glossary
+    verdict: g
+  - term: Aeromedical physician assistant
+    source_type: glossary
+    verdict: g
+  - term: Anthropometric
+    source_type: glossary
+    verdict: g
+  - term: Authorized monetary value allowed for subsistence
+    source_type: glossary
+    verdict: g
+  - term: Aviation Medicine Program
+    source_type: glossary
+    verdict: g
+  - term: Basic daily food allowance (BDFA)
+    source_type: glossary
+    verdict: g
+  - term: Box meal
+    source_type: glossary
+    verdict: g
+  - term: Clinical laboratory
+    source_type: glossary
+    verdict: g
+  - term: Clinical specialty
+    source_type: glossary
+    verdict: g
+  - term: Decision-making capacity
+    source_type: glossary
+    verdict: g
+  - term: Do not resuscitate (DNR) order
+    source_type: glossary
+    verdict: g
+  - term: Donation after cardiac death
+    source_type: glossary
+    verdict: g
+  - term: Donor card
+    source_type: glossary
+    verdict: g
+  - term: Durable power of attorney for heath care
+    source_type: glossary
+    verdict: g
+  - term: EMS healthcare providers
+    source_type: glossary
+    verdict: g
+  - term: EMS nurse
+    source_type: glossary
+    verdict: g
+  - term: EMS physician
+    source_type: glossary
+    verdict: g
+  - term: Emergency
+    source_type: glossary
+    verdict: g
+  - term: Emergency center
+    source_type: glossary
+    verdict: g
+  - term: Emergency medical services (EMS)
+    source_type: glossary
+    verdict: g
+  - term: Emergency medical technician
+    source_type: glossary
+    verdict: g
+  - term: Ethics committee
+    source_type: glossary
+    verdict: g
+  - term: Federal Library and Information Network
+    source_type: glossary
+    verdict: g
+  - term: Fixed medical treatment facility
+    source_type: glossary
+    verdict: g
+  - term: Incapable patient
+    source_type: glossary
+    verdict: g
+  - term: Indefinite loan collections and libraries
+    source_type: glossary
+    verdict: g
+  - term: Investigational drug
+    source_type: glossary
+    verdict: g
+  - term: Knowledge-based information
+    source_type: glossary
+    verdict: g
+  - term: Living will
+    source_type: glossary
+    verdict: g
+  - term: Lunch
+    source_type: glossary
+    verdict: g
+  - term: Meal day
+    source_type: glossary
+    verdict: g
+  - term: Meal days served
+    source_type: glossary
+    verdict: g
+  - term: Meals served
+    source_type: glossary
+    verdict: g
+  - term: Medical care
+    source_type: glossary
+    verdict: g
+  - term: Medical officer
+    source_type: glossary
+    verdict: g
+  - term: Medical treatment facility
+    source_type: glossary
+    verdict: g
+  - term: Medical treatment facility basic daily food allowance (MTF BDFA)
+    source_type: glossary
+    verdict: g
+  - term: Medication errors
+    source_type: glossary
+    verdict: g
+  - term: Next of kin (primary)
+    source_type: glossary
+    verdict: g
+  - term: Non-Service treatment record
+    source_type: glossary
+    verdict: g
+  - term: Nutrition support team
+    source_type: glossary
+    verdict: g
+  - term: Official functions
+    source_type: glossary
+    verdict: g
+  - term: Organ
+    source_type: glossary
+    verdict: g
+  - term: Organ donor
+    source_type: glossary
+    verdict: g
+  - term: Organ procurement organization
+    source_type: glossary
+    verdict: g
+  - term: Orthopedic footwear
+    source_type: glossary
+    verdict: g
+  - term: Other food service support
+    source_type: glossary
+    verdict: g
+  - term: Other psychological test users
+    source_type: glossary
+    verdict: g
+  - term: Patient basic daily food allowance (BDFA)
+    source_type: glossary
+    verdict: g
+  - term: Patient with decision-making capacity
+    source_type: glossary
+    verdict: g
+  - term: "Pharmaceutical care (Academy of Managed Care Pharmacy\u2019s Concepts in Managed Care Pharmacy series)"
+    source_type: glossary
+    verdict: g
+  - term: Pharmacy data transaction service (PDTS) (from PDTS Business Rules)
+    source_type: glossary
+    verdict: g
+  - term: Pre-hospital EMS
+    source_type: glossary
+    verdict: g
+  - term: Primary care specialty
+    source_type: glossary
+    verdict: g
+  - term: Protocols
+    source_type: glossary
+    verdict: g
+  - term: Psychological test direction
+    source_type: glossary
+    verdict: g
+  - term: Qualified psychologist
+    source_type: glossary
+    verdict: g
+  - term: Service treatment record
+    source_type: glossary
+    verdict: g
+  - term: Special Abbreviations and Terms
+    source_type: glossary
+    verdict: g
+  - term: Special measurement footwear
+    source_type: glossary
+    verdict: g
+  - term: Surrogate
+    source_type: glossary
+    verdict: g
+  - term: TJC
+    source_type: glossary
+    verdict: g
+  - term: TM
+    source_type: glossary
+    verdict: g
+  - term: TPCP
+    source_type: glossary
+    verdict: g
+  - term: TRICARE
+    source_type: glossary
+    verdict: g
+  - term: TSG
+    source_type: glossary
+    verdict: g
+  - term: Test administration
+    source_type: glossary
+    verdict: g
+  - term: Test scoring
+    source_type: glossary
+    verdict: g
+  - term: Tissue
+    source_type: glossary
+    verdict: g
+  - term: Traditional meal pricing system
+    source_type: glossary
+    verdict: g
+  - term: Traditional meal service
+    source_type: glossary
+    verdict: g
+  - term: USAMEDCOM
+    source_type: glossary
+    verdict: g
+  - term: USAMRMC
+    source_type: glossary
+    verdict: g
+  - term: USAPHC
+    source_type: glossary
+    verdict: g
+  - term: USC
+    source_type: glossary
+    verdict: g
+  - term: USCENTCOM
+    source_type: glossary
+    verdict: g
+  - term: VA
+    source_type: glossary
+    verdict: g
+  - term: VISN3
+    source_type: glossary
+    verdict: g
+  - term: VTAT
+    source_type: glossary
+    verdict: g
+  - term: Withhold or withdraw order
+    source_type: glossary
+    verdict: g
+- pdf: AR_40-5_ARMY_PUBLIC_HEALTH_PROGRAM_TSG_2020_05_12_OCR.pdf
+  verdicts:
+  - term: Accountability
+    source_type: glossary
+    verdict: g
+  - term: Accountable agent
+    source_type: glossary
+    verdict: g
+  - term: "All\u2013hazards"
+    source_type: glossary
+    verdict: g
+  - term: Army installation
+    source_type: glossary
+    verdict: g
+  - term: Army personnel
+    source_type: glossary
+    verdict: g
+  - term: Army populations
+    source_type: glossary
+    verdict: g
+  - term: Biological agent
+    source_type: glossary
+    verdict: g
+  - term: Biologics
+    source_type: glossary
+    verdict: g
+  - term: Chemical warfare agent or chemical agent
+    source_type: glossary
+    verdict: g
+  - term: Clinical public health
+    source_type: glossary
+    verdict: g
+  - term: Combat and operational stress reactions
+    source_type: glossary
+    verdict: g
+  - term: Communicable disease
+    source_type: glossary
+    verdict: g
+  - term: Comprehensive health surveillance
+    source_type: glossary
+    verdict: g
+  - term: Contract working dog
+    source_type: glossary
+    verdict: g
+  - term: "Department of Defense\u2013owned animals"
+    source_type: glossary
+    verdict: g
+  - term: Deployment
+    source_type: glossary
+    verdict: g
+  - term: Determination official
+    source_type: glossary
+    verdict: g
+  - term: Direct reporting unit
+    source_type: glossary
+    verdict: g
+  - term: Disease and injury
+    source_type: glossary
+    verdict: g
+  - term: Disease and nonbattle injuries
+    source_type: glossary
+    verdict: g
+  - term: Enterprise
+    source_type: glossary
+    verdict: g
+  - term: Enterprise governance process
+    source_type: glossary
+    verdict: g
+  - term: Environmental health
+    source_type: glossary
+    verdict: g
+  - term: Environmental medicine
+    source_type: glossary
+    verdict: g
+  - term: Epidemiology
+    source_type: glossary
+    verdict: g
+  - term: Ergonomics
+    source_type: glossary
+    verdict: g
+  - term: Feral animal risk mitigation
+    source_type: glossary
+    verdict: g
+  - term: Force health protection
+    source_type: glossary
+    verdict: g
+  - term: Garrison
+    source_type: glossary
+    verdict: g
+  - term: Global Health Engagement
+    source_type: glossary
+    verdict: g
+  - term: "Government\u2013owned animals"
+    source_type: glossary
+    verdict: g
+  - term: Health communication
+    source_type: glossary
+    verdict: g
+  - term: Health hazard
+    source_type: glossary
+    verdict: g
+  - term: Health hazard assessment
+    source_type: glossary
+    verdict: g
+  - term: Health marketing
+    source_type: glossary
+    verdict: g
+  - term: Health outcome
+    source_type: glossary
+    verdict: g
+  - term: Health risk assessment
+    source_type: glossary
+    verdict: g
+  - term: Health risk communication
+    source_type: glossary
+    verdict: g
+  - term: Health surveillance
+    source_type: glossary
+    verdict: g
+  - term: Health threat
+    source_type: glossary
+    verdict: g
+  - term: Industrial hygiene
+    source_type: glossary
+    verdict: g
+  - term: Initial entry training
+    source_type: glossary
+    verdict: g
+  - term: Installation medical authority
+    source_type: glossary
+    verdict: g
+  - term: Installation public health authority
+    source_type: glossary
+    verdict: g
+  - term: Installation public health program
+    source_type: glossary
+    verdict: g
+  - term: Institutional public health
+    source_type: glossary
+    verdict: g
+  - term: Ionizing radiation
+    source_type: glossary
+    verdict: g
+  - term: Medical qualification determination
+    source_type: glossary
+    verdict: g
+  - term: Medical surveillance
+    source_type: glossary
+    verdict: g
+  - term: Medical treatment facility
+    source_type: glossary
+    verdict: g
+  - term: Military working animals
+    source_type: glossary
+    verdict: g
+  - term: Monitoring
+    source_type: glossary
+    verdict: g
+  - term: Nonionizing radiation
+    source_type: glossary
+    verdict: g
+  - term: Occupational and environmental health site assessment
+    source_type: glossary
+    verdict: g
+  - term: Occupational and environmental health surveillance
+    source_type: glossary
+    verdict: g
+  - term: Occupational and environmental health threat
+    source_type: glossary
+    verdict: g
+  - term: Occupational health
+    source_type: glossary
+    verdict: g
+  - term: Occupational medicine
+    source_type: glossary
+    verdict: g
+  - term: Operational public health
+    source_type: glossary
+    verdict: g
+  - term: Oversight
+    source_type: glossary
+    verdict: g
+  - term: Personal readiness
+    source_type: glossary
+    verdict: g
+  - term: Pharmaceuticals
+    source_type: glossary
+    verdict: g
+  - term: Preventive medicine
+    source_type: glossary
+    verdict: g
+  - term: Principles of population medicine
+    source_type: glossary
+    verdict: g
+  - term: Program element
+    source_type: glossary
+    verdict: g
+  - term: Program evaluation
+    source_type: glossary
+    verdict: g
+  - term: Public Health Response Teams
+    source_type: glossary
+    verdict: g
+  - term: Public Health Review Board
+    source_type: glossary
+    verdict: g
+  - term: Public health
+    source_type: glossary
+    verdict: g
+  - term: Public health communication
+    source_type: glossary
+    verdict: g
+  - term: Public health emergency
+    source_type: glossary
+    verdict: g
+  - term: Public health enterprise
+    source_type: glossary
+    verdict: g
+  - term: Public health enterprise governance
+    source_type: glossary
+    verdict: g
+  - term: Quality management
+    source_type: glossary
+    verdict: g
+  - term: Regional health authority
+    source_type: glossary
+    verdict: g
+  - term: Responsibility
+    source_type: glossary
+    verdict: g
+  - term: Risk communication
+    source_type: glossary
+    verdict: g
+  - term: Risk management
+    source_type: glossary
+    verdict: g
+  - term: Senior commander
+    source_type: glossary
+    verdict: g
+  - term: TSG
+    source_type: glossary
+    verdict: g
+  - term: Toxic industrial materials
+    source_type: glossary
+    verdict: g
+  - term: USACE
+    source_type: glossary
+    verdict: g
+  - term: USAR
+    source_type: glossary
+    verdict: g
+  - term: USARC
+    source_type: glossary
+    verdict: g
+  - term: Veterinary food protection surveillance
+    source_type: glossary
+    verdict: g
+  - term: Weapons of mass destruction
+    source_type: glossary
+    verdict: g
+- pdf: AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf
+  verdicts:
+  - term: Abandon
+    source_type: glossary
+    verdict: g
+  - term: Active installation
+    source_type: glossary
+    verdict: g
+  - term: Approval authority
+    source_type: glossary
+    verdict: g
+  - term: Contamination
+    source_type: glossary
+    verdict: g
+  - term: Delegated execution authority
+    source_type: glossary
+    verdict: g
+  - term: Demolition
+    source_type: glossary
+    verdict: g
+  - term: Disposal
+    source_type: glossary
+    verdict: g
+  - term: Division and district commanders
+    source_type: glossary
+    verdict: g
+  - term: Easement
+    source_type: glossary
+    verdict: g
+  - term: "Equipment\u2013in\u2013place"
+    source_type: glossary
+    verdict: g
+  - term: Excess real property
+    source_type: glossary
+    verdict: g
+  - term: Excessing
+    source_type: glossary
+    verdict: g
+  - term: Facility
+    source_type: glossary
+    verdict: g
+  - term: Facility Book Value
+    source_type: glossary
+    verdict: g
+  - term: Fair Market Value/Fair Value
+    source_type: glossary
+    verdict: g
+  - term: Federal Property Act
+    source_type: glossary
+    verdict: g
+  - term: Fee Simple
+    source_type: glossary
+    verdict: g
+  - term: "Fee\u2013owned"
+    source_type: glossary
+    verdict: g
+  - term: Fixture
+    source_type: glossary
+    verdict: g
+  - term: Foreign excess real estate
+    source_type: glossary
+    verdict: g
+  - term: Garrison commander or equivalent
+    source_type: glossary
+    verdict: g
+  - term: HQDA
+    source_type: glossary
+    verdict: g
+  - term: HUD
+    source_type: glossary
+    verdict: g
+  - term: Hazardous materials
+    source_type: glossary
+    verdict: g
+  - term: Holding agency
+    source_type: glossary
+    verdict: g
+  - term: Improvements
+    source_type: glossary
+    verdict: g
+  - term: Industrial installation
+    source_type: glossary
+    verdict: g
+  - term: Ingrants
+    source_type: glossary
+    verdict: g
+  - term: Installation
+    source_type: glossary
+    verdict: g
+  - term: Installed building equipment
+    source_type: glossary
+    verdict: g
+  - term: LHC
+    source_type: glossary
+    verdict: g
+  - term: Land
+    source_type: glossary
+    verdict: g
+  - term: Landholding Commands (Army)
+    source_type: glossary
+    verdict: g
+  - term: Lease
+    source_type: glossary
+    verdict: g
+  - term: License
+    source_type: glossary
+    verdict: g
+  - term: MILDEP
+    source_type: glossary
+    verdict: g
+  - term: MWR
+    source_type: glossary
+    verdict: g
+  - term: NEPA
+    source_type: glossary
+    verdict: g
+  - term: NIR
+    source_type: glossary
+    verdict: g
+  - term: Nonusable condition
+    source_type: glossary
+    verdict: g
+  - term: OSD
+    source_type: glossary
+    verdict: g
+  - term: Outgrant
+    source_type: glossary
+    verdict: g
+  - term: Permit
+    source_type: glossary
+    verdict: g
+  - term: Personal property
+    source_type: glossary
+    verdict: g
+  - term: Public Benefit Conveyance
+    source_type: glossary
+    verdict: g
+  - term: Public Domain
+    source_type: glossary
+    verdict: g
+  - term: RCI
+    source_type: glossary
+    verdict: g
+  - term: RECO
+    source_type: glossary
+    verdict: g
+  - term: RPI
+    source_type: glossary
+    verdict: g
+  - term: Real estate
+    source_type: glossary
+    verdict: g
+  - term: Real estate contracting officer
+    source_type: glossary
+    verdict: g
+  - term: Real property
+    source_type: glossary
+    verdict: g
+  - term: Reassignment
+    source_type: glossary
+    verdict: g
+  - term: Related personal property
+    source_type: glossary
+    verdict: g
+  - term: Relocatable building
+    source_type: glossary
+    verdict: g
+  - term: Reserve Components
+    source_type: glossary
+    verdict: g
+  - term: Reserved public lands
+    source_type: glossary
+    verdict: g
+  - term: SECARMY
+    source_type: glossary
+    verdict: g
+  - term: SF
+    source_type: glossary
+    verdict: g
+  - term: Screening
+    source_type: glossary
+    verdict: g
+  - term: Security interest
+    source_type: glossary
+    verdict: g
+  - term: Site
+    source_type: glossary
+    verdict: g
+  - term: Special Abbreviations and Terms
+    source_type: glossary
+    verdict: g
+  - term: Structure
+    source_type: glossary
+    verdict: g
+  - term: Surplus real estate
+    source_type: glossary
+    verdict: g
+  - term: Tenant
+    source_type: glossary
+    verdict: g
+  - term: Transfer
+    source_type: glossary
+    verdict: g
+  - term: USACE
+    source_type: glossary
+    verdict: g
+  - term: USARC
+    source_type: glossary
+    verdict: g
+  - term: USC
+    source_type: glossary
+    verdict: g
+  - term: Utility
+    source_type: glossary
+    verdict: g
+  - term: Vacated premises
+    source_type: glossary
+    verdict: g
+  - term: Withdrawn public lands
+    source_type: glossary
+    verdict: g
+- pdf: AR_600-20.pdf
+  verdicts:
+  - term: Active duty
+    source_type: glossary
+    verdict: g
+  - term: Active status
+    source_type: glossary
+    verdict: g
+  - term: Anonymous complaint
+    source_type: glossary
+    verdict: g
+  - term: Army National Guard
+    source_type: glossary
+    verdict: g
+  - term: Army National Guard of the United States
+    source_type: glossary
+    verdict: g
+  - term: Army recruit
+    source_type: glossary
+    verdict: g
+  - term: Beliefs
+    source_type: glossary
+    verdict: g
+  - term: Category
+    source_type: glossary
+    verdict: g
+  - term: Chain of command
+    source_type: glossary
+    verdict: g
+  - term: Civil office
+    source_type: glossary
+    verdict: g
+  - term: Command Climate Assessment
+    source_type: glossary
+    verdict: g
+  - term: Common levels of support
+    source_type: glossary
+    verdict: g
+  - term: Complainant
+    source_type: glossary
+    verdict: g
+  - term: Complaint (equal opportunity)
+    source_type: glossary
+    verdict: g
+  - term: Complaint (equal opportunity), formal
+    source_type: glossary
+    verdict: g
+  - term: Complaint (equal opportunity), informal
+    source_type: glossary
+    verdict: g
+  - term: Consent
+    source_type: glossary
+    verdict: g
+  - term: Culture
+    source_type: glossary
+    verdict: g
+  - term: Date of rank
+    source_type: glossary
+    verdict: g
+  - term: Department of Defense Military Equal Opportunity Program
+    source_type: glossary
+    verdict: g
+  - term: Direct support
+    source_type: glossary
+    verdict: g
+  - term: Discrimination
+    source_type: glossary
+    verdict: g
+  - term: Discrimination types
+    source_type: glossary
+    verdict: g
+  - term: Disparaging terms
+    source_type: glossary
+    verdict: g
+  - term: Dual-military couple
+    source_type: glossary
+    verdict: g
+  - term: Emergency medical care
+    source_type: glossary
+    verdict: g
+  - term: Entry-level training
+    source_type: glossary
+    verdict: g
+  - term: Equal Employment Opportunity Program
+    source_type: glossary
+    verdict: g
+  - term: Equal opportunity
+    source_type: glossary
+    verdict: g
+  - term: Equal opportunity complaint review
+    source_type: glossary
+    verdict: g
+  - term: Equal opportunity leader
+    source_type: glossary
+    verdict: g
+  - term: Establishment
+    source_type: glossary
+    verdict: g
+  - term: Ethnic group
+    source_type: glossary
+    verdict: g
+  - term: Ethnicity
+    source_type: glossary
+    verdict: g
+  - term: Family member
+    source_type: glossary
+    verdict: g
+  - term: Family readiness liaison
+    source_type: glossary
+    verdict: g
+  - term: Formal complaint
+    source_type: glossary
+    verdict: g
+  - term: Garrison
+    source_type: glossary
+    verdict: g
+  - term: Goals
+    source_type: glossary
+    verdict: g
+  - term: Grade
+    source_type: glossary
+    verdict: g
+  - term: Hostile work environment
+    source_type: glossary
+    verdict: g
+  - term: Human relations
+    source_type: glossary
+    verdict: g
+  - term: Informal complaint
+    source_type: glossary
+    verdict: g
+  - term: Installation
+    source_type: glossary
+    verdict: g
+  - term: Investigation
+    source_type: glossary
+    verdict: g
+  - term: Joint Service environment
+    source_type: glossary
+    verdict: g
+  - term: Legal sufficiency review
+    source_type: glossary
+    verdict: g
+  - term: Military Equal Opportunity Program
+    source_type: glossary
+    verdict: g
+  - term: National origin
+    source_type: glossary
+    verdict: g
+  - term: Nonpartisan political activity
+    source_type: glossary
+    verdict: g
+  - term: Objective
+    source_type: glossary
+    verdict: g
+  - term: Partisan political activity
+    source_type: glossary
+    verdict: g
+  - term: Prejudice
+    source_type: glossary
+    verdict: g
+  - term: Preponderance of evidence
+    source_type: glossary
+    verdict: g
+  - term: Proposed corrective action
+    source_type: glossary
+    verdict: g
+  - term: Prospect
+    source_type: glossary
+    verdict: g
+  - term: Protected communication (Military Whistleblower Protection Act)
+    source_type: glossary
+    verdict: g
+  - term: Race
+    source_type: glossary
+    verdict: g
+  - term: Race/ethnic groups
+    source_type: glossary
+    verdict: g
+  - term: Rank
+    source_type: glossary
+    verdict: g
+  - term: Reasonable person standard
+    source_type: glossary
+    verdict: g
+  - term: Recipient
+    source_type: glossary
+    verdict: g
+  - term: Religion
+    source_type: glossary
+    verdict: g
+  - term: Reprisal
+    source_type: glossary
+    verdict: g
+  - term: Retaliation
+    source_type: glossary
+    verdict: g
+  - term: Senior commander
+    source_type: glossary
+    verdict: g
+  - term: Senior regularly assigned Army officer
+    source_type: glossary
+    verdict: g
+  - term: Senior responsible officials
+    source_type: glossary
+    verdict: g
+  - term: Servicemember
+    source_type: glossary
+    verdict: g
+  - term: Sexual assault
+    source_type: glossary
+    verdict: g
+  - term: Sexual harassment
+    source_type: glossary
+    verdict: g
+  - term: Sexual orientation
+    source_type: glossary
+    verdict: g
+  - term: Single parent
+    source_type: glossary
+    verdict: g
+  - term: Site
+    source_type: glossary
+    verdict: g
+  - term: Social media
+    source_type: glossary
+    verdict: g
+  - term: Spouse
+    source_type: glossary
+    verdict: g
+  - term: Strategic Support Area
+    source_type: glossary
+    verdict: g
+  - term: Subject
+    source_type: glossary
+    verdict: g
+  - term: Substantiated equal opportunity complaint
+    source_type: glossary
+    verdict: g
+  - term: Substantiated violation
+    source_type: glossary
+    verdict: g
+  - term: Supervisor
+    source_type: glossary
+    verdict: g
+  - term: Supported commander
+    source_type: glossary
+    verdict: g
+  - term: Supporting commander
+    source_type: glossary
+    verdict: g
+  - term: Uniformed Service
+    source_type: glossary
+    verdict: g
+  - term: Unwelcome
+    source_type: glossary
+    verdict: g
+  - term: Values
+    source_type: glossary
+    verdict: g
+  - term: Verbatim comments
+    source_type: glossary
+    verdict: g
+  - term: Victim
+    source_type: glossary
+    verdict: g
+- pdf: AR_672-20_INCENTIVE_AWARDS_G-1_2024_11_06_OCR.pdf
+  verdicts:
+  - term: Career service recognition
+    source_type: glossary
+    verdict: g
+  - term: Cash award
+    source_type: glossary
+    verdict: g
+  - term: Designated area of eligibility
+    source_type: glossary
+    verdict: g
+  - term: Direct support
+    source_type: glossary
+    verdict: g
+  - term: Equal employment opportunity and adverse action certification
+    source_type: glossary
+    verdict: g
+  - term: Honorary award
+    source_type: glossary
+    verdict: g
+  - term: Incentive award
+    source_type: glossary
+    verdict: g
+  - term: Invention award
+    source_type: glossary
+    verdict: g
+  - term: Public service award
+    source_type: glossary
+    verdict: g
+  - term: Quality Step Increase
+    source_type: glossary
+    verdict: g
+  - term: Rating of record
+    source_type: glossary
+    verdict: g
+  - term: SASA
+    source_type: glossary
+    verdict: g
+  - term: SECARMY
+    source_type: glossary
+    verdict: g
+  - term: SECDEF
+    source_type: glossary
+    verdict: g
+  - term: SES
+    source_type: glossary
+    verdict: g
+  - term: SF
+    source_type: glossary
+    verdict: g
+  - term: SIR
+    source_type: glossary
+    verdict: g
+  - term: SL
+    source_type: glossary
+    verdict: g
+  - term: ST
+    source_type: glossary
+    verdict: g
+  - term: Special achievement award
+    source_type: glossary
+    verdict: g
+  - term: TIG
+    source_type: glossary
+    verdict: g
+  - term: TIOH
+    source_type: glossary
+    verdict: g
+  - term: TOA
+    source_type: glossary
+    verdict: g
+  - term: USC
+    source_type: glossary
+    verdict: g
+  - term: USD (P&R)
+    source_type: glossary
+    verdict: g
+- pdf: ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR.pdf
+  verdicts:
+  - term: stability operation
+    source_type: glossary
+    verdict: g
+  - term: sustainment preparation of the operational environment
+    source_type: glossary
+    verdict: g
+- pdf: FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR.pdf
+  verdicts:
+  - term: '*engineer'
+    source_type: glossary
+    verdict: g
+  - term: '*field'
+    source_type: glossary
+    verdict: b
+  - term: USINDOPACOM
+    source_type: glossary
+    verdict: g
+  - term: countermobility
+    source_type: glossary
+    verdict: g
+- pdf: FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR.pdf
+  verdicts:
+  - term: surveillance
+    source_type: glossary
+    verdict: g
+  - term: synchronization
+    source_type: glossary
+    verdict: g
+  - term: tempo
+    source_type: glossary
+    verdict: g
+  - term: unified action
+    source_type: glossary
+    verdict: g
+- pdf: FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR.pdf
+  verdicts:
+  - term: sustainment warfighting function
+    source_type: glossary
+    verdict: g
+- pdf: FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR.pdf
+  verdicts:
+  - term: '* spectrum management operations'
+    source_type: glossary
+    verdict: g
+  - term: offensive cyberspace operations
+    source_type: glossary
+    verdict: g
+  - term: operational environment
+    source_type: glossary
+    verdict: g
+  - term: operational reach
+    source_type: glossary
+    verdict: g
+  - term: retrograde
+    source_type: glossary
+    verdict: g
+  - term: running estimate
+    source_type: glossary
+    verdict: g
+  - term: spillage
+    source_type: glossary
+    verdict: g
+  - term: synchronization
+    source_type: glossary
+    verdict: g
+  - term: technical channels
+    source_type: glossary
+    verdict: g
+  - term: threat
+    source_type: glossary
+    verdict: g
+  - term: unified land operations
+    source_type: glossary
+    verdict: g
+  - term: visual information
+    source_type: glossary
+    verdict: g
+  - term: wide-area network
+    source_type: glossary
+    verdict: g
+  - term: DODIN operations
+    source_type: inline
+    verdict: g
+- pdf: PAM_190-45_ARMY_LAW_ENFORCEMENT_REPORTING_AND_TRACKING_SYSTEM_PMG_2019_04_18_OCR.pdf
+  verdicts:
+  - term: case activity summary
+    source_type: glossary
+    verdict: g
+  - term: collateral law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: corrected law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: credible information
+    source_type: glossary
+    verdict: g
+  - term: final law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: for official use only
+    source_type: glossary
+    verdict: g
+  - term: initial law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: initial/final law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: interim law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: joint law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: law enforcement sensitive
+    source_type: glossary
+    verdict: g
+  - term: raw data file
+    source_type: glossary
+    verdict: g
+  - term: "serious incident report\u2013final"
+    source_type: glossary
+    verdict: g
+  - term: "serious incident report\u2013final supplemental"
+    source_type: glossary
+    verdict: g
+  - term: "serious incident report\u2013initial"
+    source_type: glossary
+    verdict: g
+  - term: "serious incident report\u2013initial/final"
+    source_type: glossary
+    verdict: g
+  - term: "serious incident report\u2013status"
+    source_type: glossary
+    verdict: g
+  - term: "serious incident report\u2013supplemental"
+    source_type: glossary
+    verdict: g
+  - term: sexual assault response coordinator
+    source_type: glossary
+    verdict: g
+  - term: status law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: subject/suspect (as reporting criteria in Army Law Enforcement Record Tracking System)
+    source_type: glossary
+    verdict: g
+  - term: supplemental code
+    source_type: glossary
+    verdict: g
+  - term: supplemental law enforcement report
+    source_type: glossary
+    verdict: g
+  - term: victim
+    source_type: glossary
+    verdict: g
+  - term: witness
+    source_type: glossary
+    verdict: g
+- pdf: PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf
+  verdicts:
+  - term: ALDF
+    source_type: glossary
+    verdict: g
+  - term: ALDP
+    source_type: glossary
+    verdict: g
+  - term: ARSTAF
+    source_type: glossary
+    verdict: g
+  - term: ASA (FM&C)
+    source_type: glossary
+    verdict: g
+  - term: ASA (M&RA)
+    source_type: glossary
+    verdict: g
+  - term: Army Leader Development Forum (formerly prepare the Army forum)
+    source_type: glossary
+    verdict: g
+  - term: Army Leader Development Program
+    source_type: glossary
+    verdict: g
+  - term: Army Leader Development Strategy
+    source_type: glossary
+    verdict: g
+  - term: Assessment
+    source_type: glossary
+    verdict: g
+  - term: Assessment support document
+    source_type: glossary
+    verdict: g
+  - term: Assist Agency (or agent)
+    source_type: glossary
+    verdict: g
+  - term: Benefits
+    source_type: glossary
+    verdict: g
+  - term: CBA
+    source_type: glossary
+    verdict: g
+  - term: CG
+    source_type: glossary
+    verdict: g
+  - term: CSA
+    source_type: glossary
+    verdict: g
+  - term: Chief of Staff, Army review
+    source_type: glossary
+    verdict: g
+  - term: Closed Leader Development Initiative
+    source_type: glossary
+    verdict: g
+  - term: Complete Leader Development Initiative
+    source_type: glossary
+    verdict: g
+  - term: Cost benefit analysis
+    source_type: glossary
+    verdict: g
+  - term: Education
+    source_type: glossary
+    verdict: g
+  - term: Experience
+    source_type: glossary
+    verdict: g
+  - term: HQDA
+    source_type: glossary
+    verdict: g
+  - term: IPL
+    source_type: glossary
+    verdict: g
+  - term: Initiative
+    source_type: glossary
+    verdict: g
+  - term: Integrated priority list
+    source_type: glossary
+    verdict: g
+  - term: Lead agent (or Agency)
+    source_type: glossary
+    verdict: g
+  - term: Leader Development Program
+    source_type: glossary
+    verdict: g
+  - term: Leader development
+    source_type: glossary
+    verdict: g
+  - term: Leader development initiative
+    source_type: glossary
+    verdict: g
+  - term: Leadership
+    source_type: glossary
+    verdict: g
+  - term: Measures of effectiveness
+    source_type: glossary
+    verdict: g
+  - term: Measures of performance
+    source_type: glossary
+    verdict: g
+  - term: POM
+    source_type: glossary
+    verdict: g
+  - term: Policy
+    source_type: glossary
+    verdict: g
+  - term: Priorities list
+    source_type: glossary
+    verdict: g
+  - term: Proposed initiative
+    source_type: glossary
+    verdict: g
+  - term: Return on investment
+    source_type: glossary
+    verdict: g
+  - term: SRO
+    source_type: glossary
+    verdict: g
+  - term: Self-development
+    source_type: glossary
+    verdict: g
+  - term: Special Abbreviations and Terms
+    source_type: glossary
+    verdict: g
+  - term: TRADOC
+    source_type: glossary
+    verdict: g
+  - term: Training
+    source_type: glossary
+    verdict: g
+- pdf: PAM_71-32_FORCE_DEVELOPMENT_AND_DOCUMENTATION_CONSOLIDATED_PROCEDURES_G-3_5_7_2019_03_21_OCR.pdf
+  verdicts:
+  - term: Army acquisition objective
+    source_type: glossary
+    verdict: g
+  - term: Associated support items of equipment and personnel
+    source_type: glossary
+    verdict: g
+  - term: Authorized substitutes
+    source_type: glossary
+    verdict: g
+  - term: Base table of organization and equipment
+    source_type: glossary
+    verdict: g
+  - term: Capability developer
+    source_type: glossary
+    verdict: g
+  - term: Component major item
+    source_type: glossary
+    verdict: g
+  - term: Components
+    source_type: glossary
+    verdict: g
+  - term: Components of end items
+    source_type: glossary
+    verdict: g
+  - term: Critical mission support items
+    source_type: glossary
+    verdict: g
+  - term: Current force
+    source_type: glossary
+    verdict: g
+  - term: Developmental line item numbers
+    source_type: glossary
+    verdict: g
+  - term: Effective date
+    source_type: glossary
+    verdict: g
+  - term: Element Sequence
+    source_type: glossary
+    verdict: g
+  - term: End item
+    source_type: glossary
+    verdict: g
+  - term: Equip for
+    source_type: glossary
+    verdict: b
+  - term: Equipment Review and Validation Board
+    source_type: glossary
+    verdict: g
+  - term: Equipment defense articles
+    source_type: glossary
+    verdict: g
+  - term: Equipment readiness code P items
+    source_type: glossary
+    verdict: g
+  - term: Equipment readiness codes A and P items
+    source_type: glossary
+    verdict: g
+  - term: Equipment-in-place
+    source_type: glossary
+    verdict: g
+  - term: Exception modified table of organization and equipment
+    source_type: glossary
+    verdict: g
+  - term: Excess defense articles
+    source_type: glossary
+    verdict: g
+  - term: Force Design Update
+    source_type: glossary
+    verdict: g
+  - term: Force development
+    source_type: glossary
+    verdict: g
+  - term: Force file
+    source_type: glossary
+    verdict: g
+  - term: Force integration
+    source_type: glossary
+    verdict: g
+  - term: Force integration functional area analysis
+    source_type: glossary
+    verdict: g
+  - term: Force management
+    source_type: glossary
+    verdict: g
+  - term: Force review point
+    source_type: glossary
+    verdict: g
+  - term: Generating force
+    source_type: glossary
+    verdict: g
+  - term: In-lieu-of equipment items
+    source_type: glossary
+    verdict: g
+  - term: Installed equipment
+    source_type: glossary
+    verdict: g
+  - term: Logistics Control Code
+    source_type: glossary
+    verdict: g
+  - term: Manpower requirements criteria
+    source_type: glossary
+    verdict: g
+  - term: Master force
+    source_type: glossary
+    verdict: g
+  - term: Materiel developer
+    source_type: glossary
+    verdict: g
+  - term: Minimum mission essential wartime requirements
+    source_type: glossary
+    verdict: g
+  - term: Modernization Guidance
+    source_type: glossary
+    verdict: g
+  - term: Modernization Path
+    source_type: glossary
+    verdict: g
+  - term: Modified table of organization and equipment
+    source_type: glossary
+    verdict: g
+  - term: Multicomponent unit
+    source_type: glossary
+    verdict: g
+  - term: Nonstandard line item numbers
+    source_type: glossary
+    verdict: g
+  - term: Objective table of organization and equipment
+    source_type: glossary
+    verdict: g
+  - term: Operating force
+    source_type: glossary
+    verdict: g
+  - term: Organization integrator
+    source_type: glossary
+    verdict: g
+  - term: Organizational integration
+    source_type: glossary
+    verdict: g
+  - term: Organizational requirements document approval board
+    source_type: glossary
+    verdict: g
+  - term: Program objective memorandum force (programmed force)
+    source_type: glossary
+    verdict: g
+  - term: Retention objective
+    source_type: glossary
+    verdict: g
+  - term: Special Abbreviations and Terms
+    source_type: glossary
+    verdict: g
+  - term: Staff support agency (or activity)
+    source_type: glossary
+    verdict: g
+  - term: Standard line item numbers
+    source_type: glossary
+    verdict: g
+  - term: Standard manpower requirements criteria
+    source_type: glossary
+    verdict: g
+  - term: Standard requirements code
+    source_type: glossary
+    verdict: g
+  - term: "Standard study number\u2013line item number automated management and integrating system"
+    source_type: glossary
+    verdict: g
+  - term: Troop program sequence number
+    source_type: glossary
+    verdict: g
+  - term: Unit Reference Sheet
+    source_type: glossary
+    verdict: g
+  - term: VCSA
+    source_type: glossary
+    verdict: g
+  - term: VI
+    source_type: glossary
+    verdict: g
+  - term: WO
+    source_type: glossary
+    verdict: g
+  - term: WRSA
+    source_type: glossary
+    verdict: g
+  - term: ZLIN
+    source_type: glossary
+    verdict: g
+- pdf: TC_1-19.30.pdf
+  verdicts:
+  - term: music performance team
+    source_type: glossary
+    verdict: g
+  - term: "dampen \nusually"
+    source_type: inline
+    verdict: g

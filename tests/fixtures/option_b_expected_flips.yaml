@@ -1,0 +1,51 @@
+description: 'Terms that Option B''s classifier fixes must flip from verdict ''b'' to ''g''. Regenerate via: python3 scripts/refresh_option_b_fixture.py. Sourced from scripts/build_labels_yaml.py::FLIPS_BAD_TO_GOOD
+  at the time this fixture was generated (independent of later dict pruning).'
+expected_flips:
+- pdf_prefix: AR_135-100
+  pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf
+  source_type: glossary
+  term: 1LT
+- pdf_prefix: AR_135-100
+  pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf
+  source_type: glossary
+  term: 1SG
+- pdf_prefix: AR_135-100
+  pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf
+  source_type: glossary
+  term: 2LT
+- pdf_prefix: AR_135-100
+  pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf
+  source_type: glossary
+  term: Military Intelligence (MI) combat electronic warfare intelligence (CEWI) units
+- pdf_prefix: AR_135-100
+  pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf
+  source_type: glossary
+  term: USAR Active Guard Reserve Management Program (USAR AGR MP)
+- pdf_prefix: AR_135-100
+  pdf: AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf
+  source_type: glossary
+  term: vol
+- pdf_prefix: AR_40-3
+  pdf: AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf
+  source_type: glossary
+  term: Medical treatment facility basic daily food allowance (MTF BDFA)
+- pdf_prefix: AR_40-3
+  pdf: AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf
+  source_type: glossary
+  term: Pharmaceutical care (Academy of Managed Care Pharmacy’s Concepts in Managed Care Pharmacy series)
+- pdf_prefix: AR_40-3
+  pdf: AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf
+  source_type: glossary
+  term: Pharmacy data transaction service (PDTS) (from PDTS Business Rules)
+- pdf_prefix: PAM_190-45
+  pdf: PAM_190-45_ARMY_LAW_ENFORCEMENT_REPORTING_AND_TRACKING_SYSTEM_PMG_2019_04_18_OCR.pdf
+  source_type: glossary
+  term: subject/suspect (as reporting criteria in Army Law Enforcement Record Tracking System)
+- pdf_prefix: PAM_350-58
+  pdf: PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf
+  source_type: glossary
+  term: Army Leader Development Forum (formerly prepare the Army forum)
+- pdf_prefix: PAM_71-32
+  pdf: PAM_71-32_FORCE_DEVELOPMENT_AND_DOCUMENTATION_CONSOLIDATED_PROCEDURES_G-3_5_7_2019_03_21_OCR.pdf
+  source_type: glossary
+  term: Standard study number–line item number automated management and integrating system
