@@ -54,13 +54,13 @@ entries:
   verdicts:
   - term: 1LT
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: 1SG
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: 2LT
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: AR 124
     source_type: glossary
     verdict: b
@@ -276,7 +276,7 @@ entries:
     verdict: g
   - term: Military Intelligence (MI) combat electronic warfare intelligence (CEWI) units
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: Military record
     source_type: glossary
     verdict: g
@@ -453,7 +453,7 @@ entries:
     verdict: g
   - term: USAR Active Guard Reserve Management Program (USAR AGR MP)
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: USF
     source_type: glossary
     verdict: g
@@ -510,7 +510,7 @@ entries:
     verdict: g
   - term: vol
     source_type: glossary
-    verdict: b
+    verdict: g
 - pdf: AR_190-55_U.S._ARMY_CORRECTIONS_SYSTEM__PROCEDURES_FOR_MILITARY_EXECUTIONS_PMG_2023_10_30_OCR.pdf
   verdicts:
   - term: Execution Management and Coordination Team
@@ -694,7 +694,7 @@ entries:
     verdict: g
   - term: Medical treatment facility basic daily food allowance (MTF BDFA)
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: Medication errors
     source_type: glossary
     verdict: g
@@ -736,10 +736,10 @@ entries:
     verdict: g
   - term: "Pharmaceutical care (Academy of Managed Care Pharmacy\u2019s Concepts in Managed Care Pharmacy series)"
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: Pharmacy data transaction service (PDTS) (from PDTS Business Rules)
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: Pre-hospital EMS
     source_type: glossary
     verdict: g
@@ -1800,7 +1800,7 @@ entries:
     verdict: g
   - term: subject/suspect (as reporting criteria in Army Law Enforcement Record Tracking System)
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: supplemental code
     source_type: glossary
     verdict: g
@@ -1832,7 +1832,7 @@ entries:
     verdict: g
   - term: Army Leader Development Forum (formerly prepare the Army forum)
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: Army Leader Development Program
     source_type: glossary
     verdict: g
@@ -2107,7 +2107,7 @@ entries:
     verdict: g
   - term: "Standard study number\u2013line item number automated management and integrating system"
     source_type: glossary
-    verdict: b
+    verdict: g
   - term: Troop program sequence number
     source_type: glossary
     verdict: g
