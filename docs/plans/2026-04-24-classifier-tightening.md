@@ -366,3 +366,38 @@ These will be written into the D plan upfront, not as iter-2/3 revisions. Writin
 - 3 rule suggestions surfaced for ~/.claude/CLAUDE.md Quality Standards (see /review-plan iter-4 final)
 
 **Deferred to separate plan:** Option D (LLM-judge) — the 4 upfront design concerns (response-contract validation, cache-key completeness, mocked API tests, cost-assumptions-grounded-in-real-workload) will be baked into that plan at iter-1.
+
+---
+
+## Post-merge remediation (iter-1 — Codex iter-exec findings)
+
+After PR #6 merged, /review-execution iter-1 surfaced 2 Codex findings
+that warranted a follow-up PR (#7):
+
+1. **Repo-root entrypoint broken after classifier extraction.** `python3
+   scripts/build_labels_yaml.py` from fresh checkout failed because the
+   classifier now lives under `src/`, requiring `pip install -e .` first.
+   Fixed via `sys.path` shim in `scripts/build_labels_yaml.py`,
+   `refresh_classifier_snapshot.py`, and `refresh_option_b_fixture.py`
+   (the last also needed `__file__` in its exec() namespace).
+
+2. **Raw-length cap lost.** The step-5 length-cap tweak
+   `len(_strip_trailing_parens(t)) > 100` only checked the stripped core,
+   letting garbage like `Foo (<120 chars>) × 3` pass. Added
+   `len(t) > 200` absolute cap alongside the core cap.
+
+Plus a docs gap: `validation_set/README.md` now lists the committed
+`classifier_snapshot*.yaml` files + explains the two-snapshot
+regression-oracle mechanism.
+
+**PR #7 verification:**
+- Codex rerun on remediation: SUCCESS, no new issues
+- pytest tests/: 77/77 pass
+- pytest -m validation: 2/2 pass (no regression)
+- Fresh-venv smoke (pyyaml only, no editable install): all 3 scripts run from repo root
+- CI green (build-wheel + lint-and-test 3.11 + 3.12)
+
+Merged at `75705f0` on 2026-04-24. Post-merge main validation: 2/2 pass.
+
+**Final state:** 9 total commits across 2 PRs. Main at `75705f0`. No
+further remediation items pending.
