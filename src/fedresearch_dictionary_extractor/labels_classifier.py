@@ -144,10 +144,17 @@ def classify(term: str, definition: str) -> str:
         re.IGNORECASE,
     ):
         return "b"
-    # Option B 2a length cap: use post-strip core for upper bound so
+    # Option B 2a length cap: use post-strip core for the inner bound so
     # long-paren-suffix terms aren't rejected before looks_like_noun_phrase
     # peels their trailing parens. 100 chars accommodates ~10 ten-char words.
+    # ALSO keep a raw absolute cap (Codex exec-remediate #2) to reject OCR
+    # garbage like `Foo (<120 chars>) (<120 chars>) (<120 chars>)` whose
+    # stripped core is short but whose raw length balloons. 200 chars allows
+    # the 100-char core + one ~100-char paren suffix, which is well past any
+    # real Army glossary entry observed (longest in current corpus: ~100 chars).
     if len(t) < 2:
+        return "b"
+    if len(t) > 200:
         return "b"
     if len(_strip_trailing_parens(t)) > 100:
         return "b"

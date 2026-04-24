@@ -16,6 +16,15 @@ import re
 import sys
 from pathlib import Path
 
+# Allow `python scripts/build_labels_yaml.py` from repo root WITHOUT
+# requiring `pip install -e .` first. Codex remediation-iter-1 fix:
+# before extraction, the classifier was inline; after extraction it lives
+# under src/. Keep the documented zero-setup workflow working.
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_SRC_PATH = _REPO_ROOT / "src"
+if _SRC_PATH.is_dir() and str(_SRC_PATH) not in sys.path:
+    sys.path.insert(0, str(_SRC_PATH))
+
 try:
     import yaml
 except ImportError:
