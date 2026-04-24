@@ -77,64 +77,11 @@ EXCLUDE_FROM_NEGATIVES = {
     "AR_135-100": ["AR 124", "AR 140"],   # citation fragments from "(AR 124-210)" splits
 }
 
-# ── Auto-classifier (heuristic for non-reviewed docs + tier-2 metric) ───
-NOISE_TERMS = {
-    "UNCLASSIFIED", "CLASSIFIED", "CONFIDENTIAL", "SECRET",
-    "This section contains no entries.", "Terms", "See",
-}
-STOP_TAIL = {
-    "and", "or", "the", "of", "to", "with", "in", "on", "for", "by", "as",
-    "are", "is", "was", "were", "that", "which", "who", "if", "when",
-}
-ACRO_TERM_RE = re.compile(r"^[A-Z][A-Z0-9.\-/]{1,18}(\s*\([^)]{1,20}\))?$")
-
-
-def is_recognized_acronym_entry(term: str, definition: str) -> bool:
-    """Recognized acronym + expansion pattern (e.g., WHINSEC, SECARMY,
-    ASA (FM&C)). Override for the `^[A-Z]{6,}` rule."""
-    if not term or not definition or len(term) > 22:
-        return False
-    if not ACRO_TERM_RE.match(term):
-        return False
-    if not definition[0].isalpha() or len(definition) < 3:
-        return False
-    return True
-
-
-def looks_like_noun_phrase(t: str) -> bool:
-    words = t.split()
-    if not words or len(words) > 8:
-        return False
-    if re.search(r"\.\s+\S", t):
-        return False
-    if words[-1].lower().rstrip(".,;:") in STOP_TAIL:
-        return False
-    if sum(1 for c in t if c.isalpha() or c.isspace() or c in "-/") / max(len(t), 1) < 0.85:
-        return False
-    return True
-
-
-def classify(term: str, definition: str) -> str:
-    """Heuristic: 'g' (good glossary entry) or 'b' (noise)."""
-    t = term.strip()
-    d = definition.strip()
-    if not t or not d: return "b"
-    if t in NOISE_TERMS: return "b"
-    if is_recognized_acronym_entry(t, d): return "g"
-    if re.fullmatch(r"[A-Z]{6,}", t): return "b"
-    if t.lower().startswith(("this section", "see ", "pin ")): return "b"
-    if len(d) < 15: return "b"
-    if t.startswith(("a. ", "b. ", "c. ", "(1)", "(2)", "(3)", "(4)", "(5)")): return "b"
-    if re.search(r"\b(and|or|the|of|to|with|in|on|for|by|as|are|is|was|were|that|which|who)$", t, re.IGNORECASE):
-        return "b"
-    if len(t) > 80 or len(t) < 2: return "b"
-    if re.fullmatch(r"[\d\.,\-/ ]+", t): return "b"
-    if re.search(r"\([A-Z]{2,5}\s*$", t) or re.search(r"\(AR\b", t): return "b"
-    if not looks_like_noun_phrase(t): return "b"
-    if re.match(r"^(AR|PAM|FM|ATP|ADP|TC|TM|SD|STP)[\s\-]\d", d) and len(d) < 25:
-        return "b"
-    if re.fullmatch(r"[\d\.\)\s]+", d): return "b"
-    return "g"
+# ── Auto-classifier (extracted to library module PR4 §6 step 2) ─────────
+# Classifier helpers live in src/fedresearch_dictionary_extractor/labels_classifier.py
+# for direct testability. Run `pip install -e '.[dev]'` from repo root to make
+# this import resolve.
+from fedresearch_dictionary_extractor.labels_classifier import classify  # noqa: E402
 
 
 def main() -> int:
