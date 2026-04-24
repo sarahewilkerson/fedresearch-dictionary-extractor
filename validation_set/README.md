@@ -29,14 +29,25 @@ PR1.2 wheel publication is **gated on these thresholds passing AND `passed_all: 
 
 ```
 validation_set/
-├── README.md              ← this file
-├── labels.example.yaml    ← format reference (committed)
-├── labels.yaml            ← real labels (gitignored)
-├── scorecard.json         ← derived (gitignored); written by harness
-└── pdfs/                  ← gitignored — symlink or copy your 30 real PDFs here
+├── README.md                          ← this file
+├── labels.example.yaml                ← format reference (committed)
+├── labels.yaml                        ← real labels (gitignored)
+├── scorecard.json                     ← derived (gitignored); written by harness
+├── classifier_snapshot_prefix.yaml    ← immutable pre-fix regression baseline (committed — PR-classifier-B)
+├── classifier_snapshot.yaml           ← current classifier verdicts over candidate-output/*.json (committed)
+├── candidate-output/*.json            ← pre-fix extractor output per PDF (committed — used by the auto-classifier)
+└── pdfs/                              ← gitignored — symlink or copy your 30 real PDFs here
     ├── AR_600-20.pdf
     └── ... (30 total)
 ```
+
+### Regression oracle for classifier changes (PR-classifier-B)
+
+When modifying `src/fedresearch_dictionary_extractor/labels_classifier.py`:
+- `classifier_snapshot_prefix.yaml` is the **immutable** pre-fix baseline. NEVER regenerate.
+- `classifier_snapshot.yaml` is the **current** state. Regenerate via `python3 scripts/refresh_classifier_snapshot.py` after any classifier change.
+- `tests/fixtures/option_b_expected_flips.yaml` enumerates the terms expected to flip `b`→`g` for PR-classifier-B (independent of the `FLIPS_BAD_TO_GOOD` dict, which is now empty).
+- `tests/test_labels_classifier.py::test_no_unexpected_classifier_flips` asserts that the diff between the two snapshot files equals exactly the fixture's flip set. Any drift is flagged.
 
 ## Two-tier label oracle (PR1.2-quality)
 
