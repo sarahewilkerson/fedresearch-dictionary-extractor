@@ -21,13 +21,20 @@ import json
 import pathlib
 import sys
 
+# Allow `python scripts/refresh_classifier_snapshot.py` from repo root
+# without requiring `pip install -e .` first.
+_REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
+_SRC_PATH = _REPO_ROOT / "src"
+if _SRC_PATH.is_dir() and str(_SRC_PATH) not in sys.path:
+    sys.path.insert(0, str(_SRC_PATH))
+
 try:
     import yaml
 except ImportError:
     print("ERROR: PyYAML not installed. Run: pip install -e '.[dev]'", file=sys.stderr)
     sys.exit(1)
 
-from fedresearch_dictionary_extractor.labels_classifier import classify
+from fedresearch_dictionary_extractor.labels_classifier import classify  # noqa: E402
 
 CLASSIFIER_VERSION = "v2-2026-04-24"
 

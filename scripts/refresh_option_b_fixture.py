@@ -26,12 +26,13 @@ except ImportError:
 
 
 def _load_flips_bad_to_good(build_script: pathlib.Path) -> dict[str, list[str]]:
-    """Extract FLIPS_BAD_TO_GOOD dict from build_labels_yaml.py by exec-ing it
-    with a stub classify so we don't actually build labels.yaml."""
+    """Extract FLIPS_BAD_TO_GOOD dict from build_labels_yaml.py by exec-ing it.
+    Provides `__file__` in the exec namespace so build_labels_yaml.py's
+    sys.path shim (Codex remediation-iter-1) can resolve the repo root."""
     src = build_script.read_text(encoding="utf-8")
-    # Restrict exec to module-level constants; skip main() invocation
-    module_ns: dict = {"__name__": "__not_main__"}
-    # Exec but guard against the if __name__ == "__main__" block
+    # Guard against the if __name__ == "__main__" block + provide __file__
+    # for the shim at the top of build_labels_yaml.py.
+    module_ns: dict = {"__name__": "__not_main__", "__file__": str(build_script)}
     exec(compile(src, str(build_script), "exec"), module_ns)  # noqa: S102
     return module_ns["FLIPS_BAD_TO_GOOD"]
 
@@ -45,8 +46,16 @@ def main() -> int:
 
     flips = _load_flips_bad_to_good(build_script)
     if not flips:
-        print("ERROR: FLIPS_BAD_TO_GOOD is empty — nothing to fixture", file=sys.stderr)
-        return 1
+        # Post-PR-classifier-B steady state: FLIPS_BAD_TO_GOOD is empty
+        # because Option B's rule tightenings made the overrides redundant.
+        # The committed fixture (generated when the dict was populated) is
+        # the canonical oracle. No-op exit.
+        print(
+            f"FLIPS_BAD_TO_GOOD is empty (expected post-PR-classifier-B). "
+            f"Fixture at {out_path.relative_to(repo_root)} is unchanged.",
+            file=sys.stderr,
+        )
+        return 0
 
     fixture_entries: list[dict] = []
     for pdf_prefix, terms in flips.items():
