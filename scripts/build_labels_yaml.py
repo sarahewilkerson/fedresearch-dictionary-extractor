@@ -41,32 +41,20 @@ FLIPS_GOOD_TO_BAD = {
     "FM_3-34":    ["*engineer"],
 }
 
-# User flipped: classifier said bad, user said good
-# (Mostly long noun phrases with parenthetical-acronym suffix that trip
-# `looks_like_noun_phrase`'s 8-word limit.)
-FLIPS_BAD_TO_GOOD = {
-    # Batch 2
-    "PAM_190-45": [
-        "subject/suspect (as reporting criteria in Army Law Enforcement Record Tracking System)",
-    ],
-    "PAM_350-58": [
-        "Army Leader Development Forum (formerly prepare the Army forum)",
-    ],
-    "PAM_71-32":  [
-        "Standard study number–line item number automated management and integrating system",
-    ],
-    # Batch 3 (decided autonomously by AI per established user pattern; user delegated)
-    "AR_40-3": [
-        "Medical treatment facility basic daily food allowance (MTF BDFA)",
-        "Pharmaceutical care (Academy of Managed Care Pharmacy’s Concepts in Managed Care Pharmacy series)",
-        "Pharmacy data transaction service (PDTS) (from PDTS Business Rules)",
-    ],
-    "AR_135-100": [
-        "vol", "1LT", "1SG", "2LT",
-        "Military Intelligence (MI) combat electronic warfare intelligence (CEWI) units",
-        "USAR Active Guard Reserve Management Program (USAR AGR MP)",
-    ],
-}
+# User flipped: classifier said bad, user said good.
+#
+# PRUNED in the PR4-classifier plan step 6 after Option B's 2a/2b/2c rule
+# fixes in labels_classifier.py. Those 12 entries now classify as 'g'
+# naturally — the override became redundant. Verified by a zero-byte
+# labels.yaml diff: generating labels.yaml with empty FLIPS_BAD_TO_GOOD
+# produces bit-identical output to generating it with the populated list
+# (the 12 entries land in tier1_positive_terms either way).
+#
+# The authoritative snapshot of what Option B flipped is
+# tests/fixtures/option_b_expected_flips.yaml (immutable).
+#
+# Dict kept (empty) for future overrides if new patterns surface.
+FLIPS_BAD_TO_GOOD: dict[str, list[str]] = {}
 
 # Terms the user flagged as bad but the extractor faithfully captures
 # from BOLD source text — would need an extractor-level term-blocklist
