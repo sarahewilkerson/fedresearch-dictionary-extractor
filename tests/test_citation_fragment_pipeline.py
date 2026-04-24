@@ -113,15 +113,25 @@ def test_p1_ar_fragment_rejected_and_citation_stripped() -> None:
     # Primary assertion: Equipment concentration site was emitted after
     assert "Equipment concentration site" in terms, f"missing ECS; got: {terms}"
 
-    # Core pipeline assertion: the (AR 135 200 and AR 124 210) parenthetical
-    # accumulated onto "Entry on duty date" def must be stripped by
-    # strip_citations. No raw `AR 124` substring should remain in any def.
+    # Byte-exact assertion on the cleaned definition (Codex iter-1 P3 —
+    # catches over-stripping or truncation that the absence-only checks
+    # below would miss).
     eod = next(e for e in entries if e["term"] == "Entry on duty date")
-    assert "AR 124" not in eod["definition"], \
-        f"AR 124 leaked into def after strip_citations: {eod['definition']!r}"
-    # The parenthetical should be gone (or at minimum, the "210)" tail should not appear).
-    assert "210)" not in eod["definition"], \
-        f"citation fragment '210)' remains in def: {eod['definition']!r}"
+    expected_def = (
+        "The date travel officially begins (per compete orders). "
+        "The official travel date is determined by the mode."
+    )
+    assert eod["definition"] == expected_def, (
+        f"Entry on duty date def not cleaned as expected.\n"
+        f"  expected: {expected_def!r}\n"
+        f"  actual:   {eod['definition']!r}"
+    )
+
+    # Absence assertions (belt-and-suspenders — the byte-exact check above
+    # already catches these, but leaving them as explicit guards against
+    # future test refactors that might relax the exact match).
+    assert "AR 124" not in eod["definition"]
+    assert "210)" not in eod["definition"]
 
 
 def test_p1_legitimate_ar_hyphenated_still_stripped() -> None:
