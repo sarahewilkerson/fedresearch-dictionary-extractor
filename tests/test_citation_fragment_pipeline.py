@@ -86,17 +86,17 @@ def test_p1_ar_fragment_rejected_and_citation_stripped() -> None:
     # min_x + TERM_COL_MARGIN (30). min_x=50 → threshold=80. All our spans
     # start at 50, so all are "in term column" → bold spans become new-term
     # candidates, non-bold continuations fall to the continuation branch.
-    X = 50.0
+    x = 50.0  # noqa: N806 — uppercase elsewhere would shadow; this is a local coordinate
     page_dict = _page_dict_from_lines(
         [
-            (200.0, [_span("Entry on duty date", (X, 0, 250, 0), bold=True)]),
-            (220.0, [_span("The date travel officially begins (per compete", (X, 0, 400, 0))]),
-            (240.0, [_span("orders). The official travel date is determined", (X, 0, 400, 0))]),
-            (260.0, [_span("by the mode. (AR 135 200 and", (X, 0, 400, 0))]),
-            (280.0, [_span("AR 124", (X, 0, 100, 0), bold=True)]),       # REJECTED by new pattern
-            (300.0, [_span("210)", (X, 0, 100, 0))]),                     # continuation
-            (320.0, [_span("Equipment concentration site", (X, 0, 300, 0), bold=True)]),
-            (340.0, [_span("An equipment storage area.", (X, 0, 300, 0))]),
+            (200.0, [_span("Entry on duty date", (x, 0, 250, 0), bold=True)]),
+            (220.0, [_span("The date travel officially begins (per compete", (x, 0, 400, 0))]),
+            (240.0, [_span("orders). The official travel date is determined", (x, 0, 400, 0))]),
+            (260.0, [_span("by the mode. (AR 135 200 and", (x, 0, 400, 0))]),
+            (280.0, [_span("AR 124", (x, 0, 100, 0), bold=True)]),       # REJECTED by new pattern
+            (300.0, [_span("210)", (x, 0, 100, 0))]),                     # continuation
+            (320.0, [_span("Equipment concentration site", (x, 0, 300, 0), bold=True)]),
+            (340.0, [_span("An equipment storage area.", (x, 0, 300, 0))]),
         ]
     )
     pages = [_mock_page(page_dict)]
@@ -126,13 +126,13 @@ def test_p1_ar_fragment_rejected_and_citation_stripped() -> None:
 
 def test_p1_legitimate_ar_hyphenated_still_stripped() -> None:
     """Regression: full '(AR 124-210)' citation still matches strip_citations."""
-    X = 50.0
+    x = 50.0  # noqa: N806 — uppercase elsewhere would shadow; this is a local coordinate
     page_dict = _page_dict_from_lines(
         [
-            (200.0, [_span("Term A", (X, 0, 100, 0), bold=True)]),
-            (220.0, [_span("Body text referring to (AR 124-210) publication.", (X, 0, 500, 0))]),
-            (240.0, [_span("Term B", (X, 0, 100, 0), bold=True)]),
-            (260.0, [_span("Other body.", (X, 0, 300, 0))]),
+            (200.0, [_span("Term A", (x, 0, 100, 0), bold=True)]),
+            (220.0, [_span("Body text referring to (AR 124-210) publication.", (x, 0, 500, 0))]),
+            (240.0, [_span("Term B", (x, 0, 100, 0), bold=True)]),
+            (260.0, [_span("Other body.", (x, 0, 300, 0))]),
         ]
     )
     pages = [_mock_page(page_dict)]

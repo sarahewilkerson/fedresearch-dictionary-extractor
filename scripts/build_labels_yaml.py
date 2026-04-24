@@ -63,13 +63,20 @@ FLIPS_GOOD_TO_BAD = {
 # Dict kept (empty) for future overrides if new patterns surface.
 FLIPS_BAD_TO_GOOD: dict[str, list[str]] = {}
 
-# Terms the user flagged as bad but the extractor faithfully captures
-# from BOLD source text — would need an extractor-level term-blocklist
-# to suppress (deferred to v0.2). Excluded from negative_labels so the
-# Tier-1 gate isn't permanently blocked by these unfixable cases.
+# Terms the user flagged as bad but the extractor faithfully captured
+# from BOLD source text. Excluded from negative_labels so the Tier-1 gate
+# isn't permanently blocked.
+#
+# AR_135-100 entries ("AR 124", "AR 140") RESOLVED in v0.2.a (2026-04-24):
+#   ArmyProfile.invalid_term_patterns now rejects pre-hyphen citation
+#   fragments at extraction time; those entries no longer appear in
+#   candidate-output.
+# PAM_71-32 "Equip for" DEFERRED to v0.2.b: needs a deeper parser fix
+#   (rejecting the term AND its accumulated continuation, not just the
+#   term line). See docs/plans/2026-04-24-invalid-term-blocklist.md "Out
+#   of scope → v0.2.b" for the successor plan.
 EXCLUDE_FROM_NEGATIVES = {
-    "PAM_71-32":  ["Equip for"],
-    "AR_135-100": ["AR 124", "AR 140"],   # citation fragments from "(AR 124-210)" splits
+    "PAM_71-32": ["Equip for"],   # v0.2.b pending
 }
 
 # ── Auto-classifier (extracted to library module PR4 §6 step 2) ─────────

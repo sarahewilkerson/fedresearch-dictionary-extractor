@@ -218,21 +218,60 @@ def _load_snapshot(path: pathlib.Path) -> dict[tuple[str, str, str], str]:
     return out
 
 
+# Expected corpus removals over the baseline captured in
+# classifier_snapshot_prefix.yaml. Each entry documents the removing PR +
+# reason. Future corpus-shrinkage PRs must append to this set — exact-set
+# equality on both directions makes silent drift impossible.
+#
+# `classifier_snapshot_prefix.yaml` remains IMMUTABLE (per
+# validation_set/README.md) — its 700-entry keyspace captures pre-Option-B
+# classifier behavior over the then-current corpus. When the CORPUS shrinks
+# via extractor tightening (e.g., v0.2.a's invalid_term blocklist), the
+# prefix snapshot doesn't lie; it just has "ghost" entries for terms that
+# no longer exist, and this allowlist tracks them.
+REMOVED_SINCE_PREFIX: set[tuple[str, str, str]] = {
+    # v0.2.a (2026-04-24) — AR/FM pre-hyphen citation-fragment pattern
+    (
+        "AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_"
+        "OF_THE_ARMY_G-1_1994_09_01_OCR.pdf",
+        "glossary",
+        "AR 124",
+    ),
+    (
+        "AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_"
+        "OF_THE_ARMY_G-1_1994_09_01_OCR.pdf",
+        "glossary",
+        "AR 140",
+    ),
+}
+
+
 def test_no_unexpected_classifier_flips() -> None:
     """Diff classifier_snapshot.yaml (current) against classifier_snapshot_prefix.yaml
-    (immutable pre-fix baseline). The set of (pdf, source_type, term) entries
-    whose verdict went from 'b' → 'g' must equal the fixture. No g → b flips,
-    no additional b → g flips.
+    (immutable pre-fix baseline). Asserts:
+      - removed keyset == REMOVED_SINCE_PREFIX (tracks deliberate corpus
+        shrinkage via extractor tightening)
+      - added keyset == ∅ (unexpected corpus growth requires review)
+      - b→g flips (on keys common to both) == fixture
+      - no g→b regressions
     """
     prefix = _load_snapshot(SNAPSHOT_PREFIX)
     current = _load_snapshot(SNAPSHOT)
-    assert set(prefix.keys()) == set(current.keys()), \
-        "snapshot keyspaces differ — corpus or naming changed?"
+
+    removed = set(prefix.keys()) - set(current.keys())
+    added = set(current.keys()) - set(prefix.keys())
+    assert removed == REMOVED_SINCE_PREFIX, (
+        f"unexpected_removed={removed - REMOVED_SINCE_PREFIX}, "
+        f"missing_removed={REMOVED_SINCE_PREFIX - removed}"
+    )
+    assert not added, f"unexpected corpus growth (requires review): {added}"
 
     b_to_g: list[tuple[str, str, str]] = []
     g_to_b: list[tuple[str, str, str]] = []
     for key, pre_v in prefix.items():
-        cur_v = current[key]
+        cur_v = current.get(key)
+        if cur_v is None:
+            continue  # removed entry — tracked by REMOVED_SINCE_PREFIX above
         if pre_v == "b" and cur_v == "g":
             b_to_g.append(key)
         elif pre_v == "g" and cur_v == "b":

@@ -6,7 +6,7 @@
   "source_pub_number": "DA PAM 71-32",
   "source_doc_type": "DA",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:56Z",
+  "extraction_timestamp": "2026-04-24T10:14:27Z",
   "profile": "army",
   "text_sha256": "d3cf51e5d905dac172bc78afde77c7411fdfb40f1a828a19eb8a3eab565b5abf",
   "entries": [
@@ -57,7 +57,7 @@
     {
       "term": "ZLIN",
       "term_normalized": "zlin",
-      "definition": "developmental line item number 4610\u2013R Automated TDA Equipment Request Tool",
+      "definition": "developmental line item number 4610–R Automated TDA Equipment Request Tool",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
@@ -90,7 +90,7 @@
     {
       "term": "Authorized substitutes",
       "term_normalized": "authorized substitutes",
-      "definition": "Equipment items prescribed by HQDA in accordance with the provisions explained in DA Pam 708\u20133, that, if cur- rently on-hand (available) in the unit, will be reported as on-hand (available) in the USR in place of the equipment items required in accordance with the unit\u2019s formal requirements and authorizations document (MTOE and TDA).Authorized substitutes are listed in DA Pam 708\u20133 (see SB 700\u201320).",
+      "definition": "Equipment items prescribed by HQDA in accordance with the provisions explained in DA Pam 708–3, that, if cur- rently on-hand (available) in the unit, will be reported as on-hand (available) in the USR in place of the equipment items required in accordance with the unit’s formal requirements and authorizations document (MTOE and TDA).Authorized substitutes are listed in DA Pam 708–3 (see SB 700–20).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 140,
@@ -189,7 +189,7 @@
     {
       "term": "Effective date",
       "term_normalized": "effective date",
-      "definition": "The EDATE is used to identify the date of ANY change in a unit\u2019s status (that is, activation, inactivation, con- version) and is published annually with the release of updated MTOEs via the Command Plan process.",
+      "definition": "The EDATE is used to identify the date of ANY change in a unit’s status (that is, activation, inactivation, con- version) and is published annually with the release of updated MTOEs via the Command Plan process.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 141,
@@ -266,7 +266,7 @@
     {
       "term": "Equipment Review and Validation Board",
       "term_normalized": "equipment review and validation board",
-      "definition": "ERVB is a process through which TDA and/or AUGTDA organizations submit requests (automated 4610\u2013R tool) for HQDA-controlled equipment authorizations or modernization upgrades. HQDA-controlled equipment refers to the HQDA-managed LIN list, as determined by DCS, G\u20138.",
+      "definition": "ERVB is a process through which TDA and/or AUGTDA organizations submit requests (automated 4610–R tool) for HQDA-controlled equipment authorizations or modernization upgrades. HQDA-controlled equipment refers to the HQDA-managed LIN list, as determined by DCS, G–8.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 142,
@@ -398,7 +398,7 @@
     {
       "term": "In-lieu-of equipment items",
       "term_normalized": "in-lieu-of equipment items",
-      "definition": "The in-lieu-of items are those on hand (available) equipment items, to include nontype classified items and non- standard items, that do not have a valid substitute relationship reflected in SB 700\u201320, but the CDR wish-es to report as on hand (available) in place of an equipment item required in accordance with the unit's formal requirements and authorization document.",
+      "definition": "The in-lieu-of items are those on hand (available) equipment items, to include nontype classified items and non- standard items, that do not have a valid substitute relationship reflected in SB 700–20, but the CDR wish-es to report as on hand (available) in place of an equipment item required in accordance with the unit's formal requirements and authorization document.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -420,7 +420,7 @@
     {
       "term": "Logistics Control Code",
       "term_normalized": "logistics control code",
-      "definition": "The Logistics Control Code is a one position alphabetic code assigned to Army adopted items and other items of materiel authorized in accordance with AR 700\u2013142, Table 3\u20131 and Table 3\u20132. These code is used to pro-vide a basis for logistics support and documentation decisions. LCC\u2013A, is designated as standard and classify as mission essential. LCC\u2013B is designated as standard and classify as no longer procurable, not the preferred materiel but ac- ceptable for mission. LCC\u2013F, is designated as standard and classify as used for Contingency /Training/Homeland Defense. LCC\u2013N is designated as exempt and classify as exempt. LCC\u2013O, is designated as obsolete and classify as obsolete. LCC\u2013P, is designated as limited procurement and classify as non-developmental item. LCC\u2013R, does not have a designation and Non-Line Item Number (LIN) related items not appearing in SB 700\u201320. LCC\u2013S, is desig- nated as obsolete and classify as discontinued item; no longer acceptable as minimum mission warfighter equip- ment. LCC\u2013T is designated as limited procurement and classify as low-rate initial production (LRIP) for operational test and evaluation. LCC\u2013U is no longer applicable.",
+      "definition": "The Logistics Control Code is a one position alphabetic code assigned to Army adopted items and other items of materiel authorized in accordance with AR 700–142, Table 3–1 and Table 3–2. These code is used to pro-vide a basis for logistics support and documentation decisions. LCC–A, is designated as standard and classify as mission essential. LCC–B is designated as standard and classify as no longer procurable, not the preferred materiel but ac- ceptable for mission. LCC–F, is designated as standard and classify as used for Contingency /Training/Homeland Defense. LCC–N is designated as exempt and classify as exempt. LCC–O, is designated as obsolete and classify as obsolete. LCC–P, is designated as limited procurement and classify as non-developmental item. LCC–R, does not have a designation and Non-Line Item Number (LIN) related items not appearing in SB 700–20. LCC–S, is desig- nated as obsolete and classify as discontinued item; no longer acceptable as minimum mission warfighter equip- ment. LCC–T is designated as limited procurement and classify as low-rate initial production (LRIP) for operational test and evaluation. LCC–U is no longer applicable.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 143,
@@ -486,7 +486,7 @@
     {
       "term": "Modernization Path",
       "term_normalized": "modernization path",
-      "definition": "A modernization path (MODPATH) behaves much like a \"container\" that groups these BOIPs into a material capa- bility/solution and is inserted into a TOE. MODPATHs are doctrinally sound groupings of one or more BOIPs that represent materiel solutions for specific capabilities. Unless otherwise specified, the term MODPATH, in and of itself, refers to these materiel solutions. They are used to introduce, replace, or modernize, BOIPs into or within a TOE. A MODPATH may have a single BOIP or it may have many BOIPs that pro-vide a logical sequence of BOIPs that upgrade (modernize) a basic system capability over time. Equipment line item numbers (LINs) are documented in accordance with the Supply Bulletin 700\u201320. All LINs that are materiel solutions for TOE and MTOE documen- tations are managed through a basis of issue plan (BOIP). In the TOE/BOIP/MTOE production system, every BOIP is assigned a modernization path (MODPATH) which establishes a digital linkage for modernizing equipment. For example, the M48 tank is linked to the M60 tank which is linked to the M1 tank. The MODPATH accounts for modernization of a BOIP\u2019s primary LIN, its ASIOE, and unique personnel requirements like operators. The first BOIP/LIN in a MODPATH is the Army\u2019s base item for the required capability while the last BOIP/LIN is the Ar- my\u2019s most modern item to fulfill the required capability, the objective. All levels of modernization across a MODPATH are available for planning, programming, and data analysis from base TOE (BTOE) to objective TOE (OTOE). Most units are authorized and resourced at a modernization level along the MODPATH between BTOE and OTOE depending on G\u20133/5/7 modernization priorities and G\u20138 equipment availability. Modernization Paths can be viewed using FMSWeb.",
+      "definition": "A modernization path (MODPATH) behaves much like a \"container\" that groups these BOIPs into a material capa- bility/solution and is inserted into a TOE. MODPATHs are doctrinally sound groupings of one or more BOIPs that represent materiel solutions for specific capabilities. Unless otherwise specified, the term MODPATH, in and of itself, refers to these materiel solutions. They are used to introduce, replace, or modernize, BOIPs into or within a TOE. A MODPATH may have a single BOIP or it may have many BOIPs that pro-vide a logical sequence of BOIPs that upgrade (modernize) a basic system capability over time. Equipment line item numbers (LINs) are documented in accordance with the Supply Bulletin 700–20. All LINs that are materiel solutions for TOE and MTOE documen- tations are managed through a basis of issue plan (BOIP). In the TOE/BOIP/MTOE production system, every BOIP is assigned a modernization path (MODPATH) which establishes a digital linkage for modernizing equipment. For example, the M48 tank is linked to the M60 tank which is linked to the M1 tank. The MODPATH accounts for modernization of a BOIP’s primary LIN, its ASIOE, and unique personnel requirements like operators. The first BOIP/LIN in a MODPATH is the Army’s base item for the required capability while the last BOIP/LIN is the Ar- my’s most modern item to fulfill the required capability, the objective. All levels of modernization across a MODPATH are available for planning, programming, and data analysis from base TOE (BTOE) to objective TOE (OTOE). Most units are authorized and resourced at a modernization level along the MODPATH between BTOE and OTOE depending on G–3/5/7 modernization priorities and G–8 equipment availability. Modernization Paths can be viewed using FMSWeb.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -530,7 +530,7 @@
     {
       "term": "Objective table of organization and equipment",
       "term_normalized": "objective table of organization and equipment",
-      "definition": "A fully modernized, doctrinally sound organizational model design achieved by applying all of the HQDA-approved BOIPs. The OTOE sets the goal for planning and programming of the Army\u2019s force structure and supporting acqui- sition systems.",
+      "definition": "A fully modernized, doctrinally sound organizational model design achieved by applying all of the HQDA-approved BOIPs. The OTOE sets the goal for planning and programming of the Army’s force structure and supporting acqui- sition systems.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 144,
@@ -574,7 +574,7 @@
     {
       "term": "Organizational requirements document approval board",
       "term_normalized": "organizational requirements document approval board",
-      "definition": "The organizational requirements document approval board is the DCS, G\u20133/5/7 forum at the colonel and general Officer levels that convenes on a regular basis to review and approve or disapprove new and amended BOIPs for documentation.",
+      "definition": "The organizational requirements document approval board is the DCS, G–3/5/7 forum at the colonel and general Officer levels that convenes on a regular basis to review and approve or disapprove new and amended BOIPs for documentation.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -596,7 +596,7 @@
     {
       "term": "Retention objective",
       "term_normalized": "retention objective",
-      "definition": "The RO is the quantity of major end items of equipment that the army will retain once procurement is complete to support life cycle management. The RO will be established and will replace the AAO/APO when procurement is complete and the program achieves full operating capability (FOC). The RO supports the divestment process by identifying the minimum inventory for items no longer in procurement or being replaced by modernized items. To- gether the RO and AAO within a MPR support achievement of the total army requirement identified in the SACS OTOE and additional requirements identified through the AAO/APO/RO approval process. The RO will consist of the sub-elements of the AAO or APO, replacing the OTOE requirements with the MTOE, TDA and Augmentation TDA requirement. The calculated RO will be adjusted Based on strategic portfolio assessment review (SPAR) deci- sions and as modernization occurs. The DCS, G\u20133/5/7 is the approving authority for the RO",
+      "definition": "The RO is the quantity of major end items of equipment that the army will retain once procurement is complete to support life cycle management. The RO will be established and will replace the AAO/APO when procurement is complete and the program achieves full operating capability (FOC). The RO supports the divestment process by identifying the minimum inventory for items no longer in procurement or being replaced by modernized items. To- gether the RO and AAO within a MPR support achievement of the total army requirement identified in the SACS OTOE and additional requirements identified through the AAO/APO/RO approval process. The RO will consist of the sub-elements of the AAO or APO, replacing the OTOE requirements with the MTOE, TDA and Augmentation TDA requirement. The calculated RO will be adjusted Based on strategic portfolio assessment review (SPAR) deci- sions and as modernization occurs. The DCS, G–3/5/7 is the approving authority for the RO",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 145,
@@ -649,8 +649,8 @@
       "flags": []
     },
     {
-      "term": "Standard study number\u2013line item number automated management and integrating system",
-      "term_normalized": "standard study number\u2013line item number automated management and integrating system",
+      "term": "Standard study number–line item number automated management and integrating system",
+      "term_normalized": "standard study number–line item number automated management and integrating system",
       "definition": "SLAMIS is a Web-based application designed to provide Army users easy access to key \"chain-of-custody\" data relationships and management tools for use over the entire life cycle of major items of equipment. Online processes support requirements approval, funding, acquisition, basis of issue planning, authorization, initial fielding, sustain- ment, property book management, and eventual disposal of weapon systems and/or equipment items. A TDA is a workload-based manpower authorization document. It prescribes the organizational structure, the per- sonnel, and equipment requirements, and authorizations required to perform a unique mission for which no TOE exists. However, a TDA can be either an operating or GF TDA. TDAs include military, civilian, as well as standard and commercial equipment. TDAs are organized and resourced in accordance with DoD and Army priorities",
       "source_type": "glossary",
       "section": "Glossary",
@@ -662,7 +662,7 @@
     {
       "term": "Troop program sequence number",
       "term_normalized": "troop program sequence number",
-      "definition": "Used to track an organization capability at various echelons by grouping UIC\u2019s under a common field.",
+      "definition": "Used to track an organization capability at various echelons by grouping UIC’s under a common field.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 146,

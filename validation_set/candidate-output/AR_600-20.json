@@ -6,7 +6,7 @@
   "source_pub_number": "AR 600-20",
   "source_doc_type": "AR",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:46Z",
+  "extraction_timestamp": "2026-04-24T10:14:17Z",
   "profile": "army",
   "text_sha256": "eca7fd861049a3bc25c43f6c926df8bf220a9e035e124c603090ba3feb9ca328",
   "entries": [
@@ -233,7 +233,7 @@
     {
       "term": "Direct support",
       "term_normalized": "direct support",
-      "definition": "A support relationship requiring a force to support another specific forces and authorizing it to answer directly to the supported force\u2019s request for assistance.",
+      "definition": "A support relationship requiring a force to support another specific forces and authorizing it to answer directly to the supported force’s request for assistance.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -255,7 +255,7 @@
     {
       "term": "Discrimination types",
       "term_normalized": "discrimination types",
-      "definition": "The following definition of discrimination types apply to the Military Equal Opportunity program: a. Color discrimination. Occurs when an individual is treated differently based on the lightness, darkness or toner color characteristics of the person. This type of discrimination can occur with race discrimination. Color discrimina- tion can occur between persons of different races or ethnicities. It can also occur when members of the same race treat each other differently because of lightness or darkness of their skin. b. Sex discrimination. Occurs when an individual is deprived of an opportunity because of their sex (including preg- nancy) or when decisions are made based on stereotypes and assumptions about abilities, traits, or the performance of individuals on the basis of sex. c. Racial discrimination. Occurs when an individual is treated differently because of their racial group, racial charac- teristics (for example, hair texture, color, facial features), or because of their relationship or association with someone of a particular race. d. Religious discrimination. Occurs when an individual is treated more or less favorably because of their religious beliefs or practices\u2014except to the extent a religious accommodation is warranted. For example, imposing stricter promotion requirements for a person of a certain religious or imposing more or different work requirements on an individual because of their religious beliefs or practices, or forcing an individual to participate\u2014or not participate\u2014 in a religious activity. e. National origin discrimination. Occurs when an individual is treated less favorably because of their origin, ethnicity or accent, or because it is believed they are a particular nationality.",
+      "definition": "The following definition of discrimination types apply to the Military Equal Opportunity program: a. Color discrimination. Occurs when an individual is treated differently based on the lightness, darkness or toner color characteristics of the person. This type of discrimination can occur with race discrimination. Color discrimina- tion can occur between persons of different races or ethnicities. It can also occur when members of the same race treat each other differently because of lightness or darkness of their skin. b. Sex discrimination. Occurs when an individual is deprived of an opportunity because of their sex (including preg- nancy) or when decisions are made based on stereotypes and assumptions about abilities, traits, or the performance of individuals on the basis of sex. c. Racial discrimination. Occurs when an individual is treated differently because of their racial group, racial charac- teristics (for example, hair texture, color, facial features), or because of their relationship or association with someone of a particular race. d. Religious discrimination. Occurs when an individual is treated more or less favorably because of their religious beliefs or practices—except to the extent a religious accommodation is warranted. For example, imposing stricter promotion requirements for a person of a certain religious or imposing more or different work requirements on an individual because of their religious beliefs or practices, or forcing an individual to participate—or not participate— in a religious activity. e. National origin discrimination. Occurs when an individual is treated less favorably because of their origin, ethnicity or accent, or because it is believed they are a particular nationality.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 124,
@@ -266,7 +266,7 @@
     {
       "term": "Disparaging terms",
       "term_normalized": "disparaging terms",
-      "definition": "Terms used to degrade, belittle, insult, or negative statements pertaining to race, color, sex , national origin, or religion. These terms include insults, printed material, visual material, signs, symbols, posters, or insignia. The determining factor whether a term is disparaging is not the intent but the impact it has on the recipient or a reasonable person. The use of these terms may contribute to an unlawful hostile work environment if it occurs with respect to a person\u2019s race, color, sex , national origin, or religion and must not be tolerated.",
+      "definition": "Terms used to degrade, belittle, insult, or negative statements pertaining to race, color, sex , national origin, or religion. These terms include insults, printed material, visual material, signs, symbols, posters, or insignia. The determining factor whether a term is disparaging is not the intent but the impact it has on the recipient or a reasonable person. The use of these terms may contribute to an unlawful hostile work environment if it occurs with respect to a person’s race, color, sex , national origin, or religion and must not be tolerated.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 125,
@@ -453,7 +453,7 @@
     {
       "term": "Hostile work environment",
       "term_normalized": "hostile work environment",
-      "definition": "A hostile work environment is a series of acts that are so severe and pervasive as to alter an individual\u2019s work condi- tions. The acts may be discreet acts which are offensive, intimidating, or abusive to another person using the reason- able person standard. They need not result in concrete psychological harm, but need only be perceived by a reasonable person as hostile or offensive.",
+      "definition": "A hostile work environment is a series of acts that are so severe and pervasive as to alter an individual’s work condi- tions. The acts may be discreet acts which are offensive, intimidating, or abusive to another person using the reason- able person standard. They need not result in concrete psychological harm, but need only be perceived by a reasonable person as hostile or offensive.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 126,
@@ -541,7 +541,7 @@
     {
       "term": "National origin",
       "term_normalized": "national origin",
-      "definition": "An individual\u2019s or ancestor\u2019s place of origin. Also applies to a person who has the physical, cultural, or linguistic characteristics of a national group.",
+      "definition": "An individual’s or ancestor’s place of origin. Also applies to a person who has the physical, cultural, or linguistic characteristics of a national group.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 127,
@@ -728,7 +728,7 @@
     {
       "term": "Senior commander",
       "term_normalized": "senior commander",
-      "definition": "An officer designated on orders from HQDA as the SC of an installation. Normally the senior GO at the installation. The SC\u2019s mission is the care of Soldiers, Families, and DA Civilians, and to enable unit readiness. While the delegation of senior command authority is direct from HQDA, the SC will routinely resolve installation issues with IMCOM and, as needed, the associated ACOM, ASCC, or DRU.",
+      "definition": "An officer designated on orders from HQDA as the SC of an installation. Normally the senior GO at the installation. The SC’s mission is the care of Soldiers, Families, and DA Civilians, and to enable unit readiness. While the delegation of senior command authority is direct from HQDA, the SC will routinely resolve installation issues with IMCOM and, as needed, the associated ACOM, ASCC, or DRU.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -750,7 +750,7 @@
     {
       "term": "Senior responsible officials",
       "term_normalized": "senior responsible officials",
-      "definition": "Leaders of non-command type organizations that supervise military and/or DA Civilian personnel (for example, the DCS, G \u2013 1, or a director under the U.S. Army Materiel Command).",
+      "definition": "Leaders of non-command type organizations that supervise military and/or DA Civilian personnel (for example, the DCS, G – 1, or a director under the U.S. Army Materiel Command).",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -783,7 +783,7 @@
     {
       "term": "Sexual harassment",
       "term_normalized": "sexual harassment",
-      "definition": "Conduct that involves unwelcome sexual advances, requests for sexual favors, and deliberate or repeated offensive comments of a general nature when: Submission to such conduct is either explicitly or implicitly a term or condition of a person\u2019s job, pay or career; or submission to or rejection of such conduct by a person is used as a basis for career or employment decisions affecting that person; or such conduct has the purpose or effect of unreasonably interfering with an individual\u2019s work performance or creates an intimidating, hostile, or offensive working environment and is so",
+      "definition": "Conduct that involves unwelcome sexual advances, requests for sexual favors, and deliberate or repeated offensive comments of a general nature when: Submission to such conduct is either explicitly or implicitly a term or condition of a person’s job, pay or career; or submission to or rejection of such conduct by a person is used as a basis for career or employment decisions affecting that person; or such conduct has the purpose or effect of unreasonably interfering with an individual’s work performance or creates an intimidating, hostile, or offensive working environment and is so",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 128,
@@ -838,7 +838,7 @@
     {
       "term": "Spouse",
       "term_normalized": "spouse",
-      "definition": "The husband or wife of a Soldier. If such person is also in the military, see the term \u201cdual-military couple.\u201d",
+      "definition": "The husband or wife of a Soldier. If such person is also in the military, see the term “dual-military couple.”",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -871,7 +871,7 @@
     {
       "term": "Substantiated equal opportunity complaint",
       "term_normalized": "substantiated equal opportunity complaint",
-      "definition": "A substantiated finding occurs when a preponderance of the evidence supports (more likely to have occurred than not occurred) the complainant\u2019s allegation of a violation of law, regulation or Army policy or standards. The documented facts indicate that a violation occurred.",
+      "definition": "A substantiated finding occurs when a preponderance of the evidence supports (more likely to have occurred than not occurred) the complainant’s allegation of a violation of law, regulation or Army policy or standards. The documented facts indicate that a violation occurred.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -904,7 +904,7 @@
     {
       "term": "Supported commander",
       "term_normalized": "supported commander",
-      "definition": "In the context of the support command relationship, the commander who receives assistance from another com- mander\u2019s force or capabilities, and who is responsible for ensuring that the supporting commander understands the assistance required.",
+      "definition": "In the context of the support command relationship, the commander who receives assistance from another com- mander’s force or capabilities, and who is responsible for ensuring that the supporting commander understands the assistance required.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,
@@ -915,7 +915,7 @@
     {
       "term": "Supporting commander",
       "term_normalized": "supporting commander",
-      "definition": "In the context of a support command relationship, the commander who aids, protects, complements, or sustains another commander\u2019s force, and who is responsible for providing the assistance required by the supported commander.",
+      "definition": "In the context of a support command relationship, the commander who aids, protects, complements, or sustains another commander’s force, and who is responsible for providing the assistance required by the supported commander.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 129,

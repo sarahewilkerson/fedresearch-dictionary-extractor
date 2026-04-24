@@ -48,6 +48,7 @@ When modifying `src/fedresearch_dictionary_extractor/labels_classifier.py`:
 - `classifier_snapshot.yaml` is the **current** state. Regenerate via `python3 scripts/refresh_classifier_snapshot.py` after any classifier change.
 - `tests/fixtures/option_b_expected_flips.yaml` enumerates the terms expected to flip `b`→`g` for PR-classifier-B (independent of the `FLIPS_BAD_TO_GOOD` dict, which is now empty).
 - `tests/test_labels_classifier.py::test_no_unexpected_classifier_flips` asserts that the diff between the two snapshot files equals exactly the fixture's flip set. Any drift is flagged.
+- When a corpus change (e.g., extractor tightening) deliberately removes entries from `classifier_snapshot.yaml`, the removed (pdf, source_type, term) tuples must be added to `REMOVED_SINCE_PREFIX` in the same test file. The test uses exact-set equality on both removed-keys and added-keys — silent drift in either direction fails loud. `classifier_snapshot_prefix.yaml` retains "ghost" entries for the removed terms and stays immutable.
 
 ## Two-tier label oracle (PR1.2-quality)
 

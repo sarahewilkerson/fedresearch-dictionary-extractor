@@ -6,14 +6,14 @@
   "source_pub_number": "DA PAM 190-45",
   "source_doc_type": "DA",
   "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-23T11:33:52Z",
+  "extraction_timestamp": "2026-04-24T10:14:23Z",
   "profile": "army",
   "text_sha256": "3b77af78fb85dd457dcbc09ce4f56f2a621035c70130eee31e5a3a0c4c358cd2",
   "entries": [
     {
       "term": "case activity summary",
       "term_normalized": "case activity summary",
-      "definition": "Formerly known as agent\u2019s activity summary (AAS); commence in ALERTS whenever a case number is initiated and used to record information relevant to that case action.",
+      "definition": "Formerly known as agent’s activity summary (AAS); commence in ALERTS whenever a case number is initiated and used to record information relevant to that case action.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 82,
@@ -154,9 +154,9 @@
       "flags": []
     },
     {
-      "term": "serious incident report\u2013final",
-      "term_normalized": "serious incident report\u2013final",
-      "definition": "SIR-final reports are submitted by CID at the conclusion of a CID criminal incident or investigative activity. 76 DA PAM 190\u201345 \u2022 18 April 2019",
+      "term": "serious incident report–final",
+      "term_normalized": "serious incident report–final",
+      "definition": "SIR-final reports are submitted by CID at the conclusion of a CID criminal incident or investigative activity. 76 DA PAM 190–45 • 18 April 2019",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 82,
@@ -165,8 +165,8 @@
       "flags": []
     },
     {
-      "term": "serious incident report\u2013final supplemental",
-      "term_normalized": "serious incident report\u2013final supplemental",
+      "term": "serious incident report–final supplemental",
+      "term_normalized": "serious incident report–final supplemental",
       "definition": "An SIR-final supplemental is submitted at the conclusion of a selected criminal incident or investigation when a supple- mental report was generated.",
       "source_type": "glossary",
       "section": "Glossary",
@@ -176,8 +176,8 @@
       "flags": []
     },
     {
-      "term": "serious incident report\u2013initial",
-      "term_normalized": "serious incident report\u2013initial",
+      "term": "serious incident report–initial",
+      "term_normalized": "serious incident report–initial",
       "definition": "An SIR-initial is the original submission of an SIR. Submission of an SIR will not be delayed due to incomplete infor- mation; all pertinent information known at the time of the SIR submission will be included. Additional required information will be provided in an SIR-status report.",
       "source_type": "glossary",
       "section": "Glossary",
@@ -187,8 +187,8 @@
       "flags": []
     },
     {
-      "term": "serious incident report\u2013initial/final",
-      "term_normalized": "serious incident report\u2013initial/final",
+      "term": "serious incident report–initial/final",
+      "term_normalized": "serious incident report–initial/final",
       "definition": "A selected criminal incident or investigation report that can be initiated and completed expeditiously.",
       "source_type": "glossary",
       "section": "Glossary",
@@ -198,9 +198,9 @@
       "flags": []
     },
     {
-      "term": "serious incident report\u2013status",
-      "term_normalized": "serious incident report\u2013status",
-      "definition": "An SIR-status is an \u201cadd-on\u201d submitted to provide information not available at the time of the original report or when more pertinent information, such as results of autopsy, identification of subject, recovered arms, ammunition, and explosives or sensitive items is developed, or in response to a request for more information from HQDA.",
+      "term": "serious incident report–status",
+      "term_normalized": "serious incident report–status",
+      "definition": "An SIR-status is an “add-on” submitted to provide information not available at the time of the original report or when more pertinent information, such as results of autopsy, identification of subject, recovered arms, ammunition, and explosives or sensitive items is developed, or in response to a request for more information from HQDA.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 83,
@@ -209,9 +209,9 @@
       "flags": []
     },
     {
-      "term": "serious incident report\u2013supplemental",
-      "term_normalized": "serious incident report\u2013supplemental",
-      "definition": "An SIR-supplemental is a \u201ccorrection,\u201d submitted at any time to correct an error in a previous report.",
+      "term": "serious incident report–supplemental",
+      "term_normalized": "serious incident report–supplemental",
+      "definition": "An SIR-supplemental is a “correction,” submitted at any time to correct an error in a previous report.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 83,
@@ -233,7 +233,7 @@
     {
       "term": "status law enforcement report",
       "term_normalized": "status law enforcement report",
-      "definition": "A law enforcement report submitted before the criminal report and/or investigation is completed, to provide updated or changed information\u2014or significant developments\u2014during the course of an investigation, or to correct previously re- ported information.",
+      "definition": "A law enforcement report submitted before the criminal report and/or investigation is completed, to provide updated or changed information—or significant developments—during the course of an investigation, or to correct previously re- ported information.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 83,
@@ -244,7 +244,7 @@
     {
       "term": "subject/suspect (as reporting criteria in Army Law Enforcement Record Tracking System)",
       "term_normalized": "subject/suspect (as reporting criteria in army law enforcement record tracking system)",
-      "definition": "Entry of a subject or suspect for law enforcement reporting purposes. Defined and determined in accordance with the definitions provided in AR 195 \u2013 2.",
+      "definition": "Entry of a subject or suspect for law enforcement reporting purposes. Defined and determined in accordance with the definitions provided in AR 195 – 2.",
       "source_type": "glossary",
       "section": "Glossary",
       "pdf_page_index": 83,
