@@ -113,16 +113,22 @@ def classify(term: str, definition: str) -> str:
     """Heuristic: 'g' (good glossary entry) or 'b' (noise)."""
     t = term.strip()
     d = definition.strip()
-    if not t or not d: return "b"
-    if t in NOISE_TERMS: return "b"
-    if is_recognized_acronym_entry(t, d): return "g"
+    if not t or not d:
+        return "b"
+    if t in NOISE_TERMS:
+        return "b"
+    if is_recognized_acronym_entry(t, d):
+        return "g"
     # Option B 2b: military rank abbreviations (1LT, 2LT, 1SG).
-    if is_digit_prefix_abbrev(t, d): return "g"
+    if is_digit_prefix_abbrev(t, d):
+        return "g"
     # Remaining `^[A-Z]{6,}` rule is reached only when is_recognized_acronym_entry
     # returns False — i.e., def is non-alpha-start or <3 chars. Genuine garbage
     # like raw `UNCLASSIFIED`/`CONFIDENTIAL` with PIN-only defs.
-    if re.fullmatch(r"[A-Z]{6,}", t): return "b"
-    if t.lower().startswith(("this section", "see ", "pin ")): return "b"
+    if re.fullmatch(r"[A-Z]{6,}", t):
+        return "b"
+    if t.lower().startswith(("this section", "see ", "pin ")):
+        return "b"
     if len(d) < 15:
         # Option B 2c: lowercase short-def abbreviations (e.g., vol → voluntary).
         # 2-5 lowercase letter term + lowercase noun-phrase def 3-50 chars.
@@ -130,18 +136,29 @@ def classify(term: str, definition: str) -> str:
         if _LOWERCASE_SHORT_TERM_RE.match(t) and _LOWERCASE_SHORT_DEF_RE.match(d):
             return "g"
         return "b"
-    if t.startswith(("a. ", "b. ", "c. ", "(1)", "(2)", "(3)", "(4)", "(5)")): return "b"
-    if re.search(r"\b(and|or|the|of|to|with|in|on|for|by|as|are|is|was|were|that|which|who)$", t, re.IGNORECASE):
+    if t.startswith(("a. ", "b. ", "c. ", "(1)", "(2)", "(3)", "(4)", "(5)")):
+        return "b"
+    if re.search(
+        r"\b(and|or|the|of|to|with|in|on|for|by|as|are|is|was|were|that|which|who)$",
+        t,
+        re.IGNORECASE,
+    ):
         return "b"
     # Option B 2a length cap: use post-strip core for upper bound so
     # long-paren-suffix terms aren't rejected before looks_like_noun_phrase
     # peels their trailing parens. 100 chars accommodates ~10 ten-char words.
-    if len(t) < 2: return "b"
-    if len(_strip_trailing_parens(t)) > 100: return "b"
-    if re.fullmatch(r"[\d\.,\-/ ]+", t): return "b"
-    if re.search(r"\([A-Z]{2,5}\s*$", t) or re.search(r"\(AR\b", t): return "b"
-    if not looks_like_noun_phrase(t): return "b"
+    if len(t) < 2:
+        return "b"
+    if len(_strip_trailing_parens(t)) > 100:
+        return "b"
+    if re.fullmatch(r"[\d\.,\-/ ]+", t):
+        return "b"
+    if re.search(r"\([A-Z]{2,5}\s*$", t) or re.search(r"\(AR\b", t):
+        return "b"
+    if not looks_like_noun_phrase(t):
+        return "b"
     if re.match(r"^(AR|PAM|FM|ATP|ADP|TC|TM|SD|STP)[\s\-]\d", d) and len(d) < 25:
         return "b"
-    if re.fullmatch(r"[\d\.\)\s]+", d): return "b"
+    if re.fullmatch(r"[\d\.\)\s]+", d):
+        return "b"
     return "g"

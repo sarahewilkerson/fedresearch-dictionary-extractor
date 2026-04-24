@@ -12,9 +12,7 @@ labels.yaml with the same verdicts applied.
 Run from repo root: python scripts/build_labels_yaml.py
 """
 import json
-import os
 import re
-import glob
 import sys
 from pathlib import Path
 
