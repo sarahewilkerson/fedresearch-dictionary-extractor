@@ -280,3 +280,40 @@ The v0.2.b fix needs a deeper change to `glossary.py:359-365`: when a term is re
 - (B) Extend `_validate_term` with a "reject-and-discard-continuation" flag, marking specific patterns as drop-all-following-non-term-lines until the next valid term appears.
 
 v0.2.b gets its own plan + `/develop` cycle. Until then `EXCLUDE_FROM_NEGATIVES["PAM_71-32"] = ["Equip for"]` keeps the Tier-1 oracle clean.
+
+---
+
+## Execution Results
+
+**Status:** ✅ CLEAN (execution-review iter 1, with 1 Codex P3 remediation applied in commit `0a768fe`).
+
+**Commits landed on branch** (all pushed to `origin/feat/2026-04-24-invalid-term-blocklist`, PR #8):
+
+| SHA | Scope |
+|-----|-------|
+| `288850f` | docs(plan): v0.2.a plan doc |
+| `4913d1f` | feat(extractor): new invalid_term pattern + N1-N15 unit tests |
+| `71096c4` | test(extractor): P1 pipeline integration |
+| `1dbd586` | test(fixtures): hand-derived predecessor-def + pre-fix snapshot |
+| `deb58a0` | feat(extractor): corpus refresh (27 JSONs, snapshot regen, oracle allowlist, EXCLUDE prune, README) |
+| `0a768fe` | test(extractor): P3 remediation — byte-exact cleaned-def in P1 |
+
+**Verification evidence (fresh re-run):**
+- `pytest tests/` → 102 passed, 2 deselected
+- `ruff check src/ tests/ scripts/` → clean
+- Rejection-log audit: exactly 2 (pdf, term) tuples newly blocked (see `docs/plans/v0_2_a_rejection_log.txt`, gitignored)
+- Corpus removed-set: `{(AR_135-100, "AR 124"), (AR_135-100, "AR 140")}` (exact)
+- Surviving-entry field invariant: 696/696 non-predecessor entries unchanged
+- Predecessor defs byte-equal to hand-derived fixture for both `Entry on duty date` and `Statutory term of service`
+- Codex independent review: SUCCESS; 1 P3 finding raised about pipeline-test strength, remediated; post-fix no further findings
+
+**Documented deviations from plan:**
+- 3 truncated-filename PDFs in `validation_set/pdfs/` (filesystem-limit truncation from prior copy) don't extract; pre-existing, not a regression.
+- Re-extraction changes top-level `extraction_timestamp` in all 27 JSONs + switches on-disk Unicode escaping from `’` to literal `’`. Neither is an entry-level content change; field-invariant test correctly treats both as no-ops.
+
+**Technical debt introduced:** zero.
+
+**Rule suggestions surfaced to operator (not auto-applied):**
+1. Distinguish serialization drift from content drift in re-extraction PRs (CLAUDE.md Testing).
+2. Verify `REPO_ROOT` with an existence assertion in one-shot exec harnesses (CLAUDE.md Scripts).
+3. Integration tests asserting "bad value absent" must also assert full expected good value — absence-only checks miss over-stripping (CLAUDE.md Testing; based on Codex P3 finding).
