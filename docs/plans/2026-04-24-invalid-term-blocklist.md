@@ -317,3 +317,13 @@ v0.2.b gets its own plan + `/develop` cycle. Until then `EXCLUDE_FROM_NEGATIVES[
 1. Distinguish serialization drift from content drift in re-extraction PRs (CLAUDE.md Testing).
 2. Verify `REPO_ROOT` with an existence assertion in one-shot exec harnesses (CLAUDE.md Scripts).
 3. Integration tests asserting "bad value absent" must also assert full expected good value — absence-only checks miss over-stripping (CLAUDE.md Testing; based on Codex P3 finding).
+
+## Sync Verification
+- [x] Verification strategy executed: **PASS** (102/102 pytest, ruff clean, 2 removals exact, 696/696 surviving-field-invariant, predecessor defs byte-match fixture, Codex SUCCESS after P3 remediation)
+- [x] Branch pushed to remote: **YES** (`origin/feat/2026-04-24-invalid-term-blocklist` at `7c697e3` pre-merge)
+- [x] Branch merged to main: **YES** (PR #8 → merge commit `531f8db` at 2026-04-24T10:27:30Z)
+- [x] Main pushed to remote: **YES** (GitHub's own merge; `git pull --ff-only` confirms local main = origin/main)
+- [x] Documentation updated and current: **YES** (README corpus-shrinkage note; inline comments in army.py + test_labels_classifier.py; no stale refs)
+- [x] Production deploy: **SKIPPED** (extractor library; wheel consumers (FedResearch backend image) pick up via a future wheel-rebuild PR — no deploy command in this repo)
+- [x] Local, remote, and main are consistent: **YES** (`git merge-base --is-ancestor 4913d1f main` → 0; pattern commit confirmed in main)
+- Verified at: 2026-04-24T10:27Z
