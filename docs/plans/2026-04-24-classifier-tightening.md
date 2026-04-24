@@ -337,3 +337,32 @@ These will be written into the D plan upfront, not as iter-2/3 revisions. Writin
 | Validation re-run + lint + push + PR | 30 min |
 
 **Total: ~3.5 hours.** Single PR, single branch, fits in one focused half-day.
+
+---
+
+## Sync Verification — SHIPPED
+
+- [x] Plan committed before code: YES (d3827ba plan, then 7 atomic code commits)
+- [x] verify_classifier_module.sh fresh-venv gates: PASS (both import-only + script-entrypoint)
+- [x] Bit-for-bit labels.yaml diff after extraction: zero bytes
+- [x] Bit-for-bit labels.yaml diff after FLIPS_BAD_TO_GOOD prune: zero bytes (net-neutral, confirms redundancy)
+- [x] Classifier snapshot diff vs prefix baseline: exactly 12 b→g flips, 0 g→b, 0 non-verdict drift
+- [x] `pytest tests/`: 77/77 pass (40 prior + 37 new)
+- [x] `pytest -m validation`: 2/2 pass (Tier-1 100% recall, 0 negative violations)
+- [x] `ruff check src tests scripts`: clean
+- [x] PR opened: https://github.com/sarahewilkerson/fedresearch-dictionary-extractor/pull/6
+- [x] CI green (3 checks: build-wheel + lint-and-test 3.11 + 3.12)
+- [x] Merged to main: YES (merge commit 3cc48a8)
+- [x] Post-merge validation re-run on main: 2/2 pass
+- [x] Local, remote, main consistent: YES
+- Verified at: 2026-04-24
+
+## PR-classifier-B — CLOSED
+
+- Classifier tightened: parens-suffix (2a), digit-prefix military ranks (2b), lowercase short-def abbreviations (2c)
+- FLIPS_BAD_TO_GOOD pruned from 12 entries to 0 (override list became redundant)
+- Regression-oracle infrastructure shipped (immutable prefix snapshot + current snapshot + expected-flip fixture)
+- Classifier extracted to importable module under src/, enabling direct unit testing
+- 3 rule suggestions surfaced for ~/.claude/CLAUDE.md Quality Standards (see /review-plan iter-4 final)
+
+**Deferred to separate plan:** Option D (LLM-judge) — the 4 upfront design concerns (response-contract validation, cache-key completeness, mocked API tests, cost-assumptions-grounded-in-real-workload) will be baked into that plan at iter-1.
