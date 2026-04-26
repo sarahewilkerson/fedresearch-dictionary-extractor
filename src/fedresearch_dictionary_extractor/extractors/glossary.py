@@ -34,8 +34,18 @@ import re
 import fitz
 
 from ..normalize import normalize_term
+from ..profiles.army import SECTION_I_HEADER, SECTION_II_HEADER
 from ..profiles.base import ReferenceProfile
 from . import text as text_utils
+
+# Section structure label values (Unit 2 of v0.2.0).
+# Detection-only — does NOT change extraction behavior. Used by
+# core/analyzer.py to emit metadata.section_structure.
+SECTION_STRUCTURE_NONE = "none"
+SECTION_STRUCTURE_I_ONLY = "section_i_only"
+SECTION_STRUCTURE_II_ONLY = "section_ii_only"
+SECTION_STRUCTURE_BOTH = "both"
+SECTION_STRUCTURE_UNKNOWN = "unknown"  # detection error, no glossary range, or non-Army profile
 
 # ── Heuristic thresholds ──────────────────────────────────────────────────
 HEADER_ZONE_Y = 150              # ignore document headers above this Y
@@ -144,6 +154,62 @@ def find_glossary_page_range(
             end = i - 1
             break
     return (found_start, end)
+
+
+def detect_section_structure(
+    doc: fitz.Document,
+    start: int | None,
+    end: int | None,
+    profile: ReferenceProfile,
+) -> str:
+    """Detect Section I/II header presence within the glossary page range.
+    Detection only — does NOT change range or extraction behavior (Unit 3 scope).
+
+    Returns one of:
+      - "none"             — Army profile, range scanned, no headers found
+      - "section_i_only"   — Section I header found, no Section II
+      - "section_ii_only"  — Section II header found, no Section I
+      - "both"             — both found
+      - "unknown"          — non-Army profile, no glossary range, or page-read error
+
+    Profile-gated: only Army-profile docs use these regexes (other profiles
+    don't currently have section-structure semantics defined).
+
+    Range coverage caveat: scans only [start, end] from find_glossary_page_range.
+    If a Section I header lives on the page BEFORE the glossary header is
+    detected, this returns "section_ii_only" or "none" falsely. Unit 3 verifies
+    distribution against all 27 candidate-output PDFs and tightens range
+    detection if needed.
+    """
+    if profile.name != "army":
+        return SECTION_STRUCTURE_UNKNOWN
+    if start is None or end is None:
+        # No glossary range available — distinct from "scanned, found nothing".
+        return SECTION_STRUCTURE_UNKNOWN
+    has_i = False
+    has_ii = False
+    for page_idx in range(start, end + 1):
+        try:
+            page_text = doc[page_idx].get_text("text")
+        except Exception:
+            # Any page-read error → unknown for the whole doc.
+            # Simpler/safer than partial-preference: a read error on the
+            # page containing the OTHER section's header would otherwise
+            # misclassify a "both" doc as single-section.
+            return SECTION_STRUCTURE_UNKNOWN
+        if not has_ii and SECTION_II_HEADER.search(page_text):
+            has_ii = True
+        if not has_i and SECTION_I_HEADER.search(page_text):
+            has_i = True
+        if has_i and has_ii:
+            break
+    if has_i and has_ii:
+        return SECTION_STRUCTURE_BOTH
+    if has_ii:
+        return SECTION_STRUCTURE_II_ONLY
+    if has_i:
+        return SECTION_STRUCTURE_I_ONLY
+    return SECTION_STRUCTURE_NONE
 
 
 def _is_back_cover_marker(page_text: str, page_idx: int, total: int) -> bool:

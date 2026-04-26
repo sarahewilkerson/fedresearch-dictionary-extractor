@@ -67,7 +67,11 @@
         "text_layer_present": { "type": "boolean" },
         "entries_glossary": { "type": "integer", "minimum": 0 },
         "entries_inline": { "type": "integer", "minimum": 0 },
-        "entries_after_dedup": { "type": "integer", "minimum": 0 }
+        "entries_after_dedup": { "type": "integer", "minimum": 0 },
+        "section_structure": {
+          "description": "Unit 2 of v0.2.0: detection-only Section I/II structure label. Optional; not all extractor versions emit this field.",
+          "enum": ["none", "section_i_only", "section_ii_only", "both", "unknown"]
+        }
       }
     }
   }
