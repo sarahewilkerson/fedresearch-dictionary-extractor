@@ -37,11 +37,15 @@ def analyze_pdf(
         glossary_entries: list[dict] = []
         glossary_pages: list[int] = []
         glossary_used_fallback = False
+        section_structure = glossary.SECTION_STRUCTURE_UNKNOWN
         if text_layer:
             page_range = glossary.find_glossary_page_range(doc, profile)
             if page_range:
                 start, end = page_range
                 glossary_pages = list(range(start + 1, end + 2))  # 1-indexed for output
+                section_structure = glossary.detect_section_structure(
+                    doc, start, end, profile
+                )
                 glossary_entries = glossary.parse_glossary_entries(doc, start, end, profile)
                 # PR1.2-quality Fix A safety net: doc-level fallback when bold
                 # flags are essentially ABSENT in the glossary section
@@ -99,6 +103,9 @@ def analyze_pdf(
                 # gate fallback. True iff parse_glossary_entries was retried
                 # with X-only mode after the bold-gated run produced zero.
                 "glossary_used_legacy_fallback": glossary_used_fallback,
+                # Unit 2 of v0.2.0: detection-only Section I/II structure label.
+                # See extractors/glossary.detect_section_structure for semantics.
+                "section_structure": section_structure,
             },
         }
     finally:

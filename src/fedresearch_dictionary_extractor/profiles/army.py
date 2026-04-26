@@ -1,7 +1,27 @@
 """
 ArmyProfile — covers v1 doc types: AR, DA PAM, FM, ATP, ADP, TC, TM.
 """
+import re
+
 from .base import ReferenceProfile
+
+# OCR-tolerant Section header detection (Unit 2 of v0.2.0).
+# Patterns match ONLY OCR forms observed in production AR PDFs (per
+# validation_set/manifest_audit.md + AR 380-381 page 84/88/90 inspection):
+#   - SECTION_II_HEADER: "Section II" (canonical) + "Section Il"
+#     (capital I + lowercase L; AR 380-381 page 88)
+#   - SECTION_I_HEADER:  "Section I" (canonical) + "Section |"
+#     (single pipe; AR 380-381 page 84) + "Section l" (lowercase L)
+# Negative lookahead on SECTION_I_HEADER prevents matching Section II/Il.
+# re.MULTILINE makes ^ match line-starts in multi-line page text.
+SECTION_II_HEADER = re.compile(
+    r"^\s*Section\s+(?:II|Il)(?=\s|$|—|–|-)",
+    re.IGNORECASE | re.MULTILINE,
+)
+SECTION_I_HEADER = re.compile(
+    r"^\s*Section\s+(?:I|\||l)(?![Il\|])(?=\s|$|—|–|-)",
+    re.IGNORECASE | re.MULTILINE,
+)
 
 
 class ArmyProfile(ReferenceProfile):
