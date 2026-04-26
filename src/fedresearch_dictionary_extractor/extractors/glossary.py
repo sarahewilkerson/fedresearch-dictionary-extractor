@@ -34,7 +34,7 @@ import re
 import fitz
 
 from ..normalize import normalize_term
-from ..profiles.army import SECTION_I_HEADER, SECTION_II_HEADER
+from ..profiles.army import SECTION_AFTER_II_HEADER, SECTION_I_HEADER, SECTION_II_HEADER
 from ..profiles.base import ReferenceProfile
 from . import text as text_utils
 
@@ -210,6 +210,91 @@ def detect_section_structure(
     if has_i:
         return SECTION_STRUCTURE_I_ONLY
     return SECTION_STRUCTURE_NONE
+
+
+def narrow_to_section_ii(
+    doc: fitz.Document,
+    start: int,
+    end: int,
+) -> dict:
+    """When Section II is present in [start, end], return a narrowed range
+    plus diagnostics. Caller is responsible for invoking this only when
+    section_structure ∈ {"both", "section_ii_only"}; otherwise pass the
+    original (start, end) to parse_glossary_entries unchanged.
+
+    Returns a dict with:
+      - 'start': new start page (>= original start)
+      - 'end': new end page (<= original end)
+      - 'fired': True iff narrowing produced a non-empty narrowed range;
+                 False on identity transform
+      - 'boundary_scan_errors': count of pages that errored during the
+                                forward scan for SECTION_AFTER_II_HEADER
+
+    Identity transform (fired=False) cases:
+      1. SECTION_II_HEADER doesn't match in [start, end] (caller-gating
+         violation OR every Section II page errored on read).
+      2. Narrowed range is empty (new_end < new_start).
+
+    Page-read errors during the forward scan for the post-II boundary are
+    tolerated (page is skipped) but counted in boundary_scan_errors. The
+    caller surfaces the count as metadata.section_ii_boundary_scan_errors
+    so distribution analysis can flag scan-error-affected docs for review
+    (Codex Unit-3 iter-3 #7).
+
+    Known limitation (Codex Unit-3 iter-3 #6): if Section II header AND the
+    next section header occur on the SAME page, narrowing produces an
+    empty range → identity transform → preserves current (buggy) behavior
+    on that doc shape. Distribution analysis surfaces affected docs via
+    fired=False on a 'both'/'section_ii_only' classification. Line-level
+    boundary detection deferred to a follow-up unit if the local corpus
+    contains such docs.
+    """
+    found_section_ii_at: int | None = None
+    for page_idx in range(start, end + 1):
+        try:
+            page_text = doc[page_idx].get_text("text")
+        except Exception:
+            continue
+        if SECTION_II_HEADER.search(page_text):
+            found_section_ii_at = page_idx
+            break
+
+    if found_section_ii_at is None:
+        return {
+            "start": start,
+            "end": end,
+            "fired": False,
+            "boundary_scan_errors": 0,
+        }
+
+    new_start = found_section_ii_at
+    new_end = end
+    boundary_scan_errors = 0
+    for page_idx in range(found_section_ii_at + 1, end + 1):
+        try:
+            page_text = doc[page_idx].get_text("text")
+        except Exception:
+            boundary_scan_errors += 1
+            continue
+        if SECTION_AFTER_II_HEADER.search(page_text):
+            new_end = page_idx - 1
+            break
+
+    if new_end < new_start:
+        # Defense-in-depth: empty range → identity transform.
+        return {
+            "start": start,
+            "end": end,
+            "fired": False,
+            "boundary_scan_errors": boundary_scan_errors,
+        }
+
+    return {
+        "start": new_start,
+        "end": new_end,
+        "fired": True,
+        "boundary_scan_errors": boundary_scan_errors,
+    }
 
 
 def _is_back_cover_marker(page_text: str, page_idx: int, total: int) -> bool:

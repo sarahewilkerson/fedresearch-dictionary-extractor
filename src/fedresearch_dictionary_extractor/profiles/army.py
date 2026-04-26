@@ -15,11 +15,22 @@ from .base import ReferenceProfile
 # Negative lookahead on SECTION_I_HEADER prevents matching Section II/Il.
 # re.MULTILINE makes ^ match line-starts in multi-line page text.
 SECTION_II_HEADER = re.compile(
-    r"^\s*Section\s+(?:II|Il)(?=\s|$|—|–|-)",
+    # Trailing constraint added in Unit 3: require end-of-line OR
+    # recognized section-style suffix to avoid matching body-text lines
+    # that begin with "Section II policies/regulations/...".
+    r"^\s*Section\s+(?:II|Il)(?:\s*$|\s+(?:—|–|-|Terms|Other|Special|Subjects))",
     re.IGNORECASE | re.MULTILINE,
 )
 SECTION_I_HEADER = re.compile(
-    r"^\s*Section\s+(?:I|\||l)(?![Il\|])(?=\s|$|—|–|-)",
+    r"^\s*Section\s+(?:I|\||l)(?![Il\|])(?:\s*$|\s+(?:—|–|-|Abbreviations|Acronyms))",
+    re.IGNORECASE | re.MULTILINE,
+)
+# Unit 3: matches any section header AFTER Section II (III/IV/V/VI/VII).
+# Used to detect the end of Section II content during range narrowing.
+# OCR variants: III/Ill/lll, IV/lV/|V.
+SECTION_AFTER_II_HEADER = re.compile(
+    r"^\s*Section\s+(?:III|Ill|lll|IV|lV|\|V|V|VI|VII)"
+    r"(?:\s*$|\s+(?:—|–|-|Special|Subjects|Other|Terms|References))",
     re.IGNORECASE | re.MULTILINE,
 )
 
