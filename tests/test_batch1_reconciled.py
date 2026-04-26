@@ -5,13 +5,24 @@ still contain known-bad (term, definition_prefix_80) pairs reconciled from
 labels-batch1.yaml.
 
 It is NOT an extractor regression test — it does not invoke the extractor.
-The protection it provides is downstream: when Unit 3 fixes the extractor and
-regenerates candidate-output, this test fails. The fix's PR must EITHER:
-  (a) invert the assertion to `not in actual` (extractor-level fix landed),
-  (b) replace this sentinel with fixture-based extractor tests + delete this
-      file, OR
-  (c) re-pin to a new known-bad pair if the corpus changed for unrelated
-      reasons.
+
+LIFECYCLE NOTE (Unit 5 of v0.2.0, 2026-04-26):
+  When Unit 5 regenerated candidate-output under the v0.2.0 extractor,
+  the gating check found that BOTH forbidden pairs SURVIVED:
+    - TC 1-19.30 'dampen \\nusually': inline-extracted from page 102 (body
+      text, not glossary). Section II scoping doesn't apply to inline
+      extraction which runs over the entire document.
+    - FM 3-34 '*field': IS in the Section II range [131-132], hit by the
+      asterisk-prefix-split parser bug (orthogonal to Section I bleed).
+  Per Unit 5's Codex iter-1 #5 gating decision: do NOT invert the
+  assertion. The pairs are still present in v0.2.0 candidate-output.
+  This test continues to pin the corpus state as a regression detector
+  for accidental changes — the assertion semantics did NOT need to flip
+  because Section II scoping addressed a different bug class.
+
+  Future units (line-level boundary detection for asterisk-split;
+  inline-extraction filter) may eliminate these pairs; at that point
+  Unit 5's option (a) — invert assertion — applies.
 
 See validation_set/batch1_reconciled.yaml for the data and the
 docs/plans/2026-04-26-batch1-reconciliation-ESCALATION.md for context.

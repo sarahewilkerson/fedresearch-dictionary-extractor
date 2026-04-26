@@ -1,5 +1,5 @@
 classifier_version: v2-2026-04-24
-candidate_corpus_hash: sha256:ff28f27c07c41760f3111ec207e8983654ee68a178d16afe95af62d853d377f7
+candidate_corpus_hash: sha256:d3db430047b9b2b13f923f129991549aa3947feccd7e3c7165f6b0b47cb3743d
 entries:
 - pdf: ADP_3-07_STABILITY_2019_07_31_OCR.pdf
   verdicts:
@@ -24,6 +24,350 @@ entries:
   - term: unity
     source_type: glossary
     verdict: g
+- pdf: AR_115-10_WEATHER_SUPPORT_FOR_THE_U.S._ARMY_AFI_15-157_IP_G-2_2021_09_02_OCR.pdf
+  verdicts:
+  - term: (for
+    source_type: glossary
+    verdict: b
+  - term: Administrative
+    source_type: glossary
+    verdict: b
+  - term: Air
+    source_type: glossary
+    verdict: g
+  - term: Airfield
+    source_type: glossary
+    verdict: g
+  - term: All
+    source_type: glossary
+    verdict: g
+  - term: An
+    source_type: glossary
+    verdict: g
+  - term: Any
+    source_type: glossary
+    verdict: g
+  - term: Associated
+    source_type: glossary
+    verdict: b
+  - term: Augmentation
+    source_type: glossary
+    verdict: g
+  - term: Backup
+    source_type: glossary
+    verdict: g
+  - term: Capabilities
+    source_type: glossary
+    verdict: g
+  - term: Collection
+    source_type: glossary
+    verdict: g
+  - term: Command
+    source_type: glossary
+    verdict: g
+  - term: Control
+    source_type: glossary
+    verdict: g
+  - term: Deployed
+    source_type: glossary
+    verdict: g
+  - term: Depot
+    source_type: glossary
+    verdict: b
+  - term: Dictionary
+    source_type: glossary
+    verdict: g
+  - term: Direct
+    source_type: glossary
+    verdict: g
+  - term: Direction
+    source_type: glossary
+    verdict: g
+  - term: DoD
+    source_type: glossary
+    verdict: g
+  - term: Emergency
+    source_type: glossary
+    verdict: g
+  - term: Five
+    source_type: glossary
+    verdict: g
+  - term: For
+    source_type: glossary
+    verdict: b
+  - term: Garrison
+    source_type: glossary
+    verdict: b
+  - term: General
+    source_type: glossary
+    verdict: b
+  - term: Habitual
+    source_type: glossary
+    verdict: b
+  - term: In
+    source_type: glossary
+    verdict: b
+  - term: Information
+    source_type: glossary
+    verdict: b
+  - term: Installation
+    source_type: glossary
+    verdict: g
+  - term: Intent
+    source_type: glossary
+    verdict: g
+  - term: Measurements
+    source_type: glossary
+    verdict: g
+  - term: Meteorological
+    source_type: glossary
+    verdict: b
+  - term: Mission
+    source_type: glossary
+    verdict: g
+  - term: National
+    source_type: glossary
+    verdict: g
+  - term: Note.
+    source_type: glossary
+    verdict: b
+  - term: OPCON
+    source_type: glossary
+    verdict: g
+  - term: Operation
+    source_type: glossary
+    verdict: g
+  - term: Organizational
+    source_type: glossary
+    verdict: b
+  - term: Pertaining
+    source_type: glossary
+    verdict: g
+  - term: Preventive
+    source_type: glossary
+    verdict: b
+  - term: Production
+    source_type: glossary
+    verdict: g
+  - term: Providing
+    source_type: glossary
+    verdict: g
+  - term: Reach
+    source_type: glossary
+    verdict: b
+  - term: Residual
+    source_type: glossary
+    verdict: b
+  - term: "SUAS\u2019s"
+    source_type: glossary
+    verdict: b
+  - term: See
+    source_type: glossary
+    verdict: b
+  - term: Such
+    source_type: glossary
+    verdict: g
+  - term: Supplement
+    source_type: glossary
+    verdict: g
+  - term: TRADOC
+    source_type: glossary
+    verdict: g
+  - term: That
+    source_type: glossary
+    verdict: b
+  - term: The
+    source_type: glossary
+    verdict: b
+  - term: The AF
+    source_type: glossary
+    verdict: g
+  - term: Unexpended
+    source_type: glossary
+    verdict: g
+  - term: Weather
+    source_type: glossary
+    verdict: g
+  - term: accomplish
+    source_type: glossary
+    verdict: g
+  - term: aircraft
+    source_type: glossary
+    verdict: g
+  - term: at
+    source_type: glossary
+    verdict: g
+  - term: authoritative
+    source_type: glossary
+    verdict: g
+  - term: be
+    source_type: glossary
+    verdict: g
+  - term: capacities
+    source_type: glossary
+    verdict: g
+  - term: ciency
+    source_type: glossary
+    verdict: g
+  - term: condition
+    source_type: glossary
+    verdict: g
+  - term: coveries
+    source_type: glossary
+    verdict: g
+  - term: deliberate
+    source_type: glossary
+    verdict: g
+  - term: discipline
+    source_type: glossary
+    verdict: g
+  - term: disseminating
+    source_type: glossary
+    verdict: g
+  - term: ena
+    source_type: glossary
+    verdict: g
+  - term: exploitation
+    source_type: glossary
+    verdict: g
+  - term: extensive
+    source_type: glossary
+    verdict: g
+  - term: focused
+    source_type: glossary
+    verdict: g
+  - term: forces
+    source_type: glossary
+    verdict: g
+  - term: "force\u2019s"
+    source_type: glossary
+    verdict: g
+  - term: future
+    source_type: glossary
+    verdict: g
+  - term: horizontal
+    source_type: glossary
+    verdict: g
+  - term: including
+    source_type: glossary
+    verdict: g
+  - term: individual
+    source_type: glossary
+    verdict: g
+  - term: itary
+    source_type: glossary
+    verdict: g
+  - term: ity
+    source_type: glossary
+    verdict: g
+  - term: maintenance
+    source_type: glossary
+    verdict: g
+  - term: manipulation
+    source_type: glossary
+    verdict: g
+  - term: manned
+    source_type: glossary
+    verdict: g
+  - term: military
+    source_type: glossary
+    verdict: g
+  - term: natural
+    source_type: glossary
+    verdict: g
+  - term: occur
+    source_type: glossary
+    verdict: g
+  - term: operates
+    source_type: glossary
+    verdict: g
+  - term: operational
+    source_type: glossary
+    verdict: g
+  - term: other
+    source_type: glossary
+    verdict: g
+  - term: pacts)
+    source_type: glossary
+    verdict: b
+  - term: plish
+    source_type: glossary
+    verdict: g
+  - term: ployed
+    source_type: glossary
+    verdict: g
+  - term: process
+    source_type: glossary
+    verdict: g
+  - term: projects.
+    source_type: glossary
+    verdict: g
+  - term: real-world
+    source_type: glossary
+    verdict: b
+  - term: scientific
+    source_type: glossary
+    verdict: g
+  - term: semblies
+    source_type: glossary
+    verdict: g
+  - term: signed
+    source_type: glossary
+    verdict: g
+  - term: sited
+    source_type: glossary
+    verdict: g
+  - term: small
+    source_type: glossary
+    verdict: g
+  - term: software
+    source_type: glossary
+    verdict: g
+  - term: stability
+    source_type: glossary
+    verdict: g
+  - term: staff
+    source_type: glossary
+    verdict: g
+  - term: tailored
+    source_type: glossary
+    verdict: g
+  - term: talion
+    source_type: glossary
+    verdict: g
+  - term: tary
+    source_type: glossary
+    verdict: g
+  - term: temporary
+    source_type: glossary
+    verdict: b
+  - term: testing
+    source_type: glossary
+    verdict: g
+  - term: this
+    source_type: glossary
+    verdict: g
+  - term: time-phased
+    source_type: glossary
+    verdict: g
+  - term: tions
+    source_type: glossary
+    verdict: g
+  - term: trial
+    source_type: glossary
+    verdict: g
+  - term: unit
+    source_type: glossary
+    verdict: g
+  - term: unmanned
+    source_type: glossary
+    verdict: g
+  - term: upon
+    source_type: glossary
+    verdict: g
+  - term: when
+    source_type: glossary
+    verdict: b
 - pdf: AR_12-15_JOINT_SECURITY_COOPERATION_EDUCATION_AND_TRAINING_{SECNAVINST_4950.4B;_AFI_16-105}_ASA_AL_T_2011_01_03_OCR.pdf
   verdicts:
   - term: USG
@@ -421,9 +765,6 @@ entries:
   - term: Separation authority
     source_type: glossary
     verdict: g
-  - term: Special Abbreviations and Terms
-    source_type: glossary
-    verdict: g
   - term: Standby Reserve
     source_type: glossary
     verdict: g
@@ -499,9 +840,6 @@ entries:
   - term: YTP
     source_type: glossary
     verdict: g
-  - term: Years for percentage purposes
-    source_type: glossary
-    verdict: g
   - term: vol
     source_type: glossary
     verdict: g
@@ -558,6 +896,128 @@ entries:
   - term: USDB
     source_type: glossary
     verdict: g
+- pdf: AR_380-381_SPECIAL_ACCESS_PROGRAMS_SAPS_AND_SENSITIVE_ACTIVITIES_CSA_2004_04_21_OCR.pdf
+  verdicts:
+  - term: 82 AR
+    source_type: glossary
+    verdict: b
+  - term: A SAP
+    source_type: glossary
+    verdict: g
+  - term: Access
+    source_type: glossary
+    verdict: g
+  - term: Acquisition SAP
+    source_type: glossary
+    verdict: g
+  - term: All
+    source_type: glossary
+    verdict: g
+  - term: Alternative
+    source_type: glossary
+    verdict: g
+  - term: Any
+    source_type: glossary
+    verdict: g
+  - term: Carve-out
+    source_type: glossary
+    verdict: b
+  - term: Classified
+    source_type: glossary
+    verdict: g
+  - term: Collateral
+    source_type: glossary
+    verdict: b
+  - term: Contracts
+    source_type: glossary
+    verdict: g
+  - term: Extraordinary
+    source_type: glossary
+    verdict: g
+  - term: Foreground
+    source_type: glossary
+    verdict: b
+  - term: Information
+    source_type: glossary
+    verdict: g
+  - term: Operations
+    source_type: glossary
+    verdict: g
+  - term: Program
+    source_type: glossary
+    verdict: g
+  - term: Security
+    source_type: glossary
+    verdict: g
+  - term: Senior
+    source_type: glossary
+    verdict: g
+  - term: Sensitive
+    source_type: glossary
+    verdict: g
+  - term: Special
+    source_type: glossary
+    verdict: b
+  - term: TRADOC
+    source_type: glossary
+    verdict: g
+  - term: Tables
+    source_type: glossary
+    verdict: g
+  - term: Technical
+    source_type: glossary
+    verdict: g
+  - term: Technology
+    source_type: glossary
+    verdict: g
+  - term: The
+    source_type: glossary
+    verdict: b
+  - term: The PEO
+    source_type: glossary
+    verdict: g
+  - term: USACE
+    source_type: glossary
+    verdict: g
+  - term: USACIDC
+    source_type: glossary
+    verdict: g
+  - term: USAFMSA
+    source_type: glossary
+    verdict: g
+  - term: USAINSCOM
+    source_type: glossary
+    verdict: g
+  - term: USASMDC
+    source_type: glossary
+    verdict: g
+  - term: Use
+    source_type: glossary
+    verdict: g
+  - term: Used
+    source_type: glossary
+    verdict: g
+  - term: Vice
+    source_type: glossary
+    verdict: g
+  - term: available
+    source_type: glossary
+    verdict: g
+  - term: compromise
+    source_type: glossary
+    verdict: g
+  - term: expected
+    source_type: glossary
+    verdict: g
+  - term: impediment
+    source_type: glossary
+    verdict: g
+  - term: mTM S09 TAO
+    source_type: glossary
+    verdict: b
+  - term: when
+    source_type: glossary
+    verdict: b
 - pdf: AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf
   verdicts:
   - term: A la carte meal pricing system
@@ -743,24 +1203,6 @@ entries:
   - term: Protocols
     source_type: glossary
     verdict: g
-  - term: Psychological test direction
-    source_type: glossary
-    verdict: g
-  - term: Qualified psychologist
-    source_type: glossary
-    verdict: g
-  - term: Service treatment record
-    source_type: glossary
-    verdict: g
-  - term: Special Abbreviations and Terms
-    source_type: glossary
-    verdict: g
-  - term: Special measurement footwear
-    source_type: glossary
-    verdict: g
-  - term: Surrogate
-    source_type: glossary
-    verdict: g
   - term: TJC
     source_type: glossary
     verdict: g
@@ -774,21 +1216,6 @@ entries:
     source_type: glossary
     verdict: g
   - term: TSG
-    source_type: glossary
-    verdict: g
-  - term: Test administration
-    source_type: glossary
-    verdict: g
-  - term: Test scoring
-    source_type: glossary
-    verdict: g
-  - term: Tissue
-    source_type: glossary
-    verdict: g
-  - term: Traditional meal pricing system
-    source_type: glossary
-    verdict: g
-  - term: Traditional meal service
     source_type: glossary
     verdict: g
   - term: USAMEDCOM
@@ -813,9 +1240,6 @@ entries:
     source_type: glossary
     verdict: g
   - term: VTAT
-    source_type: glossary
-    verdict: g
-  - term: Withhold or withdraw order
     source_type: glossary
     verdict: g
 - pdf: AR_40-5_ARMY_PUBLIC_HEALTH_PROGRAM_TSG_2020_05_12_OCR.pdf
@@ -1239,46 +1663,10 @@ entries:
   - term: Reassignment
     source_type: glossary
     verdict: g
-  - term: Related personal property
-    source_type: glossary
-    verdict: g
-  - term: Relocatable building
-    source_type: glossary
-    verdict: g
-  - term: Reserve Components
-    source_type: glossary
-    verdict: g
-  - term: Reserved public lands
-    source_type: glossary
-    verdict: g
   - term: SECARMY
     source_type: glossary
     verdict: g
   - term: SF
-    source_type: glossary
-    verdict: g
-  - term: Screening
-    source_type: glossary
-    verdict: g
-  - term: Security interest
-    source_type: glossary
-    verdict: g
-  - term: Site
-    source_type: glossary
-    verdict: g
-  - term: Special Abbreviations and Terms
-    source_type: glossary
-    verdict: g
-  - term: Structure
-    source_type: glossary
-    verdict: g
-  - term: Surplus real estate
-    source_type: glossary
-    verdict: g
-  - term: Tenant
-    source_type: glossary
-    verdict: g
-  - term: Transfer
     source_type: glossary
     verdict: g
   - term: USACE
@@ -1288,15 +1676,6 @@ entries:
     source_type: glossary
     verdict: g
   - term: USC
-    source_type: glossary
-    verdict: g
-  - term: Utility
-    source_type: glossary
-    verdict: g
-  - term: Vacated premises
-    source_type: glossary
-    verdict: g
-  - term: Withdrawn public lands
     source_type: glossary
     verdict: g
 - pdf: AR_600-20.pdf
@@ -1565,6 +1944,104 @@ entries:
   - term: Victim
     source_type: glossary
     verdict: g
+- pdf: AR_637-2_SEPARATION_PAY_NONDISABILITY_AND_LEVELS_OF_PAYMENT_G-1_2022_08_18_OCR.pdf
+  verdicts:
+  - term: Active
+    source_type: glossary
+    verdict: b
+  - term: Character
+    source_type: glossary
+    verdict: g
+  - term: Complete
+    source_type: glossary
+    verdict: g
+  - term: DD
+    source_type: glossary
+    verdict: g
+  - term: Date
+    source_type: glossary
+    verdict: g
+  - term: Full-time
+    source_type: glossary
+    verdict: g
+  - term: Honorable
+    source_type: glossary
+    verdict: g
+  - term: Initial
+    source_type: glossary
+    verdict: b
+  - term: Military
+    source_type: glossary
+    verdict: g
+  - term: Punitive
+    source_type: glossary
+    verdict: g
+  - term: Ready
+    source_type: glossary
+    verdict: b
+  - term: Records
+    source_type: glossary
+    verdict: g
+  - term: Release
+    source_type: glossary
+    verdict: g
+  - term: Reserve
+    source_type: glossary
+    verdict: b
+  - term: Retention
+    source_type: glossary
+    verdict: b
+  - term: Secretary
+    source_type: glossary
+    verdict: b
+  - term: Service
+    source_type: glossary
+    verdict: g
+  - term: State
+    source_type: glossary
+    verdict: g
+  - term: States
+    source_type: glossary
+    verdict: g
+  - term: The
+    source_type: glossary
+    verdict: b
+  - term: Transition
+    source_type: glossary
+    verdict: b
+  - term: USAR
+    source_type: glossary
+    verdict: g
+  - term: USC
+    source_type: glossary
+    verdict: g
+  - term: United
+    source_type: glossary
+    verdict: b
+  - term: activities.
+    source_type: glossary
+    verdict: g
+  - term: an
+    source_type: glossary
+    verdict: g
+  - term: pational
+    source_type: glossary
+    verdict: g
+  - term: ponents
+    source_type: glossary
+    verdict: g
+  - term: separation
+    source_type: glossary
+    verdict: g
+  - term: structured
+    source_type: glossary
+    verdict: g
+  - term: tour
+    source_type: glossary
+    verdict: g
+  - term: training
+    source_type: glossary
+    verdict: g
 - pdf: AR_672-20_INCENTIVE_AWARDS_G-1_2024_11_06_OCR.pdf
   verdicts:
   - term: Career service recognition
@@ -1640,6 +2117,47 @@ entries:
     source_type: glossary
     verdict: g
   - term: USD (P&R)
+    source_type: glossary
+    verdict: g
+- pdf: AR_700-13_WORLDWIDE_DEPARTMENT_OF_DEFENSE_MILITARY_MUNITIONS_AMMUNITION_LOGISTICS_SURVEILLANCE_EXPLOSIVES_SAFETY_REVIEW_AND_TECHNICAL_ASSISTANCE_PROGRAM_G-4_2020_12_15_OCR.pdf
+  verdicts:
+  - term: All
+    source_type: glossary
+    verdict: g
+  - term: Explosive
+    source_type: glossary
+    verdict: g
+  - term: Generic
+    source_type: glossary
+    verdict: g
+  - term: Military
+    source_type: glossary
+    verdict: b
+  - term: control
+    source_type: glossary
+    verdict: g
+  - term: delay
+    source_type: glossary
+    verdict: g
+  - term: grenades
+    source_type: glossary
+    verdict: g
+  - term: including
+    source_type: glossary
+    verdict: g
+  - term: known
+    source_type: glossary
+    verdict: g
+  - term: mines
+    source_type: glossary
+    verdict: g
+  - term: pressure
+    source_type: glossary
+    verdict: g
+  - term: rockets
+    source_type: glossary
+    verdict: g
+  - term: weapons
     source_type: glossary
     verdict: g
 - pdf: ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR.pdf
@@ -1887,52 +2405,13 @@ entries:
   - term: Lead agent (or Agency)
     source_type: glossary
     verdict: g
-  - term: Leader Development Program
-    source_type: glossary
-    verdict: g
-  - term: Leader development
-    source_type: glossary
-    verdict: g
-  - term: Leader development initiative
-    source_type: glossary
-    verdict: g
-  - term: Leadership
-    source_type: glossary
-    verdict: g
-  - term: Measures of effectiveness
-    source_type: glossary
-    verdict: g
-  - term: Measures of performance
-    source_type: glossary
-    verdict: g
   - term: POM
-    source_type: glossary
-    verdict: g
-  - term: Policy
-    source_type: glossary
-    verdict: g
-  - term: Priorities list
-    source_type: glossary
-    verdict: g
-  - term: Proposed initiative
-    source_type: glossary
-    verdict: g
-  - term: Return on investment
     source_type: glossary
     verdict: g
   - term: SRO
     source_type: glossary
     verdict: g
-  - term: Self-development
-    source_type: glossary
-    verdict: g
-  - term: Special Abbreviations and Terms
-    source_type: glossary
-    verdict: g
   - term: TRADOC
-    source_type: glossary
-    verdict: g
-  - term: Training
     source_type: glossary
     verdict: g
 - pdf: PAM_71-32_FORCE_DEVELOPMENT_AND_DOCUMENTATION_CONSOLIDATED_PROCEDURES_G-3_5_7_2019_03_21_OCR.pdf
@@ -2084,9 +2563,6 @@ entries:
   - term: Retention objective
     source_type: glossary
     verdict: g
-  - term: Special Abbreviations and Terms
-    source_type: glossary
-    verdict: g
   - term: Staff support agency (or activity)
     source_type: glossary
     verdict: g
@@ -2100,12 +2576,6 @@ entries:
     source_type: glossary
     verdict: g
   - term: "Standard study number\u2013line item number automated management and integrating system"
-    source_type: glossary
-    verdict: g
-  - term: Troop program sequence number
-    source_type: glossary
-    verdict: g
-  - term: Unit Reference Sheet
     source_type: glossary
     verdict: g
   - term: VCSA

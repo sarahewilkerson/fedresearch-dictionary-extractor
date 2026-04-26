@@ -1,70 +1,74 @@
 {
-  "schema_version": "1",
-  "source_pdf": "FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "FM 3-55",
-  "source_doc_type": "FM",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:21Z",
-  "profile": "army",
-  "text_sha256": "70540682d1bcb2266dbe5a0b53807df9a3dd108f91e8a7269c62db393181ab1b",
   "entries": [
     {
-      "term": "surveillance",
-      "term_normalized": "surveillance",
+      "confidence": 0.95,
       "definition": "The systematic observation of aerospace, surface, or subsurface areas, places, persons, or things, by visual, aural, electronic, photographic, or other means.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 77,
       "printed_page_label": "77",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "surveillance",
+      "term_normalized": "surveillance"
     },
     {
-      "term": "synchronization",
-      "term_normalized": "synchronization",
+      "confidence": 0.95,
       "definition": "The arrangement of military actions in time, space, and purpose to produce maximum relative combat power at a decisive place and time.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 77,
       "printed_page_label": "77",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "synchronization",
+      "term_normalized": "synchronization"
     },
     {
-      "term": "tempo",
-      "term_normalized": "tempo",
+      "confidence": 0.95,
       "definition": "The relative speed and rhythm of military operations over time with respect to the enemy. (ADRP 3-0)",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 77,
       "printed_page_label": "77",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "tempo",
+      "term_normalized": "tempo"
     },
     {
-      "term": "unified action",
-      "term_normalized": "unified action",
+      "confidence": 0.95,
       "definition": "The synchronization, coordination, and/or integration of the activities of governmental and nongovernmental entities with military operations to achieve unity of effort.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 77,
       "printed_page_label": "77",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "unified action",
+      "term_normalized": "unified action"
     }
   ],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 86,
+    "entries_after_dedup": 4,
+    "entries_glossary": 4,
+    "entries_inline": 0,
     "glossary_pages": [
       77,
       78
     ],
+    "glossary_used_legacy_fallback": false,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": false,
+    "section_ii_narrowing_fired": false,
+    "section_ii_pages": null,
+    "section_structure": "none",
     "text_layer_present": true,
-    "entries_glossary": 4,
-    "entries_inline": 0,
-    "entries_after_dedup": 4,
-    "glossary_used_legacy_fallback": false
-  }
+    "total_pages": 86
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "FM",
+  "source_gcs_key": null,
+  "source_pdf": "FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR.pdf",
+  "source_pub_number": "FM 3-55",
+  "text_sha256": "70540682d1bcb2266dbe5a0b53807df9a3dd108f91e8a7269c62db393181ab1b"
 }

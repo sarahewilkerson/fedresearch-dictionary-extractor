@@ -1,36 +1,40 @@
 {
-  "schema_version": "1",
-  "source_pdf": "FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "FM 4-1",
-  "source_doc_type": "FM",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:22Z",
-  "profile": "army",
-  "text_sha256": "193139d70651273c35140be8842d351958c140511623e2007ae4729faa454965",
   "entries": [
     {
-      "term": "sustainment warfighting function",
-      "term_normalized": "sustainment warfighting function",
+      "confidence": 0.95,
       "definition": "The related tasks and systems that provide support and services to enable freedom of action, extend operational reach, and prolong endurance.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 112,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "sustainment warfighting function",
+      "term_normalized": "sustainment warfighting function"
     }
   ],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 122,
+    "entries_after_dedup": 1,
+    "entries_glossary": 1,
+    "entries_inline": 0,
     "glossary_pages": [
       112
     ],
+    "glossary_used_legacy_fallback": false,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": false,
+    "section_ii_narrowing_fired": false,
+    "section_ii_pages": null,
+    "section_structure": "none",
     "text_layer_present": true,
-    "entries_glossary": 1,
-    "entries_inline": 0,
-    "entries_after_dedup": 1,
-    "glossary_used_legacy_fallback": false
-  }
+    "total_pages": 122
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "FM",
+  "source_gcs_key": null,
+  "source_pdf": "FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR.pdf",
+  "source_pub_number": "FM 4-1",
+  "text_sha256": "193139d70651273c35140be8842d351958c140511623e2007ae4729faa454965"
 }

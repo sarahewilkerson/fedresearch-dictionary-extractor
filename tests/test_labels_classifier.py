@@ -229,6 +229,21 @@ def _load_snapshot(path: pathlib.Path) -> dict[tuple[str, str, str], str]:
 # via extractor tightening (e.g., v0.2.a's invalid_term blocklist), the
 # prefix snapshot doesn't lie; it just has "ghost" entries for terms that
 # no longer exist, and this allowlist tracks them.
+# Set of PDF stems whose presence in classifier_snapshot.yaml is expected
+# WITHOUT requiring per-key listing: these are docs added to the corpus AFTER
+# classifier_snapshot_prefix.yaml was captured. Per Codex iter-1 #4 review of
+# Unit 5 (v0.2.0 release): keys from these docs are tracked at the PDF level,
+# not the per-(pdf, source_type, term) level. Keys from non-NEW_DOCS PDFs that
+# appear in current but not prefix would be unexpected and require review.
+NEW_DOCS_SINCE_PREFIX_PDFS: set[str] = {
+    # Unit 4 (2026-04-26) — Section-I-heavy worst-offender docs added to
+    # validation corpus to expand coverage for the AR 380-381 bug class.
+    "AR_115-10_WEATHER_SUPPORT_FOR_THE_U.S._ARMY_AFI_15-157_IP_G-2_2021_09_02_OCR.pdf",
+    "AR_380-381_SPECIAL_ACCESS_PROGRAMS_SAPS_AND_SENSITIVE_ACTIVITIES_CSA_2004_04_21_OCR.pdf",
+    "AR_637-2_SEPARATION_PAY_NONDISABILITY_AND_LEVELS_OF_PAYMENT_G-1_2022_08_18_OCR.pdf",
+    "AR_700-13_WORLDWIDE_DEPARTMENT_OF_DEFENSE_MILITARY_MUNITIONS_AMMUNITION_LOGISTICS_SURVEILLANCE_EXPLOSIVES_SAFETY_REVIEW_AND_TECHNICAL_ASSISTANCE_PROGRAM_G-4_2020_12_15_OCR.pdf",
+}
+
 REMOVED_SINCE_PREFIX: set[tuple[str, str, str]] = {
     # v0.2.a (2026-04-24) — AR/FM pre-hyphen citation-fragment pattern
     (
@@ -243,6 +258,57 @@ REMOVED_SINCE_PREFIX: set[tuple[str, str, str]] = {
         "glossary",
         "AR 140",
     ),
+    # Unit 3 / v0.2.0 (2026-04-26) — Section II range scoping eliminates
+    # Section I content + over-narrowed end boundaries on existing-corpus
+    # docs. See validation_set/v0.2.0_classifier_snapshot_diff.md for full
+    # diff. Some entries here are legitimate Section II terms cut by the
+    # narrowing; tracked as a known limitation per Unit 3's distribution
+    # analysis. Line-level boundary detection deferred.
+    ("AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf", "glossary", "Special Abbreviations and Terms"),
+    ("AR_135-100_APPOINTMENT_OF_COMMISSIONED_AND_WARRANT_OFFICERS_OF_THE_ARMY_G-1_1994_09_01_OCR.pdf", "glossary", "Years for percentage purposes"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Psychological test direction"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Qualified psychologist"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Service treatment record"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Special Abbreviations and Terms"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Special measurement footwear"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Surrogate"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Test administration"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Test scoring"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Tissue"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Traditional meal pricing system"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Traditional meal service"),
+    ("AR_40-3_MEDICAL_DENTAL_AND_VETERINARY_CARE_TSG_2013_04_23_OCR.pdf", "glossary", "Withhold or withdraw order"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Related personal property"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Relocatable building"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Reserve Components"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Reserved public lands"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Screening"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Security interest"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Site"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Special Abbreviations and Terms"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Structure"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Surplus real estate"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Tenant"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Transfer"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Utility"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Vacated premises"),
+    ("AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR.pdf", "glossary", "Withdrawn public lands"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Leader Development Program"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Leader development"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Leader development initiative"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Leadership"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Measures of effectiveness"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Measures of performance"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Policy"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Priorities list"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Proposed initiative"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Return on investment"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Self-development"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Special Abbreviations and Terms"),
+    ("PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR.pdf", "glossary", "Training"),
+    ("PAM_71-32_FORCE_DEVELOPMENT_AND_DOCUMENTATION_CONSOLIDATED_PROCEDURES_G-3_5_7_2019_03_21_OCR.pdf", "glossary", "Special Abbreviations and Terms"),
+    ("PAM_71-32_FORCE_DEVELOPMENT_AND_DOCUMENTATION_CONSOLIDATED_PROCEDURES_G-3_5_7_2019_03_21_OCR.pdf", "glossary", "Troop program sequence number"),
+    ("PAM_71-32_FORCE_DEVELOPMENT_AND_DOCUMENTATION_CONSOLIDATED_PROCEDURES_G-3_5_7_2019_03_21_OCR.pdf", "glossary", "Unit Reference Sheet"),
 }
 
 
@@ -251,7 +317,8 @@ def test_no_unexpected_classifier_flips() -> None:
     (immutable pre-fix baseline). Asserts:
       - removed keyset == REMOVED_SINCE_PREFIX (tracks deliberate corpus
         shrinkage via extractor tightening)
-      - added keyset == ∅ (unexpected corpus growth requires review)
+      - added keyset's PDFs ⊆ NEW_DOCS_SINCE_PREFIX_PDFS (tracks deliberate
+        corpus growth via Unit 4 of v0.2.0; Codex iter-1 #4 review)
       - b→g flips (on keys common to both) == fixture
       - no g→b regressions
     """
@@ -264,7 +331,14 @@ def test_no_unexpected_classifier_flips() -> None:
         f"unexpected_removed={removed - REMOVED_SINCE_PREFIX}, "
         f"missing_removed={REMOVED_SINCE_PREFIX - removed}"
     )
-    assert not added, f"unexpected corpus growth (requires review): {added}"
+    # Codex iter-1 #4: split handling for new-PDF additions vs existing-PDF
+    # additions. Additions on existing PDFs are NOT allowed without explicit
+    # listing; additions on new PDFs are allowed at PDF granularity.
+    unexpected_added = {k for k in added if k[0] not in NEW_DOCS_SINCE_PREFIX_PDFS}
+    assert not unexpected_added, (
+        f"unexpected corpus growth on existing PDFs (requires review): "
+        f"{unexpected_added}"
+    )
 
     b_to_g: list[tuple[str, str, str]] = []
     g_to_b: list[tuple[str, str, str]] = []

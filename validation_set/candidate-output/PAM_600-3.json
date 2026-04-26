@@ -1,22 +1,26 @@
 {
-  "schema_version": "1",
-  "source_pdf": "PAM_600-3.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "DA PAM 600-3",
-  "source_doc_type": "DA",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:26Z",
-  "profile": "army",
-  "text_sha256": "1aeaa68f89124f5cec66dbc10bf0a9d624a6075ccce536a75f81de904f68df69",
   "entries": [],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 81,
-    "glossary_pages": [],
-    "text_layer_present": true,
+    "entries_after_dedup": 0,
     "entries_glossary": 0,
     "entries_inline": 0,
-    "entries_after_dedup": 0,
-    "glossary_used_legacy_fallback": false
-  }
+    "glossary_pages": [],
+    "glossary_used_legacy_fallback": false,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": false,
+    "section_ii_narrowing_fired": false,
+    "section_ii_pages": null,
+    "section_structure": "unknown",
+    "text_layer_present": true,
+    "total_pages": 81
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "DA",
+  "source_gcs_key": null,
+  "source_pdf": "PAM_600-3.pdf",
+  "source_pub_number": "DA PAM 600-3",
+  "text_sha256": "1aeaa68f89124f5cec66dbc10bf0a9d624a6075ccce536a75f81de904f68df69"
 }

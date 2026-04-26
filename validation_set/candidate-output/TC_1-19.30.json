@@ -1,50 +1,57 @@
 {
-  "schema_version": "1",
-  "source_pdf": "TC_1-19.30.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "TC 1-19.30",
-  "source_doc_type": "TC",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:28Z",
-  "profile": "army",
-  "text_sha256": "1befdca4b5c3a1c187ac347f56684e12a5e125a7b94aa4b96984ff1e56df3193",
   "entries": [
     {
-      "term": "music performance team",
-      "term_normalized": "music performance team",
+      "confidence": 0.95,
       "definition": "A team that offers the flexibility to support concurrent musical missions in multiple geographical areas.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 149,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "music performance team",
+      "term_normalized": "music performance team"
     },
     {
-      "term": "dampen \nusually",
-      "term_normalized": "dampen usually",
-      "definition": "the muting of undesirable overtones.",
-      "source_type": "inline",
-      "section": "Chapter 4",
-      "pdf_page_index": 102,
-      "printed_page_label": null,
       "confidence": 0.65,
+      "definition": "the muting of undesirable overtones.",
       "flags": [
         "inline_inferred"
-      ]
+      ],
+      "pdf_page_index": 102,
+      "printed_page_label": null,
+      "section": "Chapter 4",
+      "source_type": "inline",
+      "term": "dampen \nusually",
+      "term_normalized": "dampen usually"
     }
   ],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 156,
+    "entries_after_dedup": 2,
+    "entries_glossary": 1,
+    "entries_inline": 1,
     "glossary_pages": [
       149,
       150
     ],
+    "glossary_used_legacy_fallback": false,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": true,
+    "section_ii_narrowing_fired": true,
+    "section_ii_pages": [
+      149,
+      150
+    ],
+    "section_structure": "both",
     "text_layer_present": true,
-    "entries_glossary": 1,
-    "entries_inline": 1,
-    "entries_after_dedup": 2,
-    "glossary_used_legacy_fallback": false
-  }
+    "total_pages": 156
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "TC",
+  "source_gcs_key": null,
+  "source_pdf": "TC_1-19.30.pdf",
+  "source_pub_number": "TC 1-19.30",
+  "text_sha256": "1befdca4b5c3a1c187ac347f56684e12a5e125a7b94aa4b96984ff1e56df3193"
 }

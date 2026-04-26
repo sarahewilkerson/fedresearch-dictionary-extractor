@@ -1,0 +1,175 @@
+{
+  "entries": [
+    {
+      "confidence": 0.95,
+      "definition": "term related mainly to articles of military application consisting of all kinds of bombs, grenades, rockets,",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "Generic",
+      "term_normalized": "generic"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "projectiles, and other similar devices or contrivances.",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "mines",
+      "term_normalized": "mines"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "A substance or a mixture of substances that is capable by chemical reaction of producing gas at such temperature,",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "Explosive",
+      "term_normalized": "explosive"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "and speed as to cause damage to the surroundings. The term “explosive” includes all substances variously",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "pressure",
+      "term_normalized": "pressure"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "as HEs and propellants, together with igniters, primers, initiators, and pyrotechnics (e.g., illuminant, smoke,",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "known",
+      "term_normalized": "known"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "decoy, flare, and incendiary compositions).",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "delay",
+      "term_normalized": "delay"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "munitions",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "Military",
+      "term_normalized": "military"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "ammunition products and components produced for, or used by, the armed forces for national defense and security,",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "All",
+      "term_normalized": "all"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "ammunition products or components under the control of DoD, the Coast Guard, the Department of Energy,",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "including",
+      "term_normalized": "including"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "agents, smokes, and incendiaries, including bulk explosives and chemical warfare agents; chemical munitions,",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "control",
+      "term_normalized": "control"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "guided and ballistic missiles, bombs, warheads, mortar rounds, artillery ammunition, small arms ammunition,",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "rockets",
+      "term_normalized": "rockets"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "mines, torpedoes, depth charges, cluster munitions and dispensers, and demolition charges; and devices and and nuclear components, other than non-nuclear components of nuclear devices that are managed under the nuclear",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "grenades",
+      "term_normalized": "grenades"
+    },
+    {
+      "confidence": 0.95,
+      "definition": "program of the Department of Energy after all required sanitization operations under the Atomic Energy Act",
+      "flags": [],
+      "pdf_page_index": 13,
+      "printed_page_label": null,
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "weapons",
+      "term_normalized": "weapons"
+    }
+  ],
+  "extractor_version": "0.1.0",
+  "metadata": {
+    "entries_after_dedup": 13,
+    "entries_glossary": 13,
+    "entries_inline": 0,
+    "glossary_pages": [
+      12,
+      13
+    ],
+    "glossary_used_legacy_fallback": true,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": true,
+    "section_ii_narrowing_fired": true,
+    "section_ii_pages": [
+      13
+    ],
+    "section_structure": "both",
+    "text_layer_present": true,
+    "total_pages": 14
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "AR",
+  "source_gcs_key": null,
+  "source_pdf": "AR_700-13_WORLDWIDE_DEPARTMENT_OF_DEFENSE_MILITARY_MUNITIONS_AMMUNITION_LOGISTICS_SURVEILLANCE_EXPLOSIVES_SAFETY_REVIEW_AND_TECHNICAL_ASSISTANCE_PROGRAM_G-4_2020_12_15_OCR.pdf",
+  "source_pub_number": "AR 700-13",
+  "text_sha256": "0ad0c5db4be30b69a0765910df0ec017a32b2b606386d8f7026ffeb3a0431b00"
+}

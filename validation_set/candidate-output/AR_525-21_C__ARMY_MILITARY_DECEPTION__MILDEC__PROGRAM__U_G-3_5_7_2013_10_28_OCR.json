@@ -1,22 +1,26 @@
 {
-  "schema_version": "1",
-  "source_pdf": "AR_525-21_C__ARMY_MILITARY_DECEPTION__MILDEC__PROGRAM__U_G-3_5_7_2013_10_28_OCR.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "AR 525-21",
-  "source_doc_type": "AR",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:16Z",
-  "profile": "army",
-  "text_sha256": "95f61607028b1e84f469e7e98ad130c9da0ade892e9e9a91684a331decb18485",
   "entries": [],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 1,
-    "glossary_pages": [],
-    "text_layer_present": true,
+    "entries_after_dedup": 0,
     "entries_glossary": 0,
     "entries_inline": 0,
-    "entries_after_dedup": 0,
-    "glossary_used_legacy_fallback": false
-  }
+    "glossary_pages": [],
+    "glossary_used_legacy_fallback": false,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": false,
+    "section_ii_narrowing_fired": false,
+    "section_ii_pages": null,
+    "section_structure": "unknown",
+    "text_layer_present": true,
+    "total_pages": 1
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "AR",
+  "source_gcs_key": null,
+  "source_pdf": "AR_525-21_C__ARMY_MILITARY_DECEPTION__MILDEC__PROGRAM__U_G-3_5_7_2013_10_28_OCR.pdf",
+  "source_pub_number": "AR 525-21",
+  "text_sha256": "95f61607028b1e84f469e7e98ad130c9da0ade892e9e9a91684a331decb18485"
 }
