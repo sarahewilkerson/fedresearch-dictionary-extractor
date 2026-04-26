@@ -1,0 +1,73 @@
+# Source: labels-batch1.yaml (2026-04-22 user spot-check) reconciled to current
+# candidate-output by content-matching against extractor_bugs_logged patterns.
+# Generated 2026-04-26 per Sub-Unit 1b escalation (Option B).
+#
+# This is a CORPUS PIN, not an extractor regression test. See
+# docs/plans/2026-04-26-batch1-reconciliation-ESCALATION.md and
+# tests/test_batch1_reconciled.py module docstring for lifecycle.
+#
+# Lifecycle (deferred to Unit 3):
+#   When Unit 3 fixes the extractor and regenerates candidate-output, the
+#   corpus-pin test fails. The fix's PR must EITHER:
+#     (a) extractor-level fix that drops the bad pair → invert assertion to
+#         `not in actual` (preferred if extractor-level test exists),
+#     (b) replace this sentinel with a fixture-based extractor test → delete
+#         this YAML + test file, OR
+#     (c) re-pin to a new known-bad pair if the corpus changed for unrelated
+#         reasons.
+#   Decision rule: prefer (a) or (b); use (c) only when corpus regeneration is
+#   independent of an extractor fix.
+
+forbidden_pairs:
+  - doc: TC 1-19.30
+    term: "dampen \nusually"
+    definition_prefix_80: "the muting of undesirable overtones."
+    bug_pattern: page_footer_in_entries
+    source_batch1_idx: 1
+    candidate_output_idx: 1   # 0-based in current JSON
+    notes: |
+      Embedded newline in term + short body-text definition; classic
+      page-footer/column-bleed pattern. Index stable (matches batch1's idx 1).
+
+  - doc: FM 3-34
+    term: "*field"
+    definition_prefix_80: "force engineering The application of Army engineering capabilities from the thre"
+    bug_pattern: asterisk_term_split
+    source_batch1_idx: 4
+    candidate_output_idx: 3   # 0-based; batch1's idx 4 was 1-based
+    notes: |
+      Leading-asterisk term split — "*field force engineering" is one
+      multi-word term that the extractor split at "*field" / "force...".
+
+unresolvable_flips:
+  - doc: AR 190-55
+    source_batch1_idx: 5
+    note: |
+      All 17 entries in current candidate-output are legitimate (acronym→
+      expansion list at idx 0-12 + 4 multi-word term entries at idx 13-16).
+      None match an extractor_bugs_logged pattern. Original flip target
+      irrecoverable; provenance drift since 2026-04-22 capture.
+
+  - doc: AR 12-15
+    source_batch1_idx: 2
+    note: |
+      Entries[1]=USMC and entries[2]=USN at the flipped index look legitimate.
+      However, two non-flipped entries are suspect:
+        - entries[6] (WHINSEC): definition has trailing body-text contamination
+          ("Western Hemisphere Institute for Security Cooperation This s...")
+        - entries[7] (healthcare): fragment-style definition ("both medical and
+          dental care.")
+      Original flip target cannot be pinned without source notes. Suspect
+      candidates documented for Unit 3 / Unit 4 follow-up but not pinned here.
+
+  - doc: ADP 3-07
+    source_batch1_idx: 8
+    note: |
+      Original idx 8 is out of bounds — current doc has only 7 entries.
+      Multiple bad-looking candidates exist:
+        - entries[1] '*reintegration': matches asterisk_term_split pattern
+        - entries[2/3/5/6] (security/stability/unified/unity): definitions
+          start with continuation words ("cooperation...", "mechanism...",
+          "action...", "of effort..."), suggesting multi-word terms split.
+      Cannot pin to one without original spot-check notes. Documented for
+      Unit 3 follow-up.
