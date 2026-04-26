@@ -1,115 +1,121 @@
 {
-  "schema_version": "1",
-  "source_pdf": "AR_12-15_JOINT_SECURITY_COOPERATION_EDUCATION_AND_TRAINING_{SECNAVINST_4950.4B;_AFI_16-105}_ASA_AL_T_2011_01_03_OCR.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "AR 12-15",
-  "source_doc_type": "AR",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:13Z",
-  "profile": "army",
-  "text_sha256": "7cb33ab8ffe70b24d9b5b050c8f549e01278b34842d577eae83020faaf54c5eb",
   "entries": [
     {
-      "term": "USG",
-      "term_normalized": "usg",
+      "confidence": 0.95,
       "definition": "United States Government",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "USG",
+      "term_normalized": "usg"
     },
     {
-      "term": "USMC",
-      "term_normalized": "usmc",
+      "confidence": 0.95,
       "definition": "United States Marine Corps",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "USMC",
+      "term_normalized": "usmc"
     },
     {
-      "term": "USN",
-      "term_normalized": "usn",
+      "confidence": 0.95,
       "definition": "United States Navy",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "USN",
+      "term_normalized": "usn"
     },
     {
-      "term": "VEQ",
-      "term_normalized": "veq",
+      "confidence": 0.95,
       "definition": "visiting enlisted quarters",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "VEQ",
+      "term_normalized": "veq"
     },
     {
-      "term": "VOQ",
-      "term_normalized": "voq",
+      "confidence": 0.95,
       "definition": "visiting officer's quarters",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "VOQ",
+      "term_normalized": "voq"
     },
     {
-      "term": "WCN",
-      "term_normalized": "wcn",
+      "confidence": 0.95,
       "definition": "worksheet control number",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "WCN",
+      "term_normalized": "wcn"
     },
     {
-      "term": "WHINSEC",
-      "term_normalized": "whinsec",
+      "confidence": 0.95,
       "definition": "Western Hemisphere Institute for Security Cooperation This section contains entries.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 344,
       "printed_page_label": null,
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "WHINSEC",
+      "term_normalized": "whinsec"
     },
     {
-      "term": "healthcare",
-      "term_normalized": "healthcare",
-      "definition": "both medical and dental care.",
-      "source_type": "inline",
-      "section": "Chapter 6",
-      "pdf_page_index": 151,
-      "printed_page_label": null,
       "confidence": 0.65,
+      "definition": "both medical and dental care.",
       "flags": [
         "inline_inferred"
-      ]
+      ],
+      "pdf_page_index": 151,
+      "printed_page_label": null,
+      "section": "Chapter 6",
+      "source_type": "inline",
+      "term": "healthcare",
+      "term_normalized": "healthcare"
     }
   ],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 345,
+    "entries_after_dedup": 8,
+    "entries_glossary": 7,
+    "entries_inline": 2,
     "glossary_pages": [
       344
     ],
+    "glossary_used_legacy_fallback": false,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": true,
+    "section_ii_narrowing_fired": true,
+    "section_ii_pages": [
+      344
+    ],
+    "section_structure": "section_ii_only",
     "text_layer_present": true,
-    "entries_glossary": 7,
-    "entries_inline": 2,
-    "entries_after_dedup": 8,
-    "glossary_used_legacy_fallback": false
-  }
+    "total_pages": 345
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "AR",
+  "source_gcs_key": null,
+  "source_pdf": "AR_12-15_JOINT_SECURITY_COOPERATION_EDUCATION_AND_TRAINING_{SECNAVINST_4950.4B;_AFI_16-105}_ASA_AL_T_2011_01_03_OCR.pdf",
+  "source_pub_number": "AR 12-15",
+  "text_sha256": "7cb33ab8ffe70b24d9b5b050c8f549e01278b34842d577eae83020faaf54c5eb"
 }

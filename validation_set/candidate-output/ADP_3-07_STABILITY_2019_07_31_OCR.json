@@ -1,103 +1,107 @@
 {
-  "schema_version": "1",
-  "source_pdf": "ADP_3-07_STABILITY_2019_07_31_OCR.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "ADP 3-07",
-  "source_doc_type": "ADP",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:09Z",
-  "profile": "army",
-  "text_sha256": "faaf8cd976276032625b0e752de61ee85671da4631309e84c56e94e412b3b69f",
   "entries": [
     {
-      "term": "planning",
-      "term_normalized": "planning",
+      "confidence": 0.95,
       "definition": "The art and science of understanding a situation, envisioning a desired future, and determining effective ways to bring that future about.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 69,
       "printed_page_label": "69",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "planning",
+      "term_normalized": "planning"
     },
     {
-      "term": "*reintegration",
-      "term_normalized": "*reintegration",
+      "confidence": 0.95,
       "definition": "The process through which former combatants, belligerents, and displaced civilians receive amnesty, reenter civil society, gain sustainable employment, and become contributing members of the local populace.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 69,
       "printed_page_label": "69",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "*reintegration",
+      "term_normalized": "*reintegration"
     },
     {
-      "term": "security",
-      "term_normalized": "security",
+      "confidence": 0.95,
       "definition": "cooperation All Department of Defense interactions with foreign security establishments to build security relationships that promote specific United States security interests, develop allied and partner nation military and security capabilities for self-defense and multinational operations, and provide United States forces with peacetime and contingency access to allied and partner nations.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 69,
       "printed_page_label": "69",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "security",
+      "term_normalized": "security"
     },
     {
-      "term": "stability",
-      "term_normalized": "stability",
+      "confidence": 0.95,
       "definition": "mechanism The primary method through which friendly forces affect civilians in order to attain conditions that support establishing a lasting, stable peace.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 69,
       "printed_page_label": "69",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "stability",
+      "term_normalized": "stability"
     },
     {
-      "term": "task-organizing",
-      "term_normalized": "task-organizing",
+      "confidence": 0.95,
       "definition": "The act of designing a force, support staff, or sustainment package of specific size and composition to meet a unique task or mission.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 69,
       "printed_page_label": "69",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "task-organizing",
+      "term_normalized": "task-organizing"
     },
     {
-      "term": "unified",
-      "term_normalized": "unified",
+      "confidence": 0.95,
       "definition": "action The synchronization, coordination, and/or integration of the activities of governmental and nongovernmental entities with military operations to achieve unity of effort.",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 69,
       "printed_page_label": "69",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "unified",
+      "term_normalized": "unified"
     },
     {
-      "term": "unity",
-      "term_normalized": "unity",
+      "confidence": 0.95,
       "definition": "of effort Coordination and cooperation toward common objectives, even if the participants are not necessarily part of the same command or organization, which is the product of successful unified action. 31 July 2019 ADP 3-07 Glossary-3",
-      "source_type": "glossary",
-      "section": "Glossary",
+      "flags": [],
       "pdf_page_index": 69,
       "printed_page_label": "69",
-      "confidence": 0.95,
-      "flags": []
+      "section": "Glossary",
+      "source_type": "glossary",
+      "term": "unity",
+      "term_normalized": "unity"
     }
   ],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 84,
+    "entries_after_dedup": 7,
+    "entries_glossary": 11,
+    "entries_inline": 0,
     "glossary_pages": [
       69,
       70
     ],
+    "glossary_used_legacy_fallback": true,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": false,
+    "section_ii_narrowing_fired": false,
+    "section_ii_pages": null,
+    "section_structure": "none",
     "text_layer_present": true,
-    "entries_glossary": 11,
-    "entries_inline": 0,
-    "entries_after_dedup": 7,
-    "glossary_used_legacy_fallback": true
-  }
+    "total_pages": 84
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "ADP",
+  "source_gcs_key": null,
+  "source_pdf": "ADP_3-07_STABILITY_2019_07_31_OCR.pdf",
+  "source_pub_number": "ADP 3-07",
+  "text_sha256": "faaf8cd976276032625b0e752de61ee85671da4631309e84c56e94e412b3b69f"
 }

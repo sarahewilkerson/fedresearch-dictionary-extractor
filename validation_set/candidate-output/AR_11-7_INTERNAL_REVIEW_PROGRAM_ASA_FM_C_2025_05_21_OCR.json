@@ -1,22 +1,26 @@
 {
-  "schema_version": "1",
-  "source_pdf": "AR_11-7_INTERNAL_REVIEW_PROGRAM_ASA_FM_C_2025_05_21_OCR.pdf",
-  "source_gcs_key": null,
-  "source_doc_id": null,
-  "source_pub_number": "AR 11-7",
-  "source_doc_type": "AR",
-  "extractor_version": "0.1.0",
-  "extraction_timestamp": "2026-04-24T10:14:10Z",
-  "profile": "army",
-  "text_sha256": "e0577e42510afe48a0bd204d511f0848eba6f58b818c735cb527c2e282269283",
   "entries": [],
+  "extractor_version": "0.1.0",
   "metadata": {
-    "total_pages": 32,
-    "glossary_pages": [],
-    "text_layer_present": true,
+    "entries_after_dedup": 0,
     "entries_glossary": 0,
     "entries_inline": 0,
-    "entries_after_dedup": 0,
-    "glossary_used_legacy_fallback": false
-  }
+    "glossary_pages": [],
+    "glossary_used_legacy_fallback": false,
+    "section_ii_boundary_scan_errors": 0,
+    "section_ii_narrowing_attempted": false,
+    "section_ii_narrowing_fired": false,
+    "section_ii_pages": null,
+    "section_structure": "unknown",
+    "text_layer_present": true,
+    "total_pages": 32
+  },
+  "profile": "army",
+  "schema_version": "1",
+  "source_doc_id": null,
+  "source_doc_type": "AR",
+  "source_gcs_key": null,
+  "source_pdf": "AR_11-7_INTERNAL_REVIEW_PROGRAM_ASA_FM_C_2025_05_21_OCR.pdf",
+  "source_pub_number": "AR 11-7",
+  "text_sha256": "e0577e42510afe48a0bd204d511f0848eba6f58b818c735cb527c2e282269283"
 }
