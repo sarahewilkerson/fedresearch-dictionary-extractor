@@ -18,15 +18,13 @@ from fedresearch_dictionary_extractor.extractors.glossary import (
     SECTION_STRUCTURE_NONE,
     SECTION_STRUCTURE_UNKNOWN,
     detect_section_structure,
+    narrow_to_section_ii,
 )
 from fedresearch_dictionary_extractor.profiles import get_profile
 from fedresearch_dictionary_extractor.profiles.army import (
     SECTION_AFTER_II_HEADER,
     SECTION_I_HEADER,
     SECTION_II_HEADER,
-)
-from fedresearch_dictionary_extractor.extractors.glossary import (
-    narrow_to_section_ii,
 )
 
 ARMY = get_profile("army")
