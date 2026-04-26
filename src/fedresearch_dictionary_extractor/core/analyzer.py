@@ -38,6 +38,11 @@ def analyze_pdf(
         glossary_pages: list[int] = []
         glossary_used_fallback = False
         section_structure = glossary.SECTION_STRUCTURE_UNKNOWN
+        # Unit 3: Section II range scoping.
+        section_ii_pages: list[int] | None = None
+        section_ii_narrowing_attempted = False
+        section_ii_narrowing_fired = False
+        section_ii_boundary_scan_errors = 0
         if text_layer:
             page_range = glossary.find_glossary_page_range(doc, profile)
             if page_range:
@@ -46,7 +51,23 @@ def analyze_pdf(
                 section_structure = glossary.detect_section_structure(
                     doc, start, end, profile
                 )
-                glossary_entries = glossary.parse_glossary_entries(doc, start, end, profile)
+                # Unit 3: narrow range when Section II is detected.
+                parse_start, parse_end = start, end
+                if section_structure in (
+                    glossary.SECTION_STRUCTURE_BOTH,
+                    glossary.SECTION_STRUCTURE_II_ONLY,
+                ):
+                    section_ii_narrowing_attempted = True
+                    narrow = glossary.narrow_to_section_ii(doc, start, end)
+                    parse_start = narrow["start"]
+                    parse_end = narrow["end"]
+                    section_ii_narrowing_fired = narrow["fired"]
+                    section_ii_boundary_scan_errors = narrow["boundary_scan_errors"]
+                    if section_ii_narrowing_fired:
+                        section_ii_pages = list(
+                            range(parse_start + 1, parse_end + 2)
+                        )
+                glossary_entries = glossary.parse_glossary_entries(doc, parse_start, parse_end, profile)
                 # PR1.2-quality Fix A safety net: doc-level fallback when bold
                 # flags are essentially ABSENT in the glossary section
                 # (GlyphLessFont OCR'd PDFs). Catches ADP 3-07 + FM 3-34 type
@@ -67,8 +88,12 @@ def analyze_pdf(
                     profile.enable_bold_gate
                     and _bold_preservation_rate(doc, start, end) < 0.10
                 ):
+                    # Unit 3: bold-fallback path also uses the narrowed range
+                    # so Section II content is preserved on the fallback.
+                    # Bold-rate trigger uses the FULL range (more samples =
+                    # more reliable signal); only the parse uses narrowed.
                     fallback_entries = glossary.parse_glossary_entries(
-                        doc, start, end, profile, force_legacy_gate=True
+                        doc, parse_start, parse_end, profile, force_legacy_gate=True
                     )
                     if len(fallback_entries) > len(glossary_entries):
                         glossary_entries = fallback_entries
@@ -106,6 +131,21 @@ def analyze_pdf(
                 # Unit 2 of v0.2.0: detection-only Section I/II structure label.
                 # See extractors/glossary.detect_section_structure for semantics.
                 "section_structure": section_structure,
+                # Unit 3: Section II range scoping diagnostics.
+                # section_ii_pages: 1-based narrowed page range (or null if
+                # narrowing didn't fire).
+                "section_ii_pages": section_ii_pages,
+                # narrowing_attempted: did we try narrowing? True only when
+                # section_structure ∈ {both, section_ii_only}.
+                "section_ii_narrowing_attempted": section_ii_narrowing_attempted,
+                # narrowing_fired: did narrowing succeed? attempted=True +
+                # fired=False = identity-fallback (preserves prior behavior;
+                # distribution analysis flags for review).
+                "section_ii_narrowing_fired": section_ii_narrowing_fired,
+                # boundary_scan_errors: count of pages that errored during
+                # the forward scan for the post-II section header. > 0 means
+                # range may extend past Section II — flag for review.
+                "section_ii_boundary_scan_errors": section_ii_boundary_scan_errors,
             },
         }
     finally:

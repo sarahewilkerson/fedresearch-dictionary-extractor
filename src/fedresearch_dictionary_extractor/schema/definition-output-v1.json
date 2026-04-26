@@ -71,6 +71,24 @@
         "section_structure": {
           "description": "Unit 2 of v0.2.0: detection-only Section I/II structure label. Optional; not all extractor versions emit this field.",
           "enum": ["none", "section_i_only", "section_ii_only", "both", "unknown"]
+        },
+        "section_ii_pages": {
+          "description": "Unit 3 of v0.2.0: 1-based narrowed page range when Section II scoping fired. Null when narrowing didn't fire.",
+          "type": ["array", "null"],
+          "items": { "type": "integer", "minimum": 1 }
+        },
+        "section_ii_narrowing_attempted": {
+          "description": "Unit 3 of v0.2.0: True when section_structure ∈ {both, section_ii_only} and narrowing was attempted.",
+          "type": "boolean"
+        },
+        "section_ii_narrowing_fired": {
+          "description": "Unit 3 of v0.2.0: True when narrowing produced a non-empty narrowed range. attempted=True + fired=False is the identity-fallback case.",
+          "type": "boolean"
+        },
+        "section_ii_boundary_scan_errors": {
+          "description": "Unit 3 of v0.2.0: count of pages that errored during the forward scan for SECTION_AFTER_II_HEADER. > 0 flags doc for review.",
+          "type": "integer",
+          "minimum": 0
         }
       }
     }
