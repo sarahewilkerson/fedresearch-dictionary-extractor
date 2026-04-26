@@ -1,0 +1,57 @@
+{
+  "$comment": "Provenance + reproducibility manifest for Unit 4 of v0.2.0. Per Codex iter-1 #7: enables review without exposing prod credentials.",
+  "captured_at": "2026-04-26",
+  "extractor_version_at_capture": "0.1.0+unit-3",
+  "source": {
+    "kind": "production_definitions_table",
+    "host": "hetzner",
+    "table": "definitions",
+    "preserved_from": "100-doc backfill on 2026-04-25 (worker paused after 22 SUCCEEDED; bug output preserved)"
+  },
+  "classifier": {
+    "module": "fedresearch_dictionary_extractor.labels_classifier",
+    "function": "classify",
+    "version": "v2-2026-04-24"
+  },
+  "sampling": {
+    "method": "deterministic random with seed=42 for large docs; full coverage for small docs",
+    "seed": 42
+  },
+  "documents": [
+    {
+      "canonical_id": "Army Regulation|AR 380-381",
+      "gcs_key": "Regs - Army Pubs/Policy/AR 380-381 SPECIAL ACCESS PROGRAMS_SAPS_AND SENSITIVE ACTIVITIES CSA 2004_04_21_OCR.pdf",
+      "prod_def_count": 80,
+      "rows_sampled": 50
+    },
+    {
+      "canonical_id": "Army Regulation|AR 637-2",
+      "gcs_key": "Regs - Army Pubs/Policy/AR 637-2 SEPARATION PAY_NONDISABILITY_AND LEVELS OF PAYMENT G-1 2022_08_18_OCR.pdf",
+      "prod_def_count": 46,
+      "rows_sampled": 46
+    },
+    {
+      "canonical_id": "Army Regulation|AR 115-10",
+      "gcs_key": "Regs - Army Pubs/Policy/AR 115-10 WEATHER SUPPORT FOR THE U.S. ARMY {AFI 15-157_IP_} G-2 2021_09_02_OCR.pdf",
+      "prod_def_count": 155,
+      "rows_sampled": 50
+    },
+    {
+      "canonical_id": "Army Regulation|AR 700-13",
+      "gcs_key": "Regs - Army Pubs/Policy/AR 700-13 WORLDWIDE DEPARTMENT OF DEFENSE MILITARY MUNITIONS_AMMUNITION_LOGISTICS_SURVEILLANCE_EXPLOSIVES SAFETY REVIEW AND TECHNICAL ASSISTANCE PROGRAM G-4 2020_12_15_OCR.pdf",
+      "prod_def_count": 29,
+      "rows_sampled": 29
+    }
+  ],
+  "totals": {
+    "rows_appended_to_labels_pending_tsv": 175,
+    "auto_guess_g": 124,
+    "auto_guess_b": 51
+  },
+  "reproducibility": {
+    "fetch_pdfs": "Hetzner: gsutil cp <gcs_key> /tmp/; scp to validation_set/pdfs/ locally",
+    "fetch_rows": "ssh hetzner 'PGPASSWORD=$(extract from /etc/fedresearch/backend.env) psql --csv -c \"SELECT replace(d.canonical_id, ''Army Regulation|'', ''''), def.pdf_page_index, def.term, left(def.definition, 80) FROM definitions def JOIN documents d ON d.id = def.document_id WHERE d.canonical_id IN (4-doc list)\"'",
+    "classify": "fedresearch_dictionary_extractor.labels_classifier.classify(term, definition_80)",
+    "append_format": "<empty_label>\\t<auto_guess>\\t<doc>\\t<page>\\t<term>\\t<definition_80>"
+  }
+}

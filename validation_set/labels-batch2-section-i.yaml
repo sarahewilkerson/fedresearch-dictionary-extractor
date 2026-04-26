@@ -1,0 +1,34 @@
+# Batch 2 — Section-I-heavy worst-offender docs (Unit 4 of v0.2.0)
+# Format mirrors labels-batch1.yaml exactly: flips_to_bad + extractor_bugs_logged.
+# Source: 175 prod-definitions rows sampled 2026-04-26, classified via
+# fedresearch_dictionary_extractor.labels_classifier.classify(), appended to
+# labels-pending.tsv with empty `label` column (operator hand-vet pending).
+
+# flips_to_bad: empty for this batch — these 4 docs do not yet have v0.1.0
+# candidate-output JSONs in validation_set/candidate-output/. Unit 5
+# (wheel republish) regenerates candidate-output for the corpus including
+# these 4 docs; specific entry-index flips can be captured then.
+flips_to_bad:
+  AR_380-381: []
+  AR_637-2: []
+  AR_115-10: []
+  AR_700-13: []
+
+# Bug patterns observed in production output for the 4 worst-offender docs
+# (see validation_set/labels-batch2-section-i.manifest.json for provenance).
+extractor_bugs_logged:
+  - section_i_expansion_split: |
+      Section I (Abbreviations) lines like "AAA / Army Audit Agency" parsed
+      as term="AAA" def="Army Audit Agency" on entry N AND term="Army"
+      def="Audit Agency" on entry N+1. The parser split multi-word
+      expansions at first whitespace. Unit 3 (Section II scoping) excludes
+      Section I from the parse range; bug eliminated except at same-page
+      boundaries.
+  - same_page_boundary_residue: |
+      When Section II header lives on a page with Section I continuation
+      at top of page (e.g., AR 380-381 page 88 has TRADOC, USACE, etc.
+      acronyms then "Section Il / Terms" header), the parser sees the
+      whole page. Unit 3 reduces but does not eliminate this boundary
+      residue. ~6 of 40 entries (15%) on AR 380-381 are residue. Line-
+      level boundary detection is a follow-up unit if observed >10 in any
+      corpus doc.
