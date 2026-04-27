@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fedresearch-dictionary-extractor"
-version = "0.2.0"
+version = "0.3.0"
 description = "Extract glossary and inline definitions from Army regulation PDFs; emit structured JSON for FedResearch."
 readme = "README.md"
 requires-python = ">=3.11"
