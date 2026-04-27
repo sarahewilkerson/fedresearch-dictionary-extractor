@@ -21,7 +21,6 @@ classifiers = [
 ]
 dependencies = [
     "pymupdf>=1.24.0",
-    "pdfplumber>=0.11.0",
     "jsonschema>=4.21",  # runtime: write_json validates by default; dropping this breaks the CLI default path
 ]
 
