@@ -7,7 +7,6 @@
     "schema_version",
     "source_pdf",
     "extractor_version",
-    "extraction_timestamp",
     "profile",
     "entries",
     "metadata"

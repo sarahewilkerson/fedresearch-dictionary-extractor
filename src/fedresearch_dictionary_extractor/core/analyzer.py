@@ -24,8 +24,16 @@ def analyze_pdf(
     profile_name: str = "army",
     gcs_key: str | None = None,
     doc_id: str | None = None,
+    deterministic: bool = False,
 ) -> dict:
-    """Extract definitions from a single PDF and return a schema-v1 payload."""
+    """Extract definitions from a single PDF and return a schema-v1 payload.
+
+    When ``deterministic=True`` (PR-A v0.3.0 fix #5), wall-clock-derived
+    fields are omitted from the output so two runs against the same input
+    produce byte-identical JSON. Currently this means ``extraction_timestamp``
+    is suppressed; it is the only such field today, but the gate is here
+    so future additions stay in one place.
+    """
     pdf_path = Path(pdf_path)
     profile = get_profile(profile_name)
 
@@ -122,7 +130,7 @@ def analyze_pdf(
 
         deduped = _dedupe_within_doc(glossary_entries, inline_entries)
 
-        return {
+        payload: dict = {
             "schema_version": SCHEMA_VERSION,
             "source_pdf": pdf_path.name,
             "source_gcs_key": gcs_key,
@@ -130,7 +138,6 @@ def analyze_pdf(
             "source_pub_number": _guess_pub_number(pdf_path.name, profile),
             "source_doc_type": _guess_doc_type(pdf_path.name, profile),
             "extractor_version": __version__,
-            "extraction_timestamp": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "profile": profile.name,
             "text_sha256": text_sha,
             "entries": deduped,
@@ -165,6 +172,14 @@ def analyze_pdf(
                 "section_ii_boundary_scan_errors": section_ii_boundary_scan_errors,
             },
         }
+        # PR-A v0.3.0 fix #5: emit extraction_timestamp only when caller
+        # accepts non-deterministic output. Schema's required list no
+        # longer includes this field (schema v1, additive removal).
+        if not deterministic:
+            payload["extraction_timestamp"] = datetime.now(UTC).strftime(
+                "%Y-%m-%dT%H:%M:%SZ"
+            )
+        return payload
     finally:
         doc.close()
 
