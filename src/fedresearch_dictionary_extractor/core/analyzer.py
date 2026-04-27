@@ -67,7 +67,19 @@ def analyze_pdf(
                         section_ii_pages = list(
                             range(parse_start + 1, parse_end + 2)
                         )
-                glossary_entries = glossary.parse_glossary_entries(doc, parse_start, parse_end, profile)
+                # PR-A v0.3.0 fix #3: pass the Section II header pattern into
+                # parse_glossary_entries so the first page's Section I tail
+                # (when present) gets clipped before per-line parsing.
+                section_ii_pattern = (
+                    glossary.SECTION_II_HEADER if section_ii_narrowing_fired else None
+                )
+                glossary_entries = glossary.parse_glossary_entries(
+                    doc,
+                    parse_start,
+                    parse_end,
+                    profile,
+                    section_ii_header_pattern=section_ii_pattern,
+                )
                 # PR1.2-quality Fix A safety net: doc-level fallback when bold
                 # flags are essentially ABSENT in the glossary section
                 # (GlyphLessFont OCR'd PDFs). Catches ADP 3-07 + FM 3-34 type
@@ -93,7 +105,12 @@ def analyze_pdf(
                     # Bold-rate trigger uses the FULL range (more samples =
                     # more reliable signal); only the parse uses narrowed.
                     fallback_entries = glossary.parse_glossary_entries(
-                        doc, parse_start, parse_end, profile, force_legacy_gate=True
+                        doc,
+                        parse_start,
+                        parse_end,
+                        profile,
+                        force_legacy_gate=True,
+                        section_ii_header_pattern=section_ii_pattern,
                     )
                     if len(fallback_entries) > len(glossary_entries):
                         glossary_entries = fallback_entries

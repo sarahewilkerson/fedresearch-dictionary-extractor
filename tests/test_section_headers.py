@@ -385,7 +385,7 @@ def test_analyzer_emits_section_ii_metadata_on_narrowing(monkeypatch) -> None:
     def fake_find_range(doc, profile):
         return (0, 4)
 
-    def fake_parse_glossary(doc, start, end, profile, force_legacy_gate=False):
+    def fake_parse_glossary(doc, start, end, profile, force_legacy_gate=False, **kwargs):
         captured["parse_args"] = (start, end, force_legacy_gate)
         return []  # no entries
 

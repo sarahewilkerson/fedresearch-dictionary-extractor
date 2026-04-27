@@ -83,6 +83,37 @@ def _strip_asterisk_prefix(term: str) -> tuple[str, bool]:
         return term, False
     return stripped, True
 
+
+def _filter_spans_to_below_header(
+    spans: list[dict],
+    header_pattern: re.Pattern,
+) -> list[dict]:
+    """PR-A v0.3.0 fix #3: drop spans above the first ``header_pattern`` match.
+
+    Used to clip same-page residue when the FIRST page of a Section II
+    narrowed range also contains a Section I tail above the header line.
+    Page-level scoping (Unit 3) treated the whole page as Section II;
+    this helper layers a line-level filter to drop the upper-Y residue.
+
+    Returns a NEW list (never aliases input). If no span matches the
+    header pattern, the original spans are returned unchanged — same-page
+    residue cannot be detected without a header anchor, so we err toward
+    preserving real Section II content over speculative filtering.
+
+    Caller is responsible for invoking this only on boundary pages
+    (typically the first page of a narrowed Section II range).
+    """
+    if not spans:
+        return list(spans)
+    header_y: float | None = None
+    for sp in spans:
+        if header_pattern.search(sp["text"]):
+            header_y = sp["bbox"][1]
+            break
+    if header_y is None:
+        return list(spans)
+    return [sp for sp in spans if sp["bbox"][1] >= header_y]
+
 _GLOSSARY_END_PATTERNS = (
     r"^\s*Index\s*(\n|$)",
     r"^\s*References\s*(\n|$)",
@@ -342,6 +373,7 @@ def parse_glossary_entries(
     profile: ReferenceProfile,
     *,
     force_legacy_gate: bool = False,
+    section_ii_header_pattern: re.Pattern | None = None,
 ) -> list[dict]:
     """
     Walk pages [start, end] inclusive, producing dict entries matching the
@@ -352,6 +384,12 @@ def parse_glossary_entries(
     parse produces zero entries despite ample valid lines (PR1.2-quality
     Fix A safety net for OCR'd PDFs with no preserved bold flags AND
     no ALL-CAPS terms — e.g., GlyphLessFont scans of ADP 3-07).
+
+    If `section_ii_header_pattern` is provided (PR-A v0.3.0 fix #3),
+    spans on the FIRST page (page_idx == start) above the matching header
+    span's Y are dropped before per-line parsing. Used by callers that
+    narrowed the range to a Section II start page that also carries a
+    Section I tail (e.g., AR 380-381 page 88).
     """
     # PR1.2-quality Fix C: case-insensitive so "unclassified" / "section i"
     # / "pin 123" all match regardless of OCR capitalization.
@@ -405,6 +443,15 @@ def parse_glossary_entries(
 
         if not all_spans:
             continue
+
+        # PR-A v0.3.0 fix #3: on the FIRST page of a Section II narrowed range
+        # the same page may carry a Section I tail above the header line. Drop
+        # spans above the header's Y so per-line parsing sees only Section II
+        # content. No-op when caller did not pass the header pattern.
+        if section_ii_header_pattern is not None and page_idx == start:
+            all_spans = _filter_spans_to_below_header(all_spans, section_ii_header_pattern)
+            if not all_spans:
+                continue
 
         # Top-down, then left-right within each Y row.
         all_spans.sort(key=lambda s: (s["y_round"], s["bbox"][0]))
