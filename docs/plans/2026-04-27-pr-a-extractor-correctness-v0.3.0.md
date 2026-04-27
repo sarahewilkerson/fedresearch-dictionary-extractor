@@ -1,5 +1,39 @@
 # PR-A — extractor correctness fixes for v0.3.0
 
+## EXECUTION-PHASE SCOPE AMENDMENT (2026-04-27)
+
+**Fix #4 (bold-rate uses narrowed range) DROPPED from PR-A scope.**
+
+The Phase 1 exploration that informed this plan classified the
+asymmetry between `_bold_preservation_rate(doc, start, end)` (full
+range) and the bold-fallback parser's `parse_glossary_entries(doc,
+parse_start, parse_end, ...)` (narrowed range) as a "Unit 3 refactor
+inconsistency." Reading the surrounding comment in `core/analyzer.py`
+(currently lines 103-106) shows the asymmetry is INTENTIONAL and
+explicitly defended:
+
+> # Unit 3: bold-fallback path also uses the narrowed range
+> # so Section II content is preserved on the fallback.
+> # Bold-rate trigger uses the FULL range (more samples =
+> # more reliable signal); only the parse uses narrowed.
+
+Aligning the two ranges silently overrides the original author's
+stated signal/noise trade-off (more samples = less rate-metric noise).
+Without a stronger argument for narrowed-range alignment than
+"consistency," the right move per CLAUDE.md ("Don't add features,
+refactor, or introduce abstractions beyond what the task requires")
+is to leave the design choice in place.
+
+**Follow-up unit (deferred):** if production telemetry surfaces docs
+where Section I and Section II have materially different bold
+preservation rates AND the full-range trigger mis-classifies them,
+re-open fix #4 with a paired metric (emit BOTH full-range and
+narrowed-range rates in metadata; threshold logic continues to use
+full-range; analyst can compare). Tracked under: future v0.3.x
+"per-section bold preservation diagnostics."
+
+PR-A scope is now SIX fixes (was seven): #6, #2, #1, #3, #5, #16.
+
 ## Phase 0.a Classification
 
 **fast-path-eligible** — six surgical correctness fixes plus one dep cleanup; all reversible (git revert restores all). Single repo. Ships v0.3.0 wheel; backend lockstep PR (`fedresearch` repo, branch `feat/2026-04-27/dict-wheel-v0.3.0-pin`) bumps `EXTRACTOR_VERSION` from `army-v2.0.0` → `army-v2.1.0` to invalidate the worker's idempotency cache and force re-extraction.
