@@ -59,6 +59,30 @@ MIN_TERM_WITH_PERIOD = 4         # reject "1." but allow "U.S."
 MAX_DEFINITION_LEN = 5000
 MAX_FOOTER_LINES_PER_PAGE = 5    # warn when filter is too aggressive (Fix B safety net)
 
+# PR-A v0.3.0 fix #2: Army "changed since previous publication" markers
+# (leading `*` and `**`) are stripped from terms; the strip is recorded
+# on the entry's flags list under this key.
+CHANGED_SINCE_PRIOR_PUB_FLAG = "changed_since_prior_pub"
+_LEADING_ASTERISKS_RE = re.compile(r"^\*+\s*")
+
+
+def _strip_asterisk_prefix(term: str) -> tuple[str, bool]:
+    """Strip leading `*` (or `**`, `***`) from `term` and report whether
+    a strip occurred. Internal asterisks are preserved, as are bare
+    asterisk-only strings (which the validator rejects elsewhere).
+    """
+    if not term:
+        return term, False
+    m = _LEADING_ASTERISKS_RE.match(term)
+    if not m:
+        return term, False
+    stripped = term[m.end():]
+    if not stripped:
+        # Bare `*` / `**` — preserve so the validator (or a caller-side
+        # invalid-term filter) sees the original and rejects.
+        return term, False
+    return stripped, True
+
 _GLOSSARY_END_PATTERNS = (
     r"^\s*Index\s*(\n|$)",
     r"^\s*References\s*(\n|$)",
@@ -440,6 +464,7 @@ def parse_glossary_entries(
         term_col_threshold = min_x + TERM_COL_MARGIN
 
         current_term: str | None = None
+        current_term_flags: list[str] = []
         current_def_lines: list[str] = []
         term_page_idx = page_idx  # 0-indexed
 
@@ -504,6 +529,13 @@ def parse_glossary_entries(
                 ):
                     actual_term = actual_term[1:-1].strip()
 
+                # PR-A v0.3.0 fix #2: strip Army "changed since previous
+                # publication" marker (leading `*` or `**`) and record on
+                # the entry's flags so downstream consumers can surface
+                # provenance without re-parsing the PDF.
+                actual_term, was_changed = _strip_asterisk_prefix(actual_term)
+                term_flags = [CHANGED_SINCE_PRIOR_PUB_FLAG] if was_changed else []
+
                 # Validation — if any check fails, this is NOT a new term;
                 # treat the line as a continuation (or skip if no current
                 # term is open). DO NOT flush the previous term.
@@ -525,9 +557,11 @@ def parse_glossary_entries(
                     citation_pattern,
                     confidence=0.95,
                     source_type="glossary",
+                    flags=current_term_flags,
                 )
 
                 current_term = actual_term
+                current_term_flags = term_flags
                 current_def_lines = []
                 term_page_idx = page_idx
                 if inline_def:
@@ -552,6 +586,7 @@ def parse_glossary_entries(
             citation_pattern,
             confidence=0.95,
             source_type="glossary",
+            flags=current_term_flags,
         )
 
         # PR1.2-quality Fix E: per-page continuation merge. Catches residual
@@ -658,8 +693,13 @@ def _flush(
     *,
     confidence: float,
     source_type: str,
+    flags: list[str] | None = None,
 ) -> None:
-    """Append the pending entry (if any) to `entries`, applying cleanup + filters."""
+    """Append the pending entry (if any) to `entries`, applying cleanup + filters.
+
+    The optional `flags` parameter is copied (not aliased) onto the emitted
+    entry so callers can safely mutate or reuse their list.
+    """
     if not current_term or not current_def_lines:
         return
     full_def = " ".join(current_def_lines).strip()
@@ -681,7 +721,7 @@ def _flush(
             "pdf_page_index": page_idx + 1,  # convert 0-indexed → 1-indexed
             "printed_page_label": _safe_page_label(doc, page_idx),
             "confidence": confidence,
-            "flags": [],
+            "flags": list(flags) if flags else [],
         }
     )
 
