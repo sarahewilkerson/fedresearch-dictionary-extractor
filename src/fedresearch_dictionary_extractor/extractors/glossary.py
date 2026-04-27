@@ -59,6 +59,61 @@ MIN_TERM_WITH_PERIOD = 4         # reject "1." but allow "U.S."
 MAX_DEFINITION_LEN = 5000
 MAX_FOOTER_LINES_PER_PAGE = 5    # warn when filter is too aggressive (Fix B safety net)
 
+# PR-A v0.3.0 fix #2: Army "changed since previous publication" markers
+# (leading `*` and `**`) are stripped from terms; the strip is recorded
+# on the entry's flags list under this key.
+CHANGED_SINCE_PRIOR_PUB_FLAG = "changed_since_prior_pub"
+_LEADING_ASTERISKS_RE = re.compile(r"^\*+\s*")
+
+
+def _strip_asterisk_prefix(term: str) -> tuple[str, bool]:
+    """Strip leading `*` (or `**`, `***`) from `term` and report whether
+    a strip occurred. Internal asterisks are preserved, as are bare
+    asterisk-only strings (which the validator rejects elsewhere).
+    """
+    if not term:
+        return term, False
+    m = _LEADING_ASTERISKS_RE.match(term)
+    if not m:
+        return term, False
+    stripped = term[m.end():]
+    if not stripped:
+        # Bare `*` / `**` — preserve so the validator (or a caller-side
+        # invalid-term filter) sees the original and rejects.
+        return term, False
+    return stripped, True
+
+
+def _filter_spans_to_below_header(
+    spans: list[dict],
+    header_pattern: re.Pattern,
+) -> list[dict]:
+    """PR-A v0.3.0 fix #3: drop spans above the first ``header_pattern`` match.
+
+    Used to clip same-page residue when the FIRST page of a Section II
+    narrowed range also contains a Section I tail above the header line.
+    Page-level scoping (Unit 3) treated the whole page as Section II;
+    this helper layers a line-level filter to drop the upper-Y residue.
+
+    Returns a NEW list (never aliases input). If no span matches the
+    header pattern, the original spans are returned unchanged — same-page
+    residue cannot be detected without a header anchor, so we err toward
+    preserving real Section II content over speculative filtering.
+
+    Caller is responsible for invoking this only on boundary pages
+    (typically the first page of a narrowed Section II range).
+    """
+    if not spans:
+        return list(spans)
+    header_y: float | None = None
+    for sp in spans:
+        if header_pattern.search(sp["text"]):
+            header_y = sp["bbox"][1]
+            break
+    if header_y is None:
+        return list(spans)
+    return [sp for sp in spans if sp["bbox"][1] >= header_y]
+
 _GLOSSARY_END_PATTERNS = (
     r"^\s*Index\s*(\n|$)",
     r"^\s*References\s*(\n|$)",
@@ -318,6 +373,7 @@ def parse_glossary_entries(
     profile: ReferenceProfile,
     *,
     force_legacy_gate: bool = False,
+    section_ii_header_pattern: re.Pattern | None = None,
 ) -> list[dict]:
     """
     Walk pages [start, end] inclusive, producing dict entries matching the
@@ -328,6 +384,12 @@ def parse_glossary_entries(
     parse produces zero entries despite ample valid lines (PR1.2-quality
     Fix A safety net for OCR'd PDFs with no preserved bold flags AND
     no ALL-CAPS terms — e.g., GlyphLessFont scans of ADP 3-07).
+
+    If `section_ii_header_pattern` is provided (PR-A v0.3.0 fix #3),
+    spans on the FIRST page (page_idx == start) above the matching header
+    span's Y are dropped before per-line parsing. Used by callers that
+    narrowed the range to a Section II start page that also carries a
+    Section I tail (e.g., AR 380-381 page 88).
     """
     # PR1.2-quality Fix C: case-insensitive so "unclassified" / "section i"
     # / "pin 123" all match regardless of OCR capitalization.
@@ -381,6 +443,15 @@ def parse_glossary_entries(
 
         if not all_spans:
             continue
+
+        # PR-A v0.3.0 fix #3: on the FIRST page of a Section II narrowed range
+        # the same page may carry a Section I tail above the header line. Drop
+        # spans above the header's Y so per-line parsing sees only Section II
+        # content. No-op when caller did not pass the header pattern.
+        if section_ii_header_pattern is not None and page_idx == start:
+            all_spans = _filter_spans_to_below_header(all_spans, section_ii_header_pattern)
+            if not all_spans:
+                continue
 
         # Top-down, then left-right within each Y row.
         all_spans.sort(key=lambda s: (s["y_round"], s["bbox"][0]))
@@ -440,6 +511,7 @@ def parse_glossary_entries(
         term_col_threshold = min_x + TERM_COL_MARGIN
 
         current_term: str | None = None
+        current_term_flags: list[str] = []
         current_def_lines: list[str] = []
         term_page_idx = page_idx  # 0-indexed
 
@@ -504,6 +576,13 @@ def parse_glossary_entries(
                 ):
                     actual_term = actual_term[1:-1].strip()
 
+                # PR-A v0.3.0 fix #2: strip Army "changed since previous
+                # publication" marker (leading `*` or `**`) and record on
+                # the entry's flags so downstream consumers can surface
+                # provenance without re-parsing the PDF.
+                actual_term, was_changed = _strip_asterisk_prefix(actual_term)
+                term_flags = [CHANGED_SINCE_PRIOR_PUB_FLAG] if was_changed else []
+
                 # Validation — if any check fails, this is NOT a new term;
                 # treat the line as a continuation (or skip if no current
                 # term is open). DO NOT flush the previous term.
@@ -525,9 +604,11 @@ def parse_glossary_entries(
                     citation_pattern,
                     confidence=0.95,
                     source_type="glossary",
+                    flags=current_term_flags,
                 )
 
                 current_term = actual_term
+                current_term_flags = term_flags
                 current_def_lines = []
                 term_page_idx = page_idx
                 if inline_def:
@@ -552,6 +633,7 @@ def parse_glossary_entries(
             citation_pattern,
             confidence=0.95,
             source_type="glossary",
+            flags=current_term_flags,
         )
 
         # PR1.2-quality Fix E: per-page continuation merge. Catches residual
@@ -658,8 +740,13 @@ def _flush(
     *,
     confidence: float,
     source_type: str,
+    flags: list[str] | None = None,
 ) -> None:
-    """Append the pending entry (if any) to `entries`, applying cleanup + filters."""
+    """Append the pending entry (if any) to `entries`, applying cleanup + filters.
+
+    The optional `flags` parameter is copied (not aliased) onto the emitted
+    entry so callers can safely mutate or reuse their list.
+    """
     if not current_term or not current_def_lines:
         return
     full_def = " ".join(current_def_lines).strip()
@@ -681,7 +768,7 @@ def _flush(
             "pdf_page_index": page_idx + 1,  # convert 0-indexed → 1-indexed
             "printed_page_label": _safe_page_label(doc, page_idx),
             "confidence": confidence,
-            "flags": [],
+            "flags": list(flags) if flags else [],
         }
     )
 
