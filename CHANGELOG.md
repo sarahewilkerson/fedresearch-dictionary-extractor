@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.3.0] — 2026-04-27
+
+PR-A of the four-PR dictionary tech-debt remediation surfaced by the 2026-04-27 backend review. See `docs/plans/2026-04-27-pr-a-extractor-correctness-v0.3.0.md`. Companion backend PR (`feat/2026-04-27/dict-wheel-v0.3.0-pin`) bumps the FedResearch backend's `EXTRACTOR_VERSION` from `army-v2.0.0` → `army-v2.1.0` to invalidate the worker idempotency cache and trigger a full re-extraction wave.
+
+### Fixed
+- **Inline-extractor over-match** (fix #1) — dropped `re.IGNORECASE` from the inline pattern compile in `extractors/inline.py`. The flag silently widened the term group's `[A-Z]` character class to match lowercase, producing mid-sentence false positives like the TC 1-19.30 page-102 `dampen \nusually` fragment pinned in `validation_set/batch1_reconciled.yaml`. The profile patterns hard-code the leading word's case (`For…`, `The term…`) so case-sensitive matching effectively requires sentence-start usage. Lost: rare ALL-CAPS variants — acceptable per Army-pub conventions.
+- **Asterisk-prefix term split** (fix #2) — Army "changed since previous publication" markers (`*` and `**`) are now stripped from glossary terms before classification. The strip emits `flags=["changed_since_prior_pub"]` on the entry so downstream consumers can surface provenance. Witness: FM 3-34 `*field` no longer splits as a distinct term from `field`. New helper `_strip_asterisk_prefix(term) -> (stripped, was_stripped)` in `extractors/glossary.py`; new optional `flags` kwarg on `_flush` (copied not aliased to avoid mutable-default leakage).
+- **Same-page Section I/II boundary residue** (fix #3) — added `_filter_spans_to_below_header(spans, header_pattern)` helper that drops spans above the first `Section II`-matching span on the FIRST page of a narrowed range. Layered on top of Unit 3's page-level scoping so AR 380-381 page 88's Section I continuation is dropped before per-line parsing. Trailing boundary (Section II tail + Section III header on same page) remains the documented limitation in `narrow_to_section_ii`; deferred to a follow-up unit.
+
+### Added
+- **`--deterministic` CLI flag** (fix #5) — suppresses wall-clock-derived fields (currently just `extraction_timestamp`) so two runs against the same input PDF produce byte-identical JSON. Enables FedResearch backend to use the JSON shape directly as an idempotency cache key. Default behavior unchanged. Plumbed via new `deterministic=True` kwarg on `analyze_pdf` and through batch-mode worker tuple.
+- `tests/test_inline_anchoring.py`, `tests/test_asterisk_prefix.py`, `tests/test_intra_page_boundary.py`, `tests/test_deterministic_flag.py` — new regression coverage for fixes #1–#3 and #5.
+
+### Changed
+- `tests/test_batch1_reconciled.py` (fix #6) — flipped corpus-pin assertion from `forbidden in actual` to `forbidden not in actual` and wrapped each parametrized case in `pytest.mark.xfail(strict=False, reason=…)` with bug-class-specific reasons. Today the test reports 2 XFAIL (committed v0.2.0 candidate-output still has the bad pairs); after v0.3.0 candidate-output is regenerated post-merge, both flip to XPASS — signal to remove the markers in a maintenance PR.
+
+### Schema
+- `definition-output-v1.json` — `extraction_timestamp` removed from `required` list (still present in `properties`). Additive — old non-deterministic outputs continue to validate; new deterministic outputs also validate. `schema_version` unchanged at `"1"`.
+
+### Removed
+- `pdfplumber>=0.11.0` dependency (fix #16) — was declared in `pyproject.toml` but referenced only in auto-generated `egg-info/` files. Smaller install surface; pymupdf handles all PDF reads.
+
+### Known limitations (carried forward, deferred)
+- Trailing same-page boundary (Section II tail + Section III header on one page) — `narrow_to_section_ii` still emits identity-transform on this shape. Distribution analysis flags affected docs.
+- Asterisk-prefix flag (`changed_since_prior_pub`) is not yet surfaced in the FedResearch frontend; backend can ingest it now via the additive flags array.
+- The bold-rate trigger continues to use the FULL glossary range while the fallback parser uses the narrowed range — an intentional signal/noise trade-off per `core/analyzer.py:103-106`. PR-A's plan amendment dropped the alignment fix in favor of preserving the original author's documented design choice.
+
+### Process
+- One commit per fix in TDD order: #6 (xfail markers) → #2 (asterisk strip) → #1 (inline IGNORECASE) → #3 (intra-page filter) → #5 (--deterministic) → #16 (drop pdfplumber).
+- Phase 0 audit (read-only, on Hetzner) confirmed: extractor binary at v0.2.0; EXTRACTOR_VERSION + wheel pin in expected places; zero stuck-PENDING-NULL-generation queue rows; live `definitions` table holds 21,594 stale `army-v1.0.0` rows alongside 6,087 `army-v2.0.0` rows — addressed by PR-B's idempotent re-extraction GC paired with this PR's EXTRACTOR_VERSION bump.
+
 ## [0.2.0] — 2026-04-26
 
 Release of the v0.2.0 wheel after the 6-unit decomposition that resolved Unit 1's escalated planning. See `docs/plans/2026-04-26-v0.2-decomposition.md` for the meta-plan.

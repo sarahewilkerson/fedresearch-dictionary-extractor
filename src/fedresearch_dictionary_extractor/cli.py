@@ -56,6 +56,16 @@ def _build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Skip JSON-schema validation (NOT RECOMMENDED; use only for triage).",
     )
+    p.add_argument(
+        "--deterministic",
+        action="store_true",
+        help=(
+            "Suppress wall-clock-derived fields (currently extraction_timestamp) "
+            "so two runs against the same input produce byte-identical JSON. "
+            "Used by the FedResearch backend so subprocess output can be hashed "
+            "for cache-key idempotency."
+        ),
+    )
     p.add_argument("-v", "--verbose", action="store_true")
     return p
 
@@ -91,6 +101,7 @@ def _run_single(args: argparse.Namespace) -> int:
         profile_name=args.profile,
         gcs_key=args.gcs_key,
         doc_id=args.doc_id,
+        deterministic=args.deterministic,
     )
     write_json(payload, args.output, validate_first=not args.no_validate)
     LOG.info(
@@ -131,7 +142,17 @@ def _run_batch(args: argparse.Namespace) -> int:
         rel = str(pdf.relative_to(args.input_dir))
         meta = manifest.get(str(pdf)) or manifest.get(rel) or {}
         out_path = args.output_dir / (pdf.stem + ".json")
-        jobs.append((str(pdf), str(out_path), args.profile, meta.get("gcs_key"), meta.get("doc_id"), args.no_validate))
+        jobs.append(
+            (
+                str(pdf),
+                str(out_path),
+                args.profile,
+                meta.get("gcs_key"),
+                meta.get("doc_id"),
+                args.no_validate,
+                args.deterministic,
+            )
+        )
 
     no_definitions: list[str] = []
     failures: list[tuple[str, str]] = []
@@ -166,9 +187,15 @@ def _run_batch(args: argparse.Namespace) -> int:
 
 def _worker(args: tuple) -> tuple[str, str, str]:
     """Pickleable worker: returns (source_pdf, status, message)."""
-    source_pdf, output_path, profile_name, gcs_key, doc_id, no_validate = args
+    source_pdf, output_path, profile_name, gcs_key, doc_id, no_validate, deterministic = args
     try:
-        payload = analyze_pdf(source_pdf, profile_name=profile_name, gcs_key=gcs_key, doc_id=doc_id)
+        payload = analyze_pdf(
+            source_pdf,
+            profile_name=profile_name,
+            gcs_key=gcs_key,
+            doc_id=doc_id,
+            deterministic=deterministic,
+        )
         write_json(payload, output_path, validate_first=not no_validate)
         n = payload["metadata"]["entries_after_dedup"]
         if n == 0:

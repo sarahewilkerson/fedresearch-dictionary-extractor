@@ -27,7 +27,14 @@ def extract_inline_definitions(doc: fitz.Document, profile: ReferenceProfile) ->
     Walk every page, run profile.inline_definition_patterns against the page
     text, and emit a dict per match.
     """
-    patterns = [re.compile(p, re.IGNORECASE | re.MULTILINE) for p in profile.inline_definition_patterns]
+    # PR-A v0.3.0 fix #1: drop re.IGNORECASE. The profile patterns hard-code
+    # the leading word's case ("For purposes of …", "The term …") so the
+    # surrounding context already pins each pattern at sentence-start usage.
+    # IGNORECASE silently widened the term group's [A-Z] character class to
+    # match lowercase too, producing mid-sentence false positives like the
+    # TC 1-19.30 page-102 'dampen \nusually' fragment. Case-sensitive match
+    # rejects mid-sentence matches without needing a fixed-width lookbehind.
+    patterns = [re.compile(p, re.MULTILINE) for p in profile.inline_definition_patterns]
     out: list[dict] = []
 
     for page_idx in range(len(doc)):
