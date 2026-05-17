@@ -59,9 +59,15 @@ class ArmyProfile(ReferenceProfile):
 
     @property
     def glossary_header_patterns(self) -> list[str]:
+        # v0.4.0: "Glossary of Terms/Acronyms/Abbreviations" variants account
+        # for ~70% of v0.3.0 zero-entry-with-glossary failures (124 of 177
+        # docs in the May 2026 wave). The optional `and \w+` clause covers
+        # "Glossary of Terms and Abbreviations" observed in AR 735-5.
         return [
             r"^\s*Glossary\s*$",
             r"^\s*GLOSSARY\s*$",
+            r"^\s*Glossary\s+of\s+(?:Terms?|Acronyms?|Abbreviations?)(?:\s+and\s+\w+)?\s*$",
+            r"^\s*GLOSSARY\s+OF\s+(?:TERMS?|ACRONYMS?|ABBREVIATIONS?)(?:\s+AND\s+\w+)?\s*$",
             r"^\s*Section\s+II\s*[-–—]?\s*Terms\s*$",
             r"^\s*Terms\s+and\s+Abbreviations\s*$",
             r"^\s*Acronyms\s+and\s+Abbreviations\s*$",

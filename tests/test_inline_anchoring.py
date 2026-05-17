@@ -24,7 +24,6 @@ import pytest
 from fedresearch_dictionary_extractor.extractors.inline import extract_inline_definitions
 from fedresearch_dictionary_extractor.profiles.army import ArmyProfile
 
-
 # ----------------------------------------------------------------------
 # Test fixtures — minimal mock fitz.Document
 # ----------------------------------------------------------------------

@@ -29,7 +29,6 @@ import pytest
 
 from fedresearch_dictionary_extractor.core.analyzer import analyze_pdf
 
-
 # ----------------------------------------------------------------------
 # Synthetic PDF fixture — tiny, deterministic, fast
 # ----------------------------------------------------------------------
@@ -108,7 +107,7 @@ def test_cli_deterministic_flag_byte_identical(tiny_pdf: Path, tmp_path: Path) -
     bytes_b = out_b.read_bytes()
     assert bytes_a == bytes_b, (
         f"Two --deterministic runs must produce byte-identical JSON; "
-        f"diff at first byte: {next((i for i, (x, y) in enumerate(zip(bytes_a, bytes_b)) if x != y), -1)}"
+        f"diff at first byte: {next((i for i, (x, y) in enumerate(zip(bytes_a, bytes_b, strict=True)) if x != y), -1)}"
     )
 
 

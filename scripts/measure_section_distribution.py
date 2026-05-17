@@ -178,10 +178,10 @@ def main() -> int:
     forbidden_terms_present = [
         t for t in AR_380_381_FORBIDDEN_SECTION_I_HEADWORDS if t in extracted_terms
     ]
-    BOUNDARY_RESIDUE_LIMIT = 10
-    if len(forbidden_terms_present) > BOUNDARY_RESIDUE_LIMIT:
+    boundary_residue_limit = 10
+    if len(forbidden_terms_present) > boundary_residue_limit:
         failures.append(
-            f"Section I bleed exceeds boundary-residue limit ({BOUNDARY_RESIDUE_LIMIT}): "
+            f"Section I bleed exceeds boundary-residue limit ({boundary_residue_limit}): "
             f"{len(forbidden_terms_present)} acronyms present: {forbidden_terms_present}"
         )
 
@@ -209,7 +209,7 @@ def main() -> int:
         print(f"- narrowed range starts at page {sip[0]} ✓")
         print(
             f"- {len(forbidden_terms_present)} Section I boundary-residue acronyms "
-            f"(within {BOUNDARY_RESIDUE_LIMIT} cap; same-page boundary limitation per Codex iter-3 #6)"
+            f"(within {boundary_residue_limit} cap; same-page boundary limitation per Codex iter-3 #6)"
         )
         if forbidden_terms_present:
             print(f"  residue: {forbidden_terms_present}")

@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.0] — 2026-05-17
+
+Addresses the v0.3.0 zero-entry regression on ~177 Army Pubs docs (11.5% of the May 2026 re-extraction wave) by extending glossary-header detection. Empirical sampling of 4 representative failures (`AR 735-5`, `AR 420-1`, `PAM 73-1`, `ATP 3-21.10`) localized 3 of 4 failures to the `find_glossary_page_range` stage. See `docs/plans/2026-05-17-v0.4-header-and-lookback.md`.
+
+### Fixed
+- **Glossary header phrase variants** — `profiles/army.py` `glossary_header_patterns` extended with `^\s*Glossary\s+of\s+(?:Terms?|Acronyms?|Abbreviations?)(?:\s+and\s+\w+)?\s*$` (and the uppercase twin). Accounts for ~70% of failing-cohort docs (124 of 177) whose glossary section is titled `Glossary of Terms`, `Glossary of Acronyms`, `Glossary of Terms and Abbreviations`, etc. — none of which matched the v0.3.0 whole-line `Glossary` regex.
+- **Lookback distance for long-tail docs** — `MAX_GLOSSARY_LOOKBACK_PAGES` raised from 30 to 75 in `extractors/glossary.py`. Witness: PAM 73-1 has its glossary at page 462 of 499 (37 pages from the end), beyond the v0.3.0 backward-sweep horizon.
+
+### Out of scope (deferred)
+- **Broken-CMap / GlyphLessFont docs** (e.g., `ATP 3-21.10`). The PDF's embedded text layer returns Caesar-shifted bytes via pymupdf; the existing `is_gibberish` filter correctly rejects the resulting "definitions". Requires upstream-text fallback (architectural change); separate future plan.
+
+### Downstream
+- Backend bump required: `EXTRACTOR_VERSION` `army-v2.1.0` → `army-v2.2.0` in `apps/backend/src/definition-extraction/extraction-worker.service.ts:60`.
+- Re-extraction operator-UPDATE pattern targets `status='SUCCEEDED' AND extractor_version='army-v2.1.0' AND entry_count=0` for the failing cohort. See plan doc §Downstream.
+
 ## [0.3.0] — 2026-04-27
 
 PR-A of the four-PR dictionary tech-debt remediation surfaced by the 2026-04-27 backend review. See `docs/plans/2026-04-27-pr-a-extractor-correctness-v0.3.0.md`. Companion backend PR (`feat/2026-04-27/dict-wheel-v0.3.0-pin`) bumps the FedResearch backend's `EXTRACTOR_VERSION` from `army-v2.0.0` → `army-v2.1.0` to invalidate the worker idempotency cache and trigger a full re-extraction wave.
