@@ -19,7 +19,6 @@ from fedresearch_dictionary_extractor.extractors.glossary import (
     _filter_spans_to_below_header,
 )
 
-
 # ----------------------------------------------------------------------
 # Test fixtures
 # ----------------------------------------------------------------------

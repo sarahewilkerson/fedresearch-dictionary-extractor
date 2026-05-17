@@ -14,10 +14,9 @@ from __future__ import annotations
 import pytest
 
 from fedresearch_dictionary_extractor.extractors.glossary import (
-    _strip_asterisk_prefix,
     _flush,
+    _strip_asterisk_prefix,
 )
-
 
 CHANGED_FLAG = "changed_since_prior_pub"
 
