@@ -51,7 +51,7 @@ SECTION_STRUCTURE_UNKNOWN = "unknown"  # detection error, no glossary range, or 
 HEADER_ZONE_Y = 150              # ignore document headers above this Y
 FOOTER_ZONE_PCT = 0.88           # bottom 12% of page = footer zone (PR1.2-quality Fix B)
 TERM_COL_MARGIN = 30             # points past min_x to still be "term column"
-MAX_GLOSSARY_LOOKBACK_PAGES = 30 # how far back to look for the glossary
+MAX_GLOSSARY_LOOKBACK_PAGES = 75 # how far back to look for the glossary (v0.4.0: was 30; raised to cover long-tail docs like PAM 73-1 with glossary at page 462/499)
 MIN_TERM_LENGTH = 2
 MAX_TERM_LENGTH = 100
 MAX_SPLIT_TERM_LENGTH = 50       # max term length when split inline (Term. Def…)
