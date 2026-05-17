@@ -1,0 +1,46 @@
+document_id	canonical_id	total_pages	known_range_start	known_range_end	detected_range_start	detected_range_end	range_match	pdf_vowel_ratio	text_vowel_ratio	pdf_control_byte_rate	text_control_byte_rate	text_page_boundaries_detected	text_page_boundaries_count	text_glossary_header_detected	text_newlines_per_char	text_space_run_max	text_replacement_char_rate	text_sentences_per_kchar	notes
+0d650775-57d2-4cfb-960e-d8304eab663b	army:tc:tc-3-22240-medium-machine-gun-2017-04-28	202	194	195	194	195	exact	0.3708	0.383	0.0	0.0	False	0	False	0.0139	8	0.0	11.11	
+141e0718-6022-41b0-ac41-f416392c94bc	army:tc:tc-7-03-plan-an-event-2025-09-23	9					neither	0.3871	0.3895	0.0	0.0	False	0	False	0.0158	3	0.0	11.05	
+18309bc3-a029-4b66-8b3f-6b13902c78ed	army:tc:tc-3-0411-commander-s-aviation-training-and-standardization-program-2022-04-14	114	102	105	104	105	overlap	0.3833	0.3841	0.006543	0.0	False	0	True	0.0128	3	0.0	9.79	
+2012ce87-6877-417e-bc51-62f3b98c6b4e	army:tc:tc-3-22249-light-machine-gun-m249-series-2017-05-16	208	200	201	200	201	exact	0.3597	0.3835	0.0	0.0	False	0	False	0.0134	3	0.0	10.94	
+37dfab58-8a2a-4571-968a-87c8ab1601ac	army:tc:tc-3-25150-combatives-2017-03-31	408	398	399	398	399	exact	0.3615	0.3683	0.0	0.0	False	0	False	0.0184	8	0.0	9.77	
+441b8af0-7564-4ab7-a8de-8fea1796c57f	army:tc:tc-3-2237-javelin-close-combat-missile-system-medium-2013-08-13	260	242	247	246	247	overlap	0.3659	0.3812	0.0	0.0	False	0	True	0.0179	16	0.0	12.65	
+45213769-2aef-49c8-ac5e-7d09fc56d889	army:tc:tc-8-13-tactical-hospital-infrastructure-2021-02-25	154	144	147	146	147	overlap	0.3698	0.3831	0.0	0.0	False	0	False	0.0153	8	0.0	12.79	
+4d44f6bb-b3e3-4220-9097-0812c47fde0e	army:tc:tc-3-226-guard-duty-this-item-is-published-w-basic-inl-c1-2017-01-13	60	52	53	52	53	exact	0.3754	0.3817	0.0	0.0	False	0	False	0.0134	3	0.0	10.59	
+5c11e285-4ad1-4986-a6a8-b69cc21b9f5e	army:tc:tc-8-260-pharmacy-specialist-2025-04-07	52	44	45	44	45	exact	0.3715	0.3779	0.0	0.0	False	0	False	0.0161	3	0.0	10.4	
+603892f9-7a9b-4150-a06e-0fef2e0eb411	army:tc:tc-3-045-instrument-flight-for-army-aviators-2024-12-12	312	294	299	298	299	overlap	0.3923	0.3902	0.0	0.0	False	0	True	0.0117	4	0.0	9.43	
+8669df51-233d-46de-ac03-5e49fa9f10a1	army:tc:tc-3-21220-static-line-parachuting-techniques-and-training-tc-3-21220-mcwp-3-157-afman-11-420	524	508	511	511	511	overlap	0.1639	0.2299	0.158602	0.0	False	0	True	0.0157	11	0.0	4.58	
+b2cdf7d9-e8e8-45d9-978d-2def78e3faf8	army:tc:tc-3-2040-training-and-qualification-individual-weapons-2019-07-30	832	818	819	819	819	overlap	0.3772	0.3867	0.0	0.0	False	0	True	0.0204	11	0.0	8.07	
+bdd56ea4-f19d-4043-a1dd-5253e3d3f988	army:tc:tc-3-2219-grenade-machine-gun-mk-19-mod-3-2017-05-10	194	186	187	186	187	exact	0.3719	0.3795	0.007313	0.0	False	0	False	0.0132	4	0.0	10.78	
+c5ug90nbqot9sb9whpk5gdv8u	army:atp:atp-3-5020-survival-evasion-resistance-and-escape-sere-planning-and-preparation-2017-11-29	1					neither	0.3691	0.3834	0.0	0.003538	True	228	True	0.015	1	0.0	11.73	
+c70be16a-a6ba-498b-986e-c38ee16c4886	army:tc:tc-4-021-first-aid-c2-2016-01-21	120	112	113	112	113	exact	0.3742	0.3838	0.0	0.0	False	0	True	0.028	13	0.0	11.63	
+c7a9v1b362uybwh13n50jr1b1	army:atp:atp-1-0501-religious-support-and-the-operations-process-2018-07-31	92	82	83	82	83	exact	0.392	0.3925	0.0	0.0	True	70	True	0.0177	1	0.0	7.13	
+cc4ba160-6783-467d-b778-7b4b537a08d6	army:tc:tc-3-0471-commander-s-aviation-maintenance-training-program-2024-04-03	60	50	51	51	51	overlap	0.3847	0.3918	0.0	0.0	False	0	True	0.0129	3	0.0	10.27	
+cezr02yloh98v174nzwph4h4s	army:atp:atp-2-194-brigade-combat-team-intelligence-techniques-2021-06-25	1					neither	0.3697	0.3886	0.0	0.002361	True	460	True	0.013	1	0.0	8.53	
+cmfopsclncx0fiqitg7859np5	army:atp:atp-3-3930-security-and-mobility-support-2020-05-21	178	164	167	166	167	overlap	0.3818	0.3834	0.0	0.0	True	178	True	0.0279	1	0.0	23.31	
+cmjetcit900446svfh4jfo3lf	army:atp:atp-3-2110-infantry-rifle-company-2018-05-14	618	580	605	604	605	overlap	0.1494	0.154	0.187993	0.185018	True	618	True	0.0197	1	0.0	0.0	
+cmjeth7n8000zr6uhkw7jy7yb	army:atp:atp-3-3920-police-intelligence-operations-2019-05-13	226	212	215	214	215	overlap	0.3789	0.3885	0.0	0.0	True	226	True	0.023	1	0.0	12.41	
+cmjeti0wo004tr6uh0gxtboaz	army:atp:atp-7-1001-russian-tactics-2024-02-29	280	264	267	266	267	overlap	0.3667	0.3678	0.008368	0.007382	True	280	True	0.0443	1	0.0	11.38	
+cmjeti2ek004xr6uhpp2g8kb5	army:fm:fm-1-the-army-a-primer-to-our-profession-of-arms-2025-05-01	104					neither	0.3908	0.3876	0.0	0.0	True	104	False	0.0197	1	0.0	8.8	
+cmjeti2nh004yr6uhjejcnhmw	army:fm:fm-1-021-operational-terms-2024-02-28	132					neither	0.3951	0.3919	0.001571	0.002246	True	132	False	0.0147	1	0.0	7.67	
+cmjetiax4005vr6uho7socel1	army:fm:fm-3-81-maneuver-enhancement-brigade-2021-11-09	188	172	175	174	175	overlap	0.39	0.3896	0.0	0.0	True	188	True	0.0287	1	0.0	20.37	
+cmjetig4p006er6uh05bnchax	army:fm:fm-6-99-us-army-report-and-message-formats-2021-05-17	236	226	227	226	227	exact	0.3733	0.3751	0.0	0.0	True	236	True	0.0201	1	0.0	24.7	
+cmjetpw2601lir6uhsuewvnou	army:ar:ar-12-15-joint-security-cooperation-education-and-training-secnavinst-49504b-afi-16-105-asa-al-t	345	21	21	343	343	disjoint	0.4016	0.3968	0.0	0.0	True	345	True	0.0172	1	0.0	14.16	
+cmjetr2zu01u3r6uh8w4r4onl	army:ar:ar-611-1-military-occupational-classification-structure-development-and-implementation-g-1-2022-12	48	6	38	46	46	disjoint	0.3937	0.3938	0.0	0.0	True	48	True	0.0132	1	0.0	9.7	
+cmjetsvy8025mr6uhxcbak9aq	army:pam-600-8-military-human-resources-management-administrative-procedures-g-1-2019-05-20	55	6	20	52	53	disjoint	0.3815	0.3818	0.0	0.0	True	55	True	0.015	1	0.0	10.33	
+cmjetswr9025pr6uh33z09aug	army:pam-600-8-105-military-orders-2022-12-20	173	8	165	171	171	disjoint	0.3941	0.3942	0.0	0.0	True	173	True	0.0304	1	0.0	12.9	
+cmjett3270268r6uhshk0jy95	army:pam-700-127-integrated-product-support-procedures-2024-02-20	170	9	43	168	168	disjoint	0.3848	0.3849	0.0	0.0	True	170	True	0.0146	1	0.0	9.86	
+cml9uwtsv00uxjz137l0u7tab	Training Circular|TC 3-22.6	60	5	18	52	53	disjoint	0.3997	0.3875	0.0	0.0	True	60	True	0.0138	1	0.0	10.7	
+cml9yluu10105jz13xtd3lhtw	Training Circular|TC 21-306	100	86	87	86	87	exact	0.3632	0.3748	0.0	0.0	True	100	True	0.0199	1	0.0	28.78	
+cmn72jvqc008giq33l5ox8h0m	Army Techniques Publication|ATP 3-39.30	216	200	203	202	203	overlap	0.3848	0.3849	0.0	0.0	True	216	True	0.0269	1	0.0	20.71	
+cphtq144vrzne16yqqxbzj3l6	army:atp:atp-6-0246-expeditionary-signal-companies-2025-05-07	178	160	165	165	165	overlap	0.388	0.3875	0.0	0.0	True	178	True	0.0202	1	0.0	10.62	
+cvf5mbr4s1ftweqpjt44eps0o	army:pog:pog-compliance-with-requirement-for-criminal-background-checks-in-child-youth-and-school-services	7					neither	0.3798	0.3793	0.0	0.0	True	304	True	0.0146	1	0.0	12.73	
+cx2yz7khyjk5eyggqx1ia25xs	army:atp:atp-3-3912-1-law-enforcement-investigations-volume-i-2024-04-12	476	462	465	464	465	overlap	0.3752	0.3716	0.0	0.007237	True	476	True	0.0439	1	0.0	18.72	
+dbc0cf4b-05db-4628-a959-91a3f78ab9ee	army:tc:tc-21-306-tracked-combat-vehicle-driver-training-2025-04-24	100	86	87	86	87	exact	0.3632	0.3832	0.0	0.0	False	0	False	0.0192	8	0.0	11.07	
+recovered_22370f6c71c86205	army:policy-tc-3-2212-m26-modular-accessory-shotgun-system-2014-11-12	171	162	163	163	163	overlap	0.3597	0.3694	0.014925	0.007061	True	171	True	0.0203	1	0.0	11.47	
+recovered_2eab2f40df30b585	army:policy-tc-9-237-operators-circular-welding-theory-and-application-1993-05-07	782					neither	0.3693	0.3779	0.0	0.0	True	782	False	0.0182	1	0.0	12.61	
+recovered_4d2ec1fd14c515be	army:policy-tc-6-0220-cable-and-wire-systems-handbook-2018-01-23	282	268	271	270	271	overlap	0.3709	0.368	0.007883	0.006434	True	282	True	0.03	1	0.0	5.1	
+recovered_7881846736121422	army:doctrine-atp-3-3912-1-law-enforcement-investigations-volume-i-2024-04-12	476	462	465	464	465	overlap	0.3752	0.3716	0.0	0.007237	True	476	True	0.0439	1	0.0	18.72	
+recovered_97b451609e810a18	army:doctrine-tc-3-2291-mortar-fire-direction-procedures-2017-05-15	538	526	529	528	529	overlap	0.3636	0.3574	0.0	0.0	True	538	True	0.0313	1	0.0	5.13	
+recovered_f4bec2e2aeeb4283	army:doctrine-atp-3-3930-security-and-mobility-support-2020-05-21	178	164	167	166	167	overlap	0.3823	0.3834	0.0	0.0	True	178	True	0.0279	1	0.0	23.31	
+recovered_fb323d114473e0c7	army:policy-tc-3-2291-mortar-fire-direction-procedures-2025-08-29	536	520	523	523	523	overlap	0.3625	0.3592	0.0	0.0	True	536	True	0.0342	1	0.0	10.22	
