@@ -1,0 +1,58 @@
+# v0.5 Unit D-3-B running-header inventory.
+# Top-zone (y<150) lines containing 'Glossary' across 7 target + 31 validation docs.
+# matched_proposed_pattern: index of the regex pattern that matched (None if no match — line needs reviewer classification).
+# needs_review: 'yes' if no proposed pattern matched (potential gap in patterns).
+
+document_id,canonical_id,source,page_idx,y_pos,line_text,matched_proposed_pattern,is_running_header_heuristic,needs_review
+0d650775-57d2-4cfb-960e-d8304eab663b,army:tc:tc-3-22240-medium-machine-gun-2017-04-28,target_cohort,194,91.8,Glossary,,False,yes
+0d650775-57d2-4cfb-960e-d8304eab663b,army:tc:tc-3-22240-medium-machine-gun-2017-04-28,target_cohort,194,130.7,The glossary lists acronyms and terms with Army or joint definitions. Where Army and,,False,yes
+2012ce87-6877-417e-bc51-62f3b98c6b4e,army:tc:tc-3-22249-light-machine-gun-m249-series-2017-05-16,target_cohort,200,76.5,Glossary,,False,yes
+2012ce87-6877-417e-bc51-62f3b98c6b4e,army:tc:tc-3-22249-light-machine-gun-m249-series-2017-05-16,target_cohort,200,107.2,The glossary lists acronyms and terms with Army or joint definitions. Where Army and,,False,yes
+4d44f6bb-b3e3-4220-9097-0812c47fde0e,army:tc:tc-3-226-guard-duty-this-item-is-published-w-basic-inl-c1-2017-01-13,target_cohort,52,118.3,Glossary,,False,yes
+5c11e285-4ad1-4986-a6a8-b69cc21b9f5e,army:tc:tc-8-260-pharmacy-specialist-2025-04-07,target_cohort,44,70.6,Glossary,,False,yes
+bdd56ea4-f19d-4043-a1dd-5253e3d3f988,army:tc:tc-3-2219-grenade-machine-gun-mk-19-mod-3-2017-05-10,target_cohort,186,78.3,Glossary,,False,yes
+bdd56ea4-f19d-4043-a1dd-5253e3d3f988,army:tc:tc-3-2219-grenade-machine-gun-mk-19-mod-3-2017-05-10,target_cohort,186,108.5,"The glossary lists acronyms and terms with Army or joint definitions. Where Army and joint definitions differ,",,False,yes
+c70be16a-a6ba-498b-986e-c38ee16c4886,army:tc:tc-4-021-first-aid-c2-2016-01-21,target_cohort,112,79.9,Glossary,,False,yes
+c70be16a-a6ba-498b-986e-c38ee16c4886,army:tc:tc-4-021-first-aid-c2-2016-01-21,target_cohort,112,109.2,This  glossary  lists  acronyms  and  terms  with  Army  or  joint  definitions.,,False,yes
+ADP_3-07_STABILITY_2019_07_31_OCR,ADP_3-07_STABILITY_2019_07_31_OCR,validation_set,66,119.0,Glossary,,False,yes
+ADP_3-07_STABILITY_2019_07_31_OCR,ADP_3-07_STABILITY_2019_07_31_OCR,validation_set,67,37.4,Glossary,,False,yes
+ADP_3-07_STABILITY_2019_07_31_OCR,ADP_3-07_STABILITY_2019_07_31_OCR,validation_set,68,37.1,Glossary,,False,yes
+AR_11-7_INTERNAL_REVIEW_PROGRAM_ASA_FM_C_2025_05_21_OCR,AR_11-7_INTERNAL_REVIEW_PROGRAM_ASA_FM_C_2025_05_21_OCR,validation_set,30,73.8,Glossary of Terms,,False,yes
+AR_115-10_WEATHER_SUPPORT_FOR_THE_U.S._ARMY_AFI_15-157_IP_G-2_2021_09_02_OCR,AR_115-10_WEATHER_SUPPORT_FOR_THE_U.S._ARMY_AFI_15-157_IP_G-2_2021_09_02_OCR,validation_set,21,74.2,Glossary,,False,yes
+AR_190-55_U.S._ARMY_CORRECTIONS_SYSTEM__PROCEDURES_FOR_MILITARY_EXECUTIONS_PMG_2023_10_30_OCR,AR_190-55_U.S._ARMY_CORRECTIONS_SYSTEM__PROCEDURES_FOR_MILITARY_EXECUTIONS_PMG_2023_10_30_OCR,validation_set,17,73.9,Glossary,,False,yes
+AR_25-59_OFFICE_SYMBOLS_CIO_2024_02_15_OCR,AR_25-59_OFFICE_SYMBOLS_CIO_2024_02_15_OCR,validation_set,12,73.8,Glossary  of  Terms,,False,yes
+AR_380-381_SPECIAL_ACCESS_PROGRAMS_SAPS_AND_SENSITIVE_ACTIVITIES_CSA_2004_04_21_OCR,AR_380-381_SPECIAL_ACCESS_PROGRAMS_SAPS_AND_SENSITIVE_ACTIVITIES_CSA_2004_04_21_OCR,validation_set,83,51.8,Glossary,,False,yes
+AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR,AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR,validation_set,32,73.8,Glossary,,False,yes
+AR_600-20,AR_600-20,validation_set,122,73.8,Glossary,,False,yes
+AR_637-2_SEPARATION_PAY_NONDISABILITY_AND_LEVELS_OF_PAYMENT_G-1_2022_08_18_OCR,AR_637-2_SEPARATION_PAY_NONDISABILITY_AND_LEVELS_OF_PAYMENT_G-1_2022_08_18_OCR,validation_set,23,74.2,Glossary,,False,yes
+AR_700-13_WORLDWIDE_DEPARTMENT_OF_DEFENSE_MILITARY_MUNITIONS_AMMUNITION_LOGISTICS_SURVEILLANCE_EXPLOSIVES_SAFETY_REVIEW_AND_TECHNICAL_ASSISTANCE_PROGRAM_G-4_2020_12_15_OCR,AR_700-13_WORLDWIDE_DEPARTMENT_OF_DEFENSE_MILITARY_MUNITIONS_AMMUNITION_LOGISTICS_SURVEILLANCE_EXPLOSIVES_SAFETY_REVIEW_AND_TECHNICAL_ASSISTANCE_PROGRAM_G-4_2020_12_15_OCR,validation_set,11,74.0,Glossary,,False,yes
+ATP_1-05.01_RELIGIOUS_SUPPORT_AND_THE_OPERATIONS_PROCESS_2018_07_31_OCR,ATP_1-05.01_RELIGIOUS_SUPPORT_AND_THE_OPERATIONS_PROCESS_2018_07_31_OCR,validation_set,82,97.4,Glossary,,False,yes
+ATP_1-05.01_RELIGIOUS_SUPPORT_AND_THE_OPERATIONS_PROCESS_2018_07_31_OCR,ATP_1-05.01_RELIGIOUS_SUPPORT_AND_THE_OPERATIONS_PROCESS_2018_07_31_OCR,validation_set,82,137.0,The  glossary  lists  acronyms  with  Army  or  joint  definitions.,,False,yes
+ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,validation_set,106,116.5,Glossary,,False,yes
+ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,validation_set,107,36.3,Glossary,,False,yes
+ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,validation_set,108,36.3,Glossary,,False,yes
+ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR,validation_set,109,36.3,Glossary,,False,yes
+FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR,FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR,validation_set,128,119.2,Glossary,,False,yes
+FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR,FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR,validation_set,129,37.3,Glossary,,False,yes
+FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR,FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR,validation_set,130,37.4,Glossary,,False,yes
+FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR,FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR,validation_set,74,80.5,Glossary,,False,yes
+FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR,FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR,validation_set,75,37.4,Glossary,,False,yes
+FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR,FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR,validation_set,76,37.4,Glossary,,False,yes
+FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,validation_set,106,119.3,Glossary,,False,yes
+FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,validation_set,106,148.7,The  glossary  lists  acronyms  and  terms  with  Army  or  joint  definitions.  Where  Army  and  joint,,False,yes
+FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,validation_set,107,37.4,Glossary,,False,yes
+FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,validation_set,108,37.4,Glossary,,False,yes
+FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,validation_set,109,38.2,Glossary,,False,yes
+FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,validation_set,110,37.4,Glossary,,False,yes
+FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR,validation_set,111,37.4,Glossary,,False,yes
+FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,validation_set,166,119.2,Glossary,,False,yes
+FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,validation_set,167,37.4,Glossary,,False,yes
+FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,validation_set,168,37.4,Glossary,,False,yes
+FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,validation_set,169,37.4,Glossary,,False,yes
+FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR,validation_set,170,37.4,Glossary,,False,yes
+PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR,PAM_350-58_ARMY_LEADER_DEVELOPMENT_PROGRAM_G-3_5_7_2013_03_08_OCR,validation_set,24,51.5,Glossary,,False,yes
+PAM_385-64_AMMUNITION_AND_EXPLOSIVES_SAFETY_STANDARDS_2023_07_24_OCR,PAM_385-64_AMMUNITION_AND_EXPLOSIVES_SAFETY_STANDARDS_2023_07_24_OCR,validation_set,208,73.8,Glossary of Terms,,False,yes
+PAM_600-3,PAM_600-3,validation_set,76,73.8,Glossary of Terms,,False,yes
+PAM_770-3_TYPE_CLASSIFICATION_AND_MATERIEL_RELEASE_PROCEDURES_2025_05_02_OCR,PAM_770-3_TYPE_CLASSIFICATION_AND_MATERIEL_RELEASE_PROCEDURES_2025_05_02_OCR,validation_set,31,74.2,Glossary  of  Terms,,False,yes
+TC_1-19.30,TC_1-19.30,validation_set,148,114.2,Glossary,,False,yes
+TC_1-19.30,TC_1-19.30,validation_set,148,145.1,The glossary lists acronyms and term withs Army definitions or joint definitions. Where Army,,False,yes

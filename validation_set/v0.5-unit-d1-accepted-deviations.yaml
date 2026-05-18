@@ -115,16 +115,21 @@ entries:
     old_v04_range: [82, 83]
     new_v05_range: [82, 83]
     term_set_diff:
-      added_count: 15
+      added_count: 2
       removed_count: 0
-      added_sample: ['adrp', 'ar', 'arng', 'atp', 'cbrn', 'coa', 'dodd', 'dsca', 'fm', 'jp']
+      added_sample: ['the', 'there']
       removed_sample: []
     rationale: |-
-      v0.5 D-3-A column-gate relaxation admits Section II acronyms (Army doctrine
-      reference publication, etc.) that were previously filtered by the strict
-      term-column gate. Wider acronym band (min_x + 80) captures the acronym
-      table layout. Category: intended_acronym_addition. All 15 added terms
-      are real acronyms verified against the PDF's Section II acronym table.
-    category: intended_acronym_addition
-    approved_by: 'malcolm-wilkerson + claude (D-3-A execution)'
+      v0.5 D-3-B footer-pattern filter removes the combined running-header
+      "<date> <TYPE> <pub#> Glossary-<N>" from the parser's input. Side effect:
+      with the running-header gone, the parser now hits other low-quality
+      candidate lines on the page (which start with "the" / "there") and
+      emits them as terms. Net effect: 0→2 entries on a previously-0 doc;
+      the 2 entries are noise, NOT real glossary content. Future D-3-C
+      (empty-def-flush diagnostic / parser tightening) addresses this
+      precision gap. D-3-B treats this as a known precision limitation
+      rather than a regression — no terms lost, and the running-header
+      that was the v0.4 sole-term IS correctly filtered.
+    category: intended_removal_of_bogus_running_header_with_known_noise
+    approved_by: 'malcolm-wilkerson + claude (D-3-B execution)'
     approved_at: '2026-05-18'
