@@ -51,6 +51,11 @@ SECTION_STRUCTURE_UNKNOWN = "unknown"  # detection error, no glossary range, or 
 HEADER_ZONE_Y = 150              # ignore document headers above this Y
 FOOTER_ZONE_PCT = 0.88           # bottom 12% of page = footer zone (PR1.2-quality Fix B)
 TERM_COL_MARGIN = 30             # points past min_x to still be "term column"
+ACRONYM_COL_MARGIN = 80          # v0.5 D-3-A: wider band for acronym-shaped lines.
+                                  # Section I acronyms are often indented ~40-60pt past
+                                  # min_x (set by the Section header at the leftmost x).
+                                  # 80pt captures observed acronym layouts without
+                                  # over-accepting body prose. Empirical from D-2 traces.
 # v0.5 Unit D-1: MAX_GLOSSARY_LOOKBACK_PAGES (75 in v0.4.0) removed.
 # Forward-scan-largest-contiguous-block strategy obviates the cap.
 MIN_TERM_LENGTH = 2
@@ -574,10 +579,17 @@ def parse_glossary_entries(
         current_def_lines: list[str] = []
         term_page_idx = page_idx  # 0-indexed
 
+        # v0.5 D-3-A: wider acronym band — when min_x is set by a section
+        # header (e.g., "SECTION I — ACRONYMS"), the strict term-col threshold
+        # excludes the acronym lines that follow (indented past +30pt).
+        # ACRONYM_COL_MARGIN gives acronym-shaped lines a wider band to pass.
+        acronym_col_threshold = min_x + ACRONYM_COL_MARGIN
+
         for line_spans in valid_lines:
             first = line_spans[0]
             first_x = first["bbox"][0]
             in_term_col = first_x < term_col_threshold
+            in_acronym_band = first_x < acronym_col_threshold
 
             # PR1.2-quality Fix A: per-line bold/ALL-CAPS gate.
             # A left-margin line is a NEW term only if its first span is bold
@@ -587,7 +599,11 @@ def parse_glossary_entries(
                 full_line_text = " ".join(s["text"] for s in line_spans).strip()
                 is_bold = text_utils.is_span_bold(first["span"])
                 is_acronym_line = _looks_like_acronym_term_line(full_line_text)
-                is_new_term_line = in_term_col and (is_bold or is_acronym_line)
+                # v0.5 D-3-A: acronym-shaped lines pass the gate in the wider
+                # acronym band (covers Section I tables where acronyms are
+                # indented past min_x + TERM_COL_MARGIN but still close to min_x).
+                is_new_term_line = (in_term_col and (is_bold or is_acronym_line)) \
+                                   or (in_acronym_band and is_acronym_line)
             else:
                 is_new_term_line = in_term_col   # legacy X-only fallback
 
