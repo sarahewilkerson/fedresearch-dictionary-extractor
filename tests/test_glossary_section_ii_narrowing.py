@@ -35,8 +35,25 @@ from fedresearch_dictionary_extractor.profiles.army import SECTION_II_HEADER
 REPO = Path(__file__).parent.parent
 PDF_DIR = REPO / "validation_set" / "pdfs"
 GOLDEN = REPO / "validation_set" / "v0.5-unit-d1-v04-golden-output.json"
+DEVIATIONS = REPO / "validation_set" / "v0.5-unit-d1-accepted-deviations.yaml"
 
 GOLDEN_BY_STEM: dict[str, dict] = json.loads(GOLDEN.read_text())
+
+
+def _accepted_deviation_stems() -> set[str]:
+    """Parse the deviations YAML and return the set of document_id stems."""
+    import re
+    text = DEVIATIONS.read_text()
+    if re.search(r"^entries:\s*\[\s*\]\s*$", text, re.MULTILINE):
+        return set()
+    return {
+        line.split(":", 1)[1].strip()
+        for line in text.splitlines()
+        if line.startswith("  - document_id:")
+    }
+
+
+ACCEPTED_DEVIATIONS = _accepted_deviation_stems()
 SECTION_II_STEMS = [
     s for s, g in GOLDEN_BY_STEM.items()
     if g.get("section_structure") in {SECTION_STRUCTURE_BOTH, SECTION_STRUCTURE_II_ONLY}
@@ -79,7 +96,13 @@ def test_section_ii_narrowed_range_matches_section_ii_header(stem: str) -> None:
 @pytest.mark.parametrize("stem", sorted(SECTION_II_STEMS), ids=lambda s: s[:40])
 def test_section_ii_extracted_terms_stable(stem: str) -> None:
     """Extracted terms for section_ii docs match the v0.4 golden term set.
-    Catches silent term-identity drift from range/narrowing changes."""
+    Catches silent term-identity drift from range/narrowing changes.
+
+    Skipped for docs in accepted-deviations.yaml — those have explicit
+    reviewer-approved term-set changes."""
+    if stem in ACCEPTED_DEVIATIONS:
+        pytest.skip(f"{stem}: explicit accepted deviation — see accepted-deviations.yaml")
+
     pdf_path = PDF_DIR / f"{stem}.pdf"
     if not pdf_path.exists():
         pytest.skip(f"PDF not available: {pdf_path}")

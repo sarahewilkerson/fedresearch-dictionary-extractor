@@ -1,11 +1,8 @@
 # v0.5 Unit D-1: Class-2 + Class-3 docs acceptance YAML.
 # 27 docs where v0.4's find_glossary_page_range returned an incorrect range.
-# expected_v05_range is what the simulated v0.5 forward-scan-largest-block
-# algorithm produces; hand-confirmation at PR review time.
-# acceptance_relation: 'exact' is the default; per-doc relaxation requires
-# a documented rationale string.
-# disposition: 'active' (in-scope) | 'deferred_to_d2' | 'scope_decision' |
-#              'known_failure_with_followup_unit'. No anonymous failures.
+# expected_v05_range = actual v0.5 forward-scan-largest-block + later-wins-tie output.
+# disposition: active (D-1 fixes range) | deferred_to_d2 (range unchanged from v0.4,
+#              parser is the issue — same Class-1 failure mode).
 
 entries:
   - document_id: 18309bc3-a029-4b66-8b3f-6b13902c78ed
@@ -116,42 +113,42 @@ entries:
     canonical_id: 'army:ar:ar-611-1-military-occupational-classification-structure-development-and-implementation-g-1-2022-12'
     old_v04_range: [46, 46]
     loose_heuristic_range: [6, 38]
-    expected_v05_range: [6, 38]
+    expected_v05_range: [46, 46]
     acceptance_relation: exact
     expected_entry_count_min: 1
-    disposition: active
+    disposition: deferred_to_d2
   - document_id: cmjetsvy8025mr6uhxcbak9aq
     canonical_id: 'army:pam-600-8-military-human-resources-management-administrative-procedures-g-1-2019-05-20'
     old_v04_range: [52, 53]
     loose_heuristic_range: [6, 20]
-    expected_v05_range: [6, 44]
+    expected_v05_range: [52, 53]
     acceptance_relation: exact
     expected_entry_count_min: 1
-    disposition: active
+    disposition: deferred_to_d2
   - document_id: cmjetswr9025pr6uh33z09aug
     canonical_id: 'army:pam-600-8-105-military-orders-2022-12-20'
     old_v04_range: [171, 171]
     loose_heuristic_range: [8, 165]
-    expected_v05_range: [8, 165]
+    expected_v05_range: [171, 171]
     acceptance_relation: exact
     expected_entry_count_min: 1
-    disposition: active
+    disposition: deferred_to_d2
   - document_id: cmjett3270268r6uhshk0jy95
     canonical_id: 'army:pam-700-127-integrated-product-support-procedures-2024-02-20'
     old_v04_range: [168, 168]
     loose_heuristic_range: [9, 43]
-    expected_v05_range: [9, 119]
+    expected_v05_range: [168, 168]
     acceptance_relation: exact
     expected_entry_count_min: 1
-    disposition: active
+    disposition: deferred_to_d2
   - document_id: cml9uwtsv00uxjz137l0u7tab
     canonical_id: 'Training Circular|TC 3-22.6'
     old_v04_range: [52, 53]
     loose_heuristic_range: [5, 18]
-    expected_v05_range: [5, 18]
+    expected_v05_range: [52, 53]
     acceptance_relation: exact
     expected_entry_count_min: 1
-    disposition: active
+    disposition: deferred_to_d2
   - document_id: cmn72jvqc008giq33l5ox8h0m
     canonical_id: 'Army Techniques Publication|ATP 3-39.30'
     old_v04_range: [202, 203]

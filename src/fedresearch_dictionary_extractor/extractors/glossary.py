@@ -51,7 +51,8 @@ SECTION_STRUCTURE_UNKNOWN = "unknown"  # detection error, no glossary range, or 
 HEADER_ZONE_Y = 150              # ignore document headers above this Y
 FOOTER_ZONE_PCT = 0.88           # bottom 12% of page = footer zone (PR1.2-quality Fix B)
 TERM_COL_MARGIN = 30             # points past min_x to still be "term column"
-MAX_GLOSSARY_LOOKBACK_PAGES = 75 # how far back to look for the glossary (v0.4.0: was 30; raised to cover long-tail docs like PAM 73-1 with glossary at page 462/499)
+# v0.5 Unit D-1: MAX_GLOSSARY_LOOKBACK_PAGES (75 in v0.4.0) removed.
+# Forward-scan-largest-contiguous-block strategy obviates the cap.
 MIN_TERM_LENGTH = 2
 MAX_TERM_LENGTH = 100
 MAX_SPLIT_TERM_LENGTH = 50       # max term length when split inline (Term. Def…)
@@ -179,6 +180,30 @@ def find_glossary_page_range(
     """
     Return (start_page_index, end_page_index) inclusive, or None if no
     glossary found. Indices are 0-based (pymupdf native).
+
+    v0.5 Unit D-1: replaces the v0.4 backward-sweep-first-match-wins
+    strategy with forward-scan-largest-contiguous-block. The v0.4
+    strategy failed on two doc shapes:
+
+    1. Running-header docs (Class 2, 21 of 45 residuals) — Army doctrine
+       prints the section name as a footer on every page in that section,
+       so the header regex matches on every page of the glossary. The
+       backward sweep returned the LAST matching page (end of glossary)
+       instead of the FIRST.
+    2. Body-text reference docs (Class 3, 6 of 45 residuals) — an isolated
+       "see Glossary" body match was picked before reaching the real
+       earlier glossary section.
+
+    The forward-scan strategy: collect all matching pages, group into
+    strict-contiguous blocks (no gap tolerance, verified empirically safe
+    via scripts/v0.5-unit-d1/scan-gaps.py over 76 docs), pick the largest
+    block, tie-break by EARLIER position (handles real-glossary + later-
+    sidebar case).
+
+    Profile-pattern audit (A1): all ArmyProfile.glossary_header_patterns
+    are whole-line anchored (`^...$`), safe for full-doc scan. Future
+    profiles must be audited before relying on this function — broad
+    patterns would cause false positives in body text.
     """
     total = len(doc)
     header_res = [
@@ -187,18 +212,52 @@ def find_glossary_page_range(
     ]
     end_res = [re.compile(p, re.IGNORECASE | re.MULTILINE) for p in _GLOSSARY_END_PATTERNS]
 
-    found_start: int | None = None
-    for i in range(total - 1, max(-1, total - MAX_GLOSSARY_LOOKBACK_PAGES - 1), -1):
-        page_text = doc[i].get_text("text")
+    # Step 1: forward-scan, collect matching page indices.
+    matching: list[int] = []
+    for i in range(total):
+        try:
+            page_text = doc[i].get_text("text")
+        except Exception:
+            continue
         if any(r.search(page_text) for r in header_res):
-            found_start = i
-            break
-    if found_start is None:
+            matching.append(i)
+    if not matching:
         return None
 
+    # Step 2: group into strict-contiguous blocks (no gap tolerance).
+    # Empirically verified safe via A6 gap-scan: 0 docs across the
+    # 76-doc combined test surface would benefit from 1-page tolerance
+    # when the merged block size is >= 5 (real-glossary threshold).
+    blocks: list[list[int]] = []
+    cur = [matching[0]]
+    for p in matching[1:]:
+        if p == cur[-1] + 1:
+            cur.append(p)
+        else:
+            blocks.append(cur)
+            cur = [p]
+    blocks.append(cur)
+
+    # Step 3: pick the largest block; tie-break by LATER position.
+    # Empirical: Army Pubs convention places real glossaries near the END
+    # of the doc. Equal-sized blocks are typically [TOC-reference,
+    # real-glossary] — the later block is the real one. Earlier-wins
+    # caused regressions on AR 115-10 (matches at pages [3, 21] both
+    # single-page; real glossary = page 21) and similar docs in the
+    # 31-doc validation set.
+    blocks.sort(key=lambda b: (-len(b), -b[0]))
+    found_start = blocks[0][0]
+
+    # Step 4: end-scan forward from found_start.
+    # _GLOSSARY_END_PATTERNS are whole-line anchored, so standalone
+    # terminator-as-glossary-term doesn't break end detection. Verified
+    # via test_standalone_terminator_in_glossary_does_not_truncate_end_scan.
     end = total - 1
     for i in range(found_start + 1, total):
-        page_text = doc[i].get_text("text")
+        try:
+            page_text = doc[i].get_text("text")
+        except Exception:
+            continue
         if any(r.search(page_text) for r in end_res):
             end = i - 1
             break

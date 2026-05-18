@@ -208,13 +208,16 @@ def test_largest_block_wins_over_isolated_body_match() -> None:
     assert start == 80, f"5-block should beat single-page body match; got start={start}"
 
 
-def test_earlier_block_wins_on_tie() -> None:
-    """v0.5 D-1: when two blocks have equal length, the EARLIER block wins.
-    Handles the 'real glossary + later back-cover symbols sidebar' case.
+def test_later_block_wins_on_tie() -> None:
+    """v0.5 D-1: when two blocks have equal length, the LATER block wins.
+    Army Pubs convention places real glossaries near the end; equal-sized
+    blocks earlier in the doc are typically TOC references or front-matter
+    summaries. Empirically necessary on AR 115-10 (matches at [3, 21] both
+    single-page; real glossary = page 21).
     """
     n_pages = 100
     texts = ["body text"] * n_pages
-    # Two equal-size blocks: 50-54 and 80-84
+    # Two equal-size blocks: 50-54 (front-matter-ish) and 80-84 (real glossary)
     for i in range(50, 55):
         texts[i] = f"Glossary\nentry-A{i}\n"
     for i in range(80, 85):
@@ -223,7 +226,22 @@ def test_earlier_block_wins_on_tie() -> None:
     result = find_glossary_page_range(doc, ARMY)
     assert result is not None
     start, _end = result
-    assert start == 50, f"earlier 5-block (50-54) must win over later 5-block; got {start}"
+    assert start == 80, f"later 5-block (80-84) must win on tie; got {start}"
+
+
+def test_single_page_tie_picks_later() -> None:
+    """Regression sentinel for AR 115-10 shape: TOC entry + real glossary
+    both produce single-page matches at distant positions. Real glossary
+    appears later in Army Pubs convention."""
+    n_pages = 50
+    texts = ["body text"] * n_pages
+    texts[3] = "Glossary\nSee Glossary at page 21 for definitions"
+    texts[21] = "Glossary\nfoo: definition\nbar: definition\n"
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, _end = result
+    assert start == 21, f"later single-page match (real glossary) must win; got {start}"
 
 
 def test_single_page_block_when_no_multi_page_blocks() -> None:
@@ -267,11 +285,8 @@ def test_strict_contiguous_no_gap_tolerance() -> None:
     result = find_glossary_page_range(doc, ARMY)
     assert result is not None
     start, end = result
-    # Under strict contiguous + earlier-wins tie: first 3-block (50-52) wins.
-    assert start == 50
-    # The end-scan goes forward from 50; will encounter "body text" at 53
-    # (no terminator pattern matched), keep scanning, find another "Glossary"
-    # block — but end-scan only checks for End patterns (Index/References/etc),
-    # not header patterns. So end-scan continues to doc end OR a terminator.
-    # In this synthetic, no terminator exists past page 56, so end = n_pages-1.
-    # The key assertion is start=50 (not merged).
+    # Strict-contiguous + later-wins: 3-block at 54-56 (later) wins over 3-block
+    # at 50-52 (earlier). The KEY assertion: NOT merged into a 7-block.
+    assert start == 54, f"strict-contiguous + later-wins picks the later 3-block; got {start}"
+    # If gap tolerance had been applied, the merged block would be 50-56 (7 pages)
+    # and start would be 50. Strict mode rejects the merge.

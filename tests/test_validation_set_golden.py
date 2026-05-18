@@ -34,21 +34,24 @@ DEVIATIONS = REPO / "validation_set" / "v0.5-unit-d1-accepted-deviations.yaml"
 
 
 def _parse_deviations_yaml() -> dict[str, dict]:
-    """Minimal YAML parser for the deviations schema."""
+    """Minimal YAML parser for the deviations schema.
+
+    Returns dict {document_id: {old_v04_range, new_v05_range, ...}}.
+    Only the top-level fields needed for skip-decision are extracted;
+    nested term_set_diff is recorded as text for diagnostics.
+    """
     text = DEVIATIONS.read_text()
-    # If `entries: []` the file has no deviations
     if re.search(r"^entries:\s*\[\s*\]\s*$", text, re.MULTILINE):
         return {}
-    # Otherwise parse entries (not implemented for non-empty for v0.5 D-1
-    # since we expect zero deviations; raise loudly if any operator adds one
-    # without expanding the parser).
-    if "- document_id:" in text:
-        raise NotImplementedError(
-            "Deviation entries present but the test's YAML parser only "
-            "handles empty `entries: []`. Expand the parser when first "
-            "deviation is approved."
-        )
-    return {}
+    out: dict[str, dict] = {}
+    cur_id: str | None = None
+    for line in text.splitlines():
+        if line.startswith("  - document_id:"):
+            cur_id = line.split(":", 1)[1].strip()
+            out[cur_id] = {"raw": []}
+        elif cur_id and (line.startswith("    ") or line.startswith("      ")):
+            out[cur_id]["raw"].append(line)
+    return out
 
 
 GOLDEN_BY_STEM: dict[str, dict] = json.loads(GOLDEN.read_text())
