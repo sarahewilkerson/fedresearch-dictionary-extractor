@@ -1,0 +1,24 @@
+# v0.5 Unit D-1: accepted deviations from the 31-doc v0.4 golden output.
+#
+# Entries in this file are EXPLICIT REVIEWER-APPROVED deviations: docs where
+# v0.5's behavior differs from v0.4's golden output for a documented reason.
+# An empty `entries:` list (the default) means strict golden-output stability
+# is required. Any deviation NOT listed here causes test_validation_set_golden
+# to fail.
+#
+# Schema per entry:
+#   - document_id: <stem of the PDF in validation_set/pdfs/>
+#     old_v04_range: [start, end]      # from v04-golden-output.json
+#     new_v05_range: [start, end]      # what v0.5 produces
+#     term_set_diff:
+#       added: [list of newly-extracted term_normalized values]
+#       removed: [list of no-longer-extracted term_normalized values]
+#     rationale: |-
+#       (Required.) Why this deviation is correct — e.g., "v0.4 truncated to
+#       last 2 pages of glossary; v0.5 finds the full block from the running-
+#       header forward scan. Manual inspection of pages X-Y confirms the
+#       expanded range contains valid glossary entries that v0.4 missed."
+#     approved_by: <operator name>     # human reviewer confirming
+#     approved_at: <YYYY-MM-DD>
+
+entries: []
