@@ -775,6 +775,18 @@ def _merge_same_page_continuations(page_entries: list[dict]) -> list[dict]:
     return out
 
 
+# v0.5 D-3-C: lowercase-stopword rejection. Empirically observed in D-3-B
+# pre-D-3-A noise output ("the", "there"). Real glossary terms are nearly
+# always capitalized headwords OR all-caps acronyms; bare lowercase short
+# stopwords are noise from continuation-line classification slips.
+_LOWERCASE_STOPWORD_BLOCKLIST = frozenset({
+    "the", "there", "this", "these", "that", "those",
+    "when", "where", "who", "how", "why", "what",
+    "with", "from", "into", "have", "has", "had",
+    "and", "are", "but", "for", "not", "you",
+})
+
+
 def _validate_term(term: str, inline_def: str | None, invalid_res: list[re.Pattern]) -> bool:
     """
     Return True if `term` looks like a valid glossary term.
@@ -795,6 +807,12 @@ def _validate_term(term: str, inline_def: str | None, invalid_res: list[re.Patte
 
     # Sentence fragment ending with period — short ones are noise
     if term.endswith(".") and len(term) < MIN_TERM_WITH_PERIOD:
+        return False
+
+    # v0.5 D-3-C: lowercase short stopword rejection.
+    # Real glossary headwords are capitalized or acronym-shaped. Bare
+    # lowercase short common words are classification slips.
+    if term.lower() in _LOWERCASE_STOPWORD_BLOCKLIST and term == term.lower():
         return False
 
     # Profile-defined invalid patterns (re-checked after cleanup)

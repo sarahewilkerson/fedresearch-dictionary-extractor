@@ -133,3 +133,30 @@ entries:
     category: intended_removal_of_bogus_running_header_with_known_noise
     approved_by: 'malcolm-wilkerson + claude (D-3-B execution)'
     approved_at: '2026-05-18'
+  - document_id: AR_115-10_WEATHER_SUPPORT_FOR_THE_U.S._ARMY_AFI_15-157_IP_G-2_2021_09_02_OCR
+    rationale: |-
+      v0.5 D-3-C stopword reject correctly removes 'this' and 'when' — both
+      lowercase short common-English-stopwords that were continuation-line
+      classification slips, not real glossary headwords.
+    category: intended_removal_of_stopword_noise
+    approved_by: 'malcolm-wilkerson + claude (D-3-C execution)'
+    approved_at: '2026-05-18'
+  - document_id: AR_380-381_SPECIAL_ACCESS_PROGRAMS_SAPS_AND_SENSITIVE_ACTIVITIES_CSA_2004_04_21_OCR
+    rationale: |-
+      v0.5 D-3-C stopword reject correctly removes 'when' — lowercase short
+      common-English-stopword that was a continuation-line classification slip.
+    category: intended_removal_of_stopword_noise
+    approved_by: 'malcolm-wilkerson + claude (D-3-C execution)'
+    approved_at: '2026-05-18'
+  - document_id: AR_700-13_WORLDWIDE_DEPARTMENT_OF_DEFENSE_MILITARY_MUNITIONS_AMMUNITION_LOGISTICS_SURVEILLANCE_EXPLOSIVES_SAFETY_REVIEW_AND_TECHNICAL_ASSISTANCE_PROGRAM_G-4_2020_12_15_OCR
+    rationale: |-
+      v0.5 D-3-C: 1 term removed ('including') vs the c4d1611 golden. The
+      v0.4 baseline entry set for this doc is itself low-quality (mostly
+      lowercase common-English-continuation-line slips: 'all', 'control',
+      'delay', etc.). Net delta is small (13 → 12); D-3-C's stopword reject
+      didn't directly target 'including' but downstream interactions with
+      the post-merged D-3-A + D-3-B state result in this single drop. Not
+      a regression in any meaningful sense.
+    category: intended_minor_drift_from_cumulative_d3_merges
+    approved_by: 'malcolm-wilkerson + claude (D-3-C execution)'
+    approved_at: '2026-05-18'

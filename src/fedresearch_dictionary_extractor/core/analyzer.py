@@ -88,6 +88,10 @@ def analyze_pdf(
                     profile,
                     section_ii_header_pattern=section_ii_pattern,
                 )
+                # v0.5 D-3-C deferred: narrowed-range-empty-result fallback
+                # was considered but caused collateral damage on docs where
+                # narrowing was correct AND produced few entries. Future unit
+                # may add a more precise trigger.
                 # PR1.2-quality Fix A safety net: doc-level fallback when bold
                 # flags are essentially ABSENT in the glossary section
                 # (GlyphLessFont OCR'd PDFs). Catches ADP 3-07 + FM 3-34 type
