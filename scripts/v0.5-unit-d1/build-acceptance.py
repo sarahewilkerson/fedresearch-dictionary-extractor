@@ -25,11 +25,15 @@ PDF_DIR = Path("/tmp/v05-unit0/pdfs")
 OUT_YAML = REPO_ROOT / "validation_set" / "v0.5-unit-d1-acceptance.yaml"
 
 sys.path.insert(0, str(REPO_ROOT / "src"))
-from fedresearch_dictionary_extractor.profiles import get_profile
+from fedresearch_dictionary_extractor.profiles import get_profile  # noqa: E402
+
 
 # Simulated v0.5 logic (will be ported to glossary.py in implementation phase)
 def simulated_v05_find_glossary_range(doc: fitz.Document) -> tuple[int, int] | None:
-    from fedresearch_dictionary_extractor.extractors.glossary import _GLOSSARY_END_PATTERNS, _is_back_cover_marker
+    from fedresearch_dictionary_extractor.extractors.glossary import (
+        _GLOSSARY_END_PATTERNS,
+        _is_back_cover_marker,
+    )
     profile = get_profile("army")
     total = len(doc)
     header_res = [re.compile(p, re.IGNORECASE | re.MULTILINE) for p in profile.glossary_header_patterns]

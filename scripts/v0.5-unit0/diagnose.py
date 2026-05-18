@@ -22,7 +22,7 @@ import argparse
 import csv
 import re
 import sys
-from dataclasses import dataclass, asdict
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 import fitz  # pymupdf
@@ -65,7 +65,6 @@ def detect_known_glossary_range(doc: fitz.Document) -> tuple[int, int] | None:
         m = GLOSSARY_HEADER_LOOSE.search(text)
         if not m:
             continue
-        match_start = m.start()
         match_end = m.end()
         post = text[match_end : match_end + 80]
         # Skip if next ~80 chars look like TOC dot-leaders or page numbers

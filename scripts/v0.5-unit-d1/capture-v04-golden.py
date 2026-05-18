@@ -30,7 +30,7 @@ def assert_glossary_unchanged() -> str:
     ).stdout
     if diff.strip():
         raise SystemExit(
-            f"glossary.py has been modified since c4d1611. Cannot capture v0.4 baseline."
+            "glossary.py has been modified since c4d1611. Cannot capture v0.4 baseline."
         )
     return head_sha
 

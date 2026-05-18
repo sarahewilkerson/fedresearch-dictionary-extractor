@@ -12,8 +12,6 @@ import json
 from pathlib import Path
 from unittest.mock import MagicMock
 
-import pytest
-
 from fedresearch_dictionary_extractor.extractors.glossary import find_glossary_page_range
 from fedresearch_dictionary_extractor.profiles import get_profile
 

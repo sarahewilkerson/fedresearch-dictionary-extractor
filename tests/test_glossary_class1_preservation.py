@@ -10,7 +10,6 @@ Reference data: validation_set/v0.5-unit-d1-class1-range-preservation.yaml
 """
 from __future__ import annotations
 
-import re
 from pathlib import Path
 
 import fitz

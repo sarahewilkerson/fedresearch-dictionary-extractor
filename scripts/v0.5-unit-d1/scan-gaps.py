@@ -30,7 +30,7 @@ VAL_PDFS = REPO_ROOT / "validation_set" / "pdfs"
 OUT = REPO_ROOT / "validation_set" / "v0.5-unit-d1-gap-scan.txt"
 
 sys.path.insert(0, str(REPO_ROOT / "src"))
-from fedresearch_dictionary_extractor.profiles import get_profile
+from fedresearch_dictionary_extractor.profiles import get_profile  # noqa: E402
 
 
 def matching_pages(pdf_path: Path) -> tuple[list[int], dict[int, int]]:

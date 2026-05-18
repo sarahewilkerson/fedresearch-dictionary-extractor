@@ -46,8 +46,8 @@ def main() -> int:
             for i in range(start, actual_end + 1):
                 try:
                     pages[str(i)] = doc[i].get_text("text")
-                except Exception as exc:
-                    pages[str(i)] = f""  # empty; preserves page slot
+                except Exception:
+                    pages[str(i)] = ""  # empty; preserves page slot
             payload = {
                 "source_pdf": path.name,
                 "page_range_inclusive_0based": [start, actual_end],
