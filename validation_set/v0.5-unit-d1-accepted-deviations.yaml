@@ -111,3 +111,20 @@ entries:
       v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
     approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
     approved_at: '2026-05-17'
+  - document_id: ATP_1-05.01_RELIGIOUS_SUPPORT_AND_THE_OPERATIONS_PROCESS_2018_07_31_OCR
+    old_v04_range: [82, 83]
+    new_v05_range: [82, 83]
+    term_set_diff:
+      added_count: 15
+      removed_count: 0
+      added_sample: ['adrp', 'ar', 'arng', 'atp', 'cbrn', 'coa', 'dodd', 'dsca', 'fm', 'jp']
+      removed_sample: []
+    rationale: |-
+      v0.5 D-3-A column-gate relaxation admits Section II acronyms (Army doctrine
+      reference publication, etc.) that were previously filtered by the strict
+      term-column gate. Wider acronym band (min_x + 80) captures the acronym
+      table layout. Category: intended_acronym_addition. All 15 added terms
+      are real acronyms verified against the PDF's Section II acronym table.
+    category: intended_acronym_addition
+    approved_by: 'malcolm-wilkerson + claude (D-3-A execution)'
+    approved_at: '2026-05-18'

@@ -1,0 +1,16 @@
+# v0.5 Unit D-3-A section-classification — 11 verified parser-dead-end docs.
+# target_group: A_full_range_direct_target (D-3-A directly admits Section I acronyms)
+#              B_narrowed_partial_benefit (only Section II acronyms reachable; Section I out-of-scope)
+# Generated from D-2 trace summaries (no PDF re-parse).
+document_id,section_structure,section_ii_narrowing_fired,target_group,rationale,expected_to_benefit_from_d3a
+0d650775-57d2-4cfb-960e-d8304eab663b,both,True,B_narrowed_partial_benefit,Section II narrowing clipped Section I; D-3-A helps only on Section II acronyms,partial
+2012ce87-6877-417e-bc51-62f3b98c6b4e,section_i_only,False,A_full_range_direct_target,No narrowing; D-3-A directly admits Section I acronyms,full
+37dfab58-8a2a-4571-968a-87c8ab1601ac,both,True,B_narrowed_partial_benefit,Section II narrowing clipped Section I; D-3-A helps only on Section II acronyms,partial
+4d44f6bb-b3e3-4220-9097-0812c47fde0e,none,False,A_full_range_direct_target,No narrowing; D-3-A directly admits Section I acronyms,full
+5c11e285-4ad1-4986-a6a8-b69cc21b9f5e,none,False,A_full_range_direct_target,No narrowing; D-3-A directly admits Section I acronyms,full
+bdd56ea4-f19d-4043-a1dd-5253e3d3f988,both,True,B_narrowed_partial_benefit,Section II narrowing clipped Section I; D-3-A helps only on Section II acronyms,partial
+c70be16a-a6ba-498b-986e-c38ee16c4886,section_i_only,False,A_full_range_direct_target,No narrowing; D-3-A directly admits Section I acronyms,full
+c7a9v1b362uybwh13n50jr1b1,both,True,B_narrowed_partial_benefit,Section II narrowing clipped Section I; D-3-A helps only on Section II acronyms,partial
+cmjetig4p006er6uh05bnchax,both,True,B_narrowed_partial_benefit,Section II narrowing clipped Section I; D-3-A helps only on Section II acronyms,partial
+cml9yluu10105jz13xtd3lhtw,none,False,A_full_range_direct_target,No narrowing; D-3-A directly admits Section I acronyms,full
+dbc0cf4b-05db-4628-a959-91a3f78ab9ee,none,False,A_full_range_direct_target,No narrowing; D-3-A directly admits Section I acronyms,full
