@@ -1,0 +1,164 @@
+{
+  "source_commit": "ed8ede5",
+  "verified_cohort_size": 11,
+  "entries": [
+    {
+      "document_id": "0d650775-57d2-4cfb-960e-d8304eab663b",
+      "canonical_id": "army:tc:tc-3-22240-medium-machine-gun-2017-04-28",
+      "detected_range_0idx": [
+        194,
+        195
+      ],
+      "section_structure": "both",
+      "section_ii_pages_1idx": [
+        195,
+        196
+      ],
+      "section_ii_narrowing_fired": true,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "2012ce87-6877-417e-bc51-62f3b98c6b4e",
+      "canonical_id": "army:tc:tc-3-22249-light-machine-gun-m249-series-2017-05-16",
+      "detected_range_0idx": [
+        200,
+        201
+      ],
+      "section_structure": "section_i_only",
+      "section_ii_pages_1idx": null,
+      "section_ii_narrowing_fired": false,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "37dfab58-8a2a-4571-968a-87c8ab1601ac",
+      "canonical_id": "army:tc:tc-3-25150-combatives-2017-03-31",
+      "detected_range_0idx": [
+        398,
+        399
+      ],
+      "section_structure": "both",
+      "section_ii_pages_1idx": [
+        399,
+        400
+      ],
+      "section_ii_narrowing_fired": true,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "4d44f6bb-b3e3-4220-9097-0812c47fde0e",
+      "canonical_id": "army:tc:tc-3-226-guard-duty-this-item-is-published-w-basic-inl-c1-2017-01-13",
+      "detected_range_0idx": [
+        52,
+        53
+      ],
+      "section_structure": "none",
+      "section_ii_pages_1idx": null,
+      "section_ii_narrowing_fired": false,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "5c11e285-4ad1-4986-a6a8-b69cc21b9f5e",
+      "canonical_id": "army:tc:tc-8-260-pharmacy-specialist-2025-04-07",
+      "detected_range_0idx": [
+        44,
+        45
+      ],
+      "section_structure": "none",
+      "section_ii_pages_1idx": null,
+      "section_ii_narrowing_fired": false,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "bdd56ea4-f19d-4043-a1dd-5253e3d3f988",
+      "canonical_id": "army:tc:tc-3-2219-grenade-machine-gun-mk-19-mod-3-2017-05-10",
+      "detected_range_0idx": [
+        186,
+        187
+      ],
+      "section_structure": "both",
+      "section_ii_pages_1idx": [
+        187,
+        188
+      ],
+      "section_ii_narrowing_fired": true,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "c70be16a-a6ba-498b-986e-c38ee16c4886",
+      "canonical_id": "army:tc:tc-4-021-first-aid-c2-2016-01-21",
+      "detected_range_0idx": [
+        112,
+        113
+      ],
+      "section_structure": "section_i_only",
+      "section_ii_pages_1idx": null,
+      "section_ii_narrowing_fired": false,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "c7a9v1b362uybwh13n50jr1b1",
+      "canonical_id": "army:atp:atp-1-0501-religious-support-and-the-operations-process-2018-07-31",
+      "detected_range_0idx": [
+        82,
+        83
+      ],
+      "section_structure": "both",
+      "section_ii_pages_1idx": [
+        83,
+        84
+      ],
+      "section_ii_narrowing_fired": true,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "cmjetig4p006er6uh05bnchax",
+      "canonical_id": "army:fm:fm-6-99-us-army-report-and-message-formats-2021-05-17",
+      "detected_range_0idx": [
+        226,
+        227
+      ],
+      "section_structure": "both",
+      "section_ii_pages_1idx": [
+        227,
+        228
+      ],
+      "section_ii_narrowing_fired": true,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "cml9yluu10105jz13xtd3lhtw",
+      "canonical_id": "Training Circular|TC 21-306",
+      "detected_range_0idx": [
+        86,
+        87
+      ],
+      "section_structure": "none",
+      "section_ii_pages_1idx": null,
+      "section_ii_narrowing_fired": false,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    },
+    {
+      "document_id": "dbc0cf4b-05db-4628-a959-91a3f78ab9ee",
+      "canonical_id": "army:tc:tc-21-306-tracked-combat-vehicle-driver-training-2025-04-24",
+      "detected_range_0idx": [
+        86,
+        87
+      ],
+      "section_structure": "none",
+      "section_ii_pages_1idx": null,
+      "section_ii_narrowing_fired": false,
+      "glossary_used_legacy_fallback": false,
+      "entry_count": 0
+    }
+  ]
+}

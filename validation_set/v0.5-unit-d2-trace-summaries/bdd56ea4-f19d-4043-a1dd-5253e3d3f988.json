@@ -1,0 +1,75 @@
+{
+  "document_id": "bdd56ea4-f19d-4043-a1dd-5253e3d3f988",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "both",
+    "section_ii_pages": [
+      187,
+      188
+    ],
+    "section_ii_narrowing_fired": true,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      187,
+      188
+    ]
+  },
+  "event_counts": {
+    "filter_spans_below_header": 1,
+    "looks_like_acronym": 3,
+    "validate_term": 1,
+    "flush": 2
+  },
+  "validate_summary": {
+    "passed": 1,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "filter_spans_below_header",
+      "input_count": 43,
+      "output_count": 5
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "There are no terms prescribed by this publication.",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TC 3-22.19 Glossary-1",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "\u0014\u0013\u00030D\\\u0003\u0015\u0013\u0014\u001a",
+      "result": false
+    },
+    {
+      "kind": "validate_term",
+      "term": "\u0014\u0013\u00030D\\\u0003\u0015\u0013\u0014\u001a",
+      "inline_def": null,
+      "result": true
+    },
+    {
+      "kind": "flush",
+      "term": null,
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 186,
+      "result": "dropped"
+    },
+    {
+      "kind": "flush",
+      "term": "\u0014\u0013\u00030D\\\u0003\u0015\u0013\u0014\u001a",
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 186,
+      "result": "dropped"
+    }
+  ]
+}

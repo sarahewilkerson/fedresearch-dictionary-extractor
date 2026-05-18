@@ -1,0 +1,55 @@
+# v0.5 D-1-followup candidates — docs where v0.5 range detection still
+# picks a different range than the Unit-0 loose-heuristic ground truth.
+#
+# These 5 were marked `disposition: deferred_to_d2` in the D-1 acceptance
+# YAML on the assumption that their failure was parser-related. D-2's
+# Step 0 range-validation pass shows they are actually RANGE issues:
+# the matching pages in the doc are all isolated single-page matches,
+# v0.5's largest-block + later-wins picks the same single page as v0.4's
+# backward sweep, and that page doesn't contain the actual glossary.
+#
+# Each entry's actual glossary is at the Unit-0 `known_range` (forward-
+# scan loose heuristic location), which v0.5's strict-anchored regex
+# misses because the doc's glossary header uses a non-standard format
+# OR appears as a numbered section header (e.g., "Section IV — Glossary")
+# that none of the v0.4/v0.5 `glossary_header_patterns` match.
+#
+# Proposed follow-up: a separate per-unit plan extending
+# profile.glossary_header_patterns OR adding a section-numbered-glossary-
+# header detector.
+
+entries:
+  - document_id: cmjetr2zu01u3r6uh8w4r4onl
+    canonical_id: 'army:ar:ar-611-1-military-occupational-classificat'
+    v05_range: [46, 46]
+    unit0_loose_range: [6, 38]
+    rerouted_at: '2026-05-18'
+    rerouted_reason: 'Step 0 range-validation: v0.5 [46,46] disjoint from loose [6,38]'
+
+  - document_id: cmjetsvy8025mr6uhxcbak9aq
+    canonical_id: 'army:pam-600-8-military-human-resources-management'
+    v05_range: [52, 53]
+    unit0_loose_range: [6, 20]
+    rerouted_at: '2026-05-18'
+    rerouted_reason: 'Step 0 range-validation: v0.5 [52,53] disjoint from loose [6,20]'
+
+  - document_id: cmjetswr9025pr6uh33z09aug
+    canonical_id: 'army:pam-600-8-105-military-orders-2022-12-20'
+    v05_range: [171, 171]
+    unit0_loose_range: [8, 165]
+    rerouted_at: '2026-05-18'
+    rerouted_reason: 'Step 0 range-validation: v0.5 [171,171] disjoint from loose [8,165]'
+
+  - document_id: cmjett3270268r6uhshk0jy95
+    canonical_id: 'army:pam-700-127-integrated-product-support-proced'
+    v05_range: [168, 168]
+    unit0_loose_range: [9, 43]
+    rerouted_at: '2026-05-18'
+    rerouted_reason: 'Step 0 range-validation: v0.5 [168,168] disjoint from loose [9,43]'
+
+  - document_id: cml9uwtsv00uxjz137l0u7tab
+    canonical_id: 'Training Circular|TC 3-22.6'
+    v05_range: [52, 53]
+    unit0_loose_range: [5, 18]
+    rerouted_at: '2026-05-18'
+    rerouted_reason: 'Step 0 range-validation: v0.5 [52,53] disjoint from loose [5,18]'

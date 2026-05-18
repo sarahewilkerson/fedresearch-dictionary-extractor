@@ -1,0 +1,21 @@
+# v0.5 Unit D-2 range-validation
+# Methodology: v0.5 detected range vs Unit-0 loose-heuristic as proxy ground truth.
+# range_correct=true: v0.5 start within ±2 of loose start OR ranges overlap.
+# range_correct=false: re-route to v0.5-d1-followup-candidates.yaml (range issue, not parser).
+document_id,v05_detected_range,v04_detected_range,unit0_known_range,range_correct,notes,source_class
+0d650775-57d2-4cfb-960e-d8304eab663b,"[194, 195]","('194', '195')","('194', '195')",true,"v0.5 consistent with loose [194,195]",class1
+2012ce87-6877-417e-bc51-62f3b98c6b4e,"[200, 201]","('200', '201')","('200', '201')",true,"v0.5 consistent with loose [200,201]",class1
+37dfab58-8a2a-4571-968a-87c8ab1601ac,"[398, 399]","('398', '399')","('398', '399')",true,"v0.5 consistent with loose [398,399]",class1
+4d44f6bb-b3e3-4220-9097-0812c47fde0e,"[52, 53]","('52', '53')","('52', '53')",true,"v0.5 consistent with loose [52,53]",class1
+5c11e285-4ad1-4986-a6a8-b69cc21b9f5e,"[44, 45]","('44', '45')","('44', '45')",true,"v0.5 consistent with loose [44,45]",class1
+bdd56ea4-f19d-4043-a1dd-5253e3d3f988,"[186, 187]","('186', '187')","('186', '187')",true,"v0.5 consistent with loose [186,187]",class1
+c70be16a-a6ba-498b-986e-c38ee16c4886,"[112, 113]","('112', '113')","('112', '113')",true,"v0.5 consistent with loose [112,113]",class1
+c7a9v1b362uybwh13n50jr1b1,"[82, 83]","('82', '83')","('82', '83')",true,"v0.5 consistent with loose [82,83]",class1
+cmjetig4p006er6uh05bnchax,"[226, 227]","('226', '227')","('226', '227')",true,"v0.5 consistent with loose [226,227]",class1
+cmjetr2zu01u3r6uh8w4r4onl,"[46, 46]","('46', '46')","('6', '38')",false,"v0.5 [46,46] disjoint from loose [6,38]",d1_deferred
+cmjetsvy8025mr6uhxcbak9aq,"[52, 53]","('52', '53')","('6', '20')",false,"v0.5 [52,53] disjoint from loose [6,20]",d1_deferred
+cmjetswr9025pr6uh33z09aug,"[171, 171]","('171', '171')","('8', '165')",false,"v0.5 [171,171] disjoint from loose [8,165]",d1_deferred
+cmjett3270268r6uhshk0jy95,"[168, 168]","('168', '168')","('9', '43')",false,"v0.5 [168,168] disjoint from loose [9,43]",d1_deferred
+cml9uwtsv00uxjz137l0u7tab,"[52, 53]","('52', '53')","('5', '18')",false,"v0.5 [52,53] disjoint from loose [5,18]",d1_deferred
+cml9yluu10105jz13xtd3lhtw,"[86, 87]","('86', '87')","('86', '87')",true,"v0.5 consistent with loose [86,87]",class1
+dbc0cf4b-05db-4628-a959-91a3f78ab9ee,"[86, 87]","('86', '87')","('86', '87')",true,"v0.5 consistent with loose [86,87]",class1

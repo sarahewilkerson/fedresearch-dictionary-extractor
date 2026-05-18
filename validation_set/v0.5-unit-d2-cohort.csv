@@ -1,0 +1,20 @@
+# v0.5 Unit D-2 cohort — 16 docs (11 Class-1 + 5 D-1-deferred)
+# source_artifact_commit: ed8ede5
+# Re-run: python scripts/v0.5-unit-d2/build-cohort.py
+document_id,canonical_id,gcs_key,source_class
+0d650775-57d2-4cfb-960e-d8304eab663b,army:tc:tc-3-22240-medium-machine-gun-2017-04-28,Regs - Army Pubs/Doctrine/TC 3-22.240 MEDIUM MACHINE GUN 2017_04_28_OCR.pdf,class1
+2012ce87-6877-417e-bc51-62f3b98c6b4e,army:tc:tc-3-22249-light-machine-gun-m249-series-2017-05-16,Regs - Army Pubs/Doctrine/TC 3-22.249 LIGHT MACHINE GUN M249 SERIES 2017_05_16_OCR.pdf,class1
+37dfab58-8a2a-4571-968a-87c8ab1601ac,army:tc:tc-3-25150-combatives-2017-03-31,Regs - Army Pubs/Doctrine/TC 3-25.150 COMBATIVES 2017_03_31_OCR.pdf,class1
+4d44f6bb-b3e3-4220-9097-0812c47fde0e,army:tc:tc-3-226-guard-duty-this-item-is-published-w-basic-inl-c1-2017-01-13,Regs - Army Pubs/Doctrine/TC 3-22.6 GUARD DUTY _THIS ITEM IS PUBLISHED W_ BASIC INL C1 2017_01_13_OCR.pdf,class1
+5c11e285-4ad1-4986-a6a8-b69cc21b9f5e,army:tc:tc-8-260-pharmacy-specialist-2025-04-07,Regs - Army Pubs/Doctrine/TC 8-260 PHARMACY SPECIALIST 2025_04_07_OCR.pdf,class1
+bdd56ea4-f19d-4043-a1dd-5253e3d3f988,army:tc:tc-3-2219-grenade-machine-gun-mk-19-mod-3-2017-05-10,Regs - Army Pubs/Doctrine/TC 3-22.19 GRENADE MACHINE GUN MK 19 MOD 3 _  2017_05_10_OCR.pdf,class1
+c70be16a-a6ba-498b-986e-c38ee16c4886,army:tc:tc-4-021-first-aid-c2-2016-01-21,Regs - Army Pubs/Doctrine/TC 4-02.1 FIRST AID _ & C2 2016_01_21_OCR.pdf,class1
+c7a9v1b362uybwh13n50jr1b1,army:atp:atp-1-0501-religious-support-and-the-operations-process-2018-07-31,Regs - Army Pubs/Doctrine/ATP 1-05.01 RELIGIOUS SUPPORT AND THE OPERATIONS PROCESS 2018_07_31_OCR.pdf,class1
+cmjetig4p006er6uh05bnchax,army:fm:fm-6-99-us-army-report-and-message-formats-2021-05-17,Regs - Army Pubs/Doctrine/FM 6-99 U.S. ARMY REPORT AND MESSAGE FORMATS 2021_05_17_OCR.pdf,class1
+cmjetr2zu01u3r6uh8w4r4onl,army:ar:ar-611-1-military-occupational-classification-structure-development-and-implementation-g-1-2022-12,Regs - Army Pubs/Policy/AR 611-1 MILITARY OCCUPATIONAL CLASSIFICATION STRUCTURE DEVELOPMENT AND IMPLEMENTATION G-1 2022_12_20_OCR.pdf,d1_deferred
+cmjetsvy8025mr6uhxcbak9aq,army:pam-600-8-military-human-resources-management-administrative-procedures-g-1-2019-05-20,Regs - Army Pubs/Policy/PAM 600-8 MILITARY HUMAN RESOURCES MANAGEMENT ADMINISTRATIVE PROCEDURES G-1 2019_05_20_OCR.pdf,d1_deferred
+cmjetswr9025pr6uh33z09aug,army:pam-600-8-105-military-orders-2022-12-20,Regs - Army Pubs/Policy/PAM 600-8-105 MILITARY ORDERS 2022_12_20_OCR.pdf,d1_deferred
+cmjett3270268r6uhshk0jy95,army:pam-700-127-integrated-product-support-procedures-2024-02-20,Regs - Army Pubs/Policy/PAM 700-127 INTEGRATED PRODUCT SUPPORT PROCEDURES 2024_02_20_OCR.pdf,d1_deferred
+cml9uwtsv00uxjz137l0u7tab,Training Circular|TC 3-22.6,Regs - Army Pubs/Policy/TC 3-22.6 GUARD DUTY_THIS ITEM IS PUBLISHED W_BASIC INL C1 2017_01_13_OCR.pdf,d1_deferred
+cml9yluu10105jz13xtd3lhtw,Training Circular|TC 21-306,Regs - Army Pubs/Policy/TC 21-306 TRACKED COMBAT VEHICLE DRIVER TRAINING 2025_04_24_OCR.pdf,class1
+dbc0cf4b-05db-4628-a959-91a3f78ab9ee,army:tc:tc-21-306-tracked-combat-vehicle-driver-training-2025-04-24,Regs - Army Pubs/Doctrine/TC 21-306 TRACKED COMBAT VEHICLE DRIVER TRAINING 2025_04_24_OCR.pdf,class1

@@ -1,0 +1,72 @@
+{
+  "document_id": "0d650775-57d2-4cfb-960e-d8304eab663b",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "both",
+    "section_ii_pages": [
+      195,
+      196
+    ],
+    "section_ii_narrowing_fired": true,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      195,
+      196
+    ]
+  },
+  "event_counts": {
+    "filter_spans_below_header": 1,
+    "looks_like_acronym": 1,
+    "is_term_style_span": 1,
+    "validate_term": 1,
+    "flush": 2
+  },
+  "validate_summary": {
+    "passed": 1,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "filter_spans_below_header",
+      "input_count": 43,
+      "output_count": 4
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TC 3-22.240 Glossary-1",
+      "result": false
+    },
+    {
+      "kind": "is_term_style_span",
+      "span_text": "Glossary-1",
+      "is_bold": true,
+      "result": true
+    },
+    {
+      "kind": "validate_term",
+      "term": "TC 3-22.240 Glossary-1",
+      "inline_def": null,
+      "result": true
+    },
+    {
+      "kind": "flush",
+      "term": null,
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 194,
+      "result": "dropped"
+    },
+    {
+      "kind": "flush",
+      "term": "TC 3-22.240 Glossary-1",
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 194,
+      "result": "dropped"
+    }
+  ]
+}

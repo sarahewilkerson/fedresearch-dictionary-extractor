@@ -1,0 +1,50 @@
+{
+  "document_id": "cmjetig4p006er6uh05bnchax",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "both",
+    "section_ii_pages": [
+      227,
+      228
+    ],
+    "section_ii_narrowing_fired": true,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      227,
+      228
+    ]
+  },
+  "event_counts": {
+    "filter_spans_below_header": 1,
+    "looks_like_acronym": 1,
+    "flush": 1
+  },
+  "validate_summary": {
+    "passed": 0,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 1
+  },
+  "sample_events": [
+    {
+      "kind": "filter_spans_below_header",
+      "input_count": 74,
+      "output_count": 5
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "No joint or Army terms are defined in this publication.",
+      "result": false
+    },
+    {
+      "kind": "flush",
+      "term": null,
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 226,
+      "result": "dropped"
+    }
+  ]
+}

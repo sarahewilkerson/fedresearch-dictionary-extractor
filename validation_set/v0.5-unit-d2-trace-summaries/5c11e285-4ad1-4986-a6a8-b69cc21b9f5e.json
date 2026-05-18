@@ -1,0 +1,180 @@
+{
+  "document_id": "5c11e285-4ad1-4986-a6a8-b69cc21b9f5e",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "none",
+    "section_ii_pages": null,
+    "section_ii_narrowing_fired": false,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      45,
+      46
+    ]
+  },
+  "event_counts": {
+    "looks_like_acronym": 34,
+    "is_term_style_span": 2,
+    "validate_term": 1,
+    "flush": 2
+  },
+  "validate_summary": {
+    "passed": 1,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Glossary",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "AR Army regulation",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "BDO bulk drug order",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "BMSO brigade medical supply office",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DA Department of the Army",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DCAM DMLSS Customer Assistance Module",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DD Department of Defense (when used in front of form number)",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DHA Defense Health Agency",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DMLSS Defense Medical Logistics Standard Support",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DOD Department of Defense",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "FDA Food and Drug Administration",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "gm grams",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "HIPAA Health Insurance Portability and Accountability Act",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Accountability Act",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "IV intravenous",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "kcal/kg kilocalories per kilogram",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "kg kilograms",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MEDLOG medical logistics",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "mg milligrams",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "mL milliliters",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MMQC medical materiel quality control",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MTF medical treatment facility",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MTOE modified table of organization and equipment",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "on and equipment",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "OIC officer in charge",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "OCONUS outside the continental United States",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "OTC over the counter",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "SLEP Service Life Extension Program",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TC2 Theater Composite Health Care System Cache",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TLAMM Theater Lead Agent for Medical Materiel",
+      "result": true
+    }
+  ]
+}

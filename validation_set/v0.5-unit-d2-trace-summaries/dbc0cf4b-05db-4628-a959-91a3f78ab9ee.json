@@ -1,0 +1,180 @@
+{
+  "document_id": "dbc0cf4b-05db-4628-a959-91a3f78ab9ee",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "none",
+    "section_ii_pages": null,
+    "section_ii_narrowing_fired": false,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      87,
+      88
+    ]
+  },
+  "event_counts": {
+    "looks_like_acronym": 49,
+    "flush": 2,
+    "is_term_style_span": 1,
+    "validate_term": 1
+  },
+  "validate_summary": {
+    "passed": 0,
+    "failed": 1
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Glossary",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "AMPV armored multi-purpose vehicle",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Army regulation",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "AR",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ATP Army technical publication",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Bradley fighting vehicle",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "BFV",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "BII basic issue item",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "chemical, biological, radiological, and nuclear",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CBRN",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CFR Code of Federal Regulations",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "combat vehicle crewmember",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CVC",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DA Department of Army",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Department of Army pamphlet",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DA Pam",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DD Department of Defense form",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DOD Department of Defense",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DODI Department of Defense Instruction",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DODM Department of Defense Manual",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "FM field manual",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Global Combat Support System-Army",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "GCSS-Army",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "LE license examiner",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "license instructor",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "LI",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "LSA learning step activity",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "mission, enemy, terrain and weather, troops and support available, time",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "METT-TC(D)",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "available, civil considerations, and informational considerations",
+      "result": false
+    }
+  ]
+}
