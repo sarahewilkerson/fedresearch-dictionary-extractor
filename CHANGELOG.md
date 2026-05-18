@@ -1,5 +1,29 @@
 # Changelog
 
+## [0.5.0] — 2026-05-18
+
+v0.5 Branch D delivery — addresses the v0.4 residual 45-doc zero-entry-with-glossary cohort via 4 surgical fixes plus a docs cleanup. Combined effect: 22 of 27 Class-2/3 docs recovered range detection (D-1); Section-I acronym tables now parsed (D-3-A); top-of-page running-headers filtered before term-classification (D-3-B); lowercase-stopword noise rejected from extracted entries (D-3-C). See `docs/plans/2026-05-18-v0.5-roadmap-definition-extraction.md`.
+
+### Fixed
+- **D-1: forward-scan-largest-contiguous-block range detection** — replaces v0.4's backward-sweep-first-match-wins. Tie-break: LATER block (Army Pubs convention). `MAX_GLOSSARY_LOOKBACK_PAGES` removed. Recovers 22/27 Class-2+3 cohort docs (running-header pages + body-text-reference disjoint cases).
+- **D-3-A: column-gate fallback for Section-I acronym lists** — new `ACRONYM_COL_MARGIN = 80` constant. `is_new_term_line` gate admits acronym-shaped lines in a wider band past `min_x + TERM_COL_MARGIN=30`. Captures Section I acronym tables where the section header sets `min_x` further-left than the acronym entries.
+- **D-3-B: top-of-page running-header filter** — extends `ArmyProfile.footer_patterns` with 2 regexes matching the combined `<date> <TYPE> <pub#> Glossary-<N>` line shape that the parser's y-bucketing joined from separate spans (the existing per-component patterns missed the joined form).
+- **D-3-C: lowercase-stopword rejection in `_validate_term`** — bare-lowercase short common-English-stopwords (the, there, this, when, etc.) are rejected as continuation-line classification slips.
+
+### Investigation (no code change)
+- **Unit 0 cohort characterization** — empirical 9-measurement diagnostic on 45 residuals. Overturned the broken-CMap hypothesis; classified all into structural/parser failure modes.
+- **D-2 parser dead-end investigation** — trace-based classification of the 11 parser-only-failure docs into P-1 (acronym-column-gate) + P-2 (running-header-as-term) classes; produced 3 reproducible fixtures + the loader harness for D-3 acceptance.
+
+### Documentation
+- New `docs/ops/extraction-cohort-definitions.md` codifying the v0.5.0 failing-cohort SQL predicate. Adds `total_pages >= 30` floor excluding Class-4 short-doc false-positives.
+- D-1-followup candidates YAML reclassified: 1 of 5 incidentally fixed by D-3-A; 4 carried forward as `v0.6_deferred`.
+
+### Known deviations (v0.5 vs v0.4 golden)
+13 of 31 validation-set docs deviate; all reviewer-approved in `validation_set/v0.5-unit-d1-accepted-deviations.yaml`. Categories: `intended_acronym_addition`, `intended_removal_of_bogus_running_header_with_known_noise`, `intended_removal_of_stopword_noise`, `intended_minor_drift_from_cumulative_d3_merges`.
+
+### Downstream
+Backend `EXTRACTOR_VERSION` bump `army-v2.2.0` → `army-v2.3.0` in `apps/backend/src/definition-extraction/extraction-worker.service.ts:112`. Dockerfile wheel pin to v0.5.0. Operator-UPDATE re-extraction targets the v0.4 residual cohort per the new cohort definition.
+
 ## [0.4.0] — 2026-05-17
 
 Addresses the v0.3.0 zero-entry regression on ~177 Army Pubs docs (11.5% of the May 2026 re-extraction wave) by extending glossary-header detection. Empirical sampling of 4 representative failures (`AR 735-5`, `AR 420-1`, `PAM 73-1`, `ATP 3-21.10`) localized 3 of 4 failures to the `find_glossary_page_range` stage. See `docs/plans/2026-05-17-v0.4-header-and-lookback.md`.
