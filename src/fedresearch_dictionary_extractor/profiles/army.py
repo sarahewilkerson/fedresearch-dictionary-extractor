@@ -123,6 +123,14 @@ class ArmyProfile(ReferenceProfile):
             r"^\s*\d+\s*$",                                          # bare page number
             r"^(?:AR|FM|ADP|ATP|TC|PAM|TM|DA\s*PAM)\s+\d+[-–]?\d*\s*[•·\-]\s*\d+\s+\w+",
             r"^Glossary[\s\-–—]?\d*\s*$",                            # "Glossary-3"
+            # v0.5 D-3-B: combined `<date> <TYPE> <pub#> Glossary-<N>` form.
+            # TC 3-22.6 etc. emit this as 3 spans on the same y-bucket; the
+            # parser joins them into one logical line. Components are caught
+            # by patterns 1, 4, and 5 separately, but the joined line slips
+            # through. Plan: docs/plans/2026-05-18-v0.5-unit-d3b-running-header-filter.md
+            r"^\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s+(?:AR|FM|ADP|ATP|TC|PAM|TM|DA\s*PAM)\s+[\d\.\-–]+\s+Glossary[\s\-–—]+\d+\s*$",
+            # v0.5 D-3-B: date-less form `<TYPE> <pub#> Glossary-<N>`.
+            r"^(?:AR|FM|ADP|ATP|TC|PAM|TM|DA\s*PAM)\s+[\d\.\-–]+\s+Glossary[\s\-–—]+\d+\s*$",
         ]
 
     @property

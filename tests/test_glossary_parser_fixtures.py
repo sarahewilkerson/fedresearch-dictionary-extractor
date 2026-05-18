@@ -55,29 +55,23 @@ def _make_mock_doc(fixture: dict) -> MagicMock:
     return doc
 
 
-# v0.5 D-3-A success signal: fixtures that exhibit P-1 (acronym-filtered)
-# or P-1+P-2 hybrid behavior should NO LONGER reproduce zero entries after
-# D-3-A's column-gate relaxation.
-_D3A_FIXED_FIXTURES = {"p1-acronym-filtered", "p2-footer-as-term"}
-# p1-p2-hybrid still reproduces 0 entries under D-3-A alone; will be fixed
-# by D-3-A + D-3-B combined (running-header filter + column-gate relaxation).
+# v0.5 D-3-A + D-3-B combined: these fixtures no longer reproduce zero entries.
+# - p1-acronym-filtered: fixed by D-3-A.
+# - p2-footer-as-term: fixed by either D-3-A or D-3-B.
+# p1-p2-hybrid: still 0-entry; needs future D-3-C parser-precision work.
+_D3_FIXED_FIXTURES = {"p1-acronym-filtered", "p2-footer-as-term"}
 
 
 @pytest.mark.parametrize("fixture_path", FIXTURE_FILES, ids=lambda p: p.stem)
 def test_fixture_reproduces_zero_entries(fixture_path: Path, request) -> None:
-    """For each captured failure-mode fixture, parse_glossary_entries must
-    return [] (reproducing the D-2 zero-entry symptom) — proves the fixture
-    captured the failure faithfully.
-
-    Post-D-3-A: fixtures in _D3A_FIXED_FIXTURES no longer reproduce 0 entries
-    (success signal). Marked xfail strict=True so a REGRESSION would surface
-    as XPASS + test failure."""
-    if fixture_path.stem in _D3A_FIXED_FIXTURES:
+    """Per-D-2 fixtures must reproduce zero entries.
+    Post-D-3-A + D-3-B: fixtures in _D3_FIXED_FIXTURES marked xfail (success signal)."""
+    if fixture_path.stem in _D3_FIXED_FIXTURES:
         request.node.add_marker(
             pytest.mark.xfail(
                 strict=True,
-                reason=f"v0.5 D-3-A success: {fixture_path.stem} no longer "
-                       f"reproduces zero entries (acronyms now admitted).",
+                reason=f"v0.5 D-3-A + D-3-B success: {fixture_path.stem} no longer "
+                       f"reproduces zero entries.",
             )
         )
     fixture = json.loads(fixture_path.read_text())
