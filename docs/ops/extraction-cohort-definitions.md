@@ -18,9 +18,21 @@ WHERE q.status = 'SUCCEEDED'
   AND d.extracted_text_status = 'HAS_TEXT'
   AND d.extracted_text ILIKE '%glossary%'
   AND length(d.extracted_text) > 100000
-  AND d.total_pages >= 30          -- NEW v0.5: exclude Class-4 short docs
+  AND d.page_count >= 30           -- NEW v0.5: exclude Class-4 short docs
+                                   -- (see WARNING below; column NULL corpus-wide today)
 ORDER BY q.document_id;
 ```
+
+> **⚠️ WARNING (2026-05-18):** the `documents.page_count` column exists in
+> the Prisma schema but is **NULL for all 45,835 production rows** —
+> no write path populates it. Applying the floor today filters out the
+> entire cohort. Until a backfill ships, run the UPDATE **without** the
+> `page_count >= 30` clause; the ~7 Class-4 docs will re-extract → fail
+> → land SUCCEEDED-entry_count=0 again. Bounded churn (~7 noise runs).
+>
+> Tracking: page_count backfill follow-up (deferred 2026-05-18). Reopen
+> the page-count floor in this predicate once backfill ships AND a spot
+> query confirms `count(*) WHERE page_count IS NULL` ≈ 0.
 
 ### v0.5.0 rationale (Class-4 short-doc exclusion)
 
@@ -34,10 +46,11 @@ The `length(extracted_text) > 100000` floor (originally intended to
 exclude short docs) didn't help: some Class-4 docs have substantial OCR'd
 text that exceeds 100KB despite having few pages.
 
-The `total_pages >= 30` floor is empirically reliable: every Army Pub
-in the v0.4 successful-extraction cohort has ≥30 pages. Docs below this
-threshold are reference cards, change pages, or brief memos — none have
-glossary sections.
+The `page_count >= 30` floor is empirically reliable in principle: every
+Army Pub in the v0.4 successful-extraction cohort has ≥30 pages. Docs
+below this threshold are reference cards, change pages, or brief memos —
+none have glossary sections. **But see the WARNING above: the column is
+NULL corpus-wide today, so the floor is presently unusable.**
 
 ### Pre-v0.5 (deprecated)
 
@@ -64,7 +77,7 @@ WHERE status = 'SUCCEEDED' AND extractor_version = '<prior_extractor_version>'
     WHERE d.extracted_text_status = 'HAS_TEXT'
       AND d.extracted_text ILIKE '%glossary%'
       AND length(d.extracted_text) > 100000
-      AND d.total_pages >= 30
+      -- AND d.page_count >= 30  -- disabled until backfill ships (see WARNING above)
   );
 ```
 
@@ -77,4 +90,11 @@ v0.5.0 wave starting from D-1's v0.4.0 state).
   the page-count floor. 177 docs flipped; 132 recovered, 45 stayed zero.
   Of the 45, 7 were Class-4.
 - **2026-05-18:** v0.5.0 release-gate uses the new predicate with
-  `total_pages >= 30`.
+  `page_count >= 30`. **Discovered at deploy time:** column is NULL
+  corpus-wide. Floor disabled in operator-UPDATE pending a backfill
+  plan. Original v0.4-style predicate used for the v0.5.0 wave; 45
+  rows flipped (same as v0.4 plan churn pattern).
+- **2026-05-18:** column-name correction: doc originally referenced
+  `total_pages`; prod schema column is `page_count`. Fixed in this
+  PR. Memory `feedback_hermetic_fixture_must_match_production`
+  remains the canonical lesson.
