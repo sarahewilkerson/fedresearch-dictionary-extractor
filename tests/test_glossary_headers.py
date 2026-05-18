@@ -1,10 +1,11 @@
-"""Glossary header pattern + lookback tests (v0.4.0).
+"""Glossary header pattern + range-detection tests.
 
-Verifies that the ArmyProfile.glossary_header_patterns accept the
-"Glossary of {Terms,Acronyms,Abbreviations}" phrase variants observed in
-~70% of v0.3.0 zero-entry-with-glossary failures, and that
-MAX_GLOSSARY_LOOKBACK_PAGES = 75 catches the long-tail layout exhibited
-by PAM 73-1 (glossary at page 462 of 499).
+v0.4: covered header phrase variants ("Glossary of Terms" etc.) and
+MAX_GLOSSARY_LOOKBACK_PAGES = 75 for long-tail docs.
+
+v0.5 Unit D-1: backward-first-match-wins replaced with
+forward-scan-largest-contiguous-block. Tie-break: EARLIER block wins.
+MAX_GLOSSARY_LOOKBACK_PAGES removed (full-doc scan obviates the cap).
 """
 from __future__ import annotations
 
@@ -13,10 +14,8 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from fedresearch_dictionary_extractor.extractors.glossary import (
-    MAX_GLOSSARY_LOOKBACK_PAGES,
-    find_glossary_page_range,
-)
+from fedresearch_dictionary_extractor.extractors import glossary as glossary_mod
+from fedresearch_dictionary_extractor.extractors.glossary import find_glossary_page_range
 from fedresearch_dictionary_extractor.profiles import get_profile
 
 ARMY = get_profile("army")
@@ -100,30 +99,16 @@ def _make_mock_doc(page_texts: list[str]) -> MagicMock:
     return doc
 
 
-def test_lookback_constant_is_75() -> None:
-    """Pin the lookback constant — regression guard for the v0.4.0 bump
-    from 30 to 75. If a future change lowers this without updating the
-    failing cohort's expected fix, surface it loudly."""
-    assert MAX_GLOSSARY_LOOKBACK_PAGES == 75
+def test_v04_lookback_constant_removed() -> None:
+    """v0.5 D-1: MAX_GLOSSARY_LOOKBACK_PAGES is removed entirely.
+    Full-doc forward scan obviates the cap."""
+    assert not hasattr(glossary_mod, "MAX_GLOSSARY_LOOKBACK_PAGES"), (
+        "MAX_GLOSSARY_LOOKBACK_PAGES should be removed in v0.5 Unit D-1"
+    )
 
 
-def test_lookback_reaches_pam_73_1_layout() -> None:
-    """PAM 73-1 has total=499 pages with glossary at page 462 — 37 pages
-    from the end. v0.3.0 (lookback=30) missed it. v0.4.0 (lookback=75)
-    must reach it."""
-    n_pages = 499
-    glossary_page = 462
-    texts = ["body text"] * n_pages
-    texts[glossary_page] = "Glossary\nfoo definition"
-    doc = _make_mock_doc(texts)
-    result = find_glossary_page_range(doc, ARMY)
-    assert result is not None
-    start, _end = result
-    assert start == glossary_page
-
-
-def test_lookback_short_doc_unaffected() -> None:
-    """Short docs (< lookback) continue to work as before."""
+def test_short_doc_finds_single_match() -> None:
+    """Short docs with a single glossary header page find it."""
     texts = [
         "Cover page",
         "Chapter 1",
@@ -138,16 +123,33 @@ def test_lookback_short_doc_unaffected() -> None:
     assert start == 3
 
 
-def test_lookback_does_not_reach_beyond_75() -> None:
-    """Doc with glossary at page N-76 (one beyond the lookback window)
-    is NOT found. Pin the bound to catch unintended lookback growth."""
-    n_pages = 200
-    glossary_page = n_pages - 76 - 1  # 76 pages from end (just past window)
+def test_long_tail_glossary_no_lookback_cap() -> None:
+    """v0.5: full-doc scan finds glossary regardless of distance from end.
+    PAM 73-1-shape (page 462 of 499)."""
+    n_pages = 499
+    glossary_page = 462
     texts = ["body text"] * n_pages
     texts[glossary_page] = "Glossary\nfoo definition"
     doc = _make_mock_doc(texts)
     result = find_glossary_page_range(doc, ARMY)
-    assert result is None
+    assert result is not None
+    start, _end = result
+    assert start == glossary_page
+
+
+def test_extremely_long_doc_no_lookback_cap() -> None:
+    """v0.5: glossary at any depth is reachable (regression guard against
+    re-introducing MAX_GLOSSARY_LOOKBACK_PAGES). 1000-page doc with
+    glossary 800 pages from end."""
+    n_pages = 1000
+    glossary_page = 200  # 800 pages from end (impossible under v0.4 cap=75)
+    texts = ["body text"] * n_pages
+    texts[glossary_page] = "Glossary\nfoo definition"
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, _end = result
+    assert start == glossary_page
 
 
 def test_long_tail_glossary_of_terms() -> None:
@@ -162,3 +164,129 @@ def test_long_tail_glossary_of_terms() -> None:
     assert result is not None
     start, _end = result
     assert start == glossary_page
+
+
+# ─── v0.5 D-1: forward-scan-largest-contiguous-block tests ──────────────────
+
+
+def test_largest_block_wins_over_running_header_pattern() -> None:
+    """v0.5 D-1 core: running-header docs (ATP 3-21.10 shape) have N
+    contiguous matching pages. v0.4 backward-sweep picked the LAST page;
+    v0.5 picks the block's FIRST page so the full glossary is parsed.
+    """
+    n_pages = 620
+    glossary_start, glossary_end = 580, 604  # ATP 3-21.10 shape: 25 contiguous matches
+    texts = ["body text"] * n_pages
+    for i in range(glossary_start, glossary_end + 1):
+        texts[i] = f"Glossary\nentry-{i} definition for page {i}\n"
+    texts[605] = "References\n[bibliography content]"
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, end = result
+    assert start == glossary_start, f"v0.5 must pick block start={glossary_start}, got {start}"
+    assert end == 604, f"end-scan should terminate at 604 (References at 605), got {end}"
+
+
+def test_largest_block_wins_over_isolated_body_match() -> None:
+    """v0.5 D-1: a single isolated body-text 'Glossary' reference loses
+    to a multi-page real glossary block. (Class-3 shape.)
+    """
+    n_pages = 100
+    texts = ["body text"] * n_pages
+    # Isolated body reference at page 50
+    texts[50] = "...as documented in the Glossary section, see below..."  # NOT whole-line, won't match
+    # Better Class-3 emulation: isolated WHOLE-LINE match at page 50, but only 1 page
+    texts[50] = "Some body content\nGlossary\nMore body content"
+    # Real 5-page glossary block at 80-84
+    for i in range(80, 85):
+        texts[i] = f"Glossary\nentry-{i} definition\n"
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, _end = result
+    assert start == 80, f"5-block should beat single-page body match; got start={start}"
+
+
+def test_later_block_wins_on_tie() -> None:
+    """v0.5 D-1: when two blocks have equal length, the LATER block wins.
+    Army Pubs convention places real glossaries near the end; equal-sized
+    blocks earlier in the doc are typically TOC references or front-matter
+    summaries. Empirically necessary on AR 115-10 (matches at [3, 21] both
+    single-page; real glossary = page 21).
+    """
+    n_pages = 100
+    texts = ["body text"] * n_pages
+    # Two equal-size blocks: 50-54 (front-matter-ish) and 80-84 (real glossary)
+    for i in range(50, 55):
+        texts[i] = f"Glossary\nentry-A{i}\n"
+    for i in range(80, 85):
+        texts[i] = f"Glossary\nentry-B{i}\n"
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, _end = result
+    assert start == 80, f"later 5-block (80-84) must win on tie; got {start}"
+
+
+def test_single_page_tie_picks_later() -> None:
+    """Regression sentinel for AR 115-10 shape: TOC entry + real glossary
+    both produce single-page matches at distant positions. Real glossary
+    appears later in Army Pubs convention."""
+    n_pages = 50
+    texts = ["body text"] * n_pages
+    texts[3] = "Glossary\nSee Glossary at page 21 for definitions"
+    texts[21] = "Glossary\nfoo: definition\nbar: definition\n"
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, _end = result
+    assert start == 21, f"later single-page match (real glossary) must win; got {start}"
+
+
+def test_single_page_block_when_no_multi_page_blocks() -> None:
+    """v0.5 D-1: if no block has ≥2 pages, fall back to the earliest single-
+    page match. (Handles short docs with a 1-page glossary.)
+    """
+    n_pages = 50
+    texts = ["body text"] * n_pages
+    texts[40] = "Glossary\nfoo: bar\nbaz: qux\n"
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, _end = result
+    assert start == 40
+
+
+def test_no_matches_returns_none() -> None:
+    """v0.5 D-1: no glossary header anywhere → None. Preserved from v0.4."""
+    n_pages = 30
+    texts = ["nothing about glossaries here"] * n_pages
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is None
+
+
+def test_strict_contiguous_no_gap_tolerance() -> None:
+    """v0.5 D-1: per A6 empirical scan, strict-contiguous is the chosen
+    grouping. A 5-page real glossary block with a 1-page gap splits into
+    two smaller blocks. The larger half wins.
+
+    Regression sentinel: if a future change adds gap tolerance, this test
+    fails so the operator must explicitly re-decide the gap policy.
+    """
+    n_pages = 100
+    texts = ["body text"] * n_pages
+    # Block A: pages 50-52 (3 pages), GAP at 53, Block B: pages 54-56 (3 pages)
+    for i in [50, 51, 52, 54, 55, 56]:
+        texts[i] = f"Glossary\nentry-{i}\n"
+    # texts[53] left as "body text" — substantive content, would tolerate as a gap
+    doc = _make_mock_doc(texts)
+    result = find_glossary_page_range(doc, ARMY)
+    assert result is not None
+    start, end = result
+    # Strict-contiguous + later-wins: 3-block at 54-56 (later) wins over 3-block
+    # at 50-52 (earlier). The KEY assertion: NOT merged into a 7-block.
+    assert start == 54, f"strict-contiguous + later-wins picks the later 3-block; got {start}"
+    # If gap tolerance had been applied, the merged block would be 50-56 (7 pages)
+    # and start would be 50. Strict mode rejects the merge.

@@ -1,0 +1,61 @@
+# v0.5 Unit D-1: Class-1 docs (exact-range parser failures).
+# v0.4 reference ranges captured at commit c4d1611 (v0.4.0 release).
+# D-1 must preserve these ranges exactly; D-2 will trace parser dead-ends
+# starting from these pages.
+# Captured by scripts/v0.5-unit-d1/capture-class1-ranges.py at HEAD=eb7978789e58.
+entries:
+  - document_id: 0d650775-57d2-4cfb-960e-d8304eab663b
+    canonical_id: 'army:tc:tc-3-22240-medium-machine-gun-2017-04-28'
+    expected_start: 194
+    expected_end: 195
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: 2012ce87-6877-417e-bc51-62f3b98c6b4e
+    canonical_id: 'army:tc:tc-3-22249-light-machine-gun-m249-series-2017-05-16'
+    expected_start: 200
+    expected_end: 201
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: 37dfab58-8a2a-4571-968a-87c8ab1601ac
+    canonical_id: 'army:tc:tc-3-25150-combatives-2017-03-31'
+    expected_start: 398
+    expected_end: 399
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: 4d44f6bb-b3e3-4220-9097-0812c47fde0e
+    canonical_id: 'army:tc:tc-3-226-guard-duty-this-item-is-published-w-basic-inl-c1-2017-01-13'
+    expected_start: 52
+    expected_end: 53
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: 5c11e285-4ad1-4986-a6a8-b69cc21b9f5e
+    canonical_id: 'army:tc:tc-8-260-pharmacy-specialist-2025-04-07'
+    expected_start: 44
+    expected_end: 45
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: bdd56ea4-f19d-4043-a1dd-5253e3d3f988
+    canonical_id: 'army:tc:tc-3-2219-grenade-machine-gun-mk-19-mod-3-2017-05-10'
+    expected_start: 186
+    expected_end: 187
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: c70be16a-a6ba-498b-986e-c38ee16c4886
+    canonical_id: 'army:tc:tc-4-021-first-aid-c2-2016-01-21'
+    expected_start: 112
+    expected_end: 113
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: c7a9v1b362uybwh13n50jr1b1
+    canonical_id: 'army:atp:atp-1-0501-religious-support-and-the-operations-process-2018-07-31'
+    expected_start: 82
+    expected_end: 83
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: cmjetig4p006er6uh05bnchax
+    canonical_id: 'army:fm:fm-6-99-us-army-report-and-message-formats-2021-05-17'
+    expected_start: 226
+    expected_end: 227
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: cml9yluu10105jz13xtd3lhtw
+    canonical_id: 'Training Circular|TC 21-306'
+    expected_start: 86
+    expected_end: 87
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511
+  - document_id: dbc0cf4b-05db-4628-a959-91a3f78ab9ee
+    canonical_id: 'army:tc:tc-21-306-tracked-combat-vehicle-driver-training-2025-04-24'
+    expected_start: 86
+    expected_end: 87
+    captured_from_commit: c4d1611a98b8ec76c68b7faf02b4cd3e47b77511

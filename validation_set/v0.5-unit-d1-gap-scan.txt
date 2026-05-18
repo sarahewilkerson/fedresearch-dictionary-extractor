@@ -1,0 +1,11 @@
+# v0.5 Unit D-1 gap-tolerance empirical scan (revised heuristic)
+# Heuristic: scan finds docs where 1-page-tolerance WOULD change the
+# chosen largest-block (i.e., merging two adjacent blocks across a
+# substantive-text gap page produces a larger block than the current
+# strict-mode winner). Class-3 scattered-body matches don't fire here
+# because their isolated matches don't form combinable adjacent blocks.
+
+DECISION: STRICT_CONTIGUOUS
+FINDINGS: 0 doc(s) where tolerance would change block selection
+
+(none — strict-contiguous safe across the 27+31 doc combined surface)

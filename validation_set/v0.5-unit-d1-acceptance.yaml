@@ -1,0 +1,223 @@
+# v0.5 Unit D-1: Class-2 + Class-3 docs acceptance YAML.
+# 27 docs where v0.4's find_glossary_page_range returned an incorrect range.
+# expected_v05_range = actual v0.5 forward-scan-largest-block + later-wins-tie output.
+# disposition: active (D-1 fixes range) | deferred_to_d2 (range unchanged from v0.4,
+#              parser is the issue — same Class-1 failure mode).
+
+entries:
+  - document_id: 18309bc3-a029-4b66-8b3f-6b13902c78ed
+    canonical_id: 'army:tc:tc-3-0411-commander-s-aviation-training-and-standardization-program-2022-04-14'
+    old_v04_range: [104, 105]
+    loose_heuristic_range: [102, 105]
+    expected_v05_range: [102, 105]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: 441b8af0-7564-4ab7-a8de-8fea1796c57f
+    canonical_id: 'army:tc:tc-3-2237-javelin-close-combat-missile-system-medium-2013-08-13'
+    old_v04_range: [246, 247]
+    loose_heuristic_range: [242, 247]
+    expected_v05_range: [242, 247]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: 45213769-2aef-49c8-ac5e-7d09fc56d889
+    canonical_id: 'army:tc:tc-8-13-tactical-hospital-infrastructure-2021-02-25'
+    old_v04_range: [146, 147]
+    loose_heuristic_range: [144, 147]
+    expected_v05_range: [144, 147]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: 603892f9-7a9b-4150-a06e-0fef2e0eb411
+    canonical_id: 'army:tc:tc-3-045-instrument-flight-for-army-aviators-2024-12-12'
+    old_v04_range: [298, 299]
+    loose_heuristic_range: [294, 299]
+    expected_v05_range: [294, 299]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: 8669df51-233d-46de-ac03-5e49fa9f10a1
+    canonical_id: 'army:tc:tc-3-21220-static-line-parachuting-techniques-and-training-tc-3-21220-mcwp-3-157-afman-11-420'
+    old_v04_range: [511, 511]
+    loose_heuristic_range: [508, 511]
+    expected_v05_range: [508, 511]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: b2cdf7d9-e8e8-45d9-978d-2def78e3faf8
+    canonical_id: 'army:tc:tc-3-2040-training-and-qualification-individual-weapons-2019-07-30'
+    old_v04_range: [819, 819]
+    loose_heuristic_range: [818, 819]
+    expected_v05_range: [818, 819]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cc4ba160-6783-467d-b778-7b4b537a08d6
+    canonical_id: 'army:tc:tc-3-0471-commander-s-aviation-maintenance-training-program-2024-04-03'
+    old_v04_range: [51, 51]
+    loose_heuristic_range: [50, 51]
+    expected_v05_range: [50, 51]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cmfopsclncx0fiqitg7859np5
+    canonical_id: 'army:atp:atp-3-3930-security-and-mobility-support-2020-05-21'
+    old_v04_range: [166, 167]
+    loose_heuristic_range: [164, 167]
+    expected_v05_range: [164, 167]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cmjetcit900446svfh4jfo3lf
+    canonical_id: 'army:atp:atp-3-2110-infantry-rifle-company-2018-05-14'
+    old_v04_range: [604, 605]
+    loose_heuristic_range: [580, 605]
+    expected_v05_range: [580, 605]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cmjeth7n8000zr6uhkw7jy7yb
+    canonical_id: 'army:atp:atp-3-3920-police-intelligence-operations-2019-05-13'
+    old_v04_range: [214, 215]
+    loose_heuristic_range: [212, 215]
+    expected_v05_range: [212, 215]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cmjeti0wo004tr6uh0gxtboaz
+    canonical_id: 'army:atp:atp-7-1001-russian-tactics-2024-02-29'
+    old_v04_range: [266, 267]
+    loose_heuristic_range: [264, 267]
+    expected_v05_range: [264, 267]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cmjetiax4005vr6uho7socel1
+    canonical_id: 'army:fm:fm-3-81-maneuver-enhancement-brigade-2021-11-09'
+    old_v04_range: [174, 175]
+    loose_heuristic_range: [172, 175]
+    expected_v05_range: [172, 175]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cmjetpw2601lir6uhsuewvnou
+    canonical_id: 'army:ar:ar-12-15-joint-security-cooperation-education-and-training-secnavinst-49504b-afi-16-105-asa-al-t'
+    old_v04_range: [343, 343]
+    loose_heuristic_range: [21, 21]
+    expected_v05_range: [21, 21]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cmjetr2zu01u3r6uh8w4r4onl
+    canonical_id: 'army:ar:ar-611-1-military-occupational-classification-structure-development-and-implementation-g-1-2022-12'
+    old_v04_range: [46, 46]
+    loose_heuristic_range: [6, 38]
+    expected_v05_range: [46, 46]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: deferred_to_d2
+  - document_id: cmjetsvy8025mr6uhxcbak9aq
+    canonical_id: 'army:pam-600-8-military-human-resources-management-administrative-procedures-g-1-2019-05-20'
+    old_v04_range: [52, 53]
+    loose_heuristic_range: [6, 20]
+    expected_v05_range: [52, 53]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: deferred_to_d2
+  - document_id: cmjetswr9025pr6uh33z09aug
+    canonical_id: 'army:pam-600-8-105-military-orders-2022-12-20'
+    old_v04_range: [171, 171]
+    loose_heuristic_range: [8, 165]
+    expected_v05_range: [171, 171]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: deferred_to_d2
+  - document_id: cmjett3270268r6uhshk0jy95
+    canonical_id: 'army:pam-700-127-integrated-product-support-procedures-2024-02-20'
+    old_v04_range: [168, 168]
+    loose_heuristic_range: [9, 43]
+    expected_v05_range: [168, 168]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: deferred_to_d2
+  - document_id: cml9uwtsv00uxjz137l0u7tab
+    canonical_id: 'Training Circular|TC 3-22.6'
+    old_v04_range: [52, 53]
+    loose_heuristic_range: [5, 18]
+    expected_v05_range: [52, 53]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: deferred_to_d2
+  - document_id: cmn72jvqc008giq33l5ox8h0m
+    canonical_id: 'Army Techniques Publication|ATP 3-39.30'
+    old_v04_range: [202, 203]
+    loose_heuristic_range: [200, 203]
+    expected_v05_range: [200, 203]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cphtq144vrzne16yqqxbzj3l6
+    canonical_id: 'army:atp:atp-6-0246-expeditionary-signal-companies-2025-05-07'
+    old_v04_range: [165, 165]
+    loose_heuristic_range: [160, 165]
+    expected_v05_range: [160, 165]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: cx2yz7khyjk5eyggqx1ia25xs
+    canonical_id: 'army:atp:atp-3-3912-1-law-enforcement-investigations-volume-i-2024-04-12'
+    old_v04_range: [464, 465]
+    loose_heuristic_range: [462, 465]
+    expected_v05_range: [462, 465]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: recovered_22370f6c71c86205
+    canonical_id: 'army:policy-tc-3-2212-m26-modular-accessory-shotgun-system-2014-11-12'
+    old_v04_range: [163, 163]
+    loose_heuristic_range: [162, 163]
+    expected_v05_range: [162, 163]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: recovered_4d2ec1fd14c515be
+    canonical_id: 'army:policy-tc-6-0220-cable-and-wire-systems-handbook-2018-01-23'
+    old_v04_range: [270, 271]
+    loose_heuristic_range: [268, 271]
+    expected_v05_range: [268, 271]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: recovered_7881846736121422
+    canonical_id: 'army:doctrine-atp-3-3912-1-law-enforcement-investigations-volume-i-2024-04-12'
+    old_v04_range: [464, 465]
+    loose_heuristic_range: [462, 465]
+    expected_v05_range: [462, 465]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: recovered_97b451609e810a18
+    canonical_id: 'army:doctrine-tc-3-2291-mortar-fire-direction-procedures-2017-05-15'
+    old_v04_range: [528, 529]
+    loose_heuristic_range: [526, 529]
+    expected_v05_range: [526, 529]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: recovered_f4bec2e2aeeb4283
+    canonical_id: 'army:doctrine-atp-3-3930-security-and-mobility-support-2020-05-21'
+    old_v04_range: [166, 167]
+    loose_heuristic_range: [164, 167]
+    expected_v05_range: [164, 167]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active
+  - document_id: recovered_fb323d114473e0c7
+    canonical_id: 'army:policy-tc-3-2291-mortar-fire-direction-procedures-2025-08-29'
+    old_v04_range: [523, 523]
+    loose_heuristic_range: [520, 523]
+    expected_v05_range: [520, 523]
+    acceptance_relation: exact
+    expected_entry_count_min: 1
+    disposition: active

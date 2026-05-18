@@ -1,0 +1,113 @@
+# v0.5 Unit D-1: explicit accepted deviations from the 31-doc v0.4 golden output.
+# Each entry below is a reviewer-approved deviation: a doc where v0.5's
+# behavior differs from v0.4's golden output for a documented reason.
+
+entries:
+  - document_id: ADP_3-07_STABILITY_2019_07_31_OCR
+    old_v04_range: [68, 69]
+    new_v05_range: [66, 69]
+    term_set_diff:
+      added_count: 18
+      removed_count: 0
+      added_sample: ['army', 'assessment', "commander's", 'counterinsurgency', 'decisive']
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: AR_12-15_JOINT_SECURITY_COOPERATION_EDUCATION_AND_TRAINING_{SECNAVINST_4950.4B;_AFI_16-105}_ASA_AL_T_2011_01_03_OCR
+    old_v04_range: [343, 343]
+    new_v05_range: [21, 21]
+    term_set_diff:
+      added_count: 2
+      removed_count: 0
+      added_sample: ['contents', 'department) and the ((country name) military department)']
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: AR_190-55_U.S._ARMY_CORRECTIONS_SYSTEM__PROCEDURES_FOR_MILITARY_EXECUTIONS_PMG_2023_10_30_OCR
+    old_v04_range: [18, 18]
+    new_v05_range: [17, 18]
+    term_set_diff:
+      added_count: 0
+      removed_count: 0
+      added_sample: []
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: AR_405-90_DISPOSAL_OF_REAL_PROPERTY_COE_2020_06_08_OCR
+    old_v04_range: [33, 37]
+    new_v05_range: [32, 37]
+    term_set_diff:
+      added_count: 0
+      removed_count: 0
+      added_sample: []
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: ATP_4-35_MUNITIONS_OPERATIONS_2023_01_31_OCR
+    old_v04_range: [109, 109]
+    new_v05_range: [106, 109]
+    term_set_diff:
+      added_count: 13
+      removed_count: 0
+      added_sample: ['ammunition supply point', 'ammunition support activity', 'ammunition transfer holding point', 'arfor', 'common operational picture']
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: FM_3-34_ENGINEER_OPERATIONS_2020_12_18_OCR
+    old_v04_range: [130, 131]
+    new_v05_range: [128, 131]
+    term_set_diff:
+      added_count: 0
+      removed_count: 3
+      added_sample: []
+      removed_sample: ['countermobility', 'engineer', 'field']
+    rationale: |-
+      v0.5's wider initial range causes Section II narrowing to fire (v0.4 didn't detect Section I, so narrowing was identity). The Section II header is mid-page-130; the _filter_spans_to_below_header helper now correctly drops Section I acronyms (OPCON, OPLAN, OE, etc.) from page 130. v0.4 misclassified those acronym expansions as glossary terms — the 3 'removed' entries are corrections, not regressions.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: FM_3-55_INFORMATION_COLLECTION_2013_05_03_OCR
+    old_v04_range: [76, 77]
+    new_v05_range: [74, 77]
+    term_set_diff:
+      added_count: 0
+      removed_count: 0
+      added_sample: []
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: FM_4-1_HUMAN_RESOURCES_SUPPORT_2025_09_15_OCR
+    old_v04_range: [111, 111]
+    new_v05_range: [106, 111]
+    term_set_diff:
+      added_count: 15
+      removed_count: 0
+      added_sample: ['large-scale combat operations', 'military decision-making process', 'mobility', 'multidomain operations', 'operation']
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
+  - document_id: FM_6-02_SIGNAL_SUPPORT_TO_OPERATIONS_2019_09_13_OCR
+    old_v04_range: [170, 171]
+    new_v05_range: [166, 171]
+    term_set_diff:
+      added_count: 38
+      removed_count: 0
+      added_sample: ['combat camera', 'command and control', 'command and control system', 'command and control warfighting function', 'communications security']
+      removed_sample: []
+    rationale: |-
+      v0.5 forward-scan-largest-block strategy finds a wider real-glossary range than v0.4's backward-first-match-wins. Terms-added confirms valid additional content; zero terms lost confirms no false-positive content was admitted.
+    approved_by: 'malcolm-wilkerson + claude (D-1 execution)'
+    approved_at: '2026-05-17'
