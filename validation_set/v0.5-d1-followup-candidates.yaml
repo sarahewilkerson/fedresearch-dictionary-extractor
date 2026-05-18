@@ -1,22 +1,22 @@
-# v0.5 D-1-followup candidates — docs where v0.5 range detection still
-# picks a different range than the Unit-0 loose-heuristic ground truth.
+# v0.5 D-1-followup candidates — RECLASSIFIED 2026-05-18 (post D-3-A + D-3-B merge).
 #
-# These 5 were marked `disposition: deferred_to_d2` in the D-1 acceptance
-# YAML on the assumption that their failure was parser-related. D-2's
-# Step 0 range-validation pass shows they are actually RANGE issues:
-# the matching pages in the doc are all isolated single-page matches,
-# v0.5's largest-block + later-wins picks the same single page as v0.4's
-# backward sweep, and that page doesn't contain the actual glossary.
+# ORIGINAL PREMISE (deprecated): D-2's Step-0 misclassified these 5 as range-
+# detection issues. The "Unit-0 loose heuristic" ranges pointed at TOC pages
+# (Contents—Continued, Figure listings), NOT real glossary headers.
 #
-# Each entry's actual glossary is at the Unit-0 `known_range` (forward-
-# scan loose heuristic location), which v0.5's strict-anchored regex
-# misses because the doc's glossary header uses a non-standard format
-# OR appears as a numbered section header (e.g., "Section IV — Glossary")
-# that none of the v0.4/v0.5 `glossary_header_patterns` match.
+# EMPIRICAL RE-TEST (post-D-3-A+B on main):
+#  * cml9uwtsv00uxjz137l0u7tab (TC 3-22.6): 0 → 9 entries (CONUS, CQ, EOF, ...)
+#    — D-3-A's column-gate relaxation directly fixed this doc.
+#  * AR 611-1, PAM 600-8, PAM 600-8-105, PAM 700-127: still 0 entries.
+#    Failure mode: section_structure='section_ii_only' fires, narrowing yields
+#    a too-tight range, parser produces 0 entries.
 #
-# Proposed follow-up: a separate per-unit plan extending
-# profile.glossary_header_patterns OR adding a section-numbered-glossary-
-# header detector.
+# D-3-C considered a narrowed-empty-result fallback but caused collateral
+# damage on docs where narrowing was correct. Deferred to a future v0.6 unit
+# with a more precise trigger.
+#
+# STATUS: D-1-followup closed. 1 of 5 incidentally fixed by D-3-A; 4 docs
+# carried as `v0.6_deferred` for future narrowed-empty-fallback work.
 
 entries:
   - document_id: cmjetr2zu01u3r6uh8w4r4onl
