@@ -1,0 +1,186 @@
+{
+  "document_id": "c7a9v1b362uybwh13n50jr1b1",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "both",
+    "section_ii_pages": [
+      83,
+      84
+    ],
+    "section_ii_narrowing_fired": true,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      83,
+      84
+    ]
+  },
+  "event_counts": {
+    "filter_spans_below_header": 2,
+    "looks_like_acronym": 38,
+    "is_term_style_span": 3,
+    "validate_term": 3,
+    "flush": 2
+  },
+  "validate_summary": {
+    "passed": 0,
+    "failed": 3
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "filter_spans_below_header",
+      "input_count": 119,
+      "output_count": 119
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Glossary",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "The glossary lists acronyms with Army or joint definitions.",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "SECTION | \u2014 ACRONYMS AND ABBREVIATION",
+      "result": true
+    },
+    {
+      "kind": "is_term_style_span",
+      "span_text": "|",
+      "is_bold": false,
+      "result": false
+    },
+    {
+      "kind": "validate_term",
+      "term": "SECTION",
+      "inline_def": null,
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Army doctrine publication",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ADP",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ADRP Army doctrine reference publication",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "area of operations",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "AO",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "AR Army regulation",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ARNG Army National Guard",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ATP Army techniques publication",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CBRN chemical, biological, radiological, and nuclear",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "COA course of action",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Department of Defense",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DOD",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DODD Department of Defense directive",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "defense support of civil authorities",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DSCA",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "field manual",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "FM",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "joint guide",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "JG",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "JP joint publication",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "mass casualty",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MASCAL",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "military decisionmaking process",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MDMP",
+      "result": true
+    }
+  ]
+}

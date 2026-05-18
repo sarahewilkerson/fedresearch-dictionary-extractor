@@ -1,0 +1,179 @@
+{
+  "document_id": "4d44f6bb-b3e3-4220-9097-0812c47fde0e",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "none",
+    "section_ii_pages": null,
+    "section_ii_narrowing_fired": false,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      53,
+      54
+    ]
+  },
+  "event_counts": {
+    "looks_like_acronym": 23,
+    "is_term_style_span": 2,
+    "validate_term": 1,
+    "flush": 2
+  },
+  "validate_summary": {
+    "passed": 1,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Glossary",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "The glossary lists acronyms and abbreviations with Army or joint definitions. Wh",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Army and joint definitions differ, (Army) precedes the definition. Section I \u2013",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Definition",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "continental United States",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CONUS",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CQ charge of quarters",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "escalation of force",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "EOF",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "FOD Field Officer of the Day",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Mission, enemy, terrain and weather, troops and support available, time",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "METT-TC",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "available, and civil considerations",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "noncommissioned officer",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "NCO",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "SDO Staff Duty Officer",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Staff Duty Noncommissioned Officer",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "SDNCO",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "SoG Sergeant of the Guard",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "standard operating procedures",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "SOP",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TC training circular",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "13 January 2017 TC 3-22.6 Glossary-1",
+      "result": false
+    },
+    {
+      "kind": "is_term_style_span",
+      "span_text": "TC 3-22.6",
+      "is_bold": true,
+      "result": true
+    },
+    {
+      "kind": "is_term_style_span",
+      "span_text": "Glossary-1",
+      "is_bold": true,
+      "result": true
+    },
+    {
+      "kind": "validate_term",
+      "term": "13 January 2017 TC 3-22.6 Glossary-1",
+      "inline_def": null,
+      "result": true
+    },
+    {
+      "kind": "flush",
+      "term": null,
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 52,
+      "result": "dropped"
+    },
+    {
+      "kind": "flush",
+      "term": "13 January 2017 TC 3-22.6 Glossary-1",
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 52,
+      "result": "dropped"
+    }
+  ]
+}

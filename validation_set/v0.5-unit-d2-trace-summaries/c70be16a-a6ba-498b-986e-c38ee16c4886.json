@@ -1,0 +1,180 @@
+{
+  "document_id": "c70be16a-a6ba-498b-986e-c38ee16c4886",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "section_i_only",
+    "section_ii_pages": null,
+    "section_ii_narrowing_fired": false,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      113,
+      114
+    ]
+  },
+  "event_counts": {
+    "looks_like_acronym": 41,
+    "is_term_style_span": 2,
+    "validate_term": 1,
+    "flush": 2
+  },
+  "validate_summary": {
+    "passed": 1,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Glossary",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "This  glossary  lists  acronyms  and  terms  with  Army  or  joint  definitions.",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "publication is not the proponent for any terms.",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "AMedP Allied medical publication",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "antidote treatment nerve agent autoinjector",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ATNAA",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Army techniques publication",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ATP",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "convulsant antidoate for nerve agent",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CANA",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "casualty evacuation",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CASEVAC",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Department of the Army",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DA",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Department of Defense",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DD",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Fahrenheit",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "F",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "field manual",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "FM",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "cardiopulmonaryresuscitation",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CPR",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Department of Defense",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "DOD",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "IFAK improved first aid kit",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Joint Service Lightweight Integrated Suit Technology",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "JSLIST",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MOS military occupational specialty",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "North Atlantic Treaty Organization",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "NATO",
+      "result": true
+    }
+  ]
+}

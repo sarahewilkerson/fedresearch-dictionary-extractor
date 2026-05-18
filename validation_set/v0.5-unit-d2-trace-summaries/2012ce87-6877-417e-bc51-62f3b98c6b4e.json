@@ -1,0 +1,189 @@
+{
+  "document_id": "2012ce87-6877-417e-bc51-62f3b98c6b4e",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "section_i_only",
+    "section_ii_pages": null,
+    "section_ii_narrowing_fired": false,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      201,
+      202
+    ]
+  },
+  "event_counts": {
+    "looks_like_acronym": 25,
+    "is_term_style_span": 2,
+    "validate_term": 1,
+    "flush": 2
+  },
+  "validate_summary": {
+    "passed": 1,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 2
+  },
+  "sample_events": [
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "Glossary",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "The glossary lists acronyms and terms with Army or joint definitions. Where Army",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "joint definitions differ, (Army) precedes the definition. Terms for which TC 3-2",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "is the proponent are marked with an asterisk. The proponent manual for other ter",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "listed in parentheses after the definition.",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ARS adaptive rail system",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ATP Army tactics and procedures",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "ATPIAL Advanced Target Pointer/Illuminator/Aiming Light",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CBRN chemical, biological, radiological, and nuclear",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "CoVM center of visible mass",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "I2 image intensifiers",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "JP joint publication",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "LCD liquid crystal display",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "LMG light machine gun",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "LOS line of sight",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MIL milliradians",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MIL-STD military standard",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MGO machine gun optic",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "MOA minute of angle",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "SOP standard operating procedure",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "T&E traversing and elevating",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TC training circular",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TM technical manual",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TWS thermal weapon sight",
+      "result": true
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "16 May 2017 TC 3-22.249 Glossary-1",
+      "result": false
+    },
+    {
+      "kind": "is_term_style_span",
+      "span_text": "TC 3-22.249",
+      "is_bold": true,
+      "result": true
+    },
+    {
+      "kind": "is_term_style_span",
+      "span_text": "Glossary-1",
+      "is_bold": true,
+      "result": true
+    },
+    {
+      "kind": "validate_term",
+      "term": "16 May 2017 TC 3-22.249 Glossary-1",
+      "inline_def": null,
+      "result": true
+    },
+    {
+      "kind": "flush",
+      "term": null,
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 200,
+      "result": "dropped"
+    },
+    {
+      "kind": "flush",
+      "term": "16 May 2017 TC 3-22.249 Glossary-1",
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 200,
+      "result": "dropped"
+    }
+  ]
+}

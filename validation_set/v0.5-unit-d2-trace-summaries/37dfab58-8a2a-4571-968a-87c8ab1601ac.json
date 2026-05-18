@@ -1,0 +1,55 @@
+{
+  "document_id": "37dfab58-8a2a-4571-968a-87c8ab1601ac",
+  "entry_count": 0,
+  "metadata": {
+    "section_structure": "both",
+    "section_ii_pages": [
+      399,
+      400
+    ],
+    "section_ii_narrowing_fired": true,
+    "glossary_used_legacy_fallback": false,
+    "glossary_pages": [
+      399,
+      400
+    ]
+  },
+  "event_counts": {
+    "filter_spans_below_header": 1,
+    "looks_like_acronym": 2,
+    "flush": 1
+  },
+  "validate_summary": {
+    "passed": 0,
+    "failed": 0
+  },
+  "flush_summary": {
+    "emitted": 0,
+    "dropped": 1
+  },
+  "sample_events": [
+    {
+      "kind": "filter_spans_below_header",
+      "input_count": 17,
+      "output_count": 5
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "None.",
+      "result": false
+    },
+    {
+      "kind": "looks_like_acronym",
+      "line_text": "TC 3-25.150 Glossary-1",
+      "result": false
+    },
+    {
+      "kind": "flush",
+      "term": null,
+      "def_lines_count": 0,
+      "def_preview": null,
+      "page_idx": 398,
+      "result": "dropped"
+    }
+  ]
+}
