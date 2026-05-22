@@ -8,7 +8,7 @@ on:
 
 jobs:
   lint-and-test:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, fedresearch-dict]
     strategy:
       matrix:
         python-version: ["3.11", "3.12"]
@@ -33,7 +33,7 @@ jobs:
         run: pytest -q
 
   build-wheel:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, fedresearch-dict]
     needs: lint-and-test
     steps:
       - uses: actions/checkout@v4
