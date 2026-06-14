@@ -24,3 +24,6 @@ validation_set/labels-pending.tsv
 # v0.2.a execution artifacts (captured in PR comment, not committed)
 docs/plans/_exec_re_extract_with_log.py
 docs/plans/v0_2_a_rejection_log.txt
+
+# P2-B DoD profile: corpus PDFs (re-fetchable via scripts/fetch_dod_corpus.py from manifest)
+validation_set/dod_pdfs/
