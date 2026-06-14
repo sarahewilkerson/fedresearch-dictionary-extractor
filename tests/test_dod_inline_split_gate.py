@@ -58,8 +58,9 @@ def _line_spans(text: str, x: float, y: float, bold: bool = False) -> dict:
 
 
 def _mock_doc(lines: list[tuple[str, float]]) -> MagicMock:
-    """lines = [(text, x)]; y auto-increments by 14pt from 100."""
-    blocks = [{"lines": [_line_spans(t, x, 100 + i * 14)]} for i, (t, x) in enumerate(lines)]
+    """lines = [(text, x)]; y auto-increments by 14pt from 200 (body zone,
+    below HEADER_ZONE_Y=150 and above the footer band)."""
+    blocks = [{"lines": [_line_spans(t, x, 200 + i * 14)]} for i, (t, x) in enumerate(lines)]
     page = MagicMock()
     page.get_text.return_value = {"blocks": blocks}
     page.rect = MagicMock()

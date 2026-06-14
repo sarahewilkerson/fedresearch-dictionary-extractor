@@ -71,6 +71,15 @@ MAX_FOOTER_LINES_PER_PAGE = 5    # warn when filter is too aggressive (Fix B saf
 CHANGED_SINCE_PRIOR_PUB_FLAG = "changed_since_prior_pub"
 _LEADING_ASTERISKS_RE = re.compile(r"^\*+\s*")
 
+# inline_split precision: a real glossary headword never starts with a
+# lowercase function word. Rejects wrapped-continuation false positives like
+# "the assigned mission.  The three main principles…" while keeping legitimate
+# lowercase terms ("combat developer", "materiel developer", "decontamination").
+_INLINE_SPLIT_LEADING_STOPWORD_RE = re.compile(
+    r"^(?:the|a|an|of|to|in|for|and|or|nor|but|with|without|by|as|at|on|from|"
+    r"that|this|these|those|its|their|which|when|where|while|than|then|such)\b"
+)
+
 
 def _strip_asterisk_prefix(term: str) -> tuple[str, bool]:
     """Strip leading `*` (or `**`, `***`) from `term` and report whether
@@ -618,7 +627,9 @@ def parse_glossary_entries(
                         cand_term = cand_term[1:-1].strip()
                     cand_term, was_changed = _strip_asterisk_prefix(cand_term)
                     cand_def = il_match.group(3).strip()
-                    if _validate_term(cand_term, cand_def, invalid_res):
+                    if _validate_term(cand_term, cand_def, invalid_res) and not (
+                        _INLINE_SPLIT_LEADING_STOPWORD_RE.match(cand_term)
+                    ):
                         il_term = cand_term
                         il_def = cand_def
                         il_flags = (
@@ -643,8 +654,14 @@ def parse_glossary_entries(
                     term_page_idx = page_idx
                 elif current_term is not None:
                     # continuation of the open term (incl. split-shaped lines
-                    # whose "term" failed validation, e.g. "Reference (k). …")
-                    current_def_lines.append(il_line_text)
+                    # whose "term" failed validation, e.g. "Reference (k). …").
+                    # BUT skip header/footer-zone lines: at a page boundary the
+                    # running header ("…  GLOSSARY  DoDI …, date  N") sits above
+                    # the body and would otherwise bleed into the prior term's
+                    # definition.
+                    il_y = line_spans[0]["bbox"][1]
+                    if HEADER_ZONE_Y <= il_y <= footer_y_threshold:
+                        current_def_lines.append(il_line_text)
                 # else: noise before the first term — dropped.
                 continue
             # ── spatial gate (Army; default) ──────────────────────────────

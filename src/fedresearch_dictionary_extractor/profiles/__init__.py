@@ -1,8 +1,10 @@
 from .army import ArmyProfile
 from .base import ReferenceProfile
+from .dod import DodProfile
 
 PROFILES: dict[str, type[ReferenceProfile]] = {
     "army": ArmyProfile,
+    "dod": DodProfile,
 }
 
 
