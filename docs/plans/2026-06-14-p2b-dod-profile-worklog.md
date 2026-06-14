@@ -52,3 +52,10 @@
 ### Discovered/deferred
 - `validation_set/pdfs` committed broken self-referential symlink (worked around with dod_pdfs/). Separate cleanup PR.
 - Residual inline_split FPs (~1-2/doc, e.g. "surrounding medium") — inherent to textual gating; within the ≤2/doc cap; measured in validation.
+
+## RELEASED v0.6.0 (2026-06-14)
+- GitHub release: https://github.com/sarahewilkerson/fedresearch-dictionary-extractor/releases/tag/v0.6.0
+- Wheel: fedresearch_dictionary_extractor-0.6.0-py3-none-any.whl
+- **DICT_EXTRACTOR_WHEEL_URL** = https://github.com/sarahewilkerson/fedresearch-dictionary-extractor/releases/download/v0.6.0/fedresearch_dictionary_extractor-0.6.0-py3-none-any.whl
+- **DICT_EXTRACTOR_WHEEL_SHA256** = 3886c55abcd56c03d58109a9c1a5bba361d5fbf2893e7187c351d9bb220fd5bd (GitHub digest == local shasum, verified)
+- Merged to main: ce8f938. Auth switched back to adminfedres.
