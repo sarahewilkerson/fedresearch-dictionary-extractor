@@ -93,7 +93,7 @@ class DodProfile(ReferenceProfile):
             (r"\bCJCS\s+Guide\s+([\dA-Z.\-]+)", "CJCSG"),
             (r"\bAI\s+(\d+[A-Z]?)", "AI"),
             (r"\bDTM\s+([\d.\-]+)", "DTM"),
-            (r"\bJP\s+([\d.\-]+)", "JP"),
+            (r"\bJP\s+(\d+(?:[\s_\-]\d+)?)", "JP"),
         ]
 
     @property
