@@ -10,7 +10,9 @@ Sibling to the main FedResearch application. Versioned independently; backend in
 
 ## Scope
 
-**v1 covers these Army doc types:** `AR`, `DA PAM`, `FM`, `ATP`, `ADP`, `TC`, `TM`. These have glossary sections that parse reliably.
+**`--profile army` (default)** covers these Army doc types: `AR`, `DA PAM`, `FM`, `ATP`, `ADP`, `TC`, `TM`. These have glossary sections that parse reliably.
+
+**`--profile dod`** (v0.6.0) covers DoD-wide issuances — `DoDI`, `DoDD`, `DoDM`, `AI`, `DTM`, `DoD CPM` — whose back-matter "GLOSSARY / PART II. DEFINITIONS" enclosures use a `Term.  Definition` format (parsed via `term_gate_mode="inline_split"`). Joint docs (`CJCS*`, `JP`) are **experimental** (inline-paragraph / two-column glossaries; partial yield).
 
 **Deferred to v2:** `ALARACT`, `HQDA EXORD`, `MILPER`, `DA memoranda`, `HQDA policy notices` — these rely primarily on inline extraction, which carries higher false-positive risk.
 

@@ -24,4 +24,31 @@
   - **JP** (`JP_1-04`) — HAS back-matter `GLOSSARY / PART I—ABBREVIATIONS … / PART II` but **two-column / term-and-def-on-separate-lines** layout (`AOR`\n`area of responsibility`) → inline_split single-line assumption may not hold → **experimental** until validated.
 - **Implication for the family matrix (§2a):** required-pass DoD-issuance families (DoDI/DoDD/DoDM/AI/DoD CPM) are Class 1 → expected pass. DTM needs a glossary-presence check. CJCS* + JP are Class 2/3 → expected **xfail-experimental**; v0.6.0 release claim = "DoD issuances supported; Joint/CJCS experimental." This matches the plan's escape hatch exactly.
 
-### Steps 2-9 — PENDING (handed off; see status report)
+### Step 2 — Army no-drift baseline (DONE)
+- Captured `parse_glossary_entries(ARMY)` golden on the 3 committed parser fixtures, on un-edited code, committed BEFORE any glossary.py edit (`tests/test_army_no_drift.py` + `tests/fixtures/army_no_drift/`). Asserts byte-identical after.
+
+### Steps 3-4 — inline_split gate (TDD, DONE)
+- base.py: `term_gate_mode` (default "spatial") + `inline_split_pattern` (default None=reuse split_re). glossary.py: additive inline_split branch. 7 RED→GREEN gate tests; full suite 277 passed; Army no-drift byte-identical. analyzer.py NOT changed (DoD enable_bold_gate=False short-circuits the fallback — grep-confirmed analyzer.py:112 is the only trigger).
+
+### Step 5 — DodProfile + precision (DONE)
+- profiles/dod.py + registered "dod". Real DODI 3150.09 run: 36→35 entries.
+- Precision fixes (inline_split branch only): leading function-word rejection (kills "the assigned mission" wrapped-continuation FP); header/footer-zone guard on continuations (kills "Change 4, 12/08/2023 GLOSSARY" running-header bleed).
+
+### Step 6 — range content-confirmation (DONE)
+- confirm_glossary_block hook (base default True=Army unchanged); find_glossary_page_range picks largest CONFIRMED block. DoD confirm = ≥3 term.def lines AND ≤2 dot-leaders. Fixed AI_31 (was extracting a TOC signature "William E" → now its real page-10 glossary, 9 entries). FP cleanup: G.1/G.2 enclosure labels, bare U.S/U.S.C, signatures, PART-Il OCR variant.
+
+### Step 7 — tests + repro (DONE)
+- test_dod_inline_split_gate (9), test_dod_parser_fixtures (committed DODI fixture, PDF-free CI gate), test_dod_pub_number (11, incl. multi-token), test_dod_validation (20, @validation — corpus floors + e2e no-fallback + sha256 manifest). scripts/fetch_dod_corpus.py + build_dod_fixtures.py. Default suite 289 passed; -m validation 20 passed.
+
+### Step 8 — full regression (DONE)
+- `pytest` 289 passed / 0 failed; Army no-drift byte-identical.
+
+### Step 9 — release prep (DONE pre-publish)
+- version → 0.6.0 (pyproject + __init__). CHANGELOG [0.6.0] with family matrix + scoped claim. README + profile list.
+- `python -m build` → fedresearch_dictionary_extractor-0.6.0-py3-none-any.whl. Clean-venv smoke test: install + `--version`==0.6.0 + `--profile dod` on DODI 3150.09 → 35 entries, no legacy fallback. PASS.
+- **Per-family matrix (achieved):** REQUIRED-PASS — DoDI(35), DoDM(63), DoDCPM(22), AI(9), DoDD(4), DoDI-3305(4), DTM(4). EXPERIMENTAL — CJCSI(1), CJCSM(6), CJCSN(0), CJCS Guide(61 noisy), JP(8). Release claim: DoD issuances supported; Joint experimental.
+- **GitHub release publish + SHA256 capture: PENDING /review-execution CLEAN + operator OK** (outward-facing publish).
+
+### Discovered/deferred
+- `validation_set/pdfs` committed broken self-referential symlink (worked around with dod_pdfs/). Separate cleanup PR.
+- Residual inline_split FPs (~1-2/doc, e.g. "surrounding medium") — inherent to textual gating; within the ≤2/doc cap; measured in validation.
