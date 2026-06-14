@@ -108,6 +108,18 @@ class ReferenceProfile(ABC):
         """
         return None
 
+    def confirm_glossary_block(self, page_texts: list[str]) -> bool:
+        """Given the page texts of a candidate glossary block (the matching
+        pages plus a little following context), return whether it is a REAL
+        glossary body rather than a table-of-contents / appendix false match.
+
+        Default: ``True`` (no confirmation — preserves existing behavior for
+        profiles whose header patterns are TOC-safe). Override when broad
+        header tokens can match TOC entries (e.g. DoD's "PART II: DEFINITIONS"
+        appears both in the TOC and at the real back-matter glossary).
+        """
+        return True
+
     @property
     def enable_bold_gate(self) -> bool:
         """

@@ -260,7 +260,22 @@ def find_glossary_page_range(
     # single-page; real glossary = page 21) and similar docs in the
     # 31-doc validation set.
     blocks.sort(key=lambda b: (-len(b), -b[0]))
+    # Profile content-confirmation (default True = no-op for Army): pick the
+    # largest/latest block whose body is a real glossary, not a TOC/appendix
+    # false match. DoD's "PART II: DEFINITIONS" appears in BOTH the TOC and the
+    # back-matter glossary, so the largest block can be the multi-page TOC.
     found_start = blocks[0][0]
+    for block in blocks:
+        ctx_end = min(block[-1] + 2, total - 1)
+        page_texts: list[str] = []
+        for p in range(block[0], ctx_end + 1):
+            try:
+                page_texts.append(doc[p].get_text("text"))
+            except Exception:
+                page_texts.append("")
+        if profile.confirm_glossary_block(page_texts):
+            found_start = block[0]
+            break
 
     # Step 4: end-scan forward from found_start.
     # _GLOSSARY_END_PATTERNS are whole-line anchored, so standalone

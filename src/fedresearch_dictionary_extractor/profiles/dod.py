@@ -14,7 +14,19 @@ short-circuits the analyzer's legacy-gate fallback). Range detection reuses
 find_glossary_page_range (largest-contiguous-block + later-position tie-break
 handles the TOC-vs-body false match).
 """
+import re
+
 from .base import ReferenceProfile
+
+# A real DoD glossary body has `Term. Definition` lines (1+ spaces after the
+# period — DODI uses two, AI uses one); a TOC page is dominated by dot-leaders
+# ("Title ....... 33"). Used to reject TOC blocks whose "PART II: DEFINITIONS"
+# entries match the glossary header patterns. The dot-leader-dominance check
+# (not the term shape alone) is what discriminates TOC from glossary.
+_DOD_TERM_LINE_RE = re.compile(
+    r"(?m)^\s*[A-Za-z0-9][A-Za-z0-9 /()\-\.]{0,48}?\.\s+[A-Z\"(]"
+)
+_DOT_LEADER_RE = re.compile(r"\.{5,}")
 
 
 class DodProfile(ReferenceProfile):
@@ -33,6 +45,16 @@ class DodProfile(ReferenceProfile):
         # legacy-gate fallback (which would over-segment a left-justified
         # block). inline_split is independent of bold regardless.
         return False
+
+    def confirm_glossary_block(self, page_texts: list[str]) -> bool:
+        text = "\n".join(page_texts)
+        term_lines = len(_DOD_TERM_LINE_RE.findall(text))
+        dot_leaders = len(_DOT_LEADER_RE.findall(text))
+        # A real DoD glossary body has many term.def lines and ~zero
+        # dot-leaders; a TOC block (whose "PART II: DEFINITIONS" entries also
+        # match the header patterns) is dot-leader-bearing. The dot-leader
+        # count is the decisive TOC signal.
+        return term_lines >= 3 and dot_leaders <= 2
 
     @property
     def supported_doc_types(self) -> list[str]:
@@ -109,13 +131,16 @@ class DodProfile(ReferenceProfile):
             r"^\s*$",
             r"^[\W_]+$",
             r"^\d+$",
-            r"^PART\s+[IVX0-9]+\b",
+            r"^PART\s+\S",            # any "PART <x>" header (incl. OCR "PART Il")
             r"^SECTION\b",
             r"^GLOSSARY\b",
             r"^ABBREVIATIONS\s+AND\s+ACRONYMS\b",
             r"^Unless\s+otherwise\b",
             r"^GL[-–—]\d+\s*$",                     # JP glossary page label "GL-1"
             r"^\d{1,2}\s+[A-Z][a-z]+\s+\d{4}\s*$",  # bare date
+            r"^[A-Z]\.\d+\b",                       # enclosure label "G.1", "G.2"
+            r"^U\.\s*S\.?\s*C?\.?\s*$",             # bare "U.S", "U.S.", "U.S.C"
+            r"^[A-Z][a-z]+\s+[A-Z]\.?\s*$",         # signature "William E"
         ]
 
     @property
