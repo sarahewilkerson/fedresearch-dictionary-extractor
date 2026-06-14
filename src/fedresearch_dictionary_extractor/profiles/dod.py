@@ -87,7 +87,10 @@ class DodProfile(ReferenceProfile):
         # ("DoDCPMIssuance 1400.25") and the spaced form ("DoD CPM Issuance
         # 1400.25 Vol 1471").
         return [
-            (r"\bDoD\s*CPM\w*(?:\s+Issuance)?\s+([\d.]+[A-Z]?(?:\s+Vol\s+\w+)?)", "DoDCPM"),
+            # DoD CPM volume forms: compact "1400.25v1471" or spaced
+            # "1400.25 Vol 1471". (_guess_pub_number searches IGNORECASE, so a
+            # trailing-letter capture would otherwise eat the compact "v".)
+            (r"\bDoD\s*CPM\w*(?:\s+Issuance)?\s+([\d.]+(?:v\d+|\s+Vol\s+\w+)?)", "DoDCPM"),
             (r"\b(?:DoDI|DODI)\s+([\d.]+[A-Z]?)", "DoDI"),
             (r"\b(?:DoDD|DODD)\s+([\d.]+[A-Z]?)", "DoDD"),
             (r"\b(?:DoDM|DODM)\s+([\d.]+[A-Z]?)", "DoDM"),
