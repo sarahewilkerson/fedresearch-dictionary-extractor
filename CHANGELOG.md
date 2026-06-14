@@ -1,5 +1,56 @@
 # Changelog
 
+## [0.6.0] — 2026-06-14
+
+**P2-B: DoD/Joint extraction profile.** Adds a second doc-family profile
+(`--profile dod`) for DoD-wide issuances and (experimentally) Joint docs. Army
+behavior is unchanged (deterministic golden byte-identical; `term_gate_mode`
+defaults to `"spatial"`). See `docs/plans/2026-06-14-p2b-dod-profile.md`.
+
+### Added
+- **`profiles/dod.py` (DodProfile)** + `"dod"` in the profile registry. DoD
+  issuance glossaries are a back-matter "GLOSSARY" enclosure with
+  "PART I. ABBREVIATIONS AND ACRONYMS" then "PART II. DEFINITIONS"; entries are
+  `Term.  Definition` (left-justified, OCR'd, no bold).
+- **`term_gate_mode="inline_split"`** (new `ReferenceProfile` property, default
+  `"spatial"`). DoD definition pages defeat both Army gates: bold-gating yields
+  ~0 entries (no bold) and X-only gating over-segments (term and continuation
+  share the left margin). inline_split is a purely textual new-term gate — a
+  line is a new term iff it matches the split pattern AND validates — bypassing
+  the spatial gate and the analyzer's legacy-gate fallback entirely.
+  `enable_bold_gate=False` on DoD also short-circuits that fallback.
+- **`inline_split_pattern`** (profile-overridable; default reuses the shared
+  `split_re`). The shared regex is never mutated (Army-safe).
+- **`confirm_glossary_block`** range content-confirmation hook (default `True` =
+  Army unchanged). DoD's "PART II: DEFINITIONS" matches BOTH the TOC and the
+  real glossary, so `find_glossary_page_range` now picks the largest CONFIRMED
+  block (≥3 `Term. Definition` lines AND ≤2 dot-leaders — the TOC signal).
+- Reproducibility: `validation_set/dod-corpus-manifest.yaml` (12 docs:
+  gcs_key/sha256/pages/family/glossary_class), `scripts/fetch_dod_corpus.py`,
+  `scripts/build_dod_fixtures.py`.
+
+### Validation (family matrix)
+Required-pass DoD issuances (extract real back-matter `Term. Definition`
+glossaries): **DoDI, DoDD, DoDM, AI, DoD CPM** (e.g. DoDI 3150.09 → 35 entries,
+DoDM 4140.01 → 63, DoD CPM → 22, AI 31 → 9); **DTM** (short memos, small
+glossaries). **Experimental — CJCS Instruction/Manual/Notice/Guide + Joint
+Publication:** these use inline numbered/lettered "Definitions" paragraphs
+(CJCS) or a two-column term/definition layout (JP), NOT the back-matter
+`Term. Definition` format; partial/low yield. **v0.6.0 release claim: DoD
+issuances supported; Joint (CJCS*/JP) experimental.**
+
+### Tests
+9 PDF-free gate unit tests + a committed DODI 3150.09 parser fixture (CI gate) +
+11 per-family pub-number tests; 20 `@validation` corpus tests (per-family entry
+floors, e2e no-legacy-fallback, sha256 manifest). Army no-drift golden
+(`tests/test_army_no_drift.py`) asserts byte-identical Army parser output.
+Full default suite: 289 passed.
+
+### Downstream (Phase C, separate)
+Backend `EXTRACTOR_VERSION` bump + Dockerfile wheel pin to v0.6.0 +
+`DictionaryService.DOD` in `PROFILE_READY_SERVICES` + thread the resolved
+service to the extractor subprocess. Not part of this release.
+
 ## [0.5.0] — 2026-05-18
 
 v0.5 Branch D delivery — addresses the v0.4 residual 45-doc zero-entry-with-glossary cohort via 4 surgical fixes plus a docs cleanup. Combined effect: 22 of 27 Class-2/3 docs recovered range detection (D-1); Section-I acronym tables now parsed (D-3-A); top-of-page running-headers filtered before term-classification (D-3-B); lowercase-stopword noise rejected from extracted entries (D-3-C). See `docs/plans/2026-05-18-v0.5-roadmap-definition-extraction.md`.

@@ -71,6 +71,16 @@ MAX_FOOTER_LINES_PER_PAGE = 5    # warn when filter is too aggressive (Fix B saf
 CHANGED_SINCE_PRIOR_PUB_FLAG = "changed_since_prior_pub"
 _LEADING_ASTERISKS_RE = re.compile(r"^\*+\s*")
 
+# inline_split precision: a real glossary headword never starts with a
+# lowercase function word. Rejects wrapped-continuation false positives like
+# "the assigned mission.  The three main principles…" while keeping legitimate
+# lowercase terms ("combat developer", "materiel developer", "decontamination").
+_INLINE_SPLIT_LEADING_STOPWORD_RE = re.compile(
+    r"^(?:the|a|an|of|to|in|for|and|or|nor|but|with|without|by|as|at|on|from|"
+    r"that|this|these|those|its|their|which|when|where|while|than|then|such)\b",
+    re.IGNORECASE,  # catch capitalized sentence-continuation splits ("The assigned mission. …")
+)
+
 
 def _strip_asterisk_prefix(term: str) -> tuple[str, bool]:
     """Strip leading `*` (or `**`, `***`) from `term` and report whether
@@ -251,7 +261,28 @@ def find_glossary_page_range(
     # single-page; real glossary = page 21) and similar docs in the
     # 31-doc validation set.
     blocks.sort(key=lambda b: (-len(b), -b[0]))
-    found_start = blocks[0][0]
+    # Profile content-confirmation (default True = no-op for Army): pick the
+    # largest/latest block whose body is a real glossary, not a TOC/appendix
+    # false match. DoD's "PART II: DEFINITIONS" appears in BOTH the TOC and the
+    # back-matter glossary, so the largest block can be the multi-page TOC.
+    found_start: int | None = None
+    for block in blocks:
+        ctx_end = min(block[-1] + 2, total - 1)
+        page_texts: list[str] = []
+        for p in range(block[0], ctx_end + 1):
+            try:
+                page_texts.append(doc[p].get_text("text"))
+            except Exception:
+                page_texts.append("")
+        if profile.confirm_glossary_block(page_texts):
+            found_start = block[0]
+            break
+    # No block passed confirmation → no real glossary (e.g. a doc whose only
+    # "PART II: DEFINITIONS" match is a TOC dot-leader). Report None rather
+    # than scanning from an unconfirmed/TOC block. Army's default confirm
+    # returns True, so the first block always passes and this never trips.
+    if found_start is None:
+        return None
 
     # Step 4: end-scan forward from found_start.
     # _GLOSSARY_END_PATTERNS are whole-line anchored, so standalone
@@ -471,6 +502,15 @@ def parse_glossary_entries(
         rf"([\s\.\-—–]{{2,}}|\.\s+|—|–)"
         rf"([A-Z\"\(].*)"
     )
+    # inline_split mode (DoD/issuance): a line is a new term iff it matches
+    # this pattern. Defaults to the shared split_re; a profile may override
+    # `inline_split_pattern` when its separators/char-set diverge (Army-safe —
+    # the shared split_re object is never mutated).
+    inline_split_re = (
+        re.compile(profile.inline_split_pattern)
+        if getattr(profile, "inline_split_pattern", None)
+        else split_re
+    )
 
     entries: list[dict] = []
 
@@ -586,6 +626,67 @@ def parse_glossary_entries(
         acronym_col_threshold = min_x + ACRONYM_COL_MARGIN
 
         for line_spans in valid_lines:
+            # ── inline_split gate (DoD/issuance) ──────────────────────────
+            # Purely textual: a line is a new term iff it matches
+            # inline_split_re AND the candidate term validates; otherwise it
+            # is a definition continuation. Self-contained — bypasses the
+            # spatial bold/X-position gate and the force_legacy_gate fallback
+            # entirely. Army (term_gate_mode="spatial", the default) never
+            # enters this branch.
+            if profile.term_gate_mode == "inline_split":
+                il_line_text = " ".join(s["text"] for s in line_spans).strip()
+                il_match = inline_split_re.match(il_line_text)
+                il_term: str | None = None
+                il_def: str | None = None
+                il_flags: list[str] = []
+                if il_match:
+                    cand_term = il_match.group(1).strip().strip(":,; ")
+                    if (
+                        cand_term.startswith("(")
+                        and cand_term.endswith(")")
+                        and len(cand_term) > 2
+                    ):
+                        cand_term = cand_term[1:-1].strip()
+                    cand_term, was_changed = _strip_asterisk_prefix(cand_term)
+                    cand_def = il_match.group(3).strip()
+                    if _validate_term(cand_term, cand_def, invalid_res) and not (
+                        _INLINE_SPLIT_LEADING_STOPWORD_RE.match(cand_term)
+                    ):
+                        il_term = cand_term
+                        il_def = cand_def
+                        il_flags = (
+                            [CHANGED_SINCE_PRIOR_PUB_FLAG] if was_changed else []
+                        )
+                if il_term is not None:
+                    _flush(
+                        page_entries,
+                        current_term,
+                        current_def_lines,
+                        term_page_idx,
+                        profile,
+                        doc,
+                        citation_pattern,
+                        confidence=0.95,
+                        source_type="glossary",
+                        flags=current_term_flags,
+                    )
+                    current_term = il_term
+                    current_term_flags = il_flags
+                    current_def_lines = [il_def] if il_def else []
+                    term_page_idx = page_idx
+                elif current_term is not None:
+                    # continuation of the open term (incl. split-shaped lines
+                    # whose "term" failed validation, e.g. "Reference (k). …").
+                    # BUT skip header/footer-zone lines: at a page boundary the
+                    # running header ("…  GLOSSARY  DoDI …, date  N") sits above
+                    # the body and would otherwise bleed into the prior term's
+                    # definition.
+                    il_y = line_spans[0]["bbox"][1]
+                    if HEADER_ZONE_Y <= il_y <= footer_y_threshold:
+                        current_def_lines.append(il_line_text)
+                # else: noise before the first term — dropped.
+                continue
+            # ── spatial gate (Army; default) ──────────────────────────────
             first = line_spans[0]
             first_x = first["bbox"][0]
             in_term_col = first_x < term_col_threshold
