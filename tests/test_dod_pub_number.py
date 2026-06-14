@@ -28,6 +28,9 @@ CASES = [
     # JP prod filenames use underscores between number parts; pub_number is
     # cosmetic for the (experimental) JP family — assert actual behavior.
     ("JP_1_04_OCR.pdf", "JP 1 04", "JP"),
+    # Codex iter-1 #3: trailing volume letter + spaced "DoD CPM Issuance".
+    ("DoDI 5000.02T Operation of the Adaptive Acquisition Framework 2022_06_08_OCR.pdf", "DoDI 5000.02T", "DoDI"),
+    ("DoD CPM Issuance 1400.25 Vol 1471 NAF Labor-Management CH3 2025_07_29_OCR.pdf", "DoDCPM 1400.25 Vol 1471", "DoDCPM"),
 ]
 
 

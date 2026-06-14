@@ -133,6 +133,20 @@ def test_crossref_definition_is_a_valid_entry() -> None:
     assert "Reference (k)" in entries[0]["definition"]
 
 
+def test_capitalized_sentence_continuation_is_not_a_new_term() -> None:
+    """A wrapped definition sentence starting 'The …' (capitalized stopword)
+    must fold into the open definition, not split into a bogus term."""
+    doc = _mock_doc(
+        [
+            ("EMP survivability.  The capability of a system to withstand exposure", LEFT_X),
+            ("The assigned mission. The three main principles apply to it.", LEFT_X),
+        ]
+    )
+    entries = parse_glossary_entries(doc, 0, 0, DOD)
+    assert _terms(entries) == ["EMP survivability"]
+    assert "the assigned mission" not in [t.lower() for t in _terms(entries)]
+
+
 def test_structural_header_between_terms_does_not_pollute_defs() -> None:
     """A 'PART II. DEFINITIONS' header sitting between two terms is dropped as
     a noise line — it neither becomes a term nor pollutes either definition."""

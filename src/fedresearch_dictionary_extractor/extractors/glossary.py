@@ -77,7 +77,8 @@ _LEADING_ASTERISKS_RE = re.compile(r"^\*+\s*")
 # lowercase terms ("combat developer", "materiel developer", "decontamination").
 _INLINE_SPLIT_LEADING_STOPWORD_RE = re.compile(
     r"^(?:the|a|an|of|to|in|for|and|or|nor|but|with|without|by|as|at|on|from|"
-    r"that|this|these|those|its|their|which|when|where|while|than|then|such)\b"
+    r"that|this|these|those|its|their|which|when|where|while|than|then|such)\b",
+    re.IGNORECASE,  # catch capitalized sentence-continuation splits ("The assigned mission. …")
 )
 
 
@@ -264,7 +265,7 @@ def find_glossary_page_range(
     # largest/latest block whose body is a real glossary, not a TOC/appendix
     # false match. DoD's "PART II: DEFINITIONS" appears in BOTH the TOC and the
     # back-matter glossary, so the largest block can be the multi-page TOC.
-    found_start = blocks[0][0]
+    found_start: int | None = None
     for block in blocks:
         ctx_end = min(block[-1] + 2, total - 1)
         page_texts: list[str] = []
@@ -276,6 +277,12 @@ def find_glossary_page_range(
         if profile.confirm_glossary_block(page_texts):
             found_start = block[0]
             break
+    # No block passed confirmation → no real glossary (e.g. a doc whose only
+    # "PART II: DEFINITIONS" match is a TOC dot-leader). Report None rather
+    # than scanning from an unconfirmed/TOC block. Army's default confirm
+    # returns True, so the first block always passes and this never trips.
+    if found_start is None:
+        return None
 
     # Step 4: end-scan forward from found_start.
     # _GLOSSARY_END_PATTERNS are whole-line anchored, so standalone

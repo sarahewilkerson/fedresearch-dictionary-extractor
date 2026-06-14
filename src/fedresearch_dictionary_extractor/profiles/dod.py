@@ -82,11 +82,15 @@ class DodProfile(ReferenceProfile):
         # specific first. Single-token display prefixes so the analyzer's
         # first-token doc_type derivation stays unambiguous for multi-word
         # families (DoD CPM Issuance → "DoDCPM"; CJCS Guide → "CJCSG").
+        # Number captures allow a trailing volume-letter (DoDI 5000.02T) and
+        # "Vol N" suffix. DoD CPM matches both the concatenated filename form
+        # ("DoDCPMIssuance 1400.25") and the spaced form ("DoD CPM Issuance
+        # 1400.25 Vol 1471").
         return [
-            (r"\bDoDCPM\w*\s+([\d.]+(?:\s+Vol\s+\w+)?)", "DoDCPM"),
-            (r"\b(?:DoDI|DODI)\s+([\d.]+)", "DoDI"),
-            (r"\b(?:DoDD|DODD)\s+([\d.]+)", "DoDD"),
-            (r"\b(?:DoDM|DODM)\s+([\d.]+)", "DoDM"),
+            (r"\bDoD\s*CPM\w*(?:\s+Issuance)?\s+([\d.]+[A-Z]?(?:\s+Vol\s+\w+)?)", "DoDCPM"),
+            (r"\b(?:DoDI|DODI)\s+([\d.]+[A-Z]?)", "DoDI"),
+            (r"\b(?:DoDD|DODD)\s+([\d.]+[A-Z]?)", "DoDD"),
+            (r"\b(?:DoDM|DODM)\s+([\d.]+[A-Z]?)", "DoDM"),
             (r"\bCJCSI\s+([\dA-Z.\-]+)", "CJCSI"),
             (r"\bCJCSM\s+([\dA-Z.\-]+)", "CJCSM"),
             (r"\bCJCSN\s+([\dA-Z.\-]+)", "CJCSN"),
