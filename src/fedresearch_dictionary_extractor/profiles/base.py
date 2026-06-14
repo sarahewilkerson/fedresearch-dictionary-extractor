@@ -80,6 +80,35 @@ class ReferenceProfile(ABC):
         return []
 
     @property
+    def term_gate_mode(self) -> str:
+        """New-term detection strategy for the glossary parser.
+
+        - ``"spatial"`` (default): Army convention — a left-margin line is a
+          new term when its first span is bold OR acronym-shaped (the
+          bold/X-position gate). Continuation lines wrap to the left margin.
+        - ``"inline_split"``: DoD/issuance convention — definition pages are
+          fully left-justified (term AND continuation at the same x) and
+          OCR'd (no bold), so spatial/bold gating cannot separate entries.
+          A line is a new term iff it matches ``inline_split_pattern``
+          (``Term.  Definition`` / ``ACRONYM  expansion``) AND the candidate
+          term validates; everything else is a continuation. Independent of
+          x-position, bold flags, and the legacy-gate fallback.
+
+        Default ``"spatial"`` so existing profiles are unaffected.
+        """
+        return "spatial"
+
+    @property
+    def inline_split_pattern(self) -> str | None:
+        """Override the term/definition split regex used in ``inline_split``
+        mode. ``None`` (default) reuses the parser's module-level ``split_re``
+        (``^Term <sep> Definition`` with the Army character set). Override only
+        when a family's term separators / first-definition chars / term
+        char-set diverge from Army's — keeps the shared ``split_re`` untouched.
+        """
+        return None
+
+    @property
     def enable_bold_gate(self) -> bool:
         """
         Toggle the bold/ALL-CAPS new-term gate added in PR1.2-quality.

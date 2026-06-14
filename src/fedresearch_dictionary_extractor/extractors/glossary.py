@@ -471,6 +471,15 @@ def parse_glossary_entries(
         rf"([\s\.\-—–]{{2,}}|\.\s+|—|–)"
         rf"([A-Z\"\(].*)"
     )
+    # inline_split mode (DoD/issuance): a line is a new term iff it matches
+    # this pattern. Defaults to the shared split_re; a profile may override
+    # `inline_split_pattern` when its separators/char-set diverge (Army-safe —
+    # the shared split_re object is never mutated).
+    inline_split_re = (
+        re.compile(profile.inline_split_pattern)
+        if getattr(profile, "inline_split_pattern", None)
+        else split_re
+    )
 
     entries: list[dict] = []
 
@@ -586,6 +595,59 @@ def parse_glossary_entries(
         acronym_col_threshold = min_x + ACRONYM_COL_MARGIN
 
         for line_spans in valid_lines:
+            # ── inline_split gate (DoD/issuance) ──────────────────────────
+            # Purely textual: a line is a new term iff it matches
+            # inline_split_re AND the candidate term validates; otherwise it
+            # is a definition continuation. Self-contained — bypasses the
+            # spatial bold/X-position gate and the force_legacy_gate fallback
+            # entirely. Army (term_gate_mode="spatial", the default) never
+            # enters this branch.
+            if profile.term_gate_mode == "inline_split":
+                il_line_text = " ".join(s["text"] for s in line_spans).strip()
+                il_match = inline_split_re.match(il_line_text)
+                il_term: str | None = None
+                il_def: str | None = None
+                il_flags: list[str] = []
+                if il_match:
+                    cand_term = il_match.group(1).strip().strip(":,; ")
+                    if (
+                        cand_term.startswith("(")
+                        and cand_term.endswith(")")
+                        and len(cand_term) > 2
+                    ):
+                        cand_term = cand_term[1:-1].strip()
+                    cand_term, was_changed = _strip_asterisk_prefix(cand_term)
+                    cand_def = il_match.group(3).strip()
+                    if _validate_term(cand_term, cand_def, invalid_res):
+                        il_term = cand_term
+                        il_def = cand_def
+                        il_flags = (
+                            [CHANGED_SINCE_PRIOR_PUB_FLAG] if was_changed else []
+                        )
+                if il_term is not None:
+                    _flush(
+                        page_entries,
+                        current_term,
+                        current_def_lines,
+                        term_page_idx,
+                        profile,
+                        doc,
+                        citation_pattern,
+                        confidence=0.95,
+                        source_type="glossary",
+                        flags=current_term_flags,
+                    )
+                    current_term = il_term
+                    current_term_flags = il_flags
+                    current_def_lines = [il_def] if il_def else []
+                    term_page_idx = page_idx
+                elif current_term is not None:
+                    # continuation of the open term (incl. split-shaped lines
+                    # whose "term" failed validation, e.g. "Reference (k). …")
+                    current_def_lines.append(il_line_text)
+                # else: noise before the first term — dropped.
+                continue
+            # ── spatial gate (Army; default) ──────────────────────────────
             first = line_spans[0]
             first_x = first["bbox"][0]
             in_term_col = first_x < term_col_threshold
