@@ -136,3 +136,29 @@ N/A (feature). Design-constraint RCA: DoD issuance PDFs are left-justified, OCR'
 - Iter-1 Codex (0 SUCCESS): 8 structural findings → all incorporated (rev 2).
 - Iter-2 Codex (0 SUCCESS): 8 refinement findings → all incorporated (rev 3).
 - Iter-3: APPROVED via operator-judgment (stable design across both rounds; all fixes bounded targeted edits; converging — structural→granularity).
+
+## Execution Results
+- **Status:** CLEAN after execution-review iterations 1-2 (Codex-driven).
+- **Iterations:** plan review 3 (iter-3 operator-judgment APPROVED) + execution review 2 = 5.
+- **Deviations:** analyzer.py needed NO change (DoD enable_bold_gate=False short-circuits the fallback — confirmed). Do Not Touch fully honored (army.py 0 lines, split_re literal unmutated).
+- **Codex findings (all fixed+tested):** confirmation-fallback→None; stopword IGNORECASE; pub-number trailing-letter + spaced-CPM; compact DoDCPM v-volume.
+
+## Handoff Summary
+- **State:** shipped to branch feat/2026-06-14-dod-profile; PENDING merge-to-main + v0.6.0 GitHub release publish (operator confirmation — exec review had remediations + release is outward-facing).
+- **What changed:** new `dod` extractor profile via additive `term_gate_mode="inline_split"` (textual gate) + `confirm_glossary_block` range hook + `profiles/dod.py`. Army path byte-identical. Key files: profiles/dod.py, profiles/base.py, extractors/glossary.py, profiles/__init__.py.
+- **Verified by:** default suite 293 passed; `-m validation` 20 passed; Army no-drift golden byte-identical; clean-venv `pip install` + `--profile dod` on DODI 3150.09 → 35 entries, no legacy fallback.
+- **Known failures / skipped:** `@validation` corpus tests (22) deselected by default (need PDFs via scripts/fetch_dod_corpus.py) — by design (CI runs PDF-free gate). Pre-existing 4 xfail + 100 skipped (Army validation, no local PDFs).
+- **Rollback:** revert the branch (new profile; Army unaffected). No deploy to undo. If released, `gh release delete v0.6.0 && git tag -d v0.6.0`.
+- **Open follow-ups (TRACK, separate from completed work):** (1) CJCS*/JP families experimental — inline-paragraph/two-column glossaries need a future profile mode if wanted; (2) residual ~1-2 FP/doc inherent to textual gating ("surrounding medium"); (3) `validation_set/pdfs` broken self-referential symlink (pre-existing repo bug) — cleanup PR.
+- **Scratch log:** docs/plans/2026-06-14-p2b-dod-profile-worklog.md
+- **To resume (Phase C):** capture the v0.6.0 wheel SHA256 (`gh release view v0.6.0 --json assets --jq '.assets[]|select(.name|endswith(".whl")).digest'`) → pin DICT_EXTRACTOR_WHEEL_URL+_SHA256 in apps/backend/Dockerfile + bump EXTRACTOR_VERSION + add DictionaryService.DOD to PROFILE_READY_SERVICES + thread resolved service to subprocess (`--profile dod`).
+
+## Sync Verification
+- [x] Verification strategy executed: PASS (293 default + 20 validation + Army golden + smoke test)
+- [x] Branch pushed to remote: PENDING (pushing now)
+- [ ] Branch merged to main: PENDING operator confirmation
+- [ ] Main pushed to remote: PENDING merge
+- [x] Documentation updated and current: YES (CHANGELOG/README/worklog)
+- [ ] Production deploy (v0.6.0 GitHub release publish): PENDING operator confirmation
+- [ ] Local, remote, and main consistent: PENDING merge
+- Verified at: 2026-06-14
