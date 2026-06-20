@@ -19,7 +19,13 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          cache: pip
+          # No `cache: pip` — this job runs on a self-hosted runner whose `_work`
+          # dir is a symlink onto the extra volume (disk-remediation 2026-06-16).
+          # setup-python's cache runs hashFiles('**/requirements.txt',
+          # '**/pyproject.toml') which fails to match through the symlinked work
+          # dir → "No file matched … checked out the target repository" → the
+          # Set-up-Python step fails. The host has a warm ~/.cache/pip, so the
+          # actions cache is redundant here. Matches fedresearch-scraper #588.
 
       - name: Install package + dev deps
         run: |
