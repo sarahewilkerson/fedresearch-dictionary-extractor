@@ -9,6 +9,23 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  # Rot detector, not a build. This repo is low-traffic: between 2026-06-20 and
+  # 2026-08-09 nothing triggered CI at all, and in that window the runner host moved
+  # to Debian 13 and broke `actions/setup-python` for every job here. The breakage was
+  # invisible for seven weeks and surfaced on an unrelated docs PR, which is the worst
+  # time to discover it — a green history means nothing if nothing ran.
+  #
+  # A weekly tick turns "silent rot" into "a failing scheduled run within 7 days".
+  # It also keeps this runner's uv interpreter cache warm, so the first PR of the
+  # month doesn't pay the cold download.
+  #
+  # NOTE ON NOTIFICATION: a failing scheduled run relies on GitHub's default email to
+  # the user who last touched this workflow file. That is weak. Cross-repo CI-staleness
+  # monitoring on the ops alert bus is the fuller answer and is deliberately not
+  # attempted here.
+  schedule:
+    - cron: "17 6 * * 1"  # Mondays 06:17 UTC — off the hour, away from the nightly producer window
+  workflow_dispatch:
 
 jobs:
   lint-and-test:
