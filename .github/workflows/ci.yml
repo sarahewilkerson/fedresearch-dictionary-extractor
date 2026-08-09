@@ -1,5 +1,9 @@
 name: CI
 
+env:
+  # Pinned: an unpinned installer script is a moving dependency on every CI run.
+  UV_VERSION: "0.9.28"
+
 on:
   push:
     branches: [main]
@@ -15,17 +19,33 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-          # No `cache: pip` — this job runs on a self-hosted runner whose `_work`
-          # dir is a symlink onto the extra volume (disk-remediation 2026-06-16).
-          # setup-python's cache runs hashFiles('**/requirements.txt',
-          # '**/pyproject.toml') which fails to match through the symlinked work
-          # dir → "No file matched … checked out the target repository" → the
-          # Set-up-Python step fails. The host has a warm ~/.cache/pip, so the
-          # actions cache is redundant here. Matches fedresearch-scraper #588.
+      # NOT actions/setup-python. The runner host moved to Debian 13 (trixie), and
+      # actions/python-versions publishes no x64 builds for it, so setup-python fails
+      # at "The version '3.11' with architecture 'x64' was not found for Debian 13"
+      # before lint or tests ever run. Trixie itself ships only 3.13, and 3.11/3.12
+      # are not in its archive, so there is no apt path either. uv provisions its own
+      # standalone interpreters, which is what makes the declared support matrix
+      # (requires-python >=3.11; classifiers 3.11 + 3.12) testable on this host at all.
+      #
+      # `--seed` is load-bearing: a bare `uv venv` creates no pip, and the steps below
+      # call `python -m pip`. Prepending .venv/bin to GITHUB_PATH keeps those steps
+      # unchanged, so this swap is confined to interpreter provisioning.
+      #
+      # No `cache: pip` concerns carry over — uv caches interpreters under
+      # ~/.local/share/uv and wheels under ~/.cache/uv, both outside the symlinked
+      # `_work` dir that broke setup-python's hashFiles cache (fedresearch-scraper #588).
+      - name: Set up Python ${{ matrix.python-version }} (uv)
+        run: |
+          curl -LsSf https://astral.sh/uv/${UV_VERSION}/install.sh | sh
+          export PATH="$HOME/.local/bin:$PATH"
+          uv python install "${{ matrix.python-version }}"
+          uv venv --seed --python "${{ matrix.python-version }}" .venv
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Verify the interpreter is the one the matrix asked for
+        run: |
+          python -c "import sys; v='%d.%d'%sys.version_info[:2]; want='${{ matrix.python-version }}'; print('running',v,'want',want); sys.exit(0 if v==want else 1)"
 
       - name: Install package + dev deps
         run: |
@@ -43,9 +63,15 @@ jobs:
     needs: lint-and-test
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
+      # Same Debian 13 constraint as lint-and-test above.
+      - name: Set up Python 3.11 (uv)
+        run: |
+          curl -LsSf https://astral.sh/uv/${UV_VERSION}/install.sh | sh
+          export PATH="$HOME/.local/bin:$PATH"
+          uv python install 3.11
+          uv venv --seed --python 3.11 .venv
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
       - name: Install build deps
         run: |
           python -m pip install --upgrade pip
